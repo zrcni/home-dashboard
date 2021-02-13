@@ -1,0 +1,2 @@
+{:deps
+ {cljfx {:git/url "https://github.com/cljfx/cljfx" :sha "ec3c34e619b2408026b9f2e2ff8665bebf70bf56"}}}
