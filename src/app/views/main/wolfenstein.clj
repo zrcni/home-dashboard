@@ -1,6 +1,5 @@
 (ns app.views.main.wolfenstein
-  (:require [app.events :as events]))
-
+  (:require [app.events.api :refer [create-event]]))
 
 (defn image [{:keys [image on-click]}]
   {:fx/type :image-view
@@ -9,5 +8,5 @@
 
 (defn wolfenstein-view [{:keys [mode]}]
   {:fx/type image
-   :on-click {:event/type ::events/show-menu}
+   :on-click (create-event :show-menu)
    :image (:image mode)})

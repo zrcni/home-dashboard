@@ -1,6 +1,6 @@
 (ns app.views.menu.core
   (:require [cljfx.css :as css]
-            [app.events :as events]))
+            [app.events.api :refer [create-event]]))
 
 (defn menu-button [{:keys [text on-action]}]
   {:fx/type :button
@@ -15,22 +15,19 @@
    :alignment :center
    :children [{:fx/type menu-button
                :text "Hide menu"
-               :on-action {:event/type ::events/hide-menu}}
+               :on-action (create-event :hide-menu)}
               {:fx/type menu-button
                :text "Static image"
                :active? (= :static-image active-mode)
-               :on-action {:event/type ::events/change-mode
-                           :event/data {:mode :static-image}}}
+               :on-action (create-event :activate-mode-static-image)}
               {:fx/type menu-button
                :text "Wolfenstein"
                :active? (= :wolfenstein active-mode)
-               :on-action {:event/type ::events/change-mode
-                           :event/data {:mode :wolfenstein}}}
+               :on-action (create-event :activate-mode-wolfenstein)}
               {:fx/type menu-button
                :text "Temperature"
                :active? (= :temperature active-mode)
-               :on-action {:event/type ::events/change-mode
-                           :event/data {:mode :temperature}}}]})
+               :on-action (create-event :activate-mode-temperature)}]})
 
 (defn menu-view [{:keys [style active-mode]}]
   {:fx/type :scene
