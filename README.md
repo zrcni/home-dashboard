@@ -1,4 +1,4 @@
-dev w/ vscode:
+### dev w/ vscode:
 ```
 clj -M:repl
 ```
@@ -9,3 +9,8 @@ Command palette (SHIFT+CTRL+P):
 
 Load current file and dependencies: **CTRL+ALT+C + Enter**
 Evaluate current form: **CTRL+Enter**
+
+### test
+```
+clj -M:test
+```

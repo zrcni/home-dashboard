@@ -7,7 +7,7 @@
    :on-mouse-clicked on-click
    :image image})
 
-(defn static-image-view [_]
+(defn static-image-view [& _]
   {:fx/type image
    :on-click {:event/type ::events/show-menu}
    :image "app/images/batmaaaaan.jpg"})
