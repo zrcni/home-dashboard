@@ -1,4 +1,4 @@
-(ns app.views.main.static-image
+(ns app.views.main.wolfenstein
   (:require [app.events :as events]))
 
 
@@ -7,7 +7,7 @@
    :on-mouse-clicked on-click
    :image image})
 
-(defn static-image-view [{:keys [mode]}]
+(defn wolfenstein-view [{:keys [mode]}]
   {:fx/type image
    :on-click {:event/type ::events/show-menu}
    :image (:image mode)})

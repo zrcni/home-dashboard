@@ -9,7 +9,8 @@
 
 (defn change-mode [state e]
   (-> (case (-> e :event/data :mode)
-        :static-image (assoc state :mode :static-image)
+        :static-image (assoc state :active-mode :static-image)
+        :wolfenstein (assoc state :active-mode :wolfenstein)
         state)
       (hide-menu e)))
 

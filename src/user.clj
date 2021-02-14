@@ -3,7 +3,8 @@
             [app.views.core :as views]
             [app.state :refer [*state]]
             [app.events :as events]
-            [app.styles :refer [style]]))
+            [app.styles :refer [style]]
+            [clojure.tools.namespace.repl :refer [refresh]]))
 
 (def renderer
   (fx/create-renderer

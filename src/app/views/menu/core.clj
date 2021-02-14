@@ -10,7 +10,7 @@
    :pref-height 100
    :pref-width 400})
 
-(defn menu [& _]
+(defn menu [{:keys [active-mode]}]
   {:fx/type :v-box
    :alignment :center
    :children [{:fx/type menu-button
@@ -18,20 +18,24 @@
                :on-action {:event/type ::events/hide-menu}}
               {:fx/type menu-button
                :text "Static image"
+               :active? (= :static-image active-mode)
                :on-action {:event/type ::events/change-mode
-                           :mode :static-image}}
+                           :event/data {:mode :static-image}}}
               {:fx/type menu-button
                :text "Wolfenstein"
+               :active? (= :wolfenstein active-mode)
                :on-action {:event/type ::events/change-mode
-                           :mode :wolfenstein}}
+                           :event/data {:mode :wolfenstein}}}
               {:fx/type menu-button
                :text "Temperature"
+               :active? (= :temperature active-mode)
                :on-action {:event/type ::events/change-mode
-                           :mode :temperature}}]})
+                           :event/data {:mode :temperature}}}]})
 
-(defn menu-view [{:keys [style]}]
+(defn menu-view [{:keys [style active-mode]}]
   {:fx/type :scene
    :stylesheets [(::css/url style)]
    :root {:fx/type :v-box
           :alignment :center
-          :children [{:fx/type menu}]}})
+          :children [{:fx/type menu
+                      :active-mode active-mode}]}})

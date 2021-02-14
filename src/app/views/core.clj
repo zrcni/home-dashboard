@@ -3,15 +3,12 @@
             [app.views.main.core :refer [main-view]]
             [app.events :as events]))
 
-(defn root [{:keys [menu? mode style]}]
+(defn root [state]
   {:fx/type :stage
    :showing true
   ;;  :full-screen true
    :title "beep boop"
    :on-close-request {:event/type ::events/window-closed}
-   :scene (if menu?
-            {:fx/type menu-view
-             :style style}
-            {:fx/type main-view
-             :style style
-             :mode mode})})
+   :scene (if (:menu? state)
+            (assoc state :fx/type menu-view)
+            (assoc state :fx/type main-view))})
