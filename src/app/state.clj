@@ -1,5 +1,7 @@
-(ns app.state)
+(ns app.state
+  (:require [app.styles :refer [style]]))
 
 (def *state
   (atom {:menu? false
-         :mode :static-image}))
+         :mode :static-image
+         :style style}))
