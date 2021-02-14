@@ -1,10 +1,10 @@
 (ns app.view
   (:require [app.events :as events]))
 
-(defn image [{:keys [source on-click]}]
+(defn image [{:keys [image on-click]}]
   {:fx/type :image-view
    :on-mouse-clicked on-click
-   :image {:url source}})
+   :image image})
 
 (defn menu [props]
   {:fx/type :v-box
@@ -38,7 +38,7 @@
           :children (case mode
                       :static-image [{:fx/type image
                                       :on-click {:event/type ::events/show-menu}
-                                      :source "https://pbs.twimg.com/profile_images/1228944321426214913/yAE5GY9g_400x400.jpg"}]
+                                      :image "app/images/batmaaaaan.jpg"}]
                       [])}})
 
 (defn root [{:keys [menu? mode]}]
