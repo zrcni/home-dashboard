@@ -6,9 +6,11 @@
   {:fx/type :button
    :style-class ["button" "menu-button"]
    :on-action on-action
-   :text text})
+   :text text
+   :pref-height 100
+   :pref-width 400})
 
-(defn menu [_]
+(defn menu [& _]
   {:fx/type :v-box
    :alignment :center
    :children [{:fx/type menu-button
