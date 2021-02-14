@@ -6,7 +6,7 @@
 (defn root [{:keys [menu? mode style]}]
   {:fx/type :stage
    :showing true
-   :full-screen true
+  ;;  :full-screen true
    :title "beep boop"
    :on-close-request {:event/type ::events/window-closed}
    :scene (if menu?

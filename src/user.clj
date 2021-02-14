@@ -8,20 +8,30 @@
 (def renderer
   (fx/create-renderer
    :opts {:fx.opt/map-event-handler #'events/handle}
-   :middleware (fx/wrap-map-desc views/root)))
+   :middleware (fx/wrap-map-desc #'views/root)))
 
-(defn render []
+(defn mount []
   (fx/mount-renderer *state renderer))
+
+(defn unmount []
+  (fx/unmount-renderer *state renderer))
+
+(defn rerender []
+  (unmount)
+  (mount))
 
 ;; Refresh styles whenever they change to
 ;; make the app rerender with updated styles.
 (defn watch-styles []
-  (add-watch #'style :refresh-styles (fn [_ _ _ _]
-                                       (swap! *state assoc :style style))))
+  (add-watch #'style :refresh-styles #(swap! *state assoc :style style)))
 
 (defn stop-watch-styles []
   (remove-watch #'style :refresh-styles))
 
 (defn start []
   (watch-styles)
-  (render))
+  (rerender))
+
+(defn stop []
+  (stop-watch-styles)
+  (unmount))

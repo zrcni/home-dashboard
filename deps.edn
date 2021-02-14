@@ -1,6 +1,7 @@
 {:deps
  {cljfx/cljfx {:mvn/version "1.7.13"}
-  cljfx/css {:mvn/version "1.1.0"}}
+  cljfx/css {:mvn/version "1.1.0"}
+  org.clojure/tools.namespace {:mvn/version "1.1.0"}}
 
  :aliases {:repl
            {:extra-deps {nrepl/nrepl                {:mvn/version "0.8.3"}
