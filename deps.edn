@@ -14,4 +14,10 @@
            :test {:extra-paths ["test"]
                   :extra-deps {com.cognitect/test-runner {:git/url "https://github.com/cognitect-labs/test-runner.git"
                                                           :sha "b6b3193fcc42659d7e46ecd1884a228993441182"}}
-                  :main-opts ["-m" "cognitect.test-runner"]}}}
+                  :main-opts ["-m" "cognitect.test-runner"]}
+
+           :test/watch
+           {:extra-paths ["test"]
+            :extra-deps  {lambdaisland/kaocha {:mvn/version "1.0.732"}}
+            :main-opts   ["-m" "kaocha.runner"
+                          "--watch"]}}}

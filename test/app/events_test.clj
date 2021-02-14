@@ -63,5 +63,5 @@
           emit (events/create-emit handle)]
       (emit {:event/type ::events/change-mode
              :mode :static-image})
-      (is (= (:mode @*state) (:mode state/default-state)))
-      (is (not (:menu? @*state))))))
+      (is (= state/default-state
+             (assoc state/default-state :menu? false))))))
