@@ -12,12 +12,12 @@
     :static-image (swap! *state assoc :mode :static-image)
     nil))
 
-(defn handle-event [e]
+(defn handle [e]
   (case (:event/type e)
     ::show-menu (show-menu e)
     ::hide-menu (hide-menu e)
     ::change-mode (change-mode e)
     (prn e)))
 
-(defn emit-event [e]
-  (handle-event e))
+(defn emit [e]
+  (handle e))
