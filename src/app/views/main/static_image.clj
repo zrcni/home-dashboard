@@ -1,12 +1,10 @@
-(ns app.views.main.static-image
-  (:require [app.events.api :refer [create-event]]))
+(ns app.views.main.static-image)
 
-(defn image [{:keys [image on-click]}]
+(defn image [{:keys [image]}]
   {:fx/type :image-view
-   :on-mouse-clicked on-click
+   :style-class "main-image"
    :image image})
 
 (defn static-image-view [{:keys [mode]}]
   {:fx/type image
-   :on-click (create-event :show-menu)
    :image (:image mode)})

@@ -13,14 +13,14 @@
   (swap! *state assoc :menu? false))
 
 (defn activate-mode-static-image [_ *state dispatch]
-  (when-not (= (:active-mode *state) :static-image)
+  (when-not (= (:active-mode @*state) :static-image)
     (let [prev-mode (:active-mode @*state)]
       (dispatch (create-event (make-deactivate-event-type prev-mode)))
       (swap! *state assoc :active-mode :static-image)))
   (dispatch (create-event :hide-menu)))
 
 (defn activate-mode-wolfenstein [_ *state dispatch]
-  (when-not (= (:active-mode *state) :wolfenstein)
+  (when-not (= (:active-mode @*state) :wolfenstein)
     (dispatch (create-event (make-deactivate-event-type (:active-mode @*state))))
     (let [kill-ch (wolfenstein-mode/activate #(dispatch (create-event :wolfenstein-image-updated {:img-n %})))]
       (swap! *state assoc-in [:modes :wolfenstein :stop] #(put! kill-ch true))

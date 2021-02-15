@@ -25,7 +25,8 @@
 ;; Refresh styles whenever they change to
 ;; make the app rerender with updated styles.
 (defn watch-styles []
-  (add-watch #'style :refresh-styles #(swap! *state assoc :style style)))
+  (add-watch #'style :refresh-styles (fn [_ _ _ _]
+                                       (swap! *state assoc :style style))))
 
 (defn stop-watch-styles []
   (remove-watch #'style :refresh-styles))

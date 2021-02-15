@@ -4,4 +4,5 @@
 (def style
   (css/register
    ::style
-   {".menu-button" {:-fx-cursor :hand}}))
+   {".menu-button" {:-fx-cursor :hand}
+    ".main-view" {:-fx-background-color :black}}))

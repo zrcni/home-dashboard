@@ -13,5 +13,4 @@
 
 (handlers/register subscribe)
 
-(subscribe :global (fn [e _ _]
-                     (prn e)))
+(subscribe :global (fn [e & _] (prn e)))
