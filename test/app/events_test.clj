@@ -36,6 +36,14 @@
       (dispatch (create-event :activate-mode-static-image))
       (wait-until (= (:active-mode @*state) :static-image)))))
 
+(deftest change-mode-wolfenstein
+  (testing "change active mode to wolfenstein"
+    (let [*state (atom (assoc state/default-state :active-mode :static-image))
+          [dispatch subscribe] (init-events *state)]
+      (handlers/register subscribe)
+      (dispatch (create-event :activate-mode-wolfenstein))
+      (wait-until (= (:active-mode @*state) :wolfenstein)))))
+
 (deftest change-mode-hide-menu
   (testing "changing active mode hides menu"
     (let [*state (atom state/default-state)
@@ -51,5 +59,4 @@
           [dispatch subscribe] (init-events *state)]
       (handlers/register subscribe)
       (dispatch (create-event :activate-mode-static-image))
-      (wait-until (= @*state
-                     (assoc state/default-state :menu? false))))))
+      (wait-until (not (:menu? @*state))))))
