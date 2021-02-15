@@ -1,6 +1,6 @@
 ### dev w/ vscode:
 ```
-clj -M:repl
+clj -M:repl:scratch
 ```
 Command palette (SHIFT+CTRL+P):   
 **Calva: Connect to a running REPL server in your project**   
@@ -9,6 +9,13 @@ Command palette (SHIFT+CTRL+P):
 
 Load current file and dependencies: **CTRL+ALT+C + Enter**
 Evaluate current form: **CTRL+Enter**
+
+Experiment in scratch/scratch.clj
+
+### test watch
+```
+clj -M:test/watch
+```
 
 ### test
 ```

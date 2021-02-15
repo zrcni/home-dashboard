@@ -22,7 +22,7 @@
     (let [c (register *channels event-type)]
       (go-loop []
         (try
-          (callback (<! c) *state #(dispatch *channels %))
+          (callback (<! c) *state #(apply dispatch [*channels %]))
           (catch Exception err (println err)))
         (recur))
       (fn []

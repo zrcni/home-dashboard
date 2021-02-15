@@ -22,4 +22,7 @@
            {:extra-paths ["test"]
             :extra-deps  {lambdaisland/kaocha {:mvn/version "1.0.732"}}
             :main-opts   ["-m" "kaocha.runner"
-                          "--watch"]}}}
+                          "--watch"]}
+
+           :scratch
+           {:extra-paths ["scratch"]}}}
