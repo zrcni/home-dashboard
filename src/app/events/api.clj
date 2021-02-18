@@ -2,9 +2,9 @@
   (:require [clojure.core.async :refer [chan >! <! go go-loop close!]]))
 
 (defn- register [*channels event-type]
- (let [c (chan)]
-   (swap! *channels update event-type conj c)
-   c))
+  (let [c (chan)]
+    (swap! *channels update event-type conj c)
+    c))
 
 (defn- unregister [*channels event-type c]
   (swap! *channels update event-type remove c))
@@ -19,16 +19,17 @@
           (>! c event))))))
 
 (defn subscribe [*channels *state event-type callback]
-    (let [c (register *channels event-type)]
-      (go-loop []
-        (try
-          (callback (<! c) *state #(apply dispatch [*channels %]))
-          (catch Exception err (println err)))
-        (recur))
-      (fn []
-        (unregister *channels event-type c)
-        (close! c))))
+  (let [c (register *channels event-type)]
+    (go-loop []
+      (try
+        (callback (<! c) *state #(apply dispatch [*channels %]))
+        (catch Exception err (println err)))
+      (recur))
+    (fn []
+      (unregister *channels event-type c)
+      (close! c))))
 
-(defn create-event [event-type & [data]]
-  {:event/type event-type
-   :event/data (or data nil)})
+(defn create-event
+  ([event-type] {:event/type event-type})
+  ([event-type data] (assoc (create-event event-type)
+                            :event/data data)))

@@ -2,9 +2,13 @@
   (:require [cljfx.api :as fx]
             [app.views.core :as views]
             [app.state :refer [*state]]
+            [app.events.api :refer [create-event]]
             [app.events.core :refer [dispatch]]
             [app.styles :refer [style]]
+            [app.temperature-mode.core :as temperature]
             [clojure.tools.namespace.repl :refer [refresh]]))
+
+(temperature/subscribe #(dispatch (create-event :temperature-updated %)))
 
 (def renderer
   (fx/create-renderer

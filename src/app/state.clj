@@ -6,7 +6,9 @@
                     :active-mode :static-image
                     :modes {:static-image {:image "app/images/static-image/tonnin-seteli.png"}
                             :wolfenstein {:image "app/images/wolfenstein/1.png"
-                                          :stop nil}}
+                                          :deactivate-fn nil}
+                            :temperature {:data nil
+                                          :last-updated nil}}
                     :style style})
 (def *state
   (atom default-state))

@@ -2,7 +2,8 @@
   (:require [cljfx.css :as css]
             [app.events.api :refer [create-event]]
             [app.views.main.static-image :refer [static-image-view]]
-            [app.views.main.wolfenstein :refer [wolfenstein-view]]))
+            [app.views.main.wolfenstein :refer [wolfenstein-view]]
+            [app.views.main.temperature :refer [temperature-view]]))
 
 (defn main-view [{:keys [style active-mode modes]}]
   {:fx/type :scene
@@ -16,4 +17,6 @@
                                       :mode (:static-image modes)}]
                       :wolfenstein [{:fx/type wolfenstein-view
                                      :mode (:wolfenstein modes)}]
+                      :temperature [{:fx/type temperature-view
+                                     :mode (:temperature modes)}]
                       [])}})

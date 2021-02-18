@@ -1,6 +1,6 @@
 (ns app.wolfenstein-mode.core
   (:import java.time.LocalTime)
-  (:require [clojure.core.async :refer [alt! go-loop timeout chan close!]]))
+  (:require [clojure.core.async :refer [alt! go-loop timeout chan close! put!]]))
 
 (def *rand? (atom true))
 (def interval-ms (if @*rand? 2000 60000))
@@ -40,6 +40,11 @@
       (reset! *prev-img-n img-n)
       (callback img-n))))
 
+(defn- deactivate []
+  (when @*chan
+    (close! @*chan)
+    (reset! *chan nil)))
+
 (defn create-activate [update-image]
   (fn [callback]
     (when-not @*chan
@@ -52,13 +57,11 @@
                         ([] (update-image callback) (recur))
                         kill-ch nil))]
         (reset! *chan loop-ch)
-        kill-ch))))
+        
+        (fn []
+          (put! kill-ch true)
+          (deactivate))))))
 
 (def activate (create-activate (if @*rand?
                                  update-image-randomly
                                  update-image-based-on-time)))
-
-(defn deactivate []
-  (when @*chan
-    (close! @*chan)
-    (reset! *chan nil)))

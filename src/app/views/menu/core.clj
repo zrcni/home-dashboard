@@ -30,7 +30,7 @@
               {:fx/type menu-button
                :text "Temperature"
                :active? (= :temperature active-mode)
-               :on-action (create-event :hide-menu #_:activate-mode-temperature)}]})
+               :on-action (create-event :activate-mode-temperature)}]})
 
 (defn menu-view [{:keys [style active-mode]}]
   {:fx/type :scene
