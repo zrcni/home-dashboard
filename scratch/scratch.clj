@@ -1,6 +1,5 @@
 (ns scratch
-  (:require [clojure.core.async :refer [go chan close!]]
-            [user :refer [start stop rerender]]
+  (:require [user :refer [start stop rerender]]
             [app.events.core :as events]
             [app.state :refer [*state]]
             [app.events.api :refer [create-event]]
@@ -22,3 +21,7 @@
 (wolfenstein/deactivate)
 
 (reset! wolfenstein/*prev-image-n nil)
+
+;; RPi terminal session seems to become
+;; frozen sometimes, so this kills it
+(System/exit 0)

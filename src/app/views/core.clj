@@ -6,7 +6,7 @@
 (defn root [state]
   {:fx/type :stage
    :showing true
-  ;;  :full-screen true
+   :full-screen (true? (:full-screen? state))
    :title "beep boop"
    :on-close-request (create-event :window-closed)
    :scene (if (:menu? state)

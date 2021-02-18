@@ -2,8 +2,9 @@
   (:require [app.styles :refer [style]]))
 
 (def default-state {:menu? false
+                    :full-screen? true
                     :active-mode :static-image
-                    :modes {:static-image {:image "app/images/static-image/batmaaaaan.jpg"}
+                    :modes {:static-image {:image "app/images/static-image/tonnin-seteli.png"}
                             :wolfenstein {:image "app/images/wolfenstein/1.png"
                                           :stop nil}}
                     :style style})

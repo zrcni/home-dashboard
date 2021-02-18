@@ -22,7 +22,7 @@
   (unmount)
   (mount))
 
-;; Refresh styles whenever they change to
+;; Refresh styles in state whenever they change to
 ;; make the app rerender with updated styles.
 (defn watch-styles []
   (add-watch #'style :refresh-styles (fn [_ _ _ _]
