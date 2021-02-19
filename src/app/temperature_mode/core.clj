@@ -1,9 +1,10 @@
 (ns app.temperature-mode.core
-  (:require [clojure.core.async :refer [chan go-loop <!]]))
+  (:require [clojure.core.async :refer [put! chan go-loop <!]]))
 
 (def *callbacks (atom #{}))
 
-(def msg-ch (chan))
+(def in-ch (chan))
+(def out-ch (chan))
 
 (defn subscribe [callback]
   (swap! *callbacks conj callback)
@@ -14,5 +15,8 @@
     (callback msg)))
 
 (go-loop []
-  (on-msg (<! msg-ch))
+  (on-msg (<! in-ch))
   (recur))
+
+(defn request-update []
+  (put! out-ch true))

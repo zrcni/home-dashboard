@@ -1,6 +1,7 @@
 (ns app.events.handlers
   (:require [app.events.api :refer [create-event]]
-            [app.wolfenstein-mode.core :as wolfenstein-mode]))
+            [app.wolfenstein-mode.core :as wolfenstein-mode]
+            [app.temperature-mode.core :as temperature-mode]))
 
 (defn- make-deactivate-event-type [mode]
   (keyword (str "deactivate-mode-" (name mode))))
@@ -38,6 +39,8 @@
 (defn activate-mode-temperature [_ *state dispatch]
   (when-not (= (:active-mode @*state) :temperature)
     (dispatch (create-event (make-deactivate-event-type (:active-mode @*state))))
+    (when-not (-> @*state :modes :temperature :data)
+      (temperature-mode/request-update))
     (swap! *state assoc :active-mode :temperature))
   (dispatch (create-event :hide-menu)))
 
