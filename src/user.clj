@@ -1,4 +1,5 @@
 (ns user
+  (:import java.time.Instant)
   (:require [cljfx.api :as fx]
             [app.views.core :as views]
             [app.state :refer [*state]]
@@ -8,7 +9,10 @@
             [app.temperature-mode.core :as temperature]
             [clojure.tools.namespace.repl :refer [refresh]]))
 
-(temperature/subscribe #(dispatch (create-event :temperature-updated %)))
+(temperature/subscribe
+ (fn [payload]
+   (let [data (assoc payload :timestamp (Instant/ofEpochMilli (:timestamp payload)))]
+     (dispatch (create-event :temperature-updated data)))))
 
 (def renderer
   (fx/create-renderer

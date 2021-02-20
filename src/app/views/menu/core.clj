@@ -11,13 +11,19 @@
    :cancel-button (true? cancel?)
    :pref-width 400})
 
-(defn menu [{:keys [active-mode]}]
+(defn menu [{:keys [fullscreen? active-mode]}]
   {:fx/type :v-box
    :style-class "menu-view"
    :alignment :center
-   :children [{:fx/type menu-button
+   :children [(if-not fullscreen?
+                {:fx/type menu-button
+                 :text "Enter fullscreen"
+                 :on-action (create-event :enter-fullscreen)}
+                {:fx/type menu-button
+                 :text "Exit fullscreen"
+                 :on-action (create-event :exit-fullscreen)})
+              {:fx/type menu-button
                :text "Hide menu"
-               :cancel? true
                :on-action (create-event :hide-menu)}
               {:fx/type menu-button
                :text "Static image"
@@ -32,10 +38,11 @@
                :active? (= :temperature active-mode)
                :on-action (create-event :activate-mode-temperature)}]})
 
-(defn menu-view [{:keys [style active-mode]}]
+(defn menu-view [{:keys [style fullscreen? active-mode]}]
   {:fx/type :scene
    :stylesheets [(::css/url style)]
    :root {:fx/type :v-box
           :alignment :center
           :children [{:fx/type menu
-                      :active-mode active-mode}]}})
+                      :active-mode active-mode
+                      :fullscreen? fullscreen?}]}})

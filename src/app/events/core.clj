@@ -1,5 +1,6 @@
 (ns app.events.core
-  (:require [app.events.api :as events-api]
+  (:require [app.logger :as log]
+            [app.events.api :as events-api]
             [app.events.handlers :as handlers]
             [app.state :refer [*state]]))
 
@@ -13,4 +14,4 @@
 
 (handlers/register subscribe)
 
-(subscribe :global (fn [e & _] (prn e)))
+(subscribe :global (fn [e & _] (log/debug e)))

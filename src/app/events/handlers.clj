@@ -1,7 +1,6 @@
 (ns app.events.handlers
   (:require [app.events.api :refer [create-event]]
-            [app.wolfenstein-mode.core :as wolfenstein-mode]
-            [app.temperature-mode.core :as temperature-mode]))
+            [app.wolfenstein-mode.core :as wolfenstein-mode]))
 
 (defn- make-deactivate-event-type [mode]
   (keyword (str "deactivate-mode-" (name mode))))
@@ -11,6 +10,12 @@
 
 (defn hide-menu [_ *state _]
   (swap! *state assoc :menu? false))
+
+(defn enter-fullscreen [_ *state _]
+  (swap! *state assoc :fullscreen? true))
+
+(defn exit-fullscreen [_ *state _]
+  (swap! *state assoc :fullscreen? false))
 
 (defn activate-mode-static-image [_ *state dispatch]
   (when-not (= (:active-mode @*state) :static-image)
@@ -43,15 +48,17 @@
   (dispatch (create-event :hide-menu)))
 
 (defn temperature-updated [e *state _]
-  (swap! *state assoc-in [:modes :temperature :data] (:event/data e))
-  (swap! *state assoc-in [:modes :temperature :last-updated] "TODO: add date"))
+  (swap! *state assoc-in [:modes :temperature :data] (select-keys (:event/data e) [:temperature :humidity]))
+  (swap! *state assoc-in [:modes :temperature :last-updated] (-> e :event/data :timestamp)))
 
 (defn register [subscribe]
-  (subscribe :show-menu #'show-menu)
-  (subscribe :hide-menu #'hide-menu)
-  (subscribe :activate-mode-static-image #'activate-mode-static-image)
-  (subscribe :activate-mode-wolfenstein #'activate-mode-wolfenstein)
-  (subscribe :deactivate-mode-wolfenstein #'deactivate-mode-wolfenstein)
-  (subscribe :wolfenstein-image-updated #'wolfenstein-image-updated)
-  (subscribe :activate-mode-temperature #'activate-mode-temperature)
-  (subscribe :temperature-updated #'temperature-updated))
+  (comp (subscribe :show-menu #'show-menu)
+        (subscribe :hide-menu #'hide-menu)
+        (subscribe :enter-fullscreen #'enter-fullscreen)
+        (subscribe :exit-fullscreen #'exit-fullscreen)
+        (subscribe :activate-mode-static-image #'activate-mode-static-image)
+        (subscribe :activate-mode-wolfenstein #'activate-mode-wolfenstein)
+        (subscribe :deactivate-mode-wolfenstein #'deactivate-mode-wolfenstein)
+        (subscribe :wolfenstein-image-updated #'wolfenstein-image-updated)
+        (subscribe :activate-mode-temperature #'activate-mode-temperature)
+        (subscribe :temperature-updated #'temperature-updated)))

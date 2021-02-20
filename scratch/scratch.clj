@@ -1,5 +1,6 @@
 (ns scratch
-  (:require [clojure.core.async :refer [put! <! go-loop]]
+  (:import java.time.Instant)
+  (:require [clojure.core.async :refer [put!]]
             [user :refer [start stop rerender]]
             [app.events.core :as events]
             [app.state :refer [*state]]
@@ -20,11 +21,18 @@
 (events/dispatch (create-event :wolfenstein-image-updated {:img-n 1}))
 
 @*state
+
+(defn toggle-fullscreen []
+  (let [enabled? (:fullscreen? @*state)]
+    (swap! *state assoc :fullscreen? (not enabled?))))
+
+(toggle-fullscreen)
+
 @wolfenstein/*chan
 
 (reset! wolfenstein/*prev-image-n nil)
 
-;; RPi terminal session seems to become
+;; RPi REPL session seems to become
 ;; frozen sometimes, so this kills it
 (System/exit 0)
 
@@ -33,4 +41,5 @@
 (app.mqtt/publish "/devices/rpi/events/temperature_updated" {:temperature 20.2 :humidity 30.1})
 
 (put! temperature/in-ch {:temperature 21.1
-                         :humidity 40.1})
+                         :humidity 40.1
+                         :timestamp (.toEpochMilli (Instant/now))})

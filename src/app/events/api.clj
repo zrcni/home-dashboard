@@ -1,5 +1,6 @@
 (ns app.events.api
-  (:require [clojure.core.async :refer [chan >! <! go go-loop close!]]))
+  (:require [app.logger :as log]
+            [clojure.core.async :refer [chan >! <! go go-loop close!]]))
 
 (defn- register [*channels event-type]
   (let [c (chan)]
@@ -23,7 +24,8 @@
     (go-loop []
       (try
         (callback (<! c) *state #(apply dispatch [*channels %]))
-        (catch Exception err (println err)))
+        (catch Exception err
+          (log/error err)))
       (recur))
     (fn []
       (unregister *channels event-type c)

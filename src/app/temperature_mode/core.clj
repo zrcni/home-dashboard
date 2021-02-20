@@ -1,5 +1,6 @@
 (ns app.temperature-mode.core
-  (:require [clojure.core.async :refer [put! chan go-loop <!]]))
+  (:require [app.logger :as log]
+            [clojure.core.async :refer [chan go-loop <!]]))
 
 (def *callbacks (atom #{}))
 
@@ -11,7 +12,10 @@
 
 (defn on-msg [msg]
   (doseq [callback @*callbacks]
-    (callback msg)))
+    (try 
+      (callback msg)
+      (catch Exception err
+        (log/error err)))))
 
 (go-loop []
   (on-msg (<! in-ch))
