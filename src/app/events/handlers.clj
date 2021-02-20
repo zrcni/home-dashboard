@@ -39,8 +39,6 @@
 (defn activate-mode-temperature [_ *state dispatch]
   (when-not (= (:active-mode @*state) :temperature)
     (dispatch (create-event (make-deactivate-event-type (:active-mode @*state))))
-    (when-not (-> @*state :modes :temperature :data)
-      (temperature-mode/request-update))
     (swap! *state assoc :active-mode :temperature))
   (dispatch (create-event :hide-menu)))
 

@@ -1,6 +1,6 @@
 (ns app.temperature-mode.mqtt
   (:require [clojure.core.async :refer [put! <! go-loop]]
-            [app.temperature-mode.core :refer [in-ch out-ch]]
+            [app.temperature-mode.core :refer [in-ch]]
             [app.mqtt :as mqtt]))
 
 (defn on-temperature-updated [data]
@@ -11,8 +11,3 @@
 
 (defn get-temperature []
   (mqtt/publish "/devices/rpi/commands/temperature_get"))
-
-(go-loop []
-  (<! out-ch)
-  (get-temperature)
-  (recur))

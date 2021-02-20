@@ -34,11 +34,3 @@
 
 (put! temperature/in-ch {:temperature 21.1
                          :humidity 40.1})
-
-;; eval this in dev to simulate temperature
-;; update requests when temperature mode is activated
-(go-loop []
-  (<! temperature/out-ch)
-  (put! temperature/in-ch {:temperature 21.1
-                           :humidity 40.1})
-  (recur))
