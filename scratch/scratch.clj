@@ -1,11 +1,10 @@
 (ns scratch
-  (:import java.time.Instant)
-  (:require [clojure.core.async :refer [put!]]
-            [user :refer [start stop rerender]]
+  (:require [app.dev :refer [send-random-temperature-update]]
             [app.events.core :as events]
+            [app.core :refer [start stop]]
             [app.state :refer [*state]]
             [app.events.api :refer [create-event]]
-            [app.temperature-mode.core :as temperature-mode]))
+            [clojure.tools.namespace.repl :refer [refresh]]))
 
 (events/dispatch (create-event :show-menu))
 (events/dispatch (create-event :hide-menu))
@@ -15,8 +14,7 @@
 
 (start)
 (stop)
-(rerender)
- 
+
 (events/dispatch (create-event :wolfenstein-image-updated {:img-n 1}))
 
 @*state
@@ -29,12 +27,7 @@
 (System/exit 0)
 
 (require 'app.mqtt)
+(app.mqtt/connect)
 (require 'app.temperature-mode.mqtt)
 
-;; send mock temperature update
-(let [rand-float (fn [min max] (+ min (rand (- max min))))
-      round2 (fn [n] (Float/parseFloat (format "%.1f" n)))]
-  (put! temperature-mode/in-ch {:temperature (round2 (rand-float 20 25))
-                                :humidity (round2 (rand-float 30 45))
-                                :timestamp (/ (.toEpochMilli (Instant/now)) 1000)}))
-
+(send-random-temperature-update)

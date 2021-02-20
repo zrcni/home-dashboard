@@ -1,6 +1,6 @@
 ### dev w/ vscode:
 ```
-clj -M:repl:scratch
+clj -M:repl:dev:scratch
 ```
 Command palette (SHIFT+CTRL+P):   
 **Calva: Connect to a running REPL server in your project**   
@@ -22,6 +22,10 @@ clj -M:test/watch
 clj -M:test
 ```
 
+### prod (temporary – build jar later)
+
+clj -M:prod -m app.prod
+
 ### TODO: oauth & google drive
 maybe helpful:
 https://stackoverflow.com/questions/28078490/google-drive-oauth2-without-browser
@@ -39,7 +43,7 @@ sshfs user@host:/host/directory /rpi/directory
 ```
 $ ssh user@host
 $ export DISPLAY=:0
-$ clj -M:repl:scratch
+$ clj -M:repl:dev:scratch
 ```
 
 Tunnel ports in another terminal window on host machine

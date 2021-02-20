@@ -4,4 +4,4 @@
                  :kaocha/source-paths ["src"]
                  :kaocha/test-paths ["test/app"]
                  :kaocha/color? true
-                 :kaocha.watch/ignore ["src/user.clj"]}]}
+                 :kaocha.watch/ignore ["src/app/core.clj"]}]}
