@@ -21,11 +21,8 @@
 
 @*state
 
-(defn toggle-fullscreen []
-  (let [enabled? (:fullscreen? @*state)]
-    (swap! *state assoc :fullscreen? (not enabled?))))
-
-(toggle-fullscreen)
+;; toggle fullscreen
+(swap! *state update :fullscreen? not)
 
 ;; RPi REPL session seems to become
 ;; frozen sometimes, so this kills it
