@@ -24,6 +24,9 @@
                  :on-action (create-event :exit-fullscreen)})
               {:fx/type menu-button
                :text "Hide menu"
+               ;; pressing esc while fullscreen exits fullscreen
+               ;; pressing esc while NOT fullscreen hides the menu 
+               :cancel? (not fullscreen?)
                :on-action (create-event :hide-menu)}
               {:fx/type menu-button
                :text "Static image"

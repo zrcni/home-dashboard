@@ -15,6 +15,12 @@
    :style-class "some-text"
    :text "No temperature data currently :("})
 
+(defn last-updated [{:keys [date]}]
+  {:fx/type :text
+   :style-class "temperature-last-updated"
+   ;; TODO: format like "2 minutes ago"
+   :text (str "Last updated: " (.toString date))})
+
 (defn temperature-view [{:keys [mode]}]
   {:fx/type :v-box
    :alignment :center
@@ -22,6 +28,8 @@
                [{:fx/type temperature
                  :temperature (-> mode :data :temperature)}
                 {:fx/type humidity
-                 :humidity (-> mode :data :humidity)}]
+                 :humidity (-> mode :data :humidity)}
+                {:fx/type last-updated
+                 :date (-> mode :last-updated)}]
 
                [{:fx/type no-temperature}])})
