@@ -11,7 +11,7 @@
 
 (temperature-mode/subscribe
  (fn [payload]
-   (let [data (assoc payload :timestamp (Instant/ofEpochMilli (:timestamp payload)))]
+   (let [data (assoc payload :timestamp (Instant/ofEpochSecond (:timestamp payload)))]
      (dispatch (create-event :temperature-updated data)))))
 
 (def renderer

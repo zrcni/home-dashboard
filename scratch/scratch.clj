@@ -30,12 +30,11 @@
 
 (require 'app.mqtt)
 (require 'app.temperature-mode.mqtt)
-(app.mqtt/publish "/devices/rpi/events/temperature_updated" {:temperature 20.2 :humidity 30.1})
 
 ;; send mock temperature update
 (let [rand-float (fn [min max] (+ min (rand (- max min))))
       round2 (fn [n] (Float/parseFloat (format "%.1f" n)))]
   (put! temperature-mode/in-ch {:temperature (round2 (rand-float 20 25))
                                 :humidity (round2 (rand-float 30 45))
-                                :timestamp (.toEpochMilli (Instant/now))}))
+                                :timestamp (/ (.toEpochMilli (Instant/now)) 1000)}))
 
