@@ -5,8 +5,7 @@
             [app.events.core :as events]
             [app.state :refer [*state]]
             [app.events.api :refer [create-event]]
-            [app.wolfenstein-mode.core :as wolfenstein]
-            [app.temperature-mode.core :as temperature]))
+            [app.temperature-mode.core :as temperature-mode]))
 
 (events/dispatch (create-event :show-menu))
 (events/dispatch (create-event :hide-menu))
@@ -28,10 +27,6 @@
 
 (toggle-fullscreen)
 
-@wolfenstein/*chan
-
-(reset! wolfenstein/*prev-image-n nil)
-
 ;; RPi REPL session seems to become
 ;; frozen sometimes, so this kills it
 (System/exit 0)
@@ -40,6 +35,6 @@
 (require 'app.temperature-mode.mqtt)
 (app.mqtt/publish "/devices/rpi/events/temperature_updated" {:temperature 20.2 :humidity 30.1})
 
-(put! temperature/in-ch {:temperature 21.1
+(put! temperature-mode/in-ch {:temperature 21.1
                          :humidity 40.1
                          :timestamp (.toEpochMilli (Instant/now))})

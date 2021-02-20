@@ -6,10 +6,10 @@
             [app.events.api :refer [create-event]]
             [app.events.core :refer [dispatch]]
             [app.styles :refer [style]]
-            [app.temperature-mode.core :as temperature]
+            [app.temperature-mode.core :as temperature-mode]
             [clojure.tools.namespace.repl :refer [refresh]]))
 
-(temperature/subscribe
+(temperature-mode/subscribe
  (fn [payload]
    (let [data (assoc payload :timestamp (Instant/ofEpochMilli (:timestamp payload)))]
      (dispatch (create-event :temperature-updated data)))))
