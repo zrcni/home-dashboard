@@ -21,18 +21,16 @@
     (reset! *conn nil)))
 
 (defn subscribe [topic callback]
-  (when @*conn
-    (mh/subscribe @*conn {topic (:at-least-once qos)}
-                  (fn [_ _ raw-payload]
-                    (-> raw-payload
-                        (io/reader)
+  (mh/subscribe @*conn {topic (:at-least-once qos)}
+                (fn [_ _ raw-payload]
+                  (-> raw-payload
+                      (io/reader)
                         ;; true = keys to keywords
-                        (json/parse-stream true)
-                        (callback))))))
+                      (json/parse-stream true)
+                      (callback)))))
 
 (defn unsubscribe [topic]
-  (when @*conn
-    (mh/unsubscribe @*conn topic)))
+  (mh/unsubscribe @*conn topic))
 
 (defn publish [topic payload]
   (when @*conn

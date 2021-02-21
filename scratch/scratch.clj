@@ -29,5 +29,6 @@
 (require 'app.mqtt)
 (app.mqtt/connect)
 (require 'app.temperature-mode.mqtt)
+(app.temperature-mode.mqtt/subscribe)
 
 (send-random-temperature-update)
