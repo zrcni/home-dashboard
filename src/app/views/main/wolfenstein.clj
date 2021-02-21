@@ -2,7 +2,7 @@
 
 (defn image [{:keys [image]}]
   {:fx/type :image-view
-   :fit-width 400
+   :fit-width 480
    :preserve-ratio true
    :style-class "main-image"
    :image image})
