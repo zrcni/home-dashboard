@@ -44,8 +44,6 @@
 (defn menu-view [{:keys [style fullscreen? active-mode]}]
   {:fx/type :scene
    :stylesheets [(::css/url style)]
-   :root {:fx/type :v-box
-          :alignment :center
-          :children [{:fx/type menu
-                      :active-mode active-mode
-                      :fullscreen? fullscreen?}]}})
+   :root {:fx/type menu
+          :active-mode active-mode
+          :fullscreen? fullscreen?}})

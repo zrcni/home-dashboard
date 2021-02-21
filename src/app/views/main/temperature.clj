@@ -1,25 +1,47 @@
 (ns app.views.main.temperature)
 
+;; TODO: thermometer icon
 (defn temperature [{:keys [temperature]}]
-  {:fx/type :text
-   :style-class "some-text"
-   :text (str "Temperature: " temperature "°C")})
+  {:fx/type :v-box
+   :style-class "temperature-mode-row"
+   :alignment :center
+   :children [{:fx/type :text
+               :style-class "temperature-mode-value"
+               :text (str temperature "°C")}
+              {:fx/type :text
+               :style-class "temperature-mode-label"
+               :text "TEMPERATURE"}]})
 
+;; TODO: water drop icon?
 (defn humidity [{:keys [humidity]}]
-  {:fx/type :text
-   :style-class "some-text"
-   :text (str "Humidity: " humidity "%")})
+  {:fx/type :v-box
+   :style-class "temperature-mode-row"
+   :alignment :center
+   :children [{:fx/type :text
+               :style-class "temperature-mode-value"
+               :text (str humidity "%")}
+              {:fx/type :text 
+               :style-class "temperature-mode-label"
+               :text "HUMIDITY"}]})
+
+;; TODO: clock icon
+(defn last-updated [{:keys [date]}]
+  {:fx/type :v-box
+   :style-class "temperature-mode-row"
+   :alignment :center
+   :children [{:fx/type :text
+               :style-class "temperature-mode-value"
+               ;; TODO: "3 minutes ago"
+               :text (.toString date)}
+              {:fx/type :text
+              ;;  :font label-font
+               :style-class "temperature-mode-label"
+               :text "LAST UPDATED"}]})
 
 (defn no-temperature [_]
   {:fx/type :text
-   :style-class "some-text"
+   :style-class "temperature-mode-value"
    :text "No temperature data currently :("})
-
-(defn last-updated [{:keys [date]}]
-  {:fx/type :text
-   :style-class "temperature-last-updated"
-   ;; TODO: format like "2 minutes ago"
-   :text (str "Last updated: " (.toString date))})
 
 (defn temperature-view [{:keys [mode]}]
   {:fx/type :v-box
