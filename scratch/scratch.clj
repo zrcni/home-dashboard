@@ -6,6 +6,9 @@
             [app.events.api :refer [create-event]]
             [clojure.tools.namespace.repl :refer [refresh]]))
 
+(start)
+(stop)
+
 (events/dispatch (create-event :show-menu))
 (events/dispatch (create-event :hide-menu))
 (events/dispatch (create-event :activate-mode-static-image))
@@ -18,9 +21,6 @@
 (if (:fullscreen? @*state)
   (events/dispatch (create-event :exit-fullscreen))
   (events/dispatch (create-event :enter-fullscreen)))
-
-(start)
-(stop)
 
 (events/dispatch (create-event :wolfenstein-image-updated {:img-n 1}))
 

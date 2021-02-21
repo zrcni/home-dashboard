@@ -1,5 +1,7 @@
 (ns app.views.main.temperature
-  (:require [app.utils :refer [format-date]]))
+  (:require [app.events.api :refer [create-event]]
+            [app.events.core :refer [dispatch]]
+            [clojure.core.async :refer [timeout go-loop <!]]))
 
 ;; TODO: thermometer icon
 (defn temperature [{:keys [temperature]}]
@@ -25,10 +27,18 @@
                :style-class "temperature-mode-label"
                :text "HUMIDITY"}]})
 
-(defn last-updated-date [{:keys [date]}]
+;; Update date format in global state.
+;; Temporary solution until I migrate to cljfx context.
+;; TODO: temporary
+(go-loop []
+  (<! (timeout 1000))
+  (dispatch (create-event :update-temperature-date-format))
+  (recur))
+
+(defn last-updated-date [{:keys [formatted-date]}]
   {:fx/type :text
    :style-class "temperature-mode-value"
-   :text (format-date date)})
+   :text formatted-date})
 
 ;; TODO: clock icon
 (defn last-updated [{:keys [date]}]
@@ -36,7 +46,7 @@
      :style-class "temperature-mode-row"
      :alignment :center
      :children [{:fx/type last-updated-date
-                 :date date}
+                 :formatted-date date}
                 {:fx/type :text
                  :style-class "temperature-mode-label"
                  :text "LAST UPDATED"}]})
@@ -55,6 +65,6 @@
                 {:fx/type humidity
                  :humidity (-> mode :data :humidity)}
                 {:fx/type last-updated
-                 :date (-> mode :last-updated)}]
+                 :date (-> mode :last-updated-formatted)}]
 
                [{:fx/type no-temperature}])})

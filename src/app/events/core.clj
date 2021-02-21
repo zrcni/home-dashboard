@@ -14,4 +14,7 @@
 
 (handlers/register subscribe)
 
-(subscribe :global (fn [e & _] (log/debug e)))
+(subscribe :global (fn [e & _]
+                     ;; TODO: temporary
+                     (when-not (= :update-temperature-date-format (:event/type e))
+                       (log/debug e))))

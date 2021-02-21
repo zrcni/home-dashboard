@@ -1,5 +1,6 @@
 (ns app.events.handlers
   (:require [app.events.api :refer [create-event]]
+            [app.utils :refer [format-date]]
             [app.wolfenstein-mode.core :as wolfenstein-mode]))
 
 (defn- make-deactivate-event-type [mode]
@@ -49,7 +50,14 @@
 
 (defn temperature-updated [e *state _]
   (swap! *state assoc-in [:modes :temperature :data] (select-keys (:event/data e) [:temperature :humidity]))
-  (swap! *state assoc-in [:modes :temperature :last-updated] (-> e :event/data :timestamp)))
+  (swap! *state assoc-in [:modes :temperature :last-updated] (-> e :event/data :timestamp))
+  ;; TODO: temporary
+  (swap! *state assoc-in [:modes :temperature :last-updated-formatted] (format-date (-> e :event/data :timestamp))))
+
+;; TODO: temporary
+(defn update-temperature-date-format [_ *state _]
+  (let [last-updated (-> @*state :modes :temperature :last-updated)]
+    (swap! *state assoc-in [:modes :temperature :last-updated-formatted] (format-date last-updated))))
 
 (defn register [subscribe]
   (comp (subscribe :show-menu #'show-menu)
@@ -61,4 +69,6 @@
         (subscribe :deactivate-mode-wolfenstein #'deactivate-mode-wolfenstein)
         (subscribe :wolfenstein-image-updated #'wolfenstein-image-updated)
         (subscribe :activate-mode-temperature #'activate-mode-temperature)
-        (subscribe :temperature-updated #'temperature-updated)))
+        (subscribe :temperature-updated #'temperature-updated)
+        ;; TODO: temporary
+        (subscribe :update-temperature-date-format #'update-temperature-date-format)))
