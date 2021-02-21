@@ -1,3 +1,5 @@
+Runs on a Raspberry Pi w/ 10" screen.
+
 ![dashboard](./dashboard.png)
 
 ### dev w/ vscode:
