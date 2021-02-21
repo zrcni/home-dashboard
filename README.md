@@ -1,3 +1,5 @@
+![dashboard](./dashboard.png)
+
 ### dev w/ vscode:
 ```
 clj -M:repl:dev:scratch
