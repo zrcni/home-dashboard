@@ -8,6 +8,7 @@
 (defn main-view [{:keys [style active-mode modes]}]
   {:fx/type :scene
    :stylesheets [(::css/url style)]
+   :cursor :none
    :root {:fx/type :v-box
           :alignment :center
           :style-class "main-view"
