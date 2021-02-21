@@ -11,6 +11,13 @@
 (events/dispatch (create-event :activate-mode-static-image))
 (events/dispatch (create-event :activate-mode-wolfenstein))
 (events/dispatch (create-event :activate-mode-temperature))
+(events/dispatch (create-event :enter-fullscreen))
+(events/dispatch (create-event :exit-fullscreen))
+
+
+(if (:fullscreen? @*state)
+  (events/dispatch (create-event :exit-fullscreen))
+  (events/dispatch (create-event :enter-fullscreen)))
 
 (start)
 (stop)
@@ -18,9 +25,6 @@
 (events/dispatch (create-event :wolfenstein-image-updated {:img-n 1}))
 
 @*state
-
-;; toggle fullscreen
-(swap! *state update :fullscreen? not)
 
 ;; RPi REPL session seems to become
 ;; frozen sometimes, so this kills it

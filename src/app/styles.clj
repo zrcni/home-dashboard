@@ -29,4 +29,5 @@
       ".temperature-mode-label" {:-fx-fill text-color
                                  :-fx-font-family "Roboto"
                                  :-fx-font-size "0.8em"
-                                 :-fx-font-weight "bold"}})))
+                                 :-fx-font-weight "bold"}
+      ".temperature-mode-no-data-text" {:-fx-font-size "1.2em !important"}})))
