@@ -5,7 +5,7 @@
             [app.views.main.wolfenstein :refer [wolfenstein-view]]
             [app.views.main.temperature :refer [temperature-view]]))
 
-(defn main-view [{:keys [style active-mode modes]}]
+(defn main-view [{:keys [style active-mode modes time-now]}]
   {:fx/type :scene
    :stylesheets [(::css/url style)]
    :cursor :none
@@ -19,5 +19,6 @@
                       :wolfenstein [{:fx/type wolfenstein-view
                                      :mode (:wolfenstein modes)}]
                       :temperature [{:fx/type temperature-view
-                                     :mode (:temperature modes)}]
+                                     :mode (:temperature modes)
+                                     :time-now time-now}]
                       [])}})

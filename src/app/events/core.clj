@@ -16,5 +16,6 @@
 
 (subscribe :global (fn [e & _]
                      ;; TODO: temporary
-                     (when-not (= :update-temperature-date-format (:event/type e))
+                     (when-not (contains? [:update-temperature-date-format :update-time-now]
+                                          (:event/type e))
                        (log/debug e))))

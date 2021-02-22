@@ -1,7 +1,9 @@
 (ns app.utils
   (:import org.ocpsoft.prettytime.PrettyTime
            org.ocpsoft.prettytime.units.JustNow
-           org.ocpsoft.prettytime.units.Millisecond)
+           org.ocpsoft.prettytime.units.Millisecond
+           java.time.format.DateTimeFormatter
+           java.time.ZoneId)
   (:require [clojure.core.async :refer [put! chan go-loop timeout <!]]
             [clojure.string :refer [capitalize]]))
 
@@ -24,5 +26,11 @@
 (.removeUnit pretty-time JustNow)
 (.removeUnit pretty-time Millisecond)
 
-(defn format-date [date]
+(defn date->relative [date]
   (capitalize (.format pretty-time date)))
+
+(defn date->hhmm [date]
+  (-> "HH:mm:ss"
+      (DateTimeFormatter/ofPattern)
+      (.withZone (ZoneId/systemDefault))
+      (.format date)))
