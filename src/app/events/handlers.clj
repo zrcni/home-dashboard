@@ -1,8 +1,7 @@
 (ns app.events.handlers
-  (:import java.time.Instant)
   (:require [cljfx.api :as fx]
-            [app.events.api :refer [create-event]]
-            [app.utils :refer [date->relative]]))
+            [app.utils :refer [date->relative]]
+            [app.events.api :refer [create-event]]))
 
 (defn- make-deactivate-event-type [mode]
   (keyword (str "deactivate-mode-" (name mode))))
@@ -59,6 +58,7 @@
 (defmethod handle-event :activate-mode-temperature [{:keys [fx/context state]}]
   (if-not (= (:active-mode state) :temperature)
     {:dispatch-n [(create-event (make-deactivate-event-type (:active-mode state)))
+                  (create-event :refresh-temperature-last-updated-relative)
                   (create-event :hide-menu)]
      :context (fx/swap-context context assoc :active-mode :temperature)}
     {:dispatch (create-event :hide-menu)}))
@@ -66,15 +66,8 @@
 (defmethod handle-event :temperature-updated [{:keys [fx/context event/data]}]
   {:context (-> context
                 (fx/swap-context assoc-in [:modes :temperature :data] (select-keys data [:temperature :humidity]))
-                (fx/swap-context assoc-in [:modes :temperature :last-updated] (-> data :timestamp))
-                ;; TODO: temporary
-                (fx/swap-context assoc-in [:modes :temperature :last-updated-formatted] (date->relative (-> data :timestamp))))})
+                (fx/swap-context assoc-in [:modes :temperature :last-updated] (-> data :timestamp)))})
 
-;; TODO: temporary
-(defmethod handle-event :update-temperature-date-format [{:keys [fx/context state]}]
-  (let [last-updated (-> state   :modes :temperature :last-updated)]
-    (when last-updated
-      {:context (fx/swap-context context assoc-in [:modes :temperature :last-updated-formatted] (date->relative last-updated))})))
-
-(defmethod handle-event :update-time-now [{:keys [fx/context]}]
-  {:context (fx/swap-context context assoc :time-now (Instant/now))})
+(defmethod handle-event :refresh-temperature-last-updated-relative [{:keys [fx/context state]}]
+  (when-let [last-updated (-> state :modes :temperature :last-updated)]
+    {:context (fx/swap-context context assoc-in [:modes :temperature :last-updated-relative] (date->relative last-updated))}))

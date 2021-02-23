@@ -1,18 +1,30 @@
 (ns app.views.main.temperature
+  (:import java.time.Instant)
   (:require [cljfx.api :as fx]
-            [app.events.api :refer [create-event]]
-            [app.events.core :refer [dispatch]]
             [app.utils :refer [date->hhmm]]
             [app.subs :as subs]
-            [clojure.core.async :refer [timeout go-loop <!]]))
+            [app.events.api :refer [create-event]]
+            [app.events.core :refer [dispatch]]
+            [clojure.core.async :refer [timeout close! go-loop <!]]))
 
-(defn clock [{:keys [date]}]
+(defn clock-text [_]
+  {:fx/type fx/ext-on-instance-lifecycle
+   :on-created (fn [c]
+                 (.setText c (date->hhmm (Instant/now)))
+                 (let [ch (go-loop []
+                            (<! (timeout 1000))
+                            (.setText c (date->hhmm (Instant/now)))
+                            (recur))]
+                   (.setUserData c {:ch ch})))
+   :on-deleted #(close! (:ch (.getUserData %)))
+   :desc {:fx/type :text
+          :style-class ["temperature-mode-text" "clock-text"]}})
+
+(defn clock [_]
   {:fx/type :v-box
    :style-class "temperature-mode-row"
    :alignment :center
-   :children [{:fx/type :text
-               :style-class ["temperature-mode-text" "clock-text"]
-               :text (date->hhmm date)}]})
+   :children [{:fx/type clock-text}]})
 
 ;; TODO: thermometer icon
 (defn temperature [{:keys [temperature]}]
@@ -37,26 +49,27 @@
                :style-class ["temperature-mode-text" "temperature-mode-label"]
                :text "HUMIDITY"}]})
 
-;; Temporary solution until I migrate to cljfx context.
-;; TODO: temporary
-(go-loop []
-  (<! (timeout 1000))
-  (dispatch (create-event :update-temperature-date-format))
-  (dispatch (create-event :update-time-now))
-  (recur))
-
-(defn last-updated-date [{:keys [formatted-date]}]
-  {:fx/type :text
-   :style-class ["temperature-mode-text" "last-updated-text"]
-   :text (str "Updated " formatted-date)})
-
 ;; TODO: clock icon
-(defn last-updated [{:keys [date]}]
-    {:fx/type :v-box
-     :alignment :center
-     :style-class "last-updated-row"
-     :children [{:fx/type last-updated-date
-                 :formatted-date date}]})
+(defn last-updated-text [{:keys [fx/context]}]
+  (let [last-updated-relative (fx/sub-ctx context subs/temperature-last-updated-relative)]
+    {:fx/type :text
+     :style-class ["temperature-mode-text" "last-updated-text"]
+     :text (str "Updated " last-updated-relative)}))
+
+(defn last-updated [_]
+  {:fx/type fx/ext-on-instance-lifecycle
+   :on-created (fn [c]
+                 (let [ch (go-loop []
+                            (<! (timeout 1000))
+                            (dispatch (create-event :refresh-temperature-last-updated-relative))
+                            (recur))]
+                   (-> c (.getProperties) (.put :ch ch))))
+   :on-deleted (fn [c]
+                 (-> c (.getProperties) (.get :ch) (close!)))
+   :desc {:fx/type :v-box
+          :alignment :center
+          :style-class "last-updated-row"
+          :children [{:fx/type last-updated-text}]}})
 
 (defn no-temperature [_]
   {:fx/type :text
@@ -64,20 +77,16 @@
    :text "No temperature data currently :("})
 
 (defn temperature-view [{:keys [fx/context]}]
-  (let [mode (fx/sub-ctx context subs/temperature-mode)
-        time-now (fx/sub-ctx context subs/time-now)]
+  (let [mode (fx/sub-ctx context subs/temperature-mode)]
     {:fx/type :v-box
      :alignment :center
      :children (if (:data mode)
-                 [{:fx/type clock
-                   :date time-now}
+                 [{:fx/type clock}
                   {:fx/type temperature
                    :temperature (-> mode :data :temperature)}
                   {:fx/type humidity
                    :humidity (-> mode :data :humidity)}
-                  {:fx/type last-updated
-                   :date (-> mode :last-updated-formatted)}]
+                  {:fx/type last-updated}]
 
-                 [{:fx/type clock
-                   :date time-now}
+                 [{:fx/type clock}
                   {:fx/type no-temperature}])}))

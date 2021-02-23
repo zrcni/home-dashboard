@@ -22,5 +22,5 @@
 (defn temperature-mode [context]
   (fx/sub-val context get-in [:modes :temperature]))
 
-(defn time-now [context]
-  (fx/sub-val context :time-now))
+(defn temperature-last-updated-relative [context]
+  (fx/sub-val context get-in [:modes :temperature :last-updated-relative]))
