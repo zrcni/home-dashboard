@@ -1,7 +1,9 @@
 (ns app.views.main.temperature
-  (:require [app.events.api :refer [create-event]]
+  (:require [cljfx.api :as fx]
+            [app.events.api :refer [create-event]]
             [app.events.core :refer [dispatch]]
             [app.utils :refer [date->hhmm]]
+            [app.subs :as subs]
             [clojure.core.async :refer [timeout go-loop <!]]))
 
 (defn clock [{:keys [date]}]
@@ -61,19 +63,21 @@
    :style-class ["temperature-mode-text" "temperature-mode-no-data-text"]
    :text "No temperature data currently :("})
 
-(defn temperature-view [{:keys [mode time-now]}]
-  {:fx/type :v-box
-   :alignment :center
-   :children (if (:data mode)
-               [{:fx/type clock
-                 :date time-now}
-                {:fx/type temperature
-                 :temperature (-> mode :data :temperature)}
-                {:fx/type humidity
-                 :humidity (-> mode :data :humidity)}
-                {:fx/type last-updated
-                 :date (-> mode :last-updated-formatted)}]
+(defn temperature-view [{:keys [fx/context]}]
+  (let [mode (fx/sub-ctx context subs/temperature-mode)
+        time-now (fx/sub-ctx context subs/time-now)]
+    {:fx/type :v-box
+     :alignment :center
+     :children (if (:data mode)
+                 [{:fx/type clock
+                   :date time-now}
+                  {:fx/type temperature
+                   :temperature (-> mode :data :temperature)}
+                  {:fx/type humidity
+                   :humidity (-> mode :data :humidity)}
+                  {:fx/type last-updated
+                   :date (-> mode :last-updated-formatted)}]
 
-               [{:fx/type clock
-                 :date time-now}
-                {:fx/type no-temperature}])})
+                 [{:fx/type clock
+                   :date time-now}
+                  {:fx/type no-temperature}])}))

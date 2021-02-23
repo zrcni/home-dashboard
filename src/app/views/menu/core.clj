@@ -1,5 +1,7 @@
 (ns app.views.menu.core
-  (:require [cljfx.css :as css]
+  (:require [cljfx.api :as fx]
+            [cljfx.css :as css]
+            [app.subs :as subs]
             [app.events.api :refer [create-event]]))
 
 (defn menu-button [{:keys [text on-action width]}]
@@ -16,42 +18,42 @@
    :on-action on-action
    :width 240})
 
-(defn menu-controls [{:keys [fullscreen?]}]
-  {:fx/type :h-box
-   :alignment :center
-   :children [(if-not fullscreen?
+(defn menu-controls [{:keys [fx/context]}]
+  (let [fullscreen? (fx/sub-ctx context subs/fullscreen?)]
+    {:fx/type :h-box
+     :alignment :center
+     :children [(if-not fullscreen?
+                  {:fx/type menu-control-button
+                   :text "Enter fullscreen"
+                   :on-action (create-event :enter-fullscreen)}
+                  {:fx/type menu-control-button
+                   :text "Exit fullscreen"
+                   :on-action (create-event :exit-fullscreen)})
                 {:fx/type menu-control-button
-                 :text "Enter fullscreen"
-                 :on-action (create-event :enter-fullscreen)}
-                {:fx/type menu-control-button
-                 :text "Exit fullscreen"
-                 :on-action (create-event :exit-fullscreen)})
-              {:fx/type menu-control-button
-               :text "Hide menu"
-               :on-action (create-event :hide-menu)}]})
+                 :text "Hide menu"
+                 :on-action (create-event :hide-menu)}]}))
 
-(defn menu [{:keys [fullscreen? active-mode]}]
-  {:fx/type :v-box
-   :style-class "menu-view"
-   :alignment :center
-   :children [{:fx/type menu-controls
-               :fullscreen? fullscreen?}
-              {:fx/type menu-button
-               :text "Image"
-               :active? (= :static-image active-mode)
-               :on-action (create-event :activate-mode-static-image)}
-              {:fx/type menu-button
-               :text "Wolfenstein"
-               :active? (= :wolfenstein active-mode)
-               :on-action (create-event :activate-mode-wolfenstein)}
-              {:fx/type menu-button
-               :text "Temperature"
-               :active? (= :temperature active-mode)
-               :on-action (create-event :activate-mode-temperature)}]})
+(defn menu [{:keys [fx/context]}]
+  (let [active-mode (fx/sub-ctx context subs/active-mode)
+        active-mode? #(= active-mode %)]
+    {:fx/type :v-box
+     :style-class "menu-view"
+     :alignment :center
+     :children [{:fx/type menu-controls}
+                {:fx/type menu-button
+                 :text "Image"
+                 :active? (active-mode? :static-image)
+                 :on-action (create-event :activate-mode-static-image)}
+                {:fx/type menu-button
+                 :text "Wolfenstein"
+                 :active? (active-mode? :wolfenstein)
+                 :on-action (create-event :activate-mode-wolfenstein)}
+                {:fx/type menu-button
+                 :text "Temperature"
+                 :active? (active-mode? :temperature)
+                 :on-action (create-event :activate-mode-temperature)}]}))
 
-(defn menu-view [{:keys [style fullscreen? active-mode]}]
+(defn menu-view [{:keys [fx/context]}]
   {:fx/type :scene
-   :stylesheets [(::css/url style)]
-   :root {:fx/type menu
-          :active-mode active-mode
-          :fullscreen? fullscreen?}})
+   :stylesheets [(::css/url (fx/sub-ctx context subs/style))]
+   :root {:fx/type menu}})

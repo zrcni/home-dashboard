@@ -1,6 +1,8 @@
 (ns app.state
   (:import java.time.Instant)
-  (:require [app.styles :refer [style]]))
+  (:require [cljfx.api :as fx]
+            [clojure.core.cache :as cache]
+            [app.styles :refer [style]]))
 
 (def default-state {:menu? false
                     :fullscreen? true
@@ -13,8 +15,8 @@
                                           :last-updated nil
                                           :last-updated-formatted nil}}
                     :style style})
-(def *state
-  (atom default-state))
+(def *context
+  (atom (fx/create-context default-state cache/lru-cache-factory)))
 
 (defn reset []
-  (reset! *state default-state))
+  (reset! *context default-state))

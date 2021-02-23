@@ -1,80 +1,80 @@
 (ns app.events.handlers
   (:import java.time.Instant)
-  (:require [app.events.api :refer [create-event]]
-            [app.utils :refer [date->relative]]
-            [app.wolfenstein-mode.core :as wolfenstein-mode]))
+  (:require [cljfx.api :as fx]
+            [app.events.api :refer [create-event]]
+            [app.utils :refer [date->relative]]))
 
 (defn- make-deactivate-event-type [mode]
   (keyword (str "deactivate-mode-" (name mode))))
 
-(defn show-menu [_ *state _]
-  (swap! *state assoc :menu? true))
+(defmulti handle-event :event/type)
 
-(defn hide-menu [_ *state _]
-  (swap! *state assoc :menu? false))
+;; (defmethod handle-event :default [e]
+;;   (println e))
 
-(defn enter-fullscreen [_ *state _]
-  (swap! *state assoc :fullscreen? true))
+(defmethod handle-event :show-menu [{:keys [fx/context]}]
+  {:context (fx/swap-context context assoc :menu? true)})
 
-(defn exit-fullscreen [_ *state _]
-  (swap! *state assoc :fullscreen? false))
+(defmethod handle-event :hide-menu [{:keys [fx/context]}]
+  {:context (fx/swap-context context assoc :menu? false)})
 
-(defn activate-mode-static-image [_ *state dispatch]
-  (when-not (= (:active-mode @*state) :static-image)
-    (dispatch (create-event (make-deactivate-event-type (:active-mode @*state))))
-    (swap! *state assoc :active-mode :static-image))
-  (dispatch (create-event :hide-menu)))
+(defmethod handle-event :enter-fullscreen [{:keys [fx/context]}]
+  {:context (fx/swap-context context assoc :fullscreen? true)})
 
-(defn activate-mode-wolfenstein [_ *state dispatch]
-  (when-not (= (:active-mode @*state) :wolfenstein)
-    (dispatch (create-event (make-deactivate-event-type (:active-mode @*state))))
-    (let [deactivate (wolfenstein-mode/activate #(dispatch (create-event :wolfenstein-image-updated {:img-n %})))]
-      (swap! *state assoc-in [:modes :wolfenstein :deactivate-fn] deactivate))
-    (swap! *state assoc :active-mode :wolfenstein))
-  (dispatch (create-event :hide-menu)))
+(defmethod handle-event :exit-fullscreen [{:keys [fx/context]}]
+  {:context (fx/swap-context context assoc :fullscreen? false)})
 
-(defn deactivate-mode-wolfenstein [_ *state _]
-  (when-let [deactivate (-> @*state :modes :wolfenstein :deactivate-fn)]
-    (deactivate)
-    (swap! *state assoc-in [:modes :wolfenstein :deactivate-fn] nil)))
+(defmethod handle-event :activate-mode-static-image [{:keys [fx/context state]}]
+  (if-not (= (:active-mode state) :static-image)
+    {:context (fx/swap-context context assoc :active-mode :static-image)
+     :dispatch-n [(create-event (make-deactivate-event-type (:active-mode state)))
+                  (create-event :hide-menu)]}
+    {:dispatch (create-event :hide-menu)}))
 
-(defn wolfenstein-image-updated [e *state _]
-  (let [img-n (-> e :event/data :img-n)
+;; noop for now that the event is dispatched without any use for it
+(defmethod handle-event :deactivate-mode-static-image [_])
+(defmethod handle-event :deactivate-mode-temperature [_])
+
+(defmethod handle-event :set-deactivate-fn [{:keys [fx/context event/data]}]
+  (let [{:keys [mode deactivate-fn]} data]
+    {:context (fx/swap-context context assoc-in [:modes mode :deactivate-fn] deactivate-fn)}))
+
+(defmethod handle-event :activate-mode-wolfenstein [{:keys [fx/context state]}]
+  (if-not (= (:active-mode state) :wolfenstein)
+    {:activate-mode-wolfenstein! nil
+     :dispatch-n [(create-event (make-deactivate-event-type (:active-mode state)))
+                  (create-event :hide-menu)]
+     :context (fx/swap-context context assoc :active-mode :wolfenstein)}
+    {:dispatch (create-event :hide-menu)}))
+
+(defmethod handle-event :deactivate-mode-wolfenstein [{:keys [fx/context]}]
+  (when-let [deactivate (-> context :modes :wolfenstein :deactivate-fn)]
+    {:deactivate-mode-wolfenstein! deactivate}))
+
+(defmethod handle-event :wolfenstein-image-updated [{:keys [fx/context event/data]}]
+  (let [img-n (:img-n data)
         image (str "app/images/wolfenstein/" img-n ".png")]
-    (swap! *state assoc-in [:modes :wolfenstein :image] image)))
+    {:context (fx/swap-context context assoc-in [:modes :wolfenstein :image] image)}))
 
-(defn activate-mode-temperature [_ *state dispatch]
-  (when-not (= (:active-mode @*state) :temperature)
-    (dispatch (create-event (make-deactivate-event-type (:active-mode @*state))))
-    (swap! *state assoc :active-mode :temperature))
-  (dispatch (create-event :hide-menu)))
+(defmethod handle-event :activate-mode-temperature [{:keys [fx/context state]}]
+  (if-not (= (:active-mode state) :temperature)
+    {:dispatch-n [(create-event (make-deactivate-event-type (:active-mode state)))
+                  (create-event :hide-menu)]
+     :context (fx/swap-context context assoc :active-mode :temperature)}
+    {:dispatch (create-event :hide-menu)}))
 
-(defn temperature-updated [e *state _]
-  (swap! *state assoc-in [:modes :temperature :data] (select-keys (:event/data e) [:temperature :humidity]))
-  (swap! *state assoc-in [:modes :temperature :last-updated] (-> e :event/data :timestamp))
-  ;; TODO: temporary
-  (swap! *state assoc-in [:modes :temperature :last-updated-formatted] (date->relative (-> e :event/data :timestamp))))
+(defmethod handle-event :temperature-updated [{:keys [fx/context event/data]}]
+  {:context (-> context
+                (fx/swap-context assoc-in [:modes :temperature :data] (select-keys data [:temperature :humidity]))
+                (fx/swap-context assoc-in [:modes :temperature :last-updated] (-> data :timestamp))
+                ;; TODO: temporary
+                (fx/swap-context assoc-in [:modes :temperature :last-updated-formatted] (date->relative (-> data :timestamp))))})
 
 ;; TODO: temporary
-(defn update-temperature-date-format [_ *state _]
-  (let [last-updated (-> @*state :modes :temperature :last-updated)]
-    (swap! *state assoc-in [:modes :temperature :last-updated-formatted] (date->relative last-updated))))
+(defmethod handle-event :update-temperature-date-format [{:keys [fx/context state]}]
+  (let [last-updated (-> state   :modes :temperature :last-updated)]
+    (when last-updated
+      {:context (fx/swap-context context assoc-in [:modes :temperature :last-updated-formatted] (date->relative last-updated))})))
 
-(defn update-time-now [_ *state _]
-  (swap! *state assoc :time-now (Instant/now)))
-
-(defn register [subscribe]
-  (comp (subscribe :show-menu #'show-menu)
-        (subscribe :hide-menu #'hide-menu)
-        (subscribe :enter-fullscreen #'enter-fullscreen)
-        (subscribe :exit-fullscreen #'exit-fullscreen)
-        (subscribe :activate-mode-static-image #'activate-mode-static-image)
-        (subscribe :activate-mode-wolfenstein #'activate-mode-wolfenstein)
-        (subscribe :deactivate-mode-wolfenstein #'deactivate-mode-wolfenstein)
-        (subscribe :wolfenstein-image-updated #'wolfenstein-image-updated)
-        (subscribe :activate-mode-temperature #'activate-mode-temperature)
-        (subscribe :temperature-updated #'temperature-updated)
-        ;; TODO: temporary
-        (subscribe :update-temperature-date-format #'update-temperature-date-format)
-        ;; TODO: temporary
-        (subscribe :update-time-now #'update-time-now)))
+(defmethod handle-event :update-time-now [{:keys [fx/context]}]
+  {:context (fx/swap-context context assoc :time-now (Instant/now))})

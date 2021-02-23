@@ -2,8 +2,9 @@
   (:require [app.dev :refer [send-random-temperature-update]]
             [app.events.core :as events]
             [app.core :refer [start stop]]
-            [app.state :refer [*state]]
+            [app.state :refer [*context]]
             [app.events.api :refer [create-event]]
+            [app.cljfx-utils :refer [ctx-state]]
             [clojure.tools.namespace.repl :refer [refresh]]))
 
 (start)
@@ -18,13 +19,14 @@
 (events/dispatch (create-event :exit-fullscreen))
 
 
-(if (:fullscreen? @*state)
+(if (:fullscreen? (ctx-state @*context))
   (events/dispatch (create-event :exit-fullscreen))
   (events/dispatch (create-event :enter-fullscreen)))
 
 (events/dispatch (create-event :wolfenstein-image-updated {:img-n 1}))
 
-@*state
+@*context
+(ctx-state @*context)
 
 ;; RPi REPL session seems to become
 ;; frozen sometimes, so this kills it

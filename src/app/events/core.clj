@@ -1,21 +1,21 @@
 (ns app.events.core
-  (:require [app.logger :as log]
-            [app.events.api :as events-api]
+  (:require [cljfx.api :as fx]
+            [app.cljfx-utils :refer [ctx-state]]
             [app.events.handlers :as handlers]
-            [app.state :refer [*state]]))
+            [app.state :refer [*context]]
+            [app.events.effects :as effects]))
 
-(def *channels (atom {}))
+(def handle-event
+  (-> handlers/handle-event
+      (fx/wrap-co-effects
+       {:fx/context (fx/make-deref-co-effect *context)
+        :state #(ctx-state @*context)})
+      (fx/wrap-effects
+       {:context (fx/make-reset-effect *context)
+        :dispatch fx/dispatch-effect
+        :dispatch-n effects/dispatch-n
+        :activate-mode-wolfenstein! effects/activate-mode-wolfenstein!
+        :deactivate-mode-wolfenstein! effects/deactivate-mode-wolfenstein!})))
 
 (defn dispatch [event]
-  (events-api/dispatch *channels event))
-
-(defn subscribe [event-type callback]
-  (events-api/subscribe *channels *state event-type callback))
-
-(handlers/register subscribe)
-
-(subscribe :global (fn [e & _]
-                     ;; TODO: temporary
-                     (when-not (contains? [:update-temperature-date-format :update-time-now]
-                                          (:event/type e))
-                       (log/debug e))))
+  (handle-event event))

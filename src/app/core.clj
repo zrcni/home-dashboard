@@ -2,9 +2,9 @@
   (:import java.time.Instant)
   (:require [cljfx.api :as fx]
             [app.views.core :as views]
-            [app.state :refer [*state]]
+            [app.state :refer [*context]]
             [app.events.api :refer [create-event]]
-            [app.events.core :refer [dispatch]]
+            [app.events.core :refer [dispatch handle-event]]
             [app.temperature-mode.core :as temperature-mode]))
 
 (temperature-mode/subscribe
@@ -14,15 +14,18 @@
 
 (def renderer
   (fx/create-renderer
-   :opts {:fx.opt/map-event-handler
-          #(dispatch (select-keys % [:event/type :event/data]))}
-   :middleware (fx/wrap-map-desc #'views/root)))
+   :middleware (comp
+                fx/wrap-context-desc
+                (fx/wrap-map-desc (fn [_] {:fx/type views/root})))
+   :opts {:fx.opt/type->lifecycle #(or (fx/keyword->lifecycle %)
+                                       (fx/fn->lifecycle-with-context %))
+          :fx.opt/map-event-handler handle-event}))
 
 (defn mount []
-  (fx/mount-renderer *state renderer))
+  (fx/mount-renderer *context renderer))
 
 (defn unmount []
-  (fx/unmount-renderer *state renderer))
+  (fx/unmount-renderer *context renderer))
 
 (def start mount)
 (def stop unmount)
