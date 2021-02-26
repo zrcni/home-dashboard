@@ -1,7 +1,7 @@
 (ns app.views.main.temperature
   (:import java.time.Instant)
   (:require [cljfx.api :as fx]
-            [app.utils :refer [date->hhmm]]
+            [app.utils :refer [date->hhmmss]]
             [app.subs :as subs]
             [app.events.api :refer [create-event]]
             [app.events.core :refer [dispatch]]
@@ -10,10 +10,10 @@
 (defn clock-text [_]
   {:fx/type fx/ext-on-instance-lifecycle
    :on-created (fn [c]
-                 (.setText c (date->hhmm (Instant/now)))
+                 (.setText c (date->hhmmss (Instant/now)))
                  (let [ch (go-loop []
                             (<! (timeout 1000))
-                            (.setText c (date->hhmm (Instant/now)))
+                            (.setText c (date->hhmmss (Instant/now)))
                             (recur))]
                    (.setUserData c {:ch ch})))
    :on-deleted #(close! (:ch (.getUserData %)))

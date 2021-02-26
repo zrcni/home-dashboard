@@ -29,8 +29,16 @@
 (defn date->relative [date]
   (capitalize (.format pretty-time date)))
 
-(defn date->hhmm [date]
+(defn date->hhmmss
+  "Date to HH:mm:ss
+   Implemented to be used with Instant, but probably works with other classes as well."
+  [date]
   (-> "HH:mm:ss"
       (DateTimeFormatter/ofPattern)
       (.withZone (ZoneId/systemDefault))
       (.format date)))
+
+(defn s->ms
+  "seconds to milliseconds"
+  [s]
+  (* s 1000))
