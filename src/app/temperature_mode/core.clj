@@ -20,9 +20,10 @@
       (catch Exception err
         (log/error err)))))
 
-(go-loop []
-  (on-msg (<! in-ch))
-  (recur))
+(defonce receiver-ch
+  (go-loop []
+    (on-msg (<! in-ch))
+    (recur)))
 
 (defn format-payload [payload]
   (assoc payload :timestamp (Instant/ofEpochSecond (:timestamp payload))))

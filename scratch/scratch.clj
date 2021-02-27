@@ -33,7 +33,7 @@
 (System/exit 0)
 
 (require 'app.mqtt)
-(app.mqtt/connect)
+(app.mqtt/connect!)
 (require 'app.temperature-mode.mqtt)
 (app.temperature-mode.mqtt/subscribe)
 

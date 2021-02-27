@@ -13,8 +13,8 @@
                                        (fx/fn->lifecycle-with-context %))
           :fx.opt/map-event-handler handle-event}))
 
-(defn mount []
+(defn mount! []
   (fx/mount-renderer *context renderer))
 
-(defn unmount []
+(defn unmount! []
   (fx/unmount-renderer *context renderer))

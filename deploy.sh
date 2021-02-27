@@ -41,8 +41,7 @@ rsync -avz --quiet -e "ssh $ssh_opts" "$PWD/run_home_dashboard.sh" "$device_user
 
 echo "Stopping the app if it's running"
 
-# TODO: kill -2 and listen for the signal in the app
-kill_command='cat ~/.home_dashboard_pid | ps -p $(xargs -I{} echo {}) && kill $(cat ~/.home_dashboard_pid) && echo "Stopped running app" || echo "App is not running"'
+kill_command='cat ~/.home_dashboard_pid | ps -p $(xargs -I{} echo {}) && kill -15 $(cat ~/.home_dashboard_pid) && echo "Stopped running app" || echo "App is not running"'
 kill_output=$(ssh $ssh_opts $device_user@$device_ip $kill_command)
 
 echo $kill_output

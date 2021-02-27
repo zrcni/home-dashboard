@@ -27,7 +27,8 @@
 
 ;; send mocked temperature updates with
 ;; randomized values every minute in dev
-(go-loop []
-  (send-mock-temperature-update)
-  (<! (timeout (* 60 1000)))
-  (recur))
+(defonce sender-ch
+  (go-loop []
+    (send-mock-temperature-update)
+    (<! (timeout (* 60 1000)))
+    (recur)))

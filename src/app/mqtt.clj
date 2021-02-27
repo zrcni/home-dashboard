@@ -10,12 +10,12 @@
 
 (def *conn (atom nil))
 
-(defn connect []
+(defn connect! []
   (when-not @*conn
     ;; TODO: handle connection errors and retries
     (reset! *conn (mh/connect (:mqtt-broker-addr cfg)))))
 
-(defn disconnect []
+(defn disconnect! []
   (when @*conn
     (mh/disconnect)
     (reset! *conn nil)))
