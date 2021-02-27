@@ -60,5 +60,3 @@ and connect to the REPL via editor!
 ### other
 
 Raspberry Pi cannot show a jpg image??? I wonder what the issue is. JavaFX?
-
-Do this for event handlers: https://github.com/cljfx/cljfx/blob/master/examples/e15_task_tracker.clj#L53-L63
