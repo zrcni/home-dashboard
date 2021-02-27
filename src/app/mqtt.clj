@@ -17,7 +17,7 @@
 
 (defn disconnect! []
   (when @*conn
-    (mh/disconnect)
+    (mh/disconnect @*conn)
     (reset! *conn nil)))
 
 (defn subscribe [topic callback]
