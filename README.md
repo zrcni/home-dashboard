@@ -28,7 +28,7 @@ clj -M:test
 
 ### prod (temporary – build jar later)
 
-clj -M:prod -m app.prod
+clj -M:prod -m app.core
 
 ### TODO: oauth & google drive
 maybe helpful:

@@ -1,16 +1,8 @@
-(ns app.core
-  (:import java.time.Instant)
+(ns app.renderer
   (:require [cljfx.api :as fx]
             [app.views.core :as views]
             [app.state :refer [*context]]
-            [app.events.api :refer [create-event]]
-            [app.events.core :refer [dispatch handle-event]]
-            [app.temperature-mode.core :as temperature-mode]))
-
-(temperature-mode/subscribe
- (fn [payload]
-   (let [data (assoc payload :timestamp (Instant/ofEpochSecond (:timestamp payload)))]
-     (dispatch (create-event :temperature-updated data)))))
+            [app.events.core :refer [handle-event]]))
 
 (def renderer
   (fx/create-renderer
@@ -26,6 +18,3 @@
 
 (defn unmount []
   (fx/unmount-renderer *context renderer))
-
-(def start mount)
-(def stop unmount)

@@ -1,6 +1,9 @@
 (ns app.temperature-mode.core
+  (:import java.time.Instant)
   (:require [app.logger :as log]
-            [clojure.core.async :refer [chan go-loop <!]]))
+            [clojure.core.async :refer [chan go-loop <!]]
+            [app.events.core :refer [dispatch]]
+            [app.events.api :refer [create-event]]))
 
 (def *callbacks (atom #{}))
 
@@ -20,3 +23,10 @@
 (go-loop []
   (on-msg (<! in-ch))
   (recur))
+
+(defn format-payload [payload]
+  (assoc payload :timestamp (Instant/ofEpochSecond (:timestamp payload))))
+
+(subscribe
+ (fn [payload]
+   (dispatch (create-event :temperature-updated (format-payload payload)))))

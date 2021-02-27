@@ -17,14 +17,17 @@
 (defn round1 [n]
   (Float/parseFloat (format "%.1f" n)))
 
-(defn send-random-temperature-update []
-  (put! temperature-mode/in-ch {:temperature (round1 (rand-float 20 25))
-                                :humidity (round1 (rand-float 30 45))
-                                :timestamp (/ (.toEpochMilli (Instant/now)) 1000)}))
+(defn gen-temperature-updated-event []
+  {:temperature (round1 (rand-float 20 25))
+   :humidity (round1 (rand-float 30 45))
+   :timestamp (/ (.toEpochMilli (Instant/now)) 1000)})
 
-;; send a temperature update with
+(defn send-mock-temperature-update []
+  (put! temperature-mode/in-ch (gen-temperature-updated-event)))
+
+;; send mocked temperature updates with
 ;; randomized values every minute in dev
 (go-loop []
-  (send-random-temperature-update)
+  (send-mock-temperature-update)
   (<! (timeout (* 60 1000)))
   (recur))

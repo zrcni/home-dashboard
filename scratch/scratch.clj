@@ -1,5 +1,5 @@
 (ns scratch
-  (:require [app.dev :refer [send-random-temperature-update]]
+  (:require [app.dev :refer [send-mock-temperature-update]]
             [app.events.core :as events]
             [app.core :refer [start stop]]
             [app.state :refer [*context]]
@@ -37,4 +37,4 @@
 (require 'app.temperature-mode.mqtt)
 (app.temperature-mode.mqtt/subscribe)
 
-(send-random-temperature-update)
+(send-mock-temperature-update)
