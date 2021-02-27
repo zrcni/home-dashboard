@@ -57,6 +57,11 @@ $ ssh -L :<localport>:localhost:<remoteport> <remoteuser>@<remotehost> -p 22 -N 
 
 and connect to the REPL via editor!
 
+### setup commit hooks
+```
+./git-hooks/setup.sh
+```
+
 ### other
 
 Raspberry Pi cannot show a jpg image??? I wonder what the issue is. JavaFX?
