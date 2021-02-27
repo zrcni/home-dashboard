@@ -52,7 +52,7 @@ $ clj -M:repl:dev:scratch
 
 Tunnel ports in another terminal window on host machine
 ```
-$ ssh -L :5555:localhost:5555 remoteuser@remotehost -p 22 -N -v
+$ ssh -L :<localport>:localhost:<remoteport> <remoteuser>@<remotehost> -p 22 -N -v
 ```
 
 and connect to the REPL via editor!
