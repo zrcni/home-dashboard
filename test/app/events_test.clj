@@ -4,7 +4,7 @@
             [app.state.default-state :refer [default-state]]
             [app.state.factory :refer [create-context]]
             [app.cljfx-utils :refer [ctx-state]]
-            [test-utils :refer [create-dispatcher]]))
+            [app.events.factory :refer [create-dispatcher]]))
 
 (deftest show-menu
   (let [*context (atom (create-context default-state))

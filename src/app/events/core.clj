@@ -1,11 +1,9 @@
 (ns app.events.core
   (:require [app.state.core :refer [*context]]
-            [app.events.factory :as factory]
-            [app.events.effects :as effects]))
+            [app.events.factory :as factory]))
         
 (def handle-event
-  (factory/create-handler {:context *context
-                           :effects {:activate-mode-wolfenstein! effects/activate-mode-wolfenstein!
-                                     :deactivate-mode-wolfenstein! effects/deactivate-mode-wolfenstein!}}))
+  (factory/create-handler {:context *context}))
 
-(def dispatch (factory/create-dispatcher handle-event))
+(def dispatch
+  (factory/create-dispatcher handle-event))

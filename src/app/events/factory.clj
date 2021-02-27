@@ -2,7 +2,7 @@
   (:require [cljfx.api :as fx]
             [app.events.handlers :as handlers]
             [app.events.api :refer [coerce-event]]
-            [app.events.effects :refer [dispatch-n dispatch]]
+            [app.events.effects :as app-effects]
             [app.cljfx-utils :refer [ctx-state]]))
 
 (defn wrap-coerce-event [f & _]
@@ -17,8 +17,10 @@
                (or coeffects {})))
        (fx/wrap-effects
         (merge {:context (fx/make-reset-effect context)
-                :dispatch dispatch
-                :dispatch-n dispatch-n}
+                :dispatch app-effects/dispatch
+                :dispatch-n app-effects/dispatch-n
+                :activate-mode-wolfenstein! app-effects/activate-mode-wolfenstein!
+                :deactivate-mode-wolfenstein! app-effects/deactivate-mode-wolfenstein!}
                (or effects {})))
        (wrap-coerce-event))))
 
