@@ -19,6 +19,9 @@
                          "-p" "33333"
                          "-f" "rebel-readline.main/-main"]}
 
+           :scratch
+           {:extra-paths ["scratch"]}
+           
            :dev
            {:extra-paths ["dev"]}
 
@@ -30,7 +33,7 @@
             :extra-deps  {lambdaisland/kaocha {:mvn/version "1.0.732"}
                           metosin/testit {:mvn/version "0.4.0"}}
             :main-opts   ["-m" "kaocha.runner"]}
-           
+
            :test/watch
            {:extra-paths ["test" "dev"]
             :extra-deps  {lambdaisland/kaocha {:mvn/version "1.0.732"}
@@ -39,5 +42,11 @@
                           "--watch"
                           "--fail-fast"]}
 
-           :scratch
-           {:extra-paths ["scratch"]}}}
+           :uberjar
+           {:replace-deps {seancorfield/depstar {:mvn/version "2.0.188"}}
+            :ns-default hf.depstar
+            :exec-args {:aliases [:prod]
+                        :main-class app.core
+                        #_#_:compile-ns [app.core]
+                        #_#_:aot true
+                        #_#_:verbose true}}}}
