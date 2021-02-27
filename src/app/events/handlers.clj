@@ -41,8 +41,8 @@
      :context (fx/swap-context context assoc :active-mode :wolfenstein)}
     {:dispatch :hide-menu}))
 
-(defmethod handle-event :deactivate-mode-wolfenstein [{:keys [fx/context]}]
-  (when-let [deactivate (-> context :modes :wolfenstein :deactivate-fn)]
+(defmethod handle-event :deactivate-mode-wolfenstein [{:keys [state]}]
+  (when-let [deactivate (-> state :modes :wolfenstein :deactivate-fn)]
     {:deactivate-mode-wolfenstein! deactivate}))
 
 (defmethod handle-event :wolfenstein-image-updated [{:keys [fx/context event/data]}]

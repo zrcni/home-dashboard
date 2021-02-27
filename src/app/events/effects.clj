@@ -3,7 +3,7 @@
             [app.events.api :refer [create-event coerce-event]]))
 
 (defn activate-mode-wolfenstein! [_ dispatch!]
-  (let [deactivate (wolfenstein-mode/activate #(dispatch! (create-event :wolfenstein-image-updated {:img-n %})))]
+  (when-let [deactivate (wolfenstein-mode/activate #(dispatch! (create-event :wolfenstein-image-updated {:img-n %})))]
     (dispatch! (create-event :set-deactivate-fn {:mode :wolfenstein
                                                  :deactivate-fn deactivate}))))
 
