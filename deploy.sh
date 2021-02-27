@@ -37,7 +37,7 @@ fi
 
 # # copy the jar to Raspberry Pi's home directory
 rsync -avz --quiet -e "ssh $ssh_opts" "$file_path" "$device_user@$device_ip:~/"
-rsync -avz --quiet -e "ssh $ssh_opts" "$PWD/run_home_dashboard.sh" "$device_user@$device_ip:~/"
+rsync -avz --quiet -e "ssh $ssh_opts" "$PWD/start_home_dashboard.sh" "$device_user@$device_ip:~/"
 
 echo "Stopping the app if it's running"
 
@@ -49,4 +49,4 @@ echo $kill_output
 log_file_path="~/logs/home_dashboard_$(date +%s).log"
 # run the jar
 echo "Starting the app"
-ssh $ssh_opts $device_user@$device_ip "nohup ~/run_home_dashboard.sh </dev/null > $log_file_path 2>&1 &"
+ssh $ssh_opts $device_user@$device_ip "nohup ~/start_home_dashboard.sh </dev/null > $log_file_path 2>&1 &"
