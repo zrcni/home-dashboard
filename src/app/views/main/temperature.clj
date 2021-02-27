@@ -3,7 +3,6 @@
   (:require [cljfx.api :as fx]
             [app.utils :refer [date->hhmmss]]
             [app.subs :as subs]
-            [app.events.api :refer [create-event]]
             [app.events.core :refer [dispatch]]
             [clojure.core.async :refer [timeout close! go-loop <!]]))
 
@@ -61,7 +60,7 @@
    :on-created (fn [c]
                  (let [ch (go-loop []
                             (<! (timeout 1000))
-                            (dispatch (create-event :refresh-temperature-last-updated-relative))
+                            (dispatch :refresh-temperature-last-updated-relative)
                             (recur))]
                    (-> c (.getProperties) (.put :ch ch))))
    :on-deleted (fn [c]

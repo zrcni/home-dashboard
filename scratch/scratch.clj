@@ -2,28 +2,28 @@
   (:require [app.dev :refer [send-mock-temperature-update]]
             [app.events.core :as events]
             [app.core :refer [start stop]]
-            [app.state :refer [*context]]
-            [app.events.api :refer [create-event]]
+            [app.state.core :refer [*context]]
             [app.cljfx-utils :refer [ctx-state]]
             [clojure.tools.namespace.repl :refer [refresh]]))
 
 (start)
 (stop)
 
-(events/dispatch (create-event :show-menu))
-(events/dispatch (create-event :hide-menu))
-(events/dispatch (create-event :activate-mode-static-image))
-(events/dispatch (create-event :activate-mode-wolfenstein))
-(events/dispatch (create-event :activate-mode-temperature))
-(events/dispatch (create-event :enter-fullscreen))
-(events/dispatch (create-event :exit-fullscreen))
+(refresh)
 
+(events/dispatch :show-menu)
+(events/dispatch :hide-menu)
+(events/dispatch :activate-mode-static-image)
+(events/dispatch :activate-mode-wolfenstein)
+(events/dispatch :activate-mode-temperature)
+(events/dispatch :enter-fullscreen)
+(events/dispatch :exit-fullscreen)
 
 (if (:fullscreen? (ctx-state @*context))
-  (events/dispatch (create-event :exit-fullscreen))
-  (events/dispatch (create-event :enter-fullscreen)))
+  (events/dispatch :exit-fullscreen)
+  (events/dispatch :enter-fullscreen))
 
-(events/dispatch (create-event :wolfenstein-image-updated {:img-n 1}))
+(events/dispatch :wolfenstein-image-updated {:img-n 1})
 
 @*context
 (ctx-state @*context)

@@ -1,15 +1,14 @@
 (ns app.events.handlers
   (:require [cljfx.api :as fx]
-            [app.utils :refer [date->relative]]
-            [app.events.api :refer [create-event]]))
+            [app.utils :refer [date->relative]]))
 
 (defn- make-deactivate-event-type [mode]
   (keyword (str "deactivate-mode-" (name mode))))
 
 (defmulti handle-event :event/type)
 
-;; (defmethod handle-event :default [e]
-;;   (println e))
+;; no-op for unhandled events
+(defmethod handle-event :default [_])
 
 (defmethod handle-event :show-menu [{:keys [fx/context]}]
   {:context (fx/swap-context context assoc :menu? true)})
@@ -26,9 +25,9 @@
 (defmethod handle-event :activate-mode-static-image [{:keys [fx/context state]}]
   (if-not (= (:active-mode state) :static-image)
     {:context (fx/swap-context context assoc :active-mode :static-image)
-     :dispatch-n [(create-event (make-deactivate-event-type (:active-mode state)))
-                  (create-event :hide-menu)]}
-    {:dispatch (create-event :hide-menu)}))
+     :dispatch-n [(make-deactivate-event-type (:active-mode state))
+                  :hide-menu]}
+    {:dispatch :hide-menu}))
 
 ;; noop for now that the event is dispatched without any use for it
 (defmethod handle-event :deactivate-mode-static-image [_])
@@ -41,10 +40,10 @@
 (defmethod handle-event :activate-mode-wolfenstein [{:keys [fx/context state]}]
   (if-not (= (:active-mode state) :wolfenstein)
     {:activate-mode-wolfenstein! nil
-     :dispatch-n [(create-event (make-deactivate-event-type (:active-mode state)))
-                  (create-event :hide-menu)]
+     :dispatch-n [(make-deactivate-event-type (:active-mode state))
+                  :hide-menu]
      :context (fx/swap-context context assoc :active-mode :wolfenstein)}
-    {:dispatch (create-event :hide-menu)}))
+    {:dispatch :hide-menu}))
 
 (defmethod handle-event :deactivate-mode-wolfenstein [{:keys [fx/context]}]
   (when-let [deactivate (-> context :modes :wolfenstein :deactivate-fn)]
@@ -57,11 +56,11 @@
 
 (defmethod handle-event :activate-mode-temperature [{:keys [fx/context state]}]
   (if-not (= (:active-mode state) :temperature)
-    {:dispatch-n [(create-event (make-deactivate-event-type (:active-mode state)))
-                  (create-event :refresh-temperature-last-updated-relative)
-                  (create-event :hide-menu)]
+    {:dispatch-n [(make-deactivate-event-type (:active-mode state))
+                  :refresh-temperature-last-updated-relative
+                  :hide-menu]
      :context (fx/swap-context context assoc :active-mode :temperature)}
-    {:dispatch (create-event :hide-menu)}))
+    {:dispatch :hide-menu}))
 
 (defmethod handle-event :temperature-updated [{:keys [fx/context event/data]}]
   {:context (-> context

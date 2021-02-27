@@ -2,7 +2,7 @@
   (:import java.time.Instant)
   (:require [cljfx.api :as fx]
             [clojure.core.async :refer [put! <! timeout go-loop]]
-            [app.state :refer [*context]]
+            [app.state.core :refer [*context]]
             [app.styles :refer [style]]
             [app.temperature-mode.core :as temperature-mode]))
 

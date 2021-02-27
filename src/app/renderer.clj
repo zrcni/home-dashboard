@@ -1,7 +1,7 @@
 (ns app.renderer
   (:require [cljfx.api :as fx]
             [app.views.core :as views]
-            [app.state :refer [*context]]
+            [app.state.core :refer [*context]]
             [app.events.core :refer [handle-event]]))
 
 (def renderer
