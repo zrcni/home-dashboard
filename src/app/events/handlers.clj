@@ -29,10 +29,6 @@
                   :hide-menu]}
     {:dispatch :hide-menu}))
 
-;; noop for now that the event is dispatched without any use for it
-(defmethod handle-event :deactivate-mode-static-image [_])
-(defmethod handle-event :deactivate-mode-temperature [_])
-
 (defmethod handle-event :set-deactivate-fn [{:keys [fx/context event/data]}]
   (let [{:keys [mode deactivate-fn]} data]
     {:context (fx/swap-context context assoc-in [:modes mode :deactivate-fn] deactivate-fn)}))
