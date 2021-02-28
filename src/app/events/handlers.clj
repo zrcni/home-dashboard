@@ -16,6 +16,9 @@
 (defmethod handle-event :hide-menu [{:keys [fx/context]}]
   (update-state! context assoc :menu? false))
 
+(defmethod handle-event :toggle-menu [{:keys [fx/context]}]
+  (update-state! context update :menu? not))
+
 (defmethod handle-event :enter-fullscreen [{:keys [fx/context]}]
   (update-state! context assoc :fullscreen? true))
 

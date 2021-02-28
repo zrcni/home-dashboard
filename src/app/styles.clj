@@ -38,9 +38,9 @@
       ".temperature-mode-no-data-text" {:-fx-font-size "1.2em"}
       ".clock-text" {:-fx-font-size "4em"
                      :-fx-font-weight "bold"}
-      ".thumbnail-button:hover" (-> {
-                                     :-fx-effect "innershadow(one-pass-box, rgba(0,0,0,1), 10, 1, 0, 0)"}
+      ".thumbnail-button:hover" (-> {:-fx-effect "innershadow(one-pass-box, rgba(0,0,0,1), 10, 1, 0, 0)"}
                                     (as-> s (if (:cursor? cfg)
                                               (assoc s :-fx-cursor :hand)
                                               s)))
-      ".thumbnail-scroll-pane" {:-fx-background-color bg-color}})))
+      ".thumbnail-scroll-pane" {:-fx-background-color bg-color}
+      ".toggle-menu-button:hover" {:-fx-cursor :hand}})))
