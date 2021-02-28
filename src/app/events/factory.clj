@@ -8,15 +8,26 @@
 (defn wrap-coerce-event [f & _]
   (fn [& args] (f (apply coerce-event args))))
 
+(defn make-get-ctx-state-co-effect
+  "Derefs the context atom and gets the current state from it"
+  [*context]
+  #(ctx-state (deref *context)))
+
 (defn create-handler
   ([{:keys [context effects coeffects]}]
    (-> handlers/handle-event
        (fx/wrap-co-effects
-        (merge {:fx/context (fx/make-deref-co-effect context)
-                :state #(ctx-state @context)}
+        ;; The context coeffect is an atom
+        (merge {:fx/context #(identity context)
+                :state (make-get-ctx-state-co-effect context)}
                (or coeffects {})))
        (fx/wrap-effects
-        (merge {:context (fx/make-reset-effect context)
+        ;; Updating context as an effect doesn't work consistently within the dispatch-n effect.
+        ;; Sometimes the same *dereferenced* context is passed into multiple effect
+        ;; handlers causing only one of them to actually update the context atom.
+        ;; Another situation where the same thing can happen is when
+        ;; :temperature-updated is dispatched at the same time as some other action.
+        (merge {:context #(throw (ex-message "Do not use the fx/context coeffect!"))
                 :dispatch app-effects/dispatch
                 :dispatch-n app-effects/dispatch-n
                 :activate-mode-wolfenstein! app-effects/activate-mode-wolfenstein!
