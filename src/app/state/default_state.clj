@@ -5,7 +5,9 @@
   {:menu? false
    :fullscreen? (:fullscreen? cfg)
    :active-mode :static-image
-   :modes {:static-image {:image "app/images/static-image/tonnin-seteli.png"}
+   :modes {:static-image {:image "app/images/static-image/tonnin-seteli.png"
+                          :images []
+                          :selecting? false}
            :wolfenstein {:image "app/images/wolfenstein/1.png"
                          :deactivate-fn nil}
            :temperature {:data nil

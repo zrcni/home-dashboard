@@ -14,12 +14,12 @@
                           :-fx-font-weight "bold"
                           :-fx-font-smoothing-type "lcd"
                           :-fx-border-width 2
-                          :-fx-border-color "white"
-                          ":hover, :focused" {:-fx-border-color "#b32cd1"
-                                              :-fx-border-width 3
-                                              :-fx-text-base-color "#b32cd1"}}
+                          :-fx-border-color "white"}
                          ;; set menu button cursor style only when cursor is enabled
                          (as-> s (if (:cursor? cfg) (assoc s :-fx-cursor :hand) s)))
+      ".menu-button:hover, .menu-button:focused" {:-fx-border-color "#b32cd1"
+                                                  :-fx-border-width 3
+                                                  :-fx-text-base-color "#b32cd1"}
 
       ".main-view" {:-fx-background-color bg-color}
       ".menu-view" {:-fx-background-color bg-color}
@@ -37,4 +37,9 @@
       ".temperature-mode-label" {:-fx-font-size "0.8em"}
       ".temperature-mode-no-data-text" {:-fx-font-size "1.2em"}
       ".clock-text" {:-fx-font-size "4em"
-                     :-fx-font-weight "bold"}})))
+                     :-fx-font-weight "bold"}
+      ".thumbnail-button:hover" (-> {
+                                     :-fx-effect "innershadow(one-pass-box, rgba(0,0,0,1), 10, 1, 0, 0)"}
+                                    (as-> s (if (:cursor? cfg)
+                                              (assoc s :-fx-cursor :hand)
+                                              s)))})))

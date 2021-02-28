@@ -34,25 +34,30 @@
                  :text "Hide menu"
                  :on-action (create-event :hide-menu)}]}))
 
-(defn menu [{:keys [fx/context]}]
-  (let [active-mode (fx/sub-ctx context subs/active-mode)
-        active-mode? #(= active-mode %)]
-    {:fx/type :v-box
-     :style-class "menu-view"
-     :alignment :center
-     :children [{:fx/type menu-controls}
-                {:fx/type menu-button
-                 :text "Image"
-                 :active? (active-mode? :static-image)
-                 :on-action (create-event :activate-mode-static-image)}
-                {:fx/type menu-button
-                 :text "Wolfenstein"
-                 :active? (active-mode? :wolfenstein)
-                 :on-action (create-event :activate-mode-wolfenstein)}
-                {:fx/type menu-button
-                 :text "Temperature"
-                 :active? (active-mode? :temperature)
-                 :on-action (create-event :activate-mode-temperature)}]}))
+(defn image-mode-menu-button [{:keys []}]
+  {:fx/type :h-box
+   :alignment :center
+   :children [{:fx/type menu-button
+               :text "Image"
+               :width 320
+               :on-action (create-event :activate-mode-static-image)}
+              {:fx/type menu-button
+               :text "Select image"
+               :width 160
+               :on-action (create-event :image-mode-open-select)}]})
+
+(defn menu [_]
+  {:fx/type :v-box
+   :style-class "menu-view"
+   :alignment :center
+   :children [{:fx/type menu-controls}
+              {:fx/type image-mode-menu-button}
+              {:fx/type menu-button
+               :text "Wolfenstein"
+               :on-action (create-event :activate-mode-wolfenstein)}
+              {:fx/type menu-button
+               :text "Temperature"
+               :on-action (create-event :activate-mode-temperature)}]})
 
 (defn menu-view [{:keys [fx/context]}]
   {:fx/type :scene

@@ -29,6 +29,22 @@
                       :hide-menu]})
     {:dispatch :hide-menu}))
 
+(defmethod handle-event :image-mode-images-refreshed [{:keys [event/data fx/context]}]
+  (update-state! context assoc-in [:modes :static-image :images] (:images data)))
+
+(defmethod handle-event :image-mode-select-image [{:keys [event/data fx/context]}]
+  (update-state! context assoc-in [:modes :static-image :image] (:image data))
+  (update-state! context assoc-in [:modes :static-image :selecting?] false))
+
+(defmethod handle-event :image-mode-open-select [{:keys [fx/context state]}]
+  (when-not (-> state :modes :static-image :selecting?)
+    (update-state! context assoc-in [:modes :static-image :selecting?] true)
+    {:dispatch-n [:activate-mode-static-image]}))
+
+(defmethod handle-event :deactivate-mode-static-image [{:keys [fx/context state]}]
+  (when (-> state :modes :static-image :selecting?)
+    (update-state! context assoc-in [:modes :static-image :selecting?] false)))
+
 (defmethod handle-event :set-deactivate-fn [{:keys [fx/context event/data]}]
   (let [{:keys [mode deactivate-fn]} data]
     (update-state! context assoc-in [:modes mode :deactivate-fn] deactivate-fn)))

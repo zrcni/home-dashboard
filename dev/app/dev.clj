@@ -6,7 +6,10 @@
             [app.styles :refer [style]]
             [app.temperature-mode.core :as temperature-mode]
             [app.shutdown :as shutdown]
-            [app.renderer :as renderer]))
+            [app.renderer :as renderer]
+            [app.events.core :refer [dispatch]]
+            [app.events.api :refer [create-event]]
+            [app.image-mode.core :as image-mode]))
 
 ;; Refresh styles in state whenever they change to
 ;; make the app rerender with updated styles.
@@ -37,3 +40,5 @@
 
 (shutdown/add-hook :renderer/unmount renderer/unmount!)
 (shutdown/add-hook :clojure.core/shutdown-agents shutdown-agents)
+
+(image-mode/on-refresh #(dispatch (create-event :image-mode-images-refreshed {:images %})))

@@ -4,6 +4,7 @@
             [app.core :refer [start stop]]
             [app.state.core :refer [*context]]
             [app.cljfx-utils :refer [ctx-state]]
+            [app.events.api :refer [create-event]]
             [clojure.tools.namespace.repl :refer [refresh]]))
 
 (start)
@@ -27,6 +28,7 @@
 
 @*context
 (ctx-state @*context)
+(:static-image (:modes (ctx-state @*context)))
 
 ;; RPi REPL session seems to become
 ;; frozen sometimes, so this kills it
