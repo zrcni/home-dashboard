@@ -1,6 +1,7 @@
 (ns app.views.main.core
   (:require [cljfx.api :as fx]
             [cljfx.css :as css]
+            [app.config :refer [cfg]]
             [app.subs :as subs]
             [app.events.api :refer [create-event]]
             [app.views.main.static-image :refer [static-image-view]]
@@ -12,7 +13,7 @@
         active-mode (fx/sub-ctx context subs/active-mode)]
     {:fx/type :scene
      :stylesheets [(::css/url style)]
-     :cursor :none
+     :cursor (if (:cursor? cfg) :default :none)
      :root {:fx/type :v-box
             :alignment :center
             :style-class "main-view"

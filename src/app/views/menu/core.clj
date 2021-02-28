@@ -1,6 +1,7 @@
 (ns app.views.menu.core
   (:require [cljfx.api :as fx]
             [cljfx.css :as css]
+            [app.config :refer [cfg]]
             [app.subs :as subs]
             [app.events.api :refer [create-event]]))
 
@@ -56,4 +57,5 @@
 (defn menu-view [{:keys [fx/context]}]
   {:fx/type :scene
    :stylesheets [(::css/url (fx/sub-ctx context subs/style))]
+   :cursor (if (:cursor? cfg) :default :none)
    :root {:fx/type menu}})

@@ -1,3 +1,4 @@
 (ns app.config)
 
-(def cfg {})
+(def cfg {:fullscreen? false
+          :cursor? true})

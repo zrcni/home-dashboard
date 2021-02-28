@@ -1,8 +1,9 @@
-(ns app.state.default-state)
+(ns app.state.default-state
+  (:require [app.config :refer [cfg]]))
 
 (def default-state
   {:menu? false
-   :fullscreen? true
+   :fullscreen? (:fullscreen? cfg)
    :active-mode :static-image
    :modes {:static-image {:image "app/images/static-image/tonnin-seteli.png"}
            :wolfenstein {:image "app/images/wolfenstein/1.png"
