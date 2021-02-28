@@ -14,13 +14,13 @@
   (fx/sub-val context :active-mode))
 
 (defn gallery [context]
-  (fx/sub-val context get-in [:modes :gallery]))
+  (fx/sub-val context :gallery))
 
 (defn wolfenstein-mode [context]
-  (fx/sub-val context get-in [:modes :wolfenstein]))
-
-(defn dashboard [context]
-  (fx/sub-val context get-in [:modes :dashboard]))
+  (fx/sub-val context :wolfenstein))
 
 (defn conditions-last-updated-relative [context]
-  (fx/sub-val context get-in [:modes :dashboard :last-updated-relative]))
+  (fx/sub-val context get-in [:conditions :last-updated-relative]))
+
+(defn conditions [context]
+  (fx/sub-val context :conditions))

@@ -27,7 +27,7 @@
 
 @*context
 (ctx-state @*context)
-(:gallery (:modes (ctx-state @*context)))
+(:gallery (ctx-state @*context))
 
 ;; RPi REPL session seems to become
 ;; frozen sometimes, so this kills it

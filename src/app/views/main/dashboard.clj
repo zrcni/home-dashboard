@@ -70,22 +70,23 @@
           :style-class "last-updated-row"
           :children [{:fx/type last-updated-text}]}})
 
+(defn create-conditions [conditions]
+  [{:fx/type temperature
+    :temperature (-> conditions :data :temperature)}
+   {:fx/type humidity
+    :humidity (-> conditions :data :humidity)}
+   {:fx/type last-updated}])
+
 (defn no-conditions [_]
   {:fx/type :text
    :style-class ["dashboard-text" "dashboard-no-data-text"]
    :text "No condition data currently :("})
 
 (defn dashboard-view [{:keys [fx/context]}]
-  (let [mode (fx/sub-ctx context subs/dashboard)]
+  (let [conditions (fx/sub-ctx context subs/conditions)]
     {:fx/type :v-box
      :alignment :center
-     :children (if (:data mode)
-                 [{:fx/type clock}
-                  {:fx/type temperature
-                   :temperature (-> mode :data :temperature)}
-                  {:fx/type humidity
-                   :humidity (-> mode :data :humidity)}
-                  {:fx/type last-updated}]
-
+     :children (if (:data conditions)
+                 (cons {:fx/type clock} (create-conditions conditions))
                  [{:fx/type clock}
                   {:fx/type no-conditions}])}))

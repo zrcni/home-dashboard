@@ -35,23 +35,23 @@
     {:dispatch :menu/hide}))
 
 (defmethod handle-event :gallery/images-refreshed [{:keys [event/data fx/context]}]
-  (update-state! context assoc-in [:modes :gallery :images] (:images data)))
+  (update-state! context assoc-in [:gallery :images] (:images data)))
 
 (defmethod handle-event :gallery/select-image [{:keys [event/data fx/context]}]
-  (update-state! context assoc-in [:modes :gallery :image] (:image data))
-  (update-state! context assoc-in [:modes :gallery :selecting?] false))
+  (update-state! context assoc-in [:gallery :image] (:image data))
+  (update-state! context assoc-in [:gallery :selecting?] false))
 
 (defmethod handle-event :gallery/open-select [{:keys [fx/context]}]
-  (update-state! context assoc-in [:modes :gallery :selecting?] true)
+  (update-state! context assoc-in [:gallery :selecting?] true)
   {:dispatch-n [:activate-mode/gallery]})
 
 (defmethod handle-event :deactivate-mode-gallery [{:keys [fx/context state]}]
-  (when (-> state :modes :gallery :selecting?)
-    (update-state! context assoc-in [:modes :gallery :selecting?] false)))
+  (when (-> state :gallery :selecting?)
+    (update-state! context assoc-in [:gallery :selecting?] false)))
 
 (defmethod handle-event :set-deactivate-fn [{:keys [fx/context event/data]}]
   (let [{:keys [mode deactivate-fn]} data]
-    (update-state! context assoc-in [:modes mode :deactivate-fn] deactivate-fn)))
+    (update-state! context assoc-in [mode :deactivate-fn] deactivate-fn)))
 
 (defmethod handle-event :activate-mode-wolfenstein [{:keys [fx/context state]}]
   (if-not (= (:active-mode state) :wolfenstein)
@@ -63,13 +63,13 @@
     {:dispatch :menu/hide}))
 
 (defmethod handle-event :deactivate-mode-wolfenstein [{:keys [state]}]
-  (when-let [deactivate (-> state :modes :wolfenstein :deactivate-fn)]
+  (when-let [deactivate (-> state :wolfenstein :deactivate-fn)]
     {:deactivate-mode-wolfenstein! deactivate}))
 
 (defmethod handle-event :wolfenstein-image-updated [{:keys [fx/context event/data]}]
   (let [img-n (:img-n data)
         image (str "app/images/wolfenstein/" img-n ".png")]
-    (update-state! context assoc-in [:modes :wolfenstein :image] image)))
+    (update-state! context assoc-in [:wolfenstein :image] image)))
 
 (defmethod handle-event :activate-mode/dashboard [{:keys [fx/context state]}]
   (if-not (= (:active-mode state) :dashboard)
@@ -80,9 +80,9 @@
     {:dispatch :menu/hide}))
 
 (defmethod handle-event :conditions/updated [{:keys [fx/context event/data]}]
-  (update-state! context assoc-in [:modes :dashboard :data] (select-keys data [:temperature :humidity]))
-  (update-state! context assoc-in [:modes :dashboard :last-updated] (-> data :timestamp)))
+  (update-state! context assoc-in [:conditions :data] (select-keys data [:temperature :humidity]))
+  (update-state! context assoc-in [:conditions :last-updated] (-> data :timestamp)))
 
 (defmethod handle-event :conditions/refresh-last-updated-relative [{:keys [fx/context state]}]
-  (when-let [last-updated (-> state :modes :dashboard :last-updated)]
-    (update-state! context assoc-in [:modes :dashboard :last-updated-relative] (date->relative last-updated))))
+  (when-let [last-updated (-> state :conditions :last-updated)]
+    (update-state! context assoc-in [:conditions :last-updated-relative] (date->relative last-updated))))
