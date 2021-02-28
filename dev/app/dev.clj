@@ -4,7 +4,9 @@
             [clojure.core.async :refer [put! <! timeout go-loop]]
             [app.state.core :refer [*context]]
             [app.styles :refer [style]]
-            [app.temperature-mode.core :as temperature-mode]))
+            [app.temperature-mode.core :as temperature-mode]
+            [app.shutdown :as shutdown]
+            [app.renderer :as renderer]))
 
 ;; Refresh styles in state whenever they change to
 ;; make the app rerender with updated styles.
@@ -32,3 +34,6 @@
     (send-mock-temperature-update)
     (<! (timeout (* 60 1000)))
     (recur)))
+
+(shutdown/add-hook :renderer/unmount renderer/unmount!)
+(shutdown/add-hook :clojure.core/shutdown-agents shutdown-agents)

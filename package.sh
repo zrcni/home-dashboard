@@ -14,7 +14,7 @@ filename="home_dashboard.jar"
 file_path="./build/$filename"
 temp_file_path="./build/$filename.temp"
 
-echo "Packaging temporarily into $temp_file_path..."
+echo "Packaging into $filename..."
 clj -X:uberjar uberjar :jar $temp_file_path
 
 # delete previously built jar if it exists

@@ -49,6 +49,7 @@
             :ns-default hf.depstar
             :exec-args {:aliases [:prod]
                         :main-class app.core
-                        #_#_:compile-ns [app.core]
-                        #_#_:aot true
+                        :jvm-opts ["-Dcljfx.skip-javafx-initialization=true"]
+                        :compile-ns [app.core]
+                        :aot true
                         #_#_:verbose true}}}}

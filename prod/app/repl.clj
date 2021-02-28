@@ -1,6 +1,6 @@
 (ns app.repl
   (:require [nrepl.server :refer [start-server stop-server]]
-            [nrepl.transport :as transport]
+            ;; [nrepl.transport :as transport]
             [cider.nrepl :refer [cider-middleware]]
             [app.config :refer [cfg]]
             [app.logger :as log]))
@@ -13,8 +13,8 @@
 
   (reset! *server
           (start-server :port port
-                        :transport-fn transport/tty
-                        :greeting-fn transport/tty-greeting
+                        ;; :transport-fn transport/tty
+                        ;; :greeting-fn transport/tty-greeting
                         :middleware [cider-middleware]))))
 
 (defn stop! []
