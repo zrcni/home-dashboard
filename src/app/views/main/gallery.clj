@@ -1,4 +1,4 @@
-(ns app.views.main.static-image
+(ns app.views.main.gallery
   (:require [cljfx.api :as fx]
             [app.subs :as subs]
             [app.config :refer [cfg]]
@@ -33,11 +33,11 @@
                         (fn [image]
                           {:fx/type thumbnail-button
                            :image image
-                           :on-action (create-event :image-mode-select-image {:image image})})
+                           :on-action (create-event :gallery/select-image {:image image})})
                         images)}})
 
-(defn static-image-view [{:keys [fx/context]}]
-  (let [mode (fx/sub-ctx context subs/static-image-mode)]
+(defn gallery-view [{:keys [fx/context]}]
+  (let [mode (fx/sub-ctx context subs/gallery-mode)]
     {:fx/type :v-box
      :alignment :center
      :children [(if (:selecting? mode)

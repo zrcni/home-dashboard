@@ -9,7 +9,7 @@
             [app.renderer :as renderer]
             [app.events.core :refer [dispatch]]
             [app.events.api :refer [create-event]]
-            [app.image-mode.core :as image-mode]))
+            [app.gallery.core :as gallery]))
 
 ;; Refresh styles in state whenever they change to
 ;; make the app rerender with updated styles.
@@ -41,4 +41,4 @@
 (shutdown/add-hook :renderer/unmount renderer/unmount!)
 (shutdown/add-hook :clojure.core/shutdown-agents shutdown-agents)
 
-(image-mode/on-refresh #(dispatch (create-event :image-mode-images-refreshed {:images %})))
+(gallery/on-refresh #(dispatch (create-event :gallery/images-refreshed {:images %})))

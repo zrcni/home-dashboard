@@ -29,24 +29,24 @@
                    :text "Exit fullscreen"
                    :on-action (create-event :fullscreen/exit)})]}))
 
-(defn image-mode-menu-button [{:keys []}]
+(defn gallery-menu-button [{:keys []}]
   {:fx/type :h-box
    :alignment :center
    :children [{:fx/type menu-button
-               :text "Image"
+               :text "Gallery"
                :width 320
-               :on-action (create-event :activate-mode-static-image)}
+               :on-action (create-event :activate-mode/gallery)}
               {:fx/type menu-button
                :text "Select image"
                :width 160
-               :on-action (create-event :image-mode-open-select)}]})
+               :on-action (create-event :gallery/open-select)}]})
 
 (defn menu-view [_]
   {:fx/type :v-box
    :style-class "menu-view"
    :alignment :center
    :children [{:fx/type menu-controls}
-              {:fx/type image-mode-menu-button}
+              {:fx/type gallery-menu-button}
               {:fx/type menu-button
                :text "Wolfenstein"
                :on-action (create-event :activate-mode-wolfenstein)}

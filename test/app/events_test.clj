@@ -22,17 +22,17 @@
     (fact "menu is closed"
           (:menu? (ctx-state @*context)) =eventually=> false)))
 
-(deftest change-mode-static-image 
+(deftest change-mode-gallery
   (let [*context (atom (create-context (assoc default-state
                                               :active-mode :wolfenstein)))
         dispatch (create-dispatcher {:context *context})]
-    (dispatch :activate-mode-static-image)
-    (fact "active mode is changed to :static-image"
-     (:active-mode (ctx-state @*context)) =eventually=> :static-image)))
+    (dispatch :activate-mode/gallery)
+    (fact "active mode is changed to :gallery"
+     (:active-mode (ctx-state @*context)) =eventually=> :gallery)))
 
 (deftest change-mode-wolfenstein
   (let [*context (atom (create-context (assoc default-state
-                                              :active-mode :static-image)))
+                                              :active-mode :gallery)))
         dispatch (create-dispatcher {:context *context})]
     (dispatch :activate-mode-wolfenstein)
     (fact "active mode is changed to :wolfenstein"
@@ -42,13 +42,13 @@
   (let [*context (atom (create-context default-state))
         dispatch (create-dispatcher {:context *context})]
     (dispatch :menu/show)
-    (dispatch :activate-mode-static-image)
+    (dispatch :activate-mode/gallery)
     (fact "changing mode hides the menu"
      (:menu? (ctx-state @*context)) =eventually=> false)))
 
 (deftest change-mode-already-selected-hide-menu
   (let [*context (atom (create-context default-state))
         dispatch (create-dispatcher {:context *context})]
-    (dispatch :activate-mode-static-image)
+    (dispatch :activate-mode/gallery)
     (fact "activating already active mode hides the menu"
           (:menu? (ctx-state @*context)) =eventually=> false)))

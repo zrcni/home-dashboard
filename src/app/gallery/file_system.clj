@@ -1,4 +1,4 @@
-(ns app.image-mode.file-system
+(ns app.gallery.file-system
   (:import [javafx.scene.image Image])
   (:require [clojure.java.io :as io]))
 

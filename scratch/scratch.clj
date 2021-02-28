@@ -13,7 +13,7 @@
 
 (events/dispatch :menu/show)
 (events/dispatch :menu/hide)
-(events/dispatch :activate-mode-static-image)
+(events/dispatch :activate-mode/gallery)
 (events/dispatch :activate-mode-wolfenstein)
 (events/dispatch :activate-mode-temperature)
 (events/dispatch :fullscreen/enter)
@@ -27,7 +27,7 @@
 
 @*context
 (ctx-state @*context)
-(:static-image (:modes (ctx-state @*context)))
+(:gallery (:modes (ctx-state @*context)))
 
 ;; RPi REPL session seems to become
 ;; frozen sometimes, so this kills it

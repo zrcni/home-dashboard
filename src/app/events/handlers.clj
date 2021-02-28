@@ -2,6 +2,8 @@
   (:require [app.cljfx-utils :refer [update-state!]]
             [app.utils :refer [date->relative]]))
 
+;; TOOD: deactivate-mode-x -> deactivate-mode/x
+
 (defn- make-deactivate-event-type [mode]
   (keyword (str "deactivate-mode-" (name mode))))
 
@@ -25,27 +27,27 @@
 (defmethod handle-event :fullscreen/exit [{:keys [fx/context]}]
   (update-state! context assoc :fullscreen? false))
 
-(defmethod handle-event :activate-mode-static-image [{:keys [fx/context state]}]
-  (if-not (= (:active-mode state) :static-image)
-    (do (update-state! context assoc :active-mode :static-image)
+(defmethod handle-event :activate-mode/gallery [{:keys [fx/context state]}]
+  (if-not (= (:active-mode state) :gallery)
+    (do (update-state! context assoc :active-mode :gallery)
         {:dispatch-n [(make-deactivate-event-type (:active-mode state))
                       :menu/hide]})
     {:dispatch :menu/hide}))
 
-(defmethod handle-event :image-mode-images-refreshed [{:keys [event/data fx/context]}]
-  (update-state! context assoc-in [:modes :static-image :images] (:images data)))
+(defmethod handle-event :gallery/images-refreshed [{:keys [event/data fx/context]}]
+  (update-state! context assoc-in [:modes :gallery :images] (:images data)))
 
-(defmethod handle-event :image-mode-select-image [{:keys [event/data fx/context]}]
-  (update-state! context assoc-in [:modes :static-image :image] (:image data))
-  (update-state! context assoc-in [:modes :static-image :selecting?] false))
+(defmethod handle-event :gallery/select-image [{:keys [event/data fx/context]}]
+  (update-state! context assoc-in [:modes :gallery :image] (:image data))
+  (update-state! context assoc-in [:modes :gallery :selecting?] false))
 
-(defmethod handle-event :image-mode-open-select [{:keys [fx/context]}]
-  (update-state! context assoc-in [:modes :static-image :selecting?] true)
-  {:dispatch-n [:activate-mode-static-image]})
+(defmethod handle-event :gallery/open-select [{:keys [fx/context]}]
+  (update-state! context assoc-in [:modes :gallery :selecting?] true)
+  {:dispatch-n [:activate-mode/gallery]})
 
-(defmethod handle-event :deactivate-mode-static-image [{:keys [fx/context state]}]
-  (when (-> state :modes :static-image :selecting?)
-    (update-state! context assoc-in [:modes :static-image :selecting?] false)))
+(defmethod handle-event :deactivate-mode-gallery [{:keys [fx/context state]}]
+  (when (-> state :modes :gallery :selecting?)
+    (update-state! context assoc-in [:modes :gallery :selecting?] false)))
 
 (defmethod handle-event :set-deactivate-fn [{:keys [fx/context event/data]}]
   (let [{:keys [mode deactivate-fn]} data]

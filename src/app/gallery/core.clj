@@ -1,6 +1,6 @@
-(ns app.image-mode.core
+(ns app.gallery.core
   (:require [app.config :refer [cfg]]
-            [app.image-mode.file-system :refer [get-images]]))
+            [app.gallery.file-system :refer [get-images]]))
 
 (def *images (atom (get-images (:images-path cfg))))
 
@@ -10,6 +10,6 @@
 (defn on-refresh [f]
   (f @*images)
 
-  (add-watch *images :image-mode-images
+  (add-watch *images :gallery-images
              (fn [_ _ _ new-val]
                (f new-val))))

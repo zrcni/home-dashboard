@@ -4,10 +4,10 @@
 (def default-state
   {:menu? false
    :fullscreen? (:fullscreen? cfg)
-   :active-mode :static-image
-   :modes {:static-image {:image "app/images/static-image/tonnin-seteli.png"
-                          :images []
-                          :selecting? false}
+   :active-mode :gallery
+   :modes {:gallery {:image "app/images/gallery/tonnin-seteli.png"
+                     :images []
+                     :selecting? false}
            :wolfenstein {:image "app/images/wolfenstein/1.png"
                          :deactivate-fn nil}
            :temperature {:data nil

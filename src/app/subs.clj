@@ -13,8 +13,8 @@
 (defn active-mode [context]
   (fx/sub-val context :active-mode))
 
-(defn static-image-mode [context]
-  (fx/sub-val context get-in [:modes :static-image]))
+(defn gallery-mode [context]
+  (fx/sub-val context get-in [:modes :gallery]))
 
 (defn wolfenstein-mode [context]
   (fx/sub-val context get-in [:modes :wolfenstein]))
