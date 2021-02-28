@@ -39,8 +39,6 @@ fi
 rsync -avz --quiet -e "ssh $ssh_opts" "$file_path" "$device_user@$device_ip:~/"
 rsync -avz --quiet -e "ssh $ssh_opts" "$PWD/start_home_dashboard.sh" "$device_user@$device_ip:~/"
 
-echo "Stopping the app if it's running"
-
 kill_command='cat ~/.home_dashboard_pid | ps -p $(xargs -I{} echo {}) >/dev/null && kill -15 $(cat ~/.home_dashboard_pid) && echo "Stopped running app" || echo "App is not running"'
 kill_output=$(ssh $ssh_opts $device_user@$device_ip $kill_command)
 
