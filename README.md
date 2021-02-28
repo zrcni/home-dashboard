@@ -71,5 +71,6 @@ and connect to the REPL via editor!
 ### other
 
 Raspberry Pi cannot show a jpg image??? I wonder what the issue is. JavaFX?
+https://www.raspberrypi.org/forums/viewtopic.php?t=291697
 
 dropbox on RPi: https://github.com/andreafabrizi/Dropbox-Uploader
