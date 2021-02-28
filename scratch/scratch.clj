@@ -15,7 +15,7 @@
 (events/dispatch :menu/hide)
 (events/dispatch :activate-mode/gallery)
 (events/dispatch :activate-mode-wolfenstein)
-(events/dispatch :activate-mode-temperature)
+(events/dispatch :activate-mode/dashboard)
 (events/dispatch :fullscreen/enter)
 (events/dispatch :fullscreen/exit)
 

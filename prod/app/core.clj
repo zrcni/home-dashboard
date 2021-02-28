@@ -23,7 +23,7 @@
 
   ;; TODO: use same code in dev and prod
   (gallery/on-refresh #(dispatch (create-event :gallery/images-refreshed {:images %})))
-  (dispatch :activate-mode-temperature)
+  (dispatch :activate-mode/dashboard)
 
   (repl/start!)
   (mqtt/connect!)

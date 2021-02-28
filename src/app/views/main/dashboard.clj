@@ -1,4 +1,4 @@
-(ns app.views.main.temperature
+(ns app.views.main.dashboard
   (:import java.time.Instant)
   (:require [cljfx.api :as fx]
             [app.utils :refer [date->hhmmss]]
@@ -17,24 +17,24 @@
                    (.setUserData c {:ch ch})))
    :on-deleted #(close! (:ch (.getUserData %)))
    :desc {:fx/type :text
-          :style-class ["temperature-mode-text" "clock-text"]}})
+          :style-class ["dashboard-text" "clock-text"]}})
 
 (defn clock [_]
   {:fx/type :v-box
-   :style-class "temperature-mode-row"
+   :style-class "dashboard-row"
    :alignment :center
    :children [{:fx/type clock-text}]})
 
 ;; TODO: thermometer icon
 (defn temperature [{:keys [temperature]}]
   {:fx/type :v-box
-   :style-class "temperature-mode-row"
+   :style-class "dashboard-row"
    :alignment :center
    :children [{:fx/type :text
-               :style-class ["temperature-mode-text" "temperature-text"]
+               :style-class ["dashboard-text" "dashboard-temperature-text"]
                :text (str temperature "°C")}
               {:fx/type :text
-               :style-class ["temperature-mode-text" "temperature-mode-label"]
+               :style-class ["dashboard-text" "dashboard-label"]
                :text "TEMPERATURE"}]})
 
 ;; TODO: water drop icon?
@@ -42,17 +42,17 @@
   {:fx/type :v-box
    :alignment :center
    :children [{:fx/type :text
-               :style-class ["temperature-mode-text" "humidity-text"]
+               :style-class ["dashboard-text" "dashboard-humidity-text"]
                :text (str humidity "%")}
-              {:fx/type :text 
-               :style-class ["temperature-mode-text" "temperature-mode-label"]
+              {:fx/type :text
+               :style-class ["dashboard-text" "dashboard-label"]
                :text "HUMIDITY"}]})
 
 ;; TODO: clock icon
 (defn last-updated-text [{:keys [fx/context]}]
   (let [last-updated-relative (fx/sub-ctx context subs/temperature-last-updated-relative)]
     {:fx/type :text
-     :style-class ["temperature-mode-text" "last-updated-text"]
+     :style-class ["dashboard-text" "last-updated-text"]
      :text (str "Updated " last-updated-relative)}))
 
 (defn last-updated [_]
@@ -72,11 +72,11 @@
 
 (defn no-temperature [_]
   {:fx/type :text
-   :style-class ["temperature-mode-text" "temperature-mode-no-data-text"]
+   :style-class ["dashboard-text" "dashboard-no-data-text"]
    :text "No temperature data currently :("})
 
-(defn temperature-view [{:keys [fx/context]}]
-  (let [mode (fx/sub-ctx context subs/temperature-mode)]
+(defn dashboard-view [{:keys [fx/context]}]
+  (let [mode (fx/sub-ctx context subs/dashboard)]
     {:fx/type :v-box
      :alignment :center
      :children (if (:data mode)

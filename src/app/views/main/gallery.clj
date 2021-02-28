@@ -37,7 +37,7 @@
                         images)}})
 
 (defn gallery-view [{:keys [fx/context]}]
-  (let [mode (fx/sub-ctx context subs/gallery-mode)]
+  (let [mode (fx/sub-ctx context subs/gallery)]
     {:fx/type :v-box
      :alignment :center
      :children [(if (:selecting? mode)

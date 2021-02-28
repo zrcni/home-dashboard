@@ -3,7 +3,7 @@
             [app.subs :as subs]
             [app.views.main.gallery :refer [gallery-view]]
             [app.views.main.wolfenstein :refer [wolfenstein-view]]
-            [app.views.main.temperature :refer [temperature-view]]))
+            [app.views.main.dashboard :refer [dashboard-view]]))
 
 (defn main-view [{:keys [fx/context]}]
   (let [active-mode (fx/sub-ctx context subs/active-mode)]
@@ -13,5 +13,5 @@
      :children (case active-mode
                  :gallery [{:fx/type gallery-view}]
                  :wolfenstein [{:fx/type wolfenstein-view}]
-                 :temperature [{:fx/type temperature-view}]
+                 :dashboard [{:fx/type dashboard-view}]
                  [])}))

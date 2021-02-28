@@ -71,18 +71,18 @@
         image (str "app/images/wolfenstein/" img-n ".png")]
     (update-state! context assoc-in [:modes :wolfenstein :image] image)))
 
-(defmethod handle-event :activate-mode-temperature [{:keys [fx/context state]}]
-  (if-not (= (:active-mode state) :temperature)
-    (do (update-state! context assoc :active-mode :temperature)
+(defmethod handle-event :activate-mode/dashboard [{:keys [fx/context state]}]
+  (if-not (= (:active-mode state) :dashboard)
+    (do (update-state! context assoc :active-mode :dashboard)
         {:dispatch-n [(make-deactivate-event-type (:active-mode state))
                       :refresh-temperature-last-updated-relative
                       :menu/hide]})
     {:dispatch :menu/hide}))
 
 (defmethod handle-event :temperature-updated [{:keys [fx/context event/data]}]
-  (update-state! context assoc-in [:modes :temperature :data] (select-keys data [:temperature :humidity]))
-  (update-state! context assoc-in [:modes :temperature :last-updated] (-> data :timestamp)))
+  (update-state! context assoc-in [:modes :dashboard :data] (select-keys data [:temperature :humidity]))
+  (update-state! context assoc-in [:modes :dashboard :last-updated] (-> data :timestamp)))
 
 (defmethod handle-event :refresh-temperature-last-updated-relative [{:keys [fx/context state]}]
-  (when-let [last-updated (-> state :modes :temperature :last-updated)]
-    (update-state! context assoc-in [:modes :temperature :last-updated-relative] (date->relative last-updated))))
+  (when-let [last-updated (-> state :modes :dashboard :last-updated)]
+    (update-state! context assoc-in [:modes :dashboard :last-updated-relative] (date->relative last-updated))))

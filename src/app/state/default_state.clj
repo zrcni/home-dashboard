@@ -10,6 +10,6 @@
                      :selecting? false}
            :wolfenstein {:image "app/images/wolfenstein/1.png"
                          :deactivate-fn nil}
-           :temperature {:data nil
-                         :last-updated nil
-                         :last-updated-relative nil}}})
+           :dashboard {:data nil
+                       :last-updated nil
+                       :last-updated-relative nil}}})

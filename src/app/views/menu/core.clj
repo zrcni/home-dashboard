@@ -51,5 +51,5 @@
                :text "Wolfenstein"
                :on-action (create-event :activate-mode-wolfenstein)}
               {:fx/type menu-button
-               :text "Temperature"
-               :on-action (create-event :activate-mode-temperature)}]})
+               :text "Dashboard"
+               :on-action (create-event :activate-mode/dashboard)}]})
