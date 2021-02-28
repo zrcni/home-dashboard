@@ -14,7 +14,6 @@
     (fact "menu is opened"
      (:menu? (ctx-state @*context)) =eventually=> true)))
 
-
 (deftest hide-menu
   (let [*context (atom (create-context default-state))
         dispatch (create-dispatcher {:context *context})]
