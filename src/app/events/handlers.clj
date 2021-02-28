@@ -75,14 +75,14 @@
   (if-not (= (:active-mode state) :dashboard)
     (do (update-state! context assoc :active-mode :dashboard)
         {:dispatch-n [(make-deactivate-event-type (:active-mode state))
-                      :refresh-temperature-last-updated-relative
+                      :conditions/refresh-last-updated-relative
                       :menu/hide]})
     {:dispatch :menu/hide}))
 
-(defmethod handle-event :temperature-updated [{:keys [fx/context event/data]}]
+(defmethod handle-event :conditions/updated [{:keys [fx/context event/data]}]
   (update-state! context assoc-in [:modes :dashboard :data] (select-keys data [:temperature :humidity]))
   (update-state! context assoc-in [:modes :dashboard :last-updated] (-> data :timestamp)))
 
-(defmethod handle-event :refresh-temperature-last-updated-relative [{:keys [fx/context state]}]
+(defmethod handle-event :conditions/refresh-last-updated-relative [{:keys [fx/context state]}]
   (when-let [last-updated (-> state :modes :dashboard :last-updated)]
     (update-state! context assoc-in [:modes :dashboard :last-updated-relative] (date->relative last-updated))))

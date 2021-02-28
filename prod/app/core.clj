@@ -3,7 +3,7 @@
             [app.mqtt :as mqtt]
             [app.repl :as repl]
             [app.config :refer [cfg]]
-            [app.temperature-mode.mqtt :as temperature-mode-mqtt]
+            [app.conditions.mqtt :as conditions-mqtt]
             [app.shutdown :as shutdown]
             [app.logger :as log]
             [app.events.core :refer [dispatch]]
@@ -27,5 +27,5 @@
 
   (repl/start!)
   (mqtt/connect!)
-  (temperature-mode-mqtt/subscribe)
+  (conditions-mqtt/subscribe)
   (renderer/mount!))

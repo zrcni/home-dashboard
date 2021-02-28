@@ -50,7 +50,7 @@
 
 ;; TODO: clock icon
 (defn last-updated-text [{:keys [fx/context]}]
-  (let [last-updated-relative (fx/sub-ctx context subs/temperature-last-updated-relative)]
+  (let [last-updated-relative (fx/sub-ctx context subs/conditions-last-updated-relative)]
     {:fx/type :text
      :style-class ["dashboard-text" "last-updated-text"]
      :text (str "Updated " last-updated-relative)}))
@@ -60,7 +60,7 @@
    :on-created (fn [c]
                  (let [ch (go-loop []
                             (<! (timeout 1000))
-                            (dispatch :refresh-temperature-last-updated-relative)
+                            (dispatch :conditions/refresh-last-updated-relative)
                             (recur))]
                    (-> c (.getProperties) (.put :ch ch))))
    :on-deleted (fn [c]
@@ -70,10 +70,10 @@
           :style-class "last-updated-row"
           :children [{:fx/type last-updated-text}]}})
 
-(defn no-temperature [_]
+(defn no-conditions [_]
   {:fx/type :text
    :style-class ["dashboard-text" "dashboard-no-data-text"]
-   :text "No temperature data currently :("})
+   :text "No condition data currently :("})
 
 (defn dashboard-view [{:keys [fx/context]}]
   (let [mode (fx/sub-ctx context subs/dashboard)]
@@ -88,4 +88,4 @@
                   {:fx/type last-updated}]
 
                  [{:fx/type clock}
-                  {:fx/type no-temperature}])}))
+                  {:fx/type no-conditions}])}))

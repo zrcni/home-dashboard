@@ -1,4 +1,4 @@
-(ns app.temperature-mode.core
+(ns app.conditions.core
   (:import java.time.Instant)
   (:require [app.logger :as log]
             [clojure.core.async :refer [chan go-loop <!]]
@@ -30,4 +30,4 @@
 
 (subscribe
  (fn [payload]
-   (dispatch (create-event :temperature-updated (format-payload payload)))))
+   (dispatch (create-event :conditions/updated (format-payload payload)))))

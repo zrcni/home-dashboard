@@ -22,5 +22,5 @@
 (defn dashboard [context]
   (fx/sub-val context get-in [:modes :dashboard]))
 
-(defn temperature-last-updated-relative [context]
+(defn conditions-last-updated-relative [context]
   (fx/sub-val context get-in [:modes :dashboard :last-updated-relative]))

@@ -4,7 +4,7 @@
             [clojure.core.async :refer [put! <! timeout go-loop]]
             [app.state.core :refer [*context]]
             [app.styles :refer [style]]
-            [app.temperature-mode.core :as temperature-mode]
+            [app.conditions.core :as conditions]
             [app.shutdown :as shutdown]
             [app.renderer :as renderer]
             [app.events.core :refer [dispatch]]
@@ -22,19 +22,19 @@
 (defn round1 [n]
   (Float/parseFloat (format "%.1f" n)))
 
-(defn gen-temperature-updated-event []
+(defn gen-conditions-updated-event []
   {:temperature (round1 (rand-float 20 25))
    :humidity (round1 (rand-float 30 45))
    :timestamp (/ (.toEpochMilli (Instant/now)) 1000)})
 
-(defn send-mock-temperature-update []
-  (put! temperature-mode/in-ch (gen-temperature-updated-event)))
+(defn send-mock-condition-update []
+  (put! conditions/in-ch (gen-conditions-updated-event)))
 
-;; send mocked temperature updates with
+;; send mocked condition updates with
 ;; randomized values every minute in dev
 (defonce sender-ch
   (go-loop []
-    (send-mock-temperature-update)
+    (send-mock-condition-update)
     (<! (timeout (* 60 1000)))
     (recur)))
 
