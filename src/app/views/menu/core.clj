@@ -24,10 +24,10 @@
      :children [(if-not fullscreen?
                   {:fx/type menu-button
                    :text "Enter fullscreen"
-                   :on-action (create-event :enter-fullscreen)}
+                   :on-action (create-event :fullscreen/enter)}
                   {:fx/type menu-button
                    :text "Exit fullscreen"
-                   :on-action (create-event :exit-fullscreen)})]}))
+                   :on-action (create-event :fullscreen/exit)})]}))
 
 (defn image-mode-menu-button [{:keys []}]
   {:fx/type :h-box

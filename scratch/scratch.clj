@@ -11,17 +11,17 @@
 
 (refresh)
 
-(events/dispatch :show-menu)
-(events/dispatch :hide-menu)
+(events/dispatch :menu/show)
+(events/dispatch :menu/hide)
 (events/dispatch :activate-mode-static-image)
 (events/dispatch :activate-mode-wolfenstein)
 (events/dispatch :activate-mode-temperature)
-(events/dispatch :enter-fullscreen)
-(events/dispatch :exit-fullscreen)
+(events/dispatch :fullscreen/enter)
+(events/dispatch :fullscreen/exit)
 
 (if (:fullscreen? (ctx-state @*context))
-  (events/dispatch :exit-fullscreen)
-  (events/dispatch :enter-fullscreen))
+  (events/dispatch :fullscreen/exit)
+  (events/dispatch :fullscreen/enter))
 
 (events/dispatch :wolfenstein-image-updated {:img-n 1})
 

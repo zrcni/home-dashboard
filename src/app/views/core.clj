@@ -18,7 +18,7 @@
 (defn create-overlay-button [alignment]
   {:fx/type toggle-menu-button
    :stack-pane/alignment alignment
-   :on-action (create-event :toggle-menu)})
+   :on-action (create-event :menu/toggle)})
 
 (defn root [{:keys [fx/context]}]
   (let [style (fx/sub-ctx context subs/style)

@@ -9,7 +9,7 @@
 (deftest show-menu
   (let [*context (atom (create-context default-state))
         dispatch (create-dispatcher {:context *context})]
-    (dispatch :show-menu)
+    (dispatch :menu/show)
 
     (fact "menu is opened"
      (:menu? (ctx-state @*context)) =eventually=> true)))
@@ -17,8 +17,8 @@
 (deftest hide-menu
   (let [*context (atom (create-context default-state))
         dispatch (create-dispatcher {:context *context})]
-    (dispatch :show-menu)
-    (dispatch :hide-menu)
+    (dispatch :menu/show)
+    (dispatch :menu/hide)
     (fact "menu is closed"
           (:menu? (ctx-state @*context)) =eventually=> false)))
 
@@ -41,7 +41,7 @@
 (deftest change-mode-hide-menu
   (let [*context (atom (create-context default-state))
         dispatch (create-dispatcher {:context *context})]
-    (dispatch :show-menu)
+    (dispatch :menu/show)
     (dispatch :activate-mode-static-image)
     (fact "changing mode hides the menu"
      (:menu? (ctx-state @*context)) =eventually=> false)))

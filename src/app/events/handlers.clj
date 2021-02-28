@@ -10,27 +10,27 @@
 ;; no-op for unhandled events
 (defmethod handle-event :default [_])
 
-(defmethod handle-event :show-menu [{:keys [fx/context]}]
+(defmethod handle-event :menu/show [{:keys [fx/context]}]
   (update-state! context assoc :menu? true))
 
-(defmethod handle-event :hide-menu [{:keys [fx/context]}]
+(defmethod handle-event :menu/hide [{:keys [fx/context]}]
   (update-state! context assoc :menu? false))
 
-(defmethod handle-event :toggle-menu [{:keys [fx/context]}]
+(defmethod handle-event :menu/toggle [{:keys [fx/context]}]
   (update-state! context update :menu? not))
 
-(defmethod handle-event :enter-fullscreen [{:keys [fx/context]}]
+(defmethod handle-event :fullscreen/enter [{:keys [fx/context]}]
   (update-state! context assoc :fullscreen? true))
 
-(defmethod handle-event :exit-fullscreen [{:keys [fx/context]}]
+(defmethod handle-event :fullscreen/exit [{:keys [fx/context]}]
   (update-state! context assoc :fullscreen? false))
 
 (defmethod handle-event :activate-mode-static-image [{:keys [fx/context state]}]
   (if-not (= (:active-mode state) :static-image)
     (do (update-state! context assoc :active-mode :static-image)
         {:dispatch-n [(make-deactivate-event-type (:active-mode state))
-                      :hide-menu]})
-    {:dispatch :hide-menu}))
+                      :menu/hide]})
+    {:dispatch :menu/hide}))
 
 (defmethod handle-event :image-mode-images-refreshed [{:keys [event/data fx/context]}]
   (update-state! context assoc-in [:modes :static-image :images] (:images data)))
@@ -39,7 +39,7 @@
   (update-state! context assoc-in [:modes :static-image :image] (:image data))
   (update-state! context assoc-in [:modes :static-image :selecting?] false))
 
-(defmethod handle-event :image-mode-open-select [{:keys [fx/context state]}]
+(defmethod handle-event :image-mode-open-select [{:keys [fx/context]}]
   (update-state! context assoc-in [:modes :static-image :selecting?] true)
   {:dispatch-n [:activate-mode-static-image]})
 
@@ -57,8 +57,8 @@
       (update-state! context assoc :active-mode :wolfenstein)
       {:activate-mode-wolfenstein! nil
        :dispatch-n [(make-deactivate-event-type (:active-mode state))
-                    :hide-menu]})
-    {:dispatch :hide-menu}))
+                    :menu/hide]})
+    {:dispatch :menu/hide}))
 
 (defmethod handle-event :deactivate-mode-wolfenstein [{:keys [state]}]
   (when-let [deactivate (-> state :modes :wolfenstein :deactivate-fn)]
@@ -74,8 +74,8 @@
     (do (update-state! context assoc :active-mode :temperature)
         {:dispatch-n [(make-deactivate-event-type (:active-mode state))
                       :refresh-temperature-last-updated-relative
-                      :hide-menu]})
-    {:dispatch :hide-menu}))
+                      :menu/hide]})
+    {:dispatch :menu/hide}))
 
 (defmethod handle-event :temperature-updated [{:keys [fx/context event/data]}]
   (update-state! context assoc-in [:modes :temperature :data] (select-keys data [:temperature :humidity]))

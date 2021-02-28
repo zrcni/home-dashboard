@@ -69,5 +69,5 @@
         dispatch (create-dispatcher {:context *context})]
 
     (assert (false? (:menu? (ctx-state @*context))))
-    (dispatch :show-menu)
+    (dispatch :menu/show)
     (assert (true? (:menu? (ctx-state @*context))))))
