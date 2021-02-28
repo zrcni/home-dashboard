@@ -13,9 +13,15 @@
   [*context]
   #(ctx-state (deref *context)))
 
+#_(defn wrap-log [f & _]
+  (fn [& args]
+    (println (select-keys (first args) [:event/type :event/data]))
+    (apply f args)))
+
 (defn create-handler
   ([{:keys [context effects coeffects]}]
    (-> handlers/handle-event
+       #_(wrap-log)
        (fx/wrap-co-effects
         ;; The context coeffect is an atom
         (merge {:fx/context #(identity context)

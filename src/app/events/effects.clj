@@ -8,7 +8,7 @@
 
 (defn wolfenstein-deactivate! [deactivate-fn dispatch!]
   (deactivate-fn)
-  (dispatch! :wolfenstein/remove-deactivate-fn))
+  (dispatch! (create-event :wolfenstein/remove-deactivate-fn)))
 
 (defn dispatch [e dispatch!]
   (dispatch! (coerce-event e)))
