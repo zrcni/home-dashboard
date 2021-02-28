@@ -1,4 +1,4 @@
-(ns app.wolfenstein-mode.api
+(ns app.wolfenstein.api
   (:require [clojure.core.async :refer [alt! go-loop timeout chan close! put!]]))
 
 (def *chan (atom nil))

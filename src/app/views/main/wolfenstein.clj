@@ -10,6 +10,6 @@
    :image image})
 
 (defn wolfenstein-view [{:keys [fx/context]}]
-  (let [mode (fx/sub-ctx context subs/wolfenstein-mode)]
+  (let [mode (fx/sub-ctx context subs/wolfenstein)]
     {:fx/type image
      :image (:image mode)}))

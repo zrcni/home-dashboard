@@ -1,4 +1,4 @@
-(ns app.wolfenstein-mode.random)
+(ns app.wolfenstein.random)
 
 (def *prev-img-n (atom nil))
 

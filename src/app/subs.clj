@@ -16,7 +16,7 @@
 (defn gallery [context]
   (fx/sub-val context :gallery))
 
-(defn wolfenstein-mode [context]
+(defn wolfenstein [context]
   (fx/sub-val context :wolfenstein))
 
 (defn conditions-last-updated-relative [context]

@@ -34,7 +34,7 @@
   (let [*context (atom (create-context (assoc default-state
                                               :active-mode :gallery)))
         dispatch (create-dispatcher {:context *context})]
-    (dispatch :activate-mode-wolfenstein)
+    (dispatch :activate-mode/wolfenstein)
     (fact "active mode is changed to :wolfenstein"
      (:active-mode (ctx-state @*context)) =eventually=> :wolfenstein)))
 

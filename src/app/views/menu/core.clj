@@ -49,7 +49,7 @@
               {:fx/type gallery-menu-button}
               {:fx/type menu-button
                :text "Wolfenstein"
-               :on-action (create-event :activate-mode-wolfenstein)}
+               :on-action (create-event :activate-mode/wolfenstein)}
               {:fx/type menu-button
                :text "Dashboard"
                :on-action (create-event :activate-mode/dashboard)}]})

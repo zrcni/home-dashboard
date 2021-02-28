@@ -1,4 +1,4 @@
-(ns app.wolfenstein-mode.time-based
+(ns app.wolfenstein.time-based
   (:import java.time.LocalTime))
 
 (def *prev-img-n (atom nil))

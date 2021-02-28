@@ -14,7 +14,7 @@
 (events/dispatch :menu/show)
 (events/dispatch :menu/hide)
 (events/dispatch :activate-mode/gallery)
-(events/dispatch :activate-mode-wolfenstein)
+(events/dispatch :activate-mode/wolfenstein)
 (events/dispatch :activate-mode/dashboard)
 (events/dispatch :fullscreen/enter)
 (events/dispatch :fullscreen/exit)
@@ -23,7 +23,7 @@
   (events/dispatch :fullscreen/exit)
   (events/dispatch :fullscreen/enter))
 
-(events/dispatch :wolfenstein-image-updated {:img-n 1})
+(events/dispatch :wolfenstein/image-updated {:img-n 1})
 
 @*context
 (ctx-state @*context)
