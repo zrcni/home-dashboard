@@ -2,6 +2,8 @@
   (:require [app.renderer :as renderer]
             [app.mqtt :as mqtt]
             [app.repl :as repl]
+            [app.config :refer [cfg]]
+            [clojure.pprint :refer [pprint]]
             [app.temperature-mode.mqtt :as temperature-mode-mqtt]
             [app.shutdown :as shutdown]
             [app.logger :as log]
@@ -10,6 +12,7 @@
 
 (defn -main [& _args]
   (log/info "Starting the app")
+  (pprint cfg)
 
   (shutdown/add-hook :mqtt/disconnect mqtt/disconnect!)
   (shutdown/add-hook :renderer/unmount renderer/unmount!)
