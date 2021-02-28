@@ -14,6 +14,8 @@ Command palette (SHIFT+CTRL+P):
 Load current file and dependencies: **CTRL+ALT+C + Enter**
 Evaluate current form: **CTRL+Enter**
 
+Nothing is evaluated on startup. Evaluate ns expression in app.scratch and start.
+
 Experiment in scratch/scratch.clj
 
 ### test watch
@@ -26,15 +28,19 @@ clj -M:test/watch
 clj -M:test
 ```
 
-### prod (temporary – build jar later)
-
-clj -M:prod -m app.core
+### prod
+```
+# compile and build the jar
+./package.sh
+# copy jar to the device, stop old version if it's running and start the new version
+./deploy.sh
+```
 
 ### TODO: oauth & google drive
 maybe helpful:
 https://stackoverflow.com/questions/28078490/google-drive-oauth2-without-browser
 
-### dev in Raspberry Pi
+### dev in Raspberry Pi (really slow, not worth)
 
 Mount host machine directory to RPi
 ```
@@ -57,7 +63,7 @@ $ ssh -L :<localport>:localhost:<remoteport> <remoteuser>@<remotehost> -p 22 -N 
 
 and connect to the REPL via editor!
 
-### setup commit hooks
+### setup git hooks
 ```
 ./git-hooks/setup.sh
 ```
@@ -65,3 +71,5 @@ and connect to the REPL via editor!
 ### other
 
 Raspberry Pi cannot show a jpg image??? I wonder what the issue is. JavaFX?
+
+dropbox on RPi: https://github.com/andreafabrizi/Dropbox-Uploader
