@@ -4,7 +4,8 @@
             [app.repl :as repl]
             [app.temperature-mode.mqtt :as temperature-mode-mqtt]
             [app.shutdown :as shutdown]
-            [app.logger :as log])
+            [app.logger :as log]
+            [app.events.core :refer [dispatch]])
   (:gen-class))
 
 (defn -main [& _args]
@@ -14,6 +15,8 @@
   (shutdown/add-hook :renderer/unmount renderer/unmount!)
   (shutdown/add-hook :clojure.core/shutdown-agents shutdown-agents)
   (shutdown/add-hook :repl/stop repl/stop!)
+
+  (dispatch :activate-mode-temperature)
 
   (repl/start!)
   (mqtt/connect!)
