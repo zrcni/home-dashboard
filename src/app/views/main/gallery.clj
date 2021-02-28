@@ -4,7 +4,7 @@
             [app.config :refer [cfg]]
             [app.events.api :refer [create-event]]))
 
-(defn image [{:keys [image]}]
+(defn gallery-image [{:keys [image]}]
   {:fx/type :image-view
    :style-class "main-image"
    :preserve-ratio true
@@ -37,11 +37,11 @@
                         images)}})
 
 (defn gallery-view [{:keys [fx/context]}]
-  (let [mode (fx/sub-ctx context subs/gallery)]
+  (let [{:keys [image images selecting?]} (fx/sub-ctx context subs/gallery)]
     {:fx/type :v-box
      :alignment :center
-     :children [(if (:selecting? mode)
+     :children [(if selecting?
                   {:fx/type thumbnail-list
-                   :images (:images mode)}
-                  {:fx/type image
-                   :image (:image mode)})]}))
+                   :images images}
+                  {:fx/type gallery-image
+                   :image image})]}))

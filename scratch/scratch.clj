@@ -13,9 +13,9 @@
 
 (events/dispatch :menu/show)
 (events/dispatch :menu/hide)
-(events/dispatch :activate-mode/gallery)
-(events/dispatch :activate-mode/wolfenstein)
-(events/dispatch :activate-mode/dashboard)
+(events/dispatch :show-view/gallery)
+(events/dispatch :show-view/wolfenstein)
+(events/dispatch :show-view/dashboard)
 (events/dispatch :fullscreen/enter)
 (events/dispatch :fullscreen/exit)
 

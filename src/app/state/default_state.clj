@@ -4,7 +4,7 @@
 (def default-state
   {:menu? false
    :fullscreen? (:fullscreen? cfg)
-   :active-mode :gallery
+   :active-view :gallery
    :gallery {:image "app/images/gallery/tonnin-seteli.png"
              :images []
              :selecting? false}

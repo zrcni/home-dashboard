@@ -1,9 +1,7 @@
 (ns app.events.handlers
   (:require [app.cljfx-utils :refer [update-state!]]
-            [app.utils :refer [date->relative]]))
-
-(defn- make-deactivate-event-type [mode]
-  (keyword (str "deactivate-mode/" (name mode))))
+            [app.utils :refer [date->relative]]
+            [app.events.api :refer [create-event]]))
 
 (defmulti handle-event :event/type)
 
@@ -25,10 +23,16 @@
 (defmethod handle-event :fullscreen/exit [{:keys [fx/context]}]
   (update-state! context assoc :fullscreen? false))
 
-(defmethod handle-event :activate-mode/gallery [{:keys [fx/context state]}]
-  (if-not (= (:active-mode state) :gallery)
-    (do (update-state! context assoc :active-mode :gallery)
-        {:dispatch-n [(make-deactivate-event-type (:active-mode state))
+(defmethod handle-event :hide-view [{:keys [event/data]}]
+  (case (:view data)
+    :gallery {:dispatch :hide-view/gallery}
+    :wolfenstein {:dispatch :hide-view/wolfenstein}
+    nil))
+
+(defmethod handle-event :show-view/gallery [{:keys [fx/context state]}]
+  (if-not (= (:active-view state) :gallery)
+    (do (update-state! context assoc :active-view :gallery)
+        {:dispatch-n [(create-event :hide-view {:view (:active-view state)})
                       :menu/hide]})
     {:dispatch :menu/hide}))
 
@@ -41,38 +45,40 @@
 
 (defmethod handle-event :gallery/open-select [{:keys [fx/context]}]
   (update-state! context assoc-in [:gallery :selecting?] true)
-  {:dispatch-n [:activate-mode/gallery]})
+  {:dispatch-n [:show-view/gallery]})
 
-(defmethod handle-event :deactivate-mode/gallery [{:keys [fx/context state]}]
+(defmethod handle-event :hide-view/gallery [{:keys [fx/context state]}]
   (when (-> state :gallery :selecting?)
     (update-state! context assoc-in [:gallery :selecting?] false)))
 
-(defmethod handle-event :set-deactivate-fn [{:keys [fx/context event/data]}]
-  (let [{:keys [mode deactivate-fn]} data]
-    (update-state! context assoc-in [mode :deactivate-fn] deactivate-fn)))
-
-(defmethod handle-event :activate-mode/wolfenstein [{:keys [fx/context state]}]
-  (if-not (= (:active-mode state) :wolfenstein)
+(defmethod handle-event :show-view/wolfenstein [{:keys [fx/context state]}]
+  (if-not (= (:active-view state) :wolfenstein)
     (do
-      (update-state! context assoc :active-mode :wolfenstein)
-      {:activate-mode/wolfenstein! nil
-       :dispatch-n [(make-deactivate-event-type (:active-mode state))
+      (update-state! context assoc :active-view :wolfenstein)
+      {:wolfenstein/activate! nil
+       :dispatch-n [(create-event :hide-view (:active-view state))
                     :menu/hide]})
     {:dispatch :menu/hide}))
 
-(defmethod handle-event :deactivate-mode/wolfenstein [{:keys [state]}]
-  (when-let [deactivate (-> state :wolfenstein :deactivate-fn)]
-    {:deactivate-mode/wolfenstein! deactivate}))
+(defmethod handle-event :hide-view/wolfenstein [{:keys [state]}]
+  (when-let [deactivate-fn (-> state :wolfenstein :deactivate-fn)]
+    {:wolfenstein/deactivate! deactivate-fn}))
 
 (defmethod handle-event :wolfenstein/image-updated [{:keys [fx/context event/data]}]
   (let [img-n (:img-n data)
         image (str "app/images/wolfenstein/" img-n ".png")]
     (update-state! context assoc-in [:wolfenstein :image] image)))
 
-(defmethod handle-event :activate-mode/dashboard [{:keys [fx/context state]}]
-  (if-not (= (:active-mode state) :dashboard)
-    (do (update-state! context assoc :active-mode :dashboard)
-        {:dispatch-n [(make-deactivate-event-type (:active-mode state))
+(defmethod handle-event :wolfenstein/add-deactivate-fn [{:keys [fx/context event/data]}]
+  (update-state! context assoc-in [:wolfenstein :deactivate-fn] (:deactivate-fn data)))
+
+(defmethod handle-event :wolfenstein/remove-deactivate-fn [{:keys [fx/context]}]
+  (update-state! context assoc-in [:wolfenstein :deactivate-fn] nil))
+
+(defmethod handle-event :show-view/dashboard [{:keys [fx/context state]}]
+  (if-not (= (:active-view state) :dashboard)
+    (do (update-state! context assoc :active-view :dashboard)
+        {:dispatch-n [(create-event :hide-view (:active-view state))
                       :conditions/refresh-last-updated-relative
                       :menu/hide]})
     {:dispatch :menu/hide}))

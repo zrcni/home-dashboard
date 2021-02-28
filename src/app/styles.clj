@@ -34,8 +34,8 @@
                         :-fx-font-weight "bold"}
       ".last-updated-text" {:-fx-font-size "1em"
                             :-fx-font-weight "bold"}
-      ".dashboard-mode-label" {:-fx-font-size "0.8em"}
-      ".dashboard-mode-no-data-text" {:-fx-font-size "1.2em"}
+      ".dashboard-label" {:-fx-font-size "0.8em"}
+      ".dashboard-no-data-text" {:-fx-font-size "1.2em"}
       ".clock-text" {:-fx-font-size "4em"
                      :-fx-font-weight "bold"}
       ".thumbnail-button:hover" (-> {:-fx-effect "innershadow(one-pass-box, rgba(0,0,0,1), 10, 1, 0, 0)"}

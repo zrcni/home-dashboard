@@ -22,33 +22,33 @@
     (fact "menu is closed"
           (:menu? (ctx-state @*context)) =eventually=> false)))
 
-(deftest change-mode-gallery
+(deftest change-view-gallery
   (let [*context (atom (create-context (assoc default-state
-                                              :active-mode :wolfenstein)))
+                                              :active-view :wolfenstein)))
         dispatch (create-dispatcher {:context *context})]
-    (dispatch :activate-mode/gallery)
-    (fact "active mode is changed to :gallery"
-     (:active-mode (ctx-state @*context)) =eventually=> :gallery)))
+    (dispatch :show-view/gallery)
+    (fact "active view is changed to gallery"
+     (:active-view (ctx-state @*context)) =eventually=> :gallery)))
 
-(deftest change-mode-wolfenstein
+(deftest change-view-wolfenstein
   (let [*context (atom (create-context (assoc default-state
-                                              :active-mode :gallery)))
+                                              :active-view :gallery)))
         dispatch (create-dispatcher {:context *context})]
-    (dispatch :activate-mode/wolfenstein)
-    (fact "active mode is changed to :wolfenstein"
-     (:active-mode (ctx-state @*context)) =eventually=> :wolfenstein)))
+    (dispatch :show-view/wolfenstein)
+    (fact "active view is changed to wolfenstein"
+     (:active-view (ctx-state @*context)) =eventually=> :wolfenstein)))
 
-(deftest change-mode-hide-menu
+(deftest change-view-hide-menu
   (let [*context (atom (create-context default-state))
         dispatch (create-dispatcher {:context *context})]
     (dispatch :menu/show)
-    (dispatch :activate-mode/gallery)
-    (fact "changing mode hides the menu"
-     (:menu? (ctx-state @*context)) =eventually=> false)))
+    (dispatch :show-view/gallery)
+    (fact "changing view hides the menu"
+          (:menu? (ctx-state @*context)) =eventually=> false)))
 
-(deftest change-mode-already-selected-hide-menu
+(deftest change-view-already-selected-hide-menu
   (let [*context (atom (create-context default-state))
         dispatch (create-dispatcher {:context *context})]
-    (dispatch :activate-mode/gallery)
-    (fact "activating already active mode hides the menu"
+    (dispatch :show-view/gallery)
+    (fact "activating already active view hides the menu"
           (:menu? (ctx-state @*context)) =eventually=> false)))

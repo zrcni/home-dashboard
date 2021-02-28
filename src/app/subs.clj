@@ -10,8 +10,8 @@
 (defn style [context]
   (fx/sub-val context :style))
 
-(defn active-mode [context]
-  (fx/sub-val context :active-mode))
+(defn active-view [context]
+  (fx/sub-val context :active-view))
 
 (defn gallery [context]
   (fx/sub-val context :gallery))

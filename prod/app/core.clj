@@ -23,7 +23,7 @@
 
   ;; TODO: use same code in dev and prod
   (gallery/on-refresh #(dispatch (create-event :gallery/images-refreshed {:images %})))
-  (dispatch :activate-mode/dashboard)
+  (dispatch :show-view/dashboard)
 
   (repl/start!)
   (mqtt/connect!)

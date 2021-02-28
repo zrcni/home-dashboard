@@ -24,8 +24,7 @@
   (let [style (fx/sub-ctx context subs/style)
         fullscreen? (fx/sub-ctx context subs/fullscreen?)
         menu? (fx/sub-ctx context subs/menu?)
-        overlay-buttons (map #(create-overlay-button %) [:top-right :top-left :bottom-right :bottom-left])
-        active-view {:fx/type (if menu? menu-view main-view)}]
+        overlay-buttons (map #(create-overlay-button %) [:top-right :top-left :bottom-right :bottom-left])]
     {:fx/type :stage
      :showing true
      :full-screen fullscreen?
@@ -37,4 +36,5 @@
              :stylesheets [(::css/url style)]
              :cursor (if (:cursor? cfg) :default :none)
              :root {:fx/type :stack-pane
-                    :children (cons active-view overlay-buttons)}}}))
+                    :children (cons {:fx/type (if menu? menu-view main-view)}
+                                    overlay-buttons)}}}))

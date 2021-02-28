@@ -30,8 +30,8 @@
         (merge {:context #(throw (ex-message "Do not use the fx/context coeffect!"))
                 :dispatch app-effects/dispatch
                 :dispatch-n app-effects/dispatch-n
-                :activate-mode/wolfenstein! app-effects/activate-mode-wolfenstein!
-                :deactivate-mode/wolfenstein! app-effects/deactivate-mode-wolfenstein!}
+                :wolfenstein/activate! app-effects/wolfenstein-activate!
+                :wolfenstein/deactivate! app-effects/wolfenstein-deactivate!}
                (or effects {})))
        (wrap-coerce-event))))
 

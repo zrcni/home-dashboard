@@ -6,11 +6,11 @@
             [app.views.main.dashboard :refer [dashboard-view]]))
 
 (defn main-view [{:keys [fx/context]}]
-  (let [active-mode (fx/sub-ctx context subs/active-mode)]
+  (let [active-view (fx/sub-ctx context subs/active-view)]
     {:fx/type :v-box
      :alignment :center
      :style-class "main-view"
-     :children (case active-mode
+     :children (case active-view
                  :gallery [{:fx/type gallery-view}]
                  :wolfenstein [{:fx/type wolfenstein-view}]
                  :dashboard [{:fx/type dashboard-view}]

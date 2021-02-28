@@ -35,7 +35,7 @@
    :children [{:fx/type menu-button
                :text "Gallery"
                :width 320
-               :on-action (create-event :activate-mode/gallery)}
+               :on-action (create-event :show-view/gallery)}
               {:fx/type menu-button
                :text "Select image"
                :width 160
@@ -49,7 +49,7 @@
               {:fx/type gallery-menu-button}
               {:fx/type menu-button
                :text "Wolfenstein"
-               :on-action (create-event :activate-mode/wolfenstein)}
+               :on-action (create-event :show-view/wolfenstein)}
               {:fx/type menu-button
                :text "Dashboard"
-               :on-action (create-event :activate-mode/dashboard)}]})
+               :on-action (create-event :show-view/dashboard)}]})
