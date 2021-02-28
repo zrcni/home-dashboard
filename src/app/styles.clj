@@ -43,4 +43,4 @@
                                               (assoc s :-fx-cursor :hand)
                                               s)))
       ".thumbnail-scroll-pane" {:-fx-background-color bg-color}
-      ".toggle-menu-button:hover" {:-fx-cursor :hand}})))
+      ".toggle-menu-button:hover" (if (:cursor? cfg) {:-fx-cursor :hand} {})})))
