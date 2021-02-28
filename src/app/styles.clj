@@ -1,23 +1,26 @@
 (ns app.styles
-  (:require [cljfx.css :as css]))
+  (:require [cljfx.css :as css]
+            [app.config :refer [cfg]]))
 
 (def style
   (let [bg-color "black"
         text-color "white"]
     (css/register
      ::style
-     {".menu-button" {:-fx-cursor :hand
-                      :-fx-text-base-color text-color
-                      :-fx-background-color "#111111"
-                      :-fx-font-family "Roboto"
-                      :-fx-font-size "20px"
-                      :-fx-font-weight "bold"
-                      :-fx-font-smoothing-type "lcd"
-                      :-fx-border-width 2
-                      :-fx-border-color "white"
-                      ":hover, :focused" {:-fx-border-color "#b32cd1"
-                                          :-fx-border-width 3
-                                          :-fx-text-base-color "#b32cd1"}}
+     {".menu-button" (-> {:-fx-text-base-color text-color
+                          :-fx-background-color "#111111"
+                          :-fx-font-family "Roboto"
+                          :-fx-font-size "20px"
+                          :-fx-font-weight "bold"
+                          :-fx-font-smoothing-type "lcd"
+                          :-fx-border-width 2
+                          :-fx-border-color "white"
+                          ":hover, :focused" {:-fx-border-color "#b32cd1"
+                                              :-fx-border-width 3
+                                              :-fx-text-base-color "#b32cd1"}}
+                         ;; set menu button cursor style only when cursor is enabled
+                         (as-> s (if (:cursor? cfg) (assoc s :-fx-cursor :hand) s)))
+
       ".main-view" {:-fx-background-color bg-color}
       ".menu-view" {:-fx-background-color bg-color}
       ".temperature-mode-row" {:-fx-padding "0px 0px 3em 0px"}
