@@ -15,19 +15,24 @@
    :style-class "thumbnail-button"
    :on-action on-action
    :graphic {:fx/type :image-view
-             :fit-height 200
+             :fit-width 480
              :preserve-ratio true
              :image image}})
 
 (defn thumbnail-list [{:keys [images]}]
-  {:fx/type :h-box
-   :alignment :center
-   :children (mapv
-              (fn [image]
-                {:fx/type thumbnail-button
-                 :image image
-                 :on-action (create-event :image-mode-select-image {:image image})})
-              images)})
+{:fx/type :scroll-pane
+ :style-class "thumbnail-scroll-pane"
+ :fit-to-width true
+ :hbar-policy :never
+ :vbar-policy :never
+ :content {:fx/type :v-box
+           :alignment :center
+           :children (mapv
+                      (fn [image]
+                        {:fx/type thumbnail-button
+                         :image image
+                         :on-action (create-event :image-mode-select-image {:image image})})
+                      images)}})
 
 (defn static-image-view [{:keys [fx/context]}]
   (let [mode (fx/sub-ctx context subs/static-image-mode)]
