@@ -26,6 +26,8 @@
 (events/dispatch :wolfenstein/image-updated {:img-n 1})
 
 @*context
+(require '[app.state.core :refer [*context]]
+         '[app.cljfx-utils :refer [ctx-state]])
 (ctx-state @*context)
 (:gallery (ctx-state @*context))
 
