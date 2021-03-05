@@ -2,7 +2,8 @@
   (:require [cljfx.api :as fx]
             [app.subs :as subs]
             [app.config :refer [cfg]]
-            [app.events.api :refer [create-event]]))
+            [app.events.api :refer [create-event]]
+            [app.components.core :refer [toolbar]]))
 
 (defn gallery-image [{:keys [image]}]
   {:fx/type :image-view
@@ -38,10 +39,16 @@
 
 (defn root [{:keys [fx/context]}]
   (let [{:keys [image images selecting?]} (fx/sub-ctx context subs/gallery)]
-    {:fx/type :v-box
-     :alignment :center
-     :children [(if selecting?
-                  {:fx/type thumbnail-list
-                   :images images}
-                  {:fx/type gallery-image
-                   :image image})]}))
+    {:fx/type :stack-pane
+     :children [{:fx/type :v-box
+                 :alignment :center
+                 :children [(if selecting?
+                              {:fx/type thumbnail-list
+                               :images images}
+                              {:fx/type gallery-image
+                               :image image})]}
+                {:fx/type toolbar
+                 :stack-pane/alignment :bottom-right
+                 :actions [{:text "Select image"
+                            :on-action (create-event :gallery/open-select)}]}]}))
+
