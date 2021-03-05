@@ -1,4 +1,4 @@
-(ns app.views.menu.core
+(ns app.views.menu
   (:require [cljfx.api :as fx]
             [app.subs :as subs]
             [app.events.api :refer [create-event]]))
@@ -41,7 +41,7 @@
                :width 160
                :on-action (create-event :gallery/open-select)}]})
 
-(defn menu-view [_]
+(defn root [_]
   {:fx/type :v-box
    :style-class "menu-view"
    :alignment :center

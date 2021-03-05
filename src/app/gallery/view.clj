@@ -1,4 +1,4 @@
-(ns app.views.main.gallery
+(ns app.gallery.view
   (:require [cljfx.api :as fx]
             [app.subs :as subs]
             [app.config :refer [cfg]]
@@ -36,7 +36,7 @@
                            :on-action (create-event :gallery/select-image {:image image})})
                         images)}})
 
-(defn gallery-view [{:keys [fx/context]}]
+(defn root [{:keys [fx/context]}]
   (let [{:keys [image images selecting?]} (fx/sub-ctx context subs/gallery)]
     {:fx/type :v-box
      :alignment :center

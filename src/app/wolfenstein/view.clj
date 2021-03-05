@@ -1,4 +1,4 @@
-(ns app.views.main.wolfenstein
+(ns app.wolfenstein.view
   (:require [cljfx.api :as fx]
             [app.subs :as subs]))
 
@@ -9,7 +9,7 @@
    :style-class "main-image"
    :image image})
 
-(defn wolfenstein-view [{:keys [fx/context]}]
+(defn root [{:keys [fx/context]}]
   (let [mode (fx/sub-ctx context subs/wolfenstein)]
     {:fx/type wolfenstein-image
      :image (:image mode)}))

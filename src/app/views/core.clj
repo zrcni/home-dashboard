@@ -1,8 +1,8 @@
 (ns app.views.core
   (:require [cljfx.api :as fx]
             [cljfx.css :as css]
-            [app.views.menu.core :refer [menu-view]]
-            [app.views.main.core :refer [main-view]]
+            [app.views.menu :as menu-view]
+            [app.views.main :as main-view]
             [app.config :refer [cfg]]
             [app.subs :as subs]
             [app.events.api :refer [create-event]]))
@@ -36,5 +36,5 @@
              :stylesheets [(::css/url style)]
              :cursor (if (:cursor? cfg) :default :none)
              :root {:fx/type :stack-pane
-                    :children (cons {:fx/type (if menu? menu-view main-view)}
+                    :children (cons {:fx/type (if menu? menu-view/root main-view/root)}
                                     overlay-buttons)}}}))

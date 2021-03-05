@@ -1,4 +1,4 @@
-(ns app.views.main.dashboard
+(ns app.dashboard.view
   (:import java.time.Instant)
   (:require [cljfx.api :as fx]
             [app.utils :refer [date->hhmmss]]
@@ -82,7 +82,7 @@
    :style-class ["dashboard-text" "dashboard-no-data-text"]
    :text "No condition data currently :("})
 
-(defn dashboard-view [{:keys [fx/context]}]
+(defn root [{:keys [fx/context]}]
   (let [conditions (fx/sub-ctx context subs/conditions)]
     {:fx/type :v-box
      :alignment :center
