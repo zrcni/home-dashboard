@@ -17,6 +17,9 @@
 (defmethod handle-event :menu/toggle [{:keys [fx/context]}]
   (update-state! context update :menu? not))
 
+(defmethod handle-event :toolbar/toggle-visibility [{:keys [fx/context]}]
+  (update-state! context update :toolbar-visible? not))
+
 (defmethod handle-event :fullscreen/enter [{:keys [fx/context]}]
   (update-state! context assoc :fullscreen? true))
 

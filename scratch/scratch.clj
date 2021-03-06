@@ -18,6 +18,7 @@
 (events/dispatch :show-view/dashboard)
 (events/dispatch :fullscreen/enter)
 (events/dispatch :fullscreen/exit)
+(events/dispatch :toolbar/toggle-visibility)
 
 (if (:fullscreen? (ctx-state @*context))
   (events/dispatch :fullscreen/exit)

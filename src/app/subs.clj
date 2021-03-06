@@ -7,6 +7,9 @@
 (defn menu? [context]
   (fx/sub-val context :menu?))
 
+(defn toolbar-visible? [context]
+  (fx/sub-val context :toolbar-visible?))
+
 (defn style [context]
   (fx/sub-val context :style))
 

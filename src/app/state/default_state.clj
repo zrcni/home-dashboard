@@ -3,6 +3,7 @@
 
 (def default-state
   {:menu? false
+   :toolbar-visible? false
    :fullscreen? (:fullscreen? cfg)
    :active-view :gallery
    :gallery {:image "app/images/gallery/tonnin-seteli.png"
