@@ -3,7 +3,7 @@
             [app.subs :as subs]
             [app.config :refer [cfg]]
             [app.events.api :refer [create-event]]
-            [app.components.core :refer [toolbar]]))
+            [app.components.core :refer [create-view-with-overlay]]))
 
 (defn gallery-image [{:keys [image]}]
   {:fx/type :image-view
@@ -39,16 +39,13 @@
 
 (defn root [{:keys [fx/context]}]
   (let [{:keys [image images selecting?]} (fx/sub-ctx context subs/gallery)]
-    {:fx/type :stack-pane
-     :children [{:fx/type :v-box
-                 :alignment :center
-                 :children [(if selecting?
-                              {:fx/type thumbnail-list
-                               :images images}
-                              {:fx/type gallery-image
-                               :image image})]}
-                {:fx/type toolbar
-                 :stack-pane/alignment :bottom-right
-                 :actions [{:text "Select image"
-                            :on-action (create-event :gallery/open-select)}]}]}))
-
+    (create-view-with-overlay
+     {:fx/type :v-box
+      :alignment :center
+      :children [(if selecting?
+                   {:fx/type thumbnail-list
+                    :images images}
+                   {:fx/type gallery-image
+                    :image image})]}
+     [{:text "Select image"
+       :on-action (create-event :gallery/open-select)}])))

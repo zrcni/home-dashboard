@@ -11,6 +11,7 @@
 
 (refresh)
 
+(require '[app.events.core :as events])
 (events/dispatch :menu/show)
 (events/dispatch :menu/hide)
 (events/dispatch :show-view/gallery)

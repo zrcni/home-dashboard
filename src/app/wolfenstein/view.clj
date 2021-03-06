@@ -1,6 +1,7 @@
 (ns app.wolfenstein.view
   (:require [cljfx.api :as fx]
-            [app.subs :as subs]))
+            [app.subs :as subs]
+            [app.components.core :refer [create-view-with-overlay]]))
 
 (defn wolfenstein-image [{:keys [image]}]
   {:fx/type :image-view
@@ -11,5 +12,7 @@
 
 (defn root [{:keys [fx/context]}]
   (let [mode (fx/sub-ctx context subs/wolfenstein)]
-    {:fx/type wolfenstein-image
-     :image (:image mode)}))
+    (create-view-with-overlay
+     {:fx/type wolfenstein-image
+      :style-class "main-view"
+      :image (:image mode)})))

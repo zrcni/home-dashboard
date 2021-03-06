@@ -4,6 +4,7 @@
             [app.utils :refer [date->hhmmss]]
             [app.subs :as subs]
             [app.events.core :refer [dispatch]]
+            [app.components.core :refer [create-view-with-overlay]]
             [clojure.core.async :refer [timeout close! go-loop <!]]))
 
 (defn clock-text [_]
@@ -84,9 +85,11 @@
 
 (defn root [{:keys [fx/context]}]
   (let [conditions (fx/sub-ctx context subs/conditions)]
-    {:fx/type :v-box
-     :alignment :center
-     :children (if (:data conditions)
-                 (cons {:fx/type clock} (create-conditions conditions))
-                 [{:fx/type clock}
-                  {:fx/type no-conditions}])}))
+    (create-view-with-overlay
+     {:fx/type :v-box
+      :alignment :center
+      :style-class "main-view"
+      :children (if (:data conditions)
+                  (cons {:fx/type clock} (create-conditions conditions))
+                  [{:fx/type clock}
+                   {:fx/type no-conditions}])})))
