@@ -11,6 +11,7 @@
 
 (refresh)
 
+#_:clj-kondo/ignore
 (require '[app.events.core :as events])
 (events/dispatch :menu/show)
 (events/dispatch :menu/hide)
@@ -28,6 +29,7 @@
 (events/dispatch :wolfenstein/image-updated {:img-n 1})
 
 @*context
+#_:clj-kondo/ignore
 (require '[app.state.core :refer [*context]]
          '[app.cljfx-utils :refer [ctx-state]])
 (ctx-state @*context)

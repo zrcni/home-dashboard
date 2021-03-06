@@ -7,10 +7,10 @@
    :toolbar-visible? false
    :fullscreen? (:fullscreen? cfg)
    :active-view :gallery
-   :gallery {:image (first gallery/default-images)
+   :gallery {:image gallery/default-image
              :images []
              :selecting? false}
-   :wolfenstein {:image "app/images/wolfenstein/1.png"
+   :wolfenstein {:image "images/wolfenstein/1.png"
                  :deactivate-fn nil}
    :conditions {:data nil
                 :last-updated nil

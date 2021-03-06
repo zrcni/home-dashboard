@@ -1,11 +1,11 @@
 (ns app.gallery.core
   (:require [app.config :refer [cfg]]
-            [app.gallery.file-system :refer [get-images]]))
+            [app.gallery.file-system :refer [get-images get-image]]))
 
-(def default-images (get-images (:src-images-path cfg)))
+(def default-image (get-image "images/gallery/default.png"))
 
-(def *images (atom (concat default-images
-                           (get-images (:images-path cfg)))))
+(def *images (atom (cons default-image
+                         (get-images (:images-path cfg)))))
 
 ;; TODO: Need to handle a case where currently selected file is removed.
 ;; Probably somewhere other than here.

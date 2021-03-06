@@ -73,7 +73,7 @@
 
 (defmethod handle-event :wolfenstein/image-updated [{:keys [fx/context event/data]}]
   (let [img-n (:img-n data)
-        image (str "app/images/wolfenstein/" img-n ".png")]
+        image (str "images/wolfenstein/" img-n ".png")]
     (update-state! context assoc-in [:wolfenstein :image] image)))
 
 (defmethod handle-event :wolfenstein/add-deactivate-fn [{:keys [fx/context event/data]}]

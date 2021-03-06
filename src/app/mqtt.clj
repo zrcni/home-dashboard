@@ -2,7 +2,7 @@
   (:require [app.config :refer [cfg]]
             [clojurewerkz.machine-head.client :as mh]
             [cheshire.core :as json]
-            [clojure.java [io :as io]]))
+            [clojure.java.io :as io]))
 
 (def qos {:at-most-once 0
           :at-least-once 1

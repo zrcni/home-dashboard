@@ -9,6 +9,8 @@
   org.clojure/core.cache {:mvn/version "1.0.207"}
   org.ocpsoft.prettytime/prettytime {:mvn/version "5.0.0.Final"}}
 
+ :paths ["src" "resources"]
+
  :aliases {:repl
            {:extra-deps {nrepl/nrepl                {:mvn/version "0.8.3"}
                          cider/cider-nrepl          {:mvn/version "0.25.8"}
@@ -21,7 +23,7 @@
 
            :scratch
            {:extra-paths ["scratch"]}
-           
+
            :dev
            {:extra-paths ["dev"]}
 

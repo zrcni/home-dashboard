@@ -5,5 +5,4 @@
    :repl-port 22222
    :fullscreen? true
    :cursor? false
-   :src-images-path "./src/app/images/gallery"
    :images-path (str (System/getenv "HOME") "/home_dashboard")})

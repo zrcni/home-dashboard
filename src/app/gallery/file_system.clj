@@ -22,3 +22,9 @@
       (->>
        (filter #(supported-file-ext? (str %)))
        (map #(-> % (io/input-stream) (Image.))))))
+
+(defn get-image [path]
+  (-> path
+      (io/resource)
+      (io/input-stream)
+      (Image.)))
