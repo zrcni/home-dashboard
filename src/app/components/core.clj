@@ -33,8 +33,8 @@
 (defn- toggle-menu-button [{:keys [on-action]}]
   {:fx/type :button
    :style-class "toggle-menu-button"
-   :pref-width 100
-   :pref-height 100
+   :pref-width 50
+   :pref-height 50
    :opacity 0
    :on-action on-action})
 
@@ -51,14 +51,12 @@
   ([view toolbar-actions]
    {:fx/type (fn [{:keys [fx/context]}]
                (let [menu? (fx/sub-ctx context subs/menu?)]
-                 (if menu?
-                   {:fx/type menu}
-                   {:fx/type :stack-pane
-                    :style-class "main-view"
-                    :children (concat [view]
-                                      (if toolbar-actions
-                                        [{:fx/type toolbar
-                                          :stack-pane/alignment :bottom-center
-                                          :actions toolbar-actions}]
-                                        [])
-                                      overlay-buttons)})))}))
+                 {:fx/type :stack-pane
+                  :style-class "main-view"
+                  :children (concat [(if menu? {:fx/type menu} view)]
+                                    (if toolbar-actions
+                                      [{:fx/type toolbar
+                                        :stack-pane/alignment :bottom-center
+                                        :actions toolbar-actions}]
+                                      [])
+                                    overlay-buttons)}))}))

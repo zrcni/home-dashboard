@@ -2,7 +2,10 @@
   (:require [app.config :refer [cfg]]
             [app.gallery.file-system :refer [get-images]]))
 
-(def *images (atom (get-images (:images-path cfg))))
+(def default-images (get-images (:src-images-path cfg)))
+
+(def *images (atom (concat default-images
+                           (get-images (:images-path cfg)))))
 
 ;; TODO: Need to handle a case where currently selected file is removed.
 ;; Probably somewhere other than here.
