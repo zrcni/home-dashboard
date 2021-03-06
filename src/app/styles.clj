@@ -12,7 +12,7 @@
       ".toolbar-button" (-> {:-fx-text-base-color text-color
                              :-fx-background-color "#111111"
                              :-fx-font-family "Roboto"
-                             :-fx-font-size "20px"
+                             :-fx-font-size "14px"
                              :-fx-font-weight "bold"
                              :-fx-font-smoothing-type "lcd"
                              :-fx-effect "innershadow(one-pass-box, rgba(0,0,0,1), 10, 1, 0, 0)"}

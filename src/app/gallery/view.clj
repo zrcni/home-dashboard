@@ -47,5 +47,8 @@
                     :images images}
                    {:fx/type gallery-image
                     :image image})]}
-     [{:text "Select image"
-       :on-action (create-event :gallery/open-select)}])))
+     [(if-not selecting?
+        {:text "Select image"
+         :on-action (create-event :gallery/open-select)}
+        {:text "Cancel"
+         :on-action (create-event :gallery/close-select)})])))

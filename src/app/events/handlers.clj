@@ -50,6 +50,10 @@
   (update-state! context assoc-in [:gallery :selecting?] true)
   {:dispatch-n [:show-view/gallery]})
 
+(defmethod handle-event :gallery/close-select [{:keys [fx/context]}]
+  (update-state! context assoc-in [:gallery :selecting?] false)
+  {:dispatch-n [:show-view/gallery]})
+
 (defmethod handle-event :hide-view/gallery [{:keys [fx/context state]}]
   (when (-> state :gallery :selecting?)
     (update-state! context assoc-in [:gallery :selecting?] false)))

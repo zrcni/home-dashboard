@@ -1,4 +1,4 @@
-(ns app.views.menu
+(ns app.components.menu
   (:require [cljfx.api :as fx]
             [app.subs :as subs]
             [app.events.api :refer [create-event]]))
@@ -29,7 +29,7 @@
                    :text "Exit fullscreen"
                    :on-action (create-event :fullscreen/exit)})]}))
 
-(defn root [_]
+(defn menu [_]
   {:fx/type :v-box
    :style-class "menu-view"
    :alignment :center

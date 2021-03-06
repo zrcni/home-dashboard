@@ -1,11 +1,13 @@
 (ns app.components.core
   (:require [cljfx.api :as fx]
             [app.subs :as subs]
-            [app.events.api :refer [create-event]]))
+            [app.events.api :refer [create-event]]
+            [app.components.menu :refer [menu]]))
 
-(defn- toolbar-action [{:keys [fx/context text on-action]}]
+(defn- toolbar-action [{:keys [fx/context text on-action width]}]
   (let [toolbar-visible? (fx/sub-ctx context subs/toolbar-visible?)]
     {:fx/type :button
+     :pref-width (or width 120)
      :style-class (filterv #(some? %)
                            ["button" "toolbar-button"
                             (when-not toolbar-visible? "transparent")])
@@ -17,7 +19,8 @@
 (def ^:private hide-button {:fx/type toolbar-action
                   :on-action (create-event :toolbar/toggle-visibility)
                   :visible? true
-                  :text "X"})
+                  :width 60
+                  :text "Hide"})
 
 ;; TODO: fade out
 (defn- toolbar [{:keys [actions]}]
@@ -46,12 +49,16 @@
 (defn create-view-with-overlay
   ([view] (create-view-with-overlay view nil))
   ([view toolbar-actions]
-   {:fx/type :stack-pane
-    :style-class "main-view"
-    :children (concat [view]
-                      (if toolbar-actions
-                        [{:fx/type toolbar
-                          :stack-pane/alignment :bottom-center
-                          :actions toolbar-actions}]
-                        [])
-                      overlay-buttons)}))
+   {:fx/type (fn [{:keys [fx/context]}]
+               (let [menu? (fx/sub-ctx context subs/menu?)]
+                 (if menu?
+                   {:fx/type menu}
+                   {:fx/type :stack-pane
+                    :style-class "main-view"
+                    :children (concat [view]
+                                      (if toolbar-actions
+                                        [{:fx/type toolbar
+                                          :stack-pane/alignment :bottom-center
+                                          :actions toolbar-actions}]
+                                        [])
+                                      overlay-buttons)})))}))
