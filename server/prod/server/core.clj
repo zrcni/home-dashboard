@@ -8,5 +8,5 @@
   (mqtt/connect!)
   (dashboard-api/on-state-updated
    (fn [state]
-     (swap! *dashboard-state assoc :data state)))
+     (reset! *dashboard-state state)))
   (server/start))
