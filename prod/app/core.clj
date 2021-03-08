@@ -23,8 +23,6 @@
   (shutdown/add-hook :repl/stop repl/stop!)
 
 
-  (state/on-updated (fn [state]
-                      (mqtt/publish "home/dashboard/state_updated" state)))
   ;; TODO: use same code in dev and prod
   (gallery/on-refresh #(dispatch (create-event :gallery/images-refreshed {:images %})))
   (dispatch :show-view/dashboard)
@@ -32,4 +30,15 @@
   (repl/start!)
   (mqtt/connect!)
   (conditions-mqtt/subscribe)
+  (state/on-updated (fn [state]
+                      (mqtt/publish "home/dashboard/state_updated" state)))
+
+  (app.mqtt/subscribe "home/dashboard/change_view"
+                      (fn [data]
+                        (when-let [action (case (-> data :view keyword)
+                                            :gallery :show-view/gallery
+                                            :dashboard :show-view/dashboard
+                                            :wolfenstein :show-view/wolfenstein
+                                            nil)]
+                          (dispatch action))))
   (renderer/mount!))

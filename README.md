@@ -76,3 +76,4 @@ https://www.raspberrypi.org/forums/viewtopic.php?t=291697
 dropbox on RPi: https://github.com/andreafabrizi/Dropbox-Uploader
 
 TODO: create bash script for getting device user & ip
+TODO: test mqtt stuff
