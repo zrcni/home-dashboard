@@ -6,12 +6,6 @@ https://github.com/vouch-opensource/krell/wiki/Reagent-Tutorial
 > ./dev.sh
 ```
 
-build JS
 ```
 ./build.sh
-```
-
-build APK
-```
-cd android && ./gradlew bundleRelease
 ```
