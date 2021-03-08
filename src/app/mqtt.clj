@@ -13,7 +13,7 @@
 (defn connect! []
   (when-not @*conn
     ;; TODO: handle connection errors and retries
-    (reset! *conn (mh/connect (:mqtt-broker-addr cfg)))))
+    (reset! *conn (mh/connect (:mqtt-broker-url cfg)))))
 
 (defn disconnect! []
   (when @*conn

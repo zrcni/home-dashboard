@@ -44,4 +44,17 @@
 (require 'app.conditions.mqtt)
 (app.conditions.mqtt/subscribe)
 
+(app.state.core/on-updated
+ (fn [state]
+   (app.mqtt/publish "home/dashboard/state_updated" state)))
+
+(app.mqtt/subscribe "home/dashboard/change_view"
+                    (fn [data]
+                      (when-let [action (case (-> data :view keyword)
+                                          :gallery :show-view/gallery
+                                          :dashboard :show-view/dashboard
+                                          :wolfenstein :show-view/wolfenstein
+                                          nil)]
+                        (events/dispatch action))))
+
 (send-mock-condition-update)
