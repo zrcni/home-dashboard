@@ -23,4 +23,4 @@ if [ ! "$match_count" -gt 0 ]; then
   exit 0
 fi
 
-clj -M:test
+cd app && clj -M:test
