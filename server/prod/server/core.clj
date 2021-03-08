@@ -4,7 +4,7 @@
             [server.dashboard-api :as dashboard-api]
             [server.state :refer [*dashboard-state]]))
 
-(defn -main [_ & _args]
+(defn -main [& _args]
   (mqtt/connect!)
   (dashboard-api/on-state-updated
    (fn [state]

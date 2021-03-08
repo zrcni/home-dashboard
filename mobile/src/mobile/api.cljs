@@ -16,7 +16,7 @@
                                                    ::last-updated])))
 
 (defn get-state []
-  (go (try (let [response (<p! (js/fetch (str (:api-url cfg) "/api/dashboard_state")))
+  (go (try (let [response (<p! (js/fetch (str (:api-url cfg) "/dashboard_state")))
                  body (<p! (.json response))
                  data (st/decode ::dashboard-state (js->clj body :keywordize-keys true) st/string-transformer)]
              data)
@@ -24,8 +24,7 @@
              err))))
 
 (defn change-view [view]
-  (prn "view????" view)
-  (go (try (<p! (js/fetch (str (:api-url cfg) "/api/change_dashboard_view")
+  (go (try (<p! (js/fetch (str (:api-url cfg) "/change_dashboard_view")
                           (clj->js {:method "POST"
                                     :headers {"Content-Type" "application/json"}
                                     :body (js/JSON.stringify (clj->js {:view view}))})))
