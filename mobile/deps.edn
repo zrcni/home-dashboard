@@ -1,0 +1,11 @@
+{:deps {io.vouch/krell {:git/url "https://github.com/vouch-opensource/krell.git"
+                        :sha "35786a94f4dd4bce4cf80542501e4d105184452a"}
+        io.vouch/reagent-react-native {:git/url "https://github.com/vouch-opensource/reagent-react-native.git"
+                                       :sha "54bf52788ab051920ed7641f386177374419e847"}
+        reagent/reagent {:mvn/version "0.10.0"
+                         :exclusions [cljsjs/react cljsjs/react-dom]}
+        org.slf4j/slf4j-simple {:mvn/version "1.7.30"}
+        org.slf4j/slf4j-api {:mvn/version "1.7.30"}
+        org.clojure/core.async {:mvn/version "1.3.610"}
+        org.clojure/spec.alpha {:mvn/version "0.2.194"}
+        metosin/spec-tools {:mvn/version "0.10.5"}}}
