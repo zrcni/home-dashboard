@@ -14,7 +14,8 @@
 (def app
   (ring/ring-handler
    (ring/router
-    [["/api/dashboard_state" {:get {:handler #'handlers/get-dashboard-state}}]
+    [["/ping" {:get {:handler (fn [_] {:status 200})}}]
+     ["/api/dashboard_state" {:get {:handler #'handlers/get-dashboard-state}}]
      ["/api/change_dashboard_view" {:post {:handler #'handlers/change-dashboard-view}}]]
     {:data {:coercion reitit.coercion.spec/coercion
             :muuntaja m/instance
