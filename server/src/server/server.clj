@@ -25,7 +25,10 @@
                          exception/exception-middleware
                          muuntaja/format-request-middleware
                          coercion/coerce-response-middleware
-                         coercion/coerce-request-middleware]}})))
+                         coercion/coerce-request-middleware]}})
+   (ring/routes
+    (ring/create-default-handler
+     {:not-found (constantly {:status 404 :body "Not found"})}))))
 
 (defn start []
   (log/info (str "Starting server on port " (:port cfg)))
