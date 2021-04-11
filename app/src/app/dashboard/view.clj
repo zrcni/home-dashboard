@@ -1,7 +1,7 @@
 (ns app.dashboard.view
   (:import java.time.Instant)
   (:require [cljfx.api :as fx]
-            [app.utils :refer [date->hhmmss]]
+            [app.utils :refer [date->hhmmss date->ddmmyyyy]]
             [app.subs :as subs]
             [app.events.core :refer [dispatch]]
             [app.components.core :refer [create-view-with-overlay]]
@@ -20,11 +20,25 @@
    :desc {:fx/type :text
           :style-class ["dashboard-text" "clock-text"]}})
 
+(defn calendar-date [_]
+  {:fx/type fx/ext-on-instance-lifecycle
+   :on-created (fn [c]
+                 (.setText c (date->ddmmyyyy(Instant/now)))
+                 (let [ch (go-loop []
+                            (<! (timeout 1000))
+                            (.setText c (date->ddmmyyyy(Instant/now)))
+                            (recur))]
+                   (.setUserData c {:ch ch})))
+   :on-deleted #(close! (:ch (.getUserData %)))
+   :desc {:fx/type :text
+          :style-class ["dashboard-text" "calendar-date-text"]}})
+
 (defn clock [_]
   {:fx/type :v-box
    :style-class "dashboard-row"
    :alignment :center
-   :children [{:fx/type clock-text}]})
+   :children [{:fx/type clock-text}
+              {:fx/type calendar-date}]})
 
 ;; TODO: thermometer icon
 (defn temperature [{:keys [temperature]}]
@@ -36,7 +50,7 @@
                :text (str temperature "°C")}
               {:fx/type :text
                :style-class ["dashboard-text" "dashboard-label"]
-               :text "TEMPERATURE"}]})
+               :text "temperature"}]})
 
 ;; TODO: water drop icon?
 (defn humidity [{:keys [humidity]}]
@@ -47,7 +61,7 @@
                :text (str humidity "%")}
               {:fx/type :text
                :style-class ["dashboard-text" "dashboard-label"]
-               :text "HUMIDITY"}]})
+               :text "humidity"}]})
 
 ;; TODO: clock icon
 (defn last-updated-text [{:keys [fx/context]}]

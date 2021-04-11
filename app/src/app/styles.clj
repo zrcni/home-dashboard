@@ -47,10 +47,11 @@
                                   :-fx-font-weight "bold"}
       ".last-updated-text" {:-fx-font-size "1em"
                             :-fx-font-weight "bold"}
-      ".dashboard-label" {:-fx-font-size "0.8em"}
+      ".dashboard-label" {:-fx-font-size "1.2em"}
       ".dashboard-no-data-text" {:-fx-font-size "1.2em"}
       ".clock-text" {:-fx-font-size "4em"
                      :-fx-font-weight "bold"}
+      ".calendar-date-text" {:-fx-font-size "1.4em"}
       ".thumbnail-button:hover" (-> {:-fx-effect "innershadow(one-pass-box, rgba(0,0,0,1), 10, 1, 0, 0)"}
                                     (as-> s (if (:cursor? cfg) (assoc s :-fx-cursor :hand) s)))
       ".thumbnail-scroll-pane .scroll-bar" {:-fx-background-color "transparent"}

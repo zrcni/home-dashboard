@@ -38,6 +38,12 @@
       (.withZone (ZoneId/systemDefault))
       (.format date)))
 
+(defn date->ddmmyyyy [date]
+  (-> "E dd/M – 'week' w"
+      (DateTimeFormatter/ofPattern)
+      (.withZone (ZoneId/systemDefault))
+      (.format date)))
+
 (defn s->ms
   "seconds to milliseconds"
   [s]
