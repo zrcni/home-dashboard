@@ -17,4 +17,4 @@ if [ -z "$device_user" ]; then
   exit 1
 fi
 
-ssh $ssh_opts -t $device_user@$device_ip 'tail -f "$HOME/logs/$(ls -t $HOME/logs/home_dashboard_server* | head -1)"'
+ssh $ssh_opts -t $device_user@$device_ip 'tail -f "$(ls -t $HOME/logs/home_dashboard_server* | head -1)"'

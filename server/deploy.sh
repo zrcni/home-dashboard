@@ -39,6 +39,12 @@ fi
 rsync -avz --quiet -e "ssh $ssh_opts" "$file_path" "$device_user@$device_ip:~/"
 rsync -avz --quiet -e "ssh $ssh_opts" "$PWD/start_home_dashboard_server.sh" "$device_user@$device_ip:~/"
 
+if [[ -f "~/.home_dashboard_server_pid" ]]; then
+  kill_command='cat ~/.home_dashboard_server_pid | ps -p $(xargs -I{} echo {}) >/dev/null && kill -15 $(cat ~/.home_dashboard_server_pid) && echo "Stopped the server" || echo "Server is not running"'
+  kill_output=$(ssh $ssh_opts $device_user@$device_ip $kill_command)
+  echo $kill_output
+fi
+
 log_file_path="~/logs/home_dashboard_server_$(date +%s).log"
 # run the jar
 echo "Starting the server"
