@@ -1,5 +1,7 @@
 (ns app.dev
-  (:import java.time.Instant)
+  (:import [java.time Instant]
+           [java.text DecimalFormat]
+           [java.text DecimalFormatSymbols])
   (:require [cljfx.api :as fx]
             [clojure.core.async :refer [put! <! timeout go-loop]]
             [app.state.core :refer [*context]]
@@ -19,8 +21,16 @@
 (defn rand-float [min max]
   (+ min (rand (- max min))))
 
+;; Java is APIs are so dumb sometimes...
+;; All I want to do is 25.132321321 -> 25.1
+;; Formatting the double to string with "%.1f" then parsing the string back
+;; into a double doesn't work when default Locale's decimal separator is ","
 (defn round1 [n]
-  (Float/parseFloat (format "%.1f" n)))
+  (let [formatter (DecimalFormat.)]
+    (.setDecimalFormatSymbols formatter (doto (DecimalFormatSymbols.)
+                                          (.setDecimalSeparator \.)))
+    (.setMaximumFractionDigits formatter 1)
+    (.format formatter n)))
 
 (defn gen-conditions-updated-event []
   {:temperature (round1 (rand-float 20 25))

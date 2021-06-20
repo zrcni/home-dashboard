@@ -70,6 +70,8 @@ and connect to the REPL via editor!
 
 ### other
 
+Default language and country are set via JVM options. Language is *en* and country is *FI*.
+
 Raspberry Pi cannot show a jpg image??? I wonder what the issue is. JavaFX?
 https://www.raspberrypi.org/forums/viewtopic.php?t=291697
 

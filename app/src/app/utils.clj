@@ -1,9 +1,9 @@
 (ns app.utils
-  (:import org.ocpsoft.prettytime.PrettyTime
-           org.ocpsoft.prettytime.units.JustNow
-           org.ocpsoft.prettytime.units.Millisecond
-           java.time.format.DateTimeFormatter
-           java.time.ZoneId)
+  (:import [org.ocpsoft.prettytime PrettyTime]
+           [org.ocpsoft.prettytime.units JustNow]
+           [org.ocpsoft.prettytime.units Millisecond]
+           [java.time.format DateTimeFormatter]
+           [java.time ZoneId])
   (:require [clojure.core.async :refer [put! chan go-loop timeout <!]]
             [clojure.string :refer [capitalize]]))
 
@@ -39,7 +39,7 @@
       (.format date)))
 
 (defn date->ddmmyyyy [date]
-  (-> "E dd/M – 'week' w"
+  (-> "E, dd/MM – 'week' w"
       (DateTimeFormatter/ofPattern)
       (.withZone (ZoneId/systemDefault))
       (.format date)))

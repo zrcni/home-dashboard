@@ -1,3 +1,5 @@
 #!/bin/bash
 
-clj -M:repl:dev:scratch
+set -e
+
+clj -J-Duser.country=FI -J-Duser.language=en -M:repl:dev:scratch
