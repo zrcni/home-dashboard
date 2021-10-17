@@ -1,3 +1,5 @@
+# THIS APP IS NOT USED ANYMORE
+
 Runs on a Raspberry Pi w/ 10" screen.
 
 ![dashboard](./dashboard.png)
