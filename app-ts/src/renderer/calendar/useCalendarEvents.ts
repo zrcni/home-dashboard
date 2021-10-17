@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { nanoid } from 'nanoid'
+import { useState, useEffect, useRef } from 'react'
 import { useMount } from 'renderer/hooks/useMount'
 import { IPC_CHANNELS } from '../../ipc-channels'
 import {
@@ -7,6 +8,7 @@ import {
 } from '../../types'
 
 export function useCalendarEvents(date: Date) {
+  const idRef = useRef(nanoid())
   const [data, setData] = useState<CalendarEvents | null>(null)
 
   const ddmm = dayMonth(date)
@@ -15,6 +17,7 @@ export function useCalendarEvents(date: Date) {
     window.electronAPI.ipcRenderer.send(
       IPC_CHANNELS.CALENDAR_EVENTS_REQUEST_UPDATE,
       {
+        id: idRef.current,
         date,
       }
     )
@@ -28,13 +31,13 @@ export function useCalendarEvents(date: Date) {
     ) => setData(payload.events)
 
     window.electronAPI.ipcRenderer.on(
-      IPC_CHANNELS.CALENDAR_EVENTS_UPDATE_RECEIVED,
+      `${IPC_CHANNELS.CALENDAR_EVENTS_UPDATE_RECEIVED}:${idRef.current}`,
       onMessage
     )
 
     return () => {
       window.electronAPI.ipcRenderer.off(
-        IPC_CHANNELS.CALENDAR_EVENTS_REQUEST_UPDATE,
+        `${IPC_CHANNELS.CALENDAR_EVENTS_REQUEST_UPDATE}:${idRef.current}`,
         onMessage
       )
     }

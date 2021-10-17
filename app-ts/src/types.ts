@@ -16,6 +16,7 @@ export interface NameDaysData {
 }
 
 export interface CalendarDateEventRequestPayload {
+  id: string
   date: Date
 }
 

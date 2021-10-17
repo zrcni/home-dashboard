@@ -43,7 +43,7 @@ export class CalendarDateEventRequestSubscrpition {
       }
 
       this.webContents.send(
-        IPC_CHANNELS.CALENDAR_EVENTS_UPDATE_RECEIVED,
+        `${IPC_CHANNELS.CALENDAR_EVENTS_UPDATE_RECEIVED}:${inPayload.id}`,
         outPayload
       )
     } catch (err) {

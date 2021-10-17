@@ -7,6 +7,7 @@ import { ConditionDataMissing } from './ConditionDataMissing'
 import { NameDayDetails } from './NameDayDetails'
 import { HolidayDetails } from './HolidayDetails'
 import { HolyDayDetails } from './HolyDayDetails'
+import './DashboardView.global.css'
 
 interface Props {
   date: Date

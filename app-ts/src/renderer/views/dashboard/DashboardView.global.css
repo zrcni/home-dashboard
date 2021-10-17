@@ -1,0 +1,50 @@
+#dashboard-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dashboard-row {
+  padding: 0 0 3em 0;
+  text-align: center;
+}
+
+.dashboard-text {
+  margin: 0;
+}
+
+.dashboard-row:last-child {
+  padding-bottom: 0;
+}
+
+.dashboard-temperature-text {
+  font-size: 2.8em;
+  font-weight: bold;
+}
+
+.dashboard-humidity-text {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.last-updated-text {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.dashboard-label {
+  font-size: 1.2em;
+}
+
+.dashboard-no-data-text {
+  font-size: 1.2em;
+}
+
+.clock-text {
+  font-size: 4em;
+  font-weight: bold;
+}
+
+.calendar-date-text {
+  font-size: 1.4em;
+}
