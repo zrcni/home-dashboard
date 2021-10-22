@@ -21,6 +21,10 @@ import { createMQTTClient } from './mqtt'
 import { ConditionsUpdatedSubscription } from './conditions/ConditionsUpdatedSubscription'
 import { CalendarDateEventRequestSubscrpition } from './calendar/CalendarDateEventRequestSubscrpition'
 
+process.on('unhandledRejection', (err) => {
+  console.error('unhandledRejection: ', err)
+})
+
 const pubSub = new PubSubMQTT(createMQTTClient(cfg.mqttBrokerUrl), {
   onError: console.error,
 })

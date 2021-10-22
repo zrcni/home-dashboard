@@ -8,7 +8,7 @@ import { useCalendarEvents } from '../../calendar/useCalendarEvents'
 
 export const DashboardViewController: React.FC = () => {
   const [dateNow, setDateNow] = useState(new Date())
-  const conditions = { temperature: 23.2, humidity: 39.2, lastUpdated: dateNow } // useLivingRoomConditions()
+  const conditions = useLivingRoomConditions()
   const eventsToday = useCalendarEvents(dateNow)
   const eventsTomorrow = useCalendarEvents(addDays(dateNow, 1))
 
