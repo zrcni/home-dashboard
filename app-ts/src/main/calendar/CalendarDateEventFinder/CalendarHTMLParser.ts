@@ -5,7 +5,7 @@ export class CalendarHTMLParser {
   private $: cheerio.Root
 
   private selectors = {
-    calendarDay: '.kuukausi_taulu .kuukausi_taulu_sisa tbody',
+    calendarDay: '.kuukausi_taulu table tbody',
     calendarDayNum: '.kasikuva:first-child > td[align=RIGHT]',
     holyDayEvent: '.teksti_pyh',
     holidayDayEvent: '.teksti_juh',
@@ -17,7 +17,6 @@ export class CalendarHTMLParser {
 
   getEventsByDayOfMonth(dayOfMonth: number) {
     const calendarDayElement = this.findCalendarDayElement(dayOfMonth)
-
     return {
       holiday: this.findHolidayEvents(this.$(calendarDayElement)),
       holy: this.findHolyDayEvents(this.$(calendarDayElement)),
