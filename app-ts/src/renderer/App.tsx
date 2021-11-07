@@ -1,4 +1,4 @@
-import { DashboardViewController } from './views/dashboard-v2'
+import { DashboardViewController } from './views/dashboard'
 import './App.global.css'
 
 export default function App() {

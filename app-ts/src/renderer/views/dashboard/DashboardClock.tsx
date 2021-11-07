@@ -1,4 +1,5 @@
 import { formatDate } from 'renderer/utils/formatDate'
+import { HeaderCell } from './HeaderCell'
 
 interface Props {
   date: Date
@@ -6,13 +7,13 @@ interface Props {
 
 export const DashboardClock: React.FC<Props> = ({ date }) => {
   return (
-    <div className="dashboard-row">
+    <HeaderCell>
       <p className="dashboard-text clock-text">{formatTimeOfDay(date)}</p>
 
       <p className="dashboard-text calendar-date-text">
         {formatCalendarDate(date)}
       </p>
-    </div>
+    </HeaderCell>
   )
 }
 

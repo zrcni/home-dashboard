@@ -2,16 +2,22 @@ import { Temperature } from 'types'
 
 interface Props {
   temperature: Temperature
+  useLabel?: boolean
 }
 
-export const TemperatureDetails: React.FC<Props> = ({ temperature }) => {
+export const TemperatureDetails: React.FC<Props> = ({
+  temperature,
+  useLabel,
+}) => {
   return (
-    <div className="dashboard-row">
-      <p className="dashboard-text dashboard-temperature-text">
+    <>
+      <p className="dashboard-text dashboard-header-side-text">
         {formatTemperature(temperature)}
       </p>
-      <p className="dashboard-text dashboard-label">temperature</p>
-    </div>
+      {useLabel && (
+        <p className="dashboard-text dashboard-label">temperature</p>
+      )}
+    </>
   )
 }
 

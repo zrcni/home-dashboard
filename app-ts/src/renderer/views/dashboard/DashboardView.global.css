@@ -1,11 +1,9 @@
 #dashboard-view {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
 }
 
 .dashboard-row {
-  padding: 0 0 3em 0;
   text-align: center;
 }
 
@@ -47,4 +45,36 @@
 
 .calendar-date-text {
   font-size: 1.4em;
+}
+
+.dashboard-view-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.dashboard-header-cell {
+  align-self: center;
+}
+
+.dashboard-header-side-text {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.event-details-container {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.event-details-container {
+  margin-bottom: 1em;
+}
+
+.event-details-container:last-child {
+  margin-bottom: 0;
 }

@@ -1,7 +1,6 @@
 import { IpcMain, WebContents } from 'electron'
 import { IPC_CHANNELS } from '../../ipc-channels'
-import { NameDayFinder } from './NameDayFinder/NameDayFinder'
-import { CalendarDateEventFinder } from './CalendarDateEventFinder'
+import * as webCalEventFinders from './WebCalEventFinder'
 import {
   CalendarDateEventUpdateReceivedPayload,
   CalendarDateEventRequestPayload,
@@ -30,15 +29,19 @@ export class CalendarDateEventRequestSubscrpition {
     inPayload: CalendarDateEventRequestPayload
   ) {
     try {
-      const [calendarEvents, nameDays] = await Promise.all([
-        CalendarDateEventFinder.findByDate(inPayload.date),
-        NameDayFinder.findByDate(inPayload.date),
+      const [holiday, goodToKnow, nameday, theme] = await Promise.all([
+        webCalEventFinders.holiday.findByDate(inPayload.date),
+        webCalEventFinders.goodToKnow.findByDate(inPayload.date),
+        webCalEventFinders.nameday.findByDate(inPayload.date),
+        webCalEventFinders.theme.findByDate(inPayload.date),
       ])
 
       const outPayload: CalendarDateEventUpdateReceivedPayload = {
         events: {
-          ...calendarEvents,
-          nameDays,
+          holiday,
+          goodToKnow,
+          nameday,
+          theme,
         },
       }
 

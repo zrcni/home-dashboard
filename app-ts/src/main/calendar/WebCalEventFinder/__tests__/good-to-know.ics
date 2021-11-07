@@ -1,0 +1,2958 @@
+BEGIN:VCALENDAR
+VERSION;VALUE=TEXT:2.0
+PRODID;VALUE=TEXT:-//WebCal.Guru//NONSGML WebCal.Guru//FI
+CALSCALE;VALUE=TEXT:GREGORIAN
+METHOD;VALUE=TEXT:PUBLISH
+X-MS-OLK-FORCEINSPECTOROPEN:FALSE
+NAME;VALUE=TEXT:Hyvä tietää
+X-WR-CALNAME;VALUE=TEXT:Hyvä tietää
+SOURCE;VALUE=URI:https://www.webcal.guru/fi-FI/lataa_kalenteri?calendar_in
+ stance_id=180
+URL;VALUE=URI:https://www.webcal.guru/fi-FI/tapahtumalista?calendar_id=hol
+ idays_good_to_know
+IMAGE;VALUE=URI;DISPLAY=BADGE,THUMBNAIL;FMTTYPE=image/png:https://www.webc
+ al.guru/_img/fontawesome-pro-5.15.0-web/pngs/light/info.png
+X-WR-RELCALID;VALUE=TEXT:E548AB11-4CA1-414A-A89F-3B3646E018AA@webcal.guru
+UID;VALUE=TEXT:E548AB11-4CA1-414A-A89F-3B3646E018AA@webcal.guru
+DESCRIPTION;VALUE=TEXT:Merkittäviä tapahtumia\, jotka eivät ole varsinaisi
+ a pyhäpäiviä\, kuten kesäaika tai aattopäivät. Tärkeä lisä Pyhät-kalenteri
+ in.
+X-WR-CALDESC;VALUE=TEXT:Merkittäviä tapahtumia\, jotka eivät ole varsinais
+ ia pyhäpäiviä\, kuten kesäaika tai aattopäivät. Tärkeä lisä Pyhät-kalenter
+ iin.
+X-WR-TIMEZONE;VALUE=TEXT:UTC
+X-PUBLISHED-TTL;VALUE=DURATION:P1W
+REFRESH-INTERVAL;VALUE=DURATION:P1W
+X-OWNER;VALUE=TEXT:CN="WebCal.Guru":mailto:guru@webcal.guru
+COLOR:#74a7ff
+X-APPLE-CALENDAR-COLOR:#74a7ff
+X-OUTLOOK-COLOR:#74a7ff
+X-FUNAMBOL-COLOR:#74a7ff
+X-LOTUS-CHARSET:UTF-8
+BEGIN:VEVENT
+UID;VALUE=TEXT:DFB21A54-C190-4A1D-A265-F2A5A61BF2BB@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211001
+DTEND;VALUE=DATE:20211002
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Heijastinpäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Joka toinen suomalainen käyttää hei
+ jastinta (51 %). Heijastin lisää jalankulkijan näkyvyyttä ja turvallisuutt
+ a pimeällä liikuttaessa. Siksi Liikenneturva kehottaa kaikkia kiinnittämää
+ n heijastimen –viimeistään nyt.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 
+ +0000\n\nLisätietoja\nhttps://www.liikenneturva.fi/fi/ajankohtaista/tiedot
+ e/110-nyt-heijastinpaiva
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.liikenneturva.fi/fi/ajankohtaista/tiedote/110-ny
+ t-heijastinpaiva
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:1A8EA0B2-F4CF-483F-A1E6-957FB70D5944@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211003
+DTEND;VALUE=DATE:20211004
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Vanhustenpäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Päivitetty: Sun\, 31 Oct 2021 19:17
+ :14 +0000\n\nLisätietoja\nhttps://www.vtkl.fi/fin/kampanjat/vanhustenpaiva
+ _ja_viikko/
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.vtkl.fi/fin/kampanjat/vanhustenpaiva_ja_viikko/
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:82D914CA-E15C-4FB2-A24C-22968D8E2B36@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211004
+DTEND;VALUE=DATE:20211005
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Korvapuustipäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Korvapuusti on kanelilla\, sokerill
+ a ja voilla täytetty pulla. Ylimääräinen rasva täytteessä lisää sen säilyv
+ yyttä tavalliseen vehnäpullaan verrattuna.\n\nPäivitetty: Sun\, 31 Oct 202
+ 1 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Korvapuusti
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Korvapuusti
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:4D4588CB-003D-4EC7-ADB9-B5DCE587C96A@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211008
+DTEND;VALUE=DATE:20211009
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Hiljaisuuden päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Päivitetty: Sun\, 31 Oct 2021 19:17
+ :14 +0000\n\nLisätietoja\nhttps://www.kuuloliitto.fi/fin/kuuloliitto/ajank
+ ohtaista/?nid=453
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.kuuloliitto.fi/fin/kuuloliitto/ajankohtaista/?ni
+ d=453
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:AB8B1332-644C-46F2-AF2B-7B44920BC328@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211010
+DTEND;VALUE=DATE:20211011
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Aleksis Kiven päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- suomalaisen kirjallisuuden päivä\
+ n\nAleksis Kivi oli suomalainen kirjailija. Kivi kirjoitti kansallisromaan
+ in aseman saavuttaneen romaanin Seitsemän veljestä (1870)\, näytelmiä kute
+ n Nummisuutarit (1864) ja runoja.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:1
+ 4 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Aleksis_Kivi
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Aleksis_Kivi
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:2B3C02AE-FE59-4319-AC37-45F52CD59949@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211017
+DTEND;VALUE=DATE:20211018
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Asunnottomien yö
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Päivitetty: Sun\, 31 Oct 2021 19:17
+ :14 +0000\n\nLisätietoja\nhttps://www.asunnottomienyo.fi/
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.asunnottomienyo.fi/
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:4CF2BE9E-B120-4C94-A361-9C133455B107@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211018
+DTEND;VALUE=DATE:20211019
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🧚 Satupäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Päivitetty: Sun\, 31 Oct 2021 19:17
+ :14 +0000\n\nLisätietoja\nhttps://www.satupaiva.fi/
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.satupaiva.fi/
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:BFBF50FF-212F-41EE-A767-822689FE9DE2@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211024
+DTEND;VALUE=DATE:20211025
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🇺🇳 Yhdistyneiden kansakuntien päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Yhdistyneiden kansakuntien päivä on
+  24. lokakuuta vietettävä vuosipäivä\, jota vietetään Yhdistyneiden kansak
+ untien (YK) perustamisen kunniaksi. Sanottuun päivään mennessä vuonna 1945
+  oli riittävän suuri määrä jäsenvaltioita vahvistanut YK:n perustamissopim
+ uksen niin\, että se tuli voimaan. Useissa maissa se on nykyisin myös lipu
+ tuspäivä ja osa kansainvälistä YK-viikkoa\, jota vietetään aina 20.–26. lo
+ kakuuta\, alkoi viikko 20. lokakuuta tai ei.\n\nPäivitetty: Sun\, 31 Oct 2
+ 021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Yhdistyne
+ iden_kansakuntien_p%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Yhdistyneiden_kansakuntien_p%C
+ 3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:33A12D07-5BE1-4A1E-AA93-48291A713DB8@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211025
+DTEND;VALUE=DATE:20211030
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Digiturvaviikko
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Digi- ja väestötietoviraston Digitu
+ rvapalvelut tukevat koko julkista hallintoa turvallisten palvelujen ja toi
+ mintaympäristön kehittämisessä.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 
+ +0000\n\nLisätietoja\nhttps://dvv.fi/digiturva
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://dvv.fi/digiturva
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:CB614CF3-12CA-441C-A40A-4BEC978A4797@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211026
+DTEND;VALUE=DATE:20211027
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Salasanapäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Digi- ja väestötietoviraston Digitu
+ rvapalvelut tukevat koko julkista hallintoa turvallisten palvelujen ja toi
+ mintaympäristön kehittämisessä.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 
+ +0000\n\nLisätietoja\nhttps://dvv.fi/digiturva
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://dvv.fi/digiturva
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:BA6E028D-259E-4CD7-A514-D8F7C8FF395B@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211027
+DTEND;VALUE=DATE:20211028
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Tietoturvapäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Digi- ja väestötietoviraston Digitu
+ rvapalvelut tukevat koko julkista hallintoa turvallisten palvelujen ja toi
+ mintaympäristön kehittämisessä.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 
+ +0000\n\nLisätietoja\nhttps://dvv.fi/digiturva
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://dvv.fi/digiturva
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:2D0F9288-4A04-4847-A220-B27DC27A1855@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211031
+DTEND;VALUE=DATE:20211101
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🎃 Halloween
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Halloween on anglosaksisissa maissa
+  pyhäinpäivän aattona lokakuun viimeisenä päivänä 31.10. vietettävä juhlap
+ äivä\, alkuaan muinaisten kelttien talven alkamisen päivä samhain\, jolloi
+ n vainajahenkien uskottiin liikkuvan. Nimi on lyhenne englannin sanoista ”
+ All Hallows' Eve” eli kaikkien pyhien aatto.\n\nPäivitetty: Sun\, 31 Oct 2
+ 021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Halloween
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Halloween
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:3EB276CD-B0F5-48B5-AB3B-A2AAFA6AC041@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211031
+DTEND;VALUE=DATE:20211101
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🕒 Kesäaika loppuu
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Kesäaika on laajalti käytetty järje
+ stelmä virallisen paikallisen ajan siirtämiseksi eteenpäin\, yleensä yhden
+  tunnin verran\, kevät- ja kesäkuukausiksi.\n\nPäivitetty: Sun\, 31 Oct 20
+ 21 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Kes%C3%A4a
+ ika
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Kes%C3%A4aika
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:97BB7020-9BA3-46D1-A35F-C503AAE82D20@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211101
+DTEND;VALUE=DATE:20211102
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🚗 Talvirenkaiden käyttöpakko alkaa
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- Nastarenkaiden käyttö sallittu\n\
+ nRenkaiden pitävyydestä riippuu koko ajoneuvon hallinta. Ratsaa renkaasi j
+ a vaihda huonokuntoiset uusiin. Tarkista myös ilmanpaineet. Lue lisää.\n\n
+ Päivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://www.l
+ iikenneturva.fi/fi/liikenteessa/auton-renkaat#420c947a
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.liikenneturva.fi/fi/liikenteessa/auton-renkaat#4
+ 20c947a
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:87371EB4-2A35-4D50-A5CE-397CD464AA41@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211102
+DTEND;VALUE=DATE:20211103
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Vainajien muistopäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- Commemoration of All the Faithful
+  Departed\n- Day of the Dead\n\nVainajien muistopäivä on juhlapäivä\, joka
+  on omistettu vainajille. Niiden alkuna on pakanallinen vainajien palvonta
+ . Kristillinen vaikutus on joko syrjäyttänyt kansanomaiset vainajien muist
+ opäivät tai ne ovat yhdistyneet\, kuten esimerkiksi kekri. Kristillisistä 
+ kirkkokunnista protestanttisissa muistopäivää vietetään pyhäinpäivänä\, ro
+ omalais-katolisessa on erityinen vainajien päivä. Ortodoksisessa kirkossa 
+ vainajien muistopäiviä on useita\, esimerkiksi radunitsa pääsiäisen jälkei
+ senä tiistaina ja helluntailauantai.\n\nPäivitetty: Sun\, 31 Oct 2021 19:1
+ 7:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Vainajien_muistop
+ %C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Vainajien_muistop%C3%A4iv%C3%A
+ 4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:47EF9ADB-E919-4A17-A60D-17D8E3BD0FF4@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211106
+DTEND;VALUE=DATE:20211107
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Ruotsalaisuuden päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- Kustaa Aadolfin päivä\n- Svenska 
+ dagen\n\nRuotsalaisuuden päivä on Suomessa 6. marraskuuta vietettävä ylein
+ en liputuspäivä. Päivä juhlistaa suomenruotsalaisten oikeutta käyttää ruot
+ sin kieltä Suomessa. Tarkoituksena on Folktingetin mukaan myös kunnioittaa
+  Suomen kieliryhmien yhteistä kaksikielistä isänmaata.\n\nPäivitetty: Sun\
+ , 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki
+ /Ruotsalaisuuden_p%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Ruotsalaisuuden_p%C3%A4iv%C3%A
+ 4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:DC62CDE7-B218-4BD4-AE63-F3C06998AAD2@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211109
+DTEND;VALUE=DATE:20211116
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Peliviikko
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Peliviikko on kirjastoista lähtenyt
+  pelikasvatuksen teemaviikko\, jonka tavoitteena on rakentaa positiivista 
+ pelikulttuuria ja vähentää pelaamiseen ja pelaajiin liittyviä ennakkoluulo
+ ja. Pelaaminen on suosittu\, hyödyllinen ja hauska harrastus\, joka sopii 
+ kaikenikäsille ja on parhaimmillaan sukupolvia ja eri kansallisuuksia yhdi
+ stävää toimintaa.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisät
+ ietoja\nhttps://www.peliviikko.fi/
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.peliviikko.fi/
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:188BBCC4-6A4B-48D5-A812-E40F3480F435@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211111
+DTEND;VALUE=DATE:20211112
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Ahtisaari-päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Valtakunnalliset Ahtisaari-päivät t
+ uovat rauhanvälityksen kaikkiin suomalaisiin kouluihin. Sovittelulla on Su
+ omessa pitkät perinteet. Jo päiväkodeissa harjoitellaan riitojen sopimista
+  ja yhteisten sääntöjen luomista. Suomalaisen rauhanvälityksen avulla puol
+ estaan ratkotaan vaikeita konflikteja maailman haastavimmilla kriisialueil
+ la.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttp:/
+ /ahtisaaripaiva.fi
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:http://ahtisaaripaiva.fi
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:A9C41756-31A0-43D8-AF59-F5F67FBA2E8E@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211112
+DTEND;VALUE=DATE:20211113
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Nenäpäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Lahjoittaminen on helppoa Nenäpäivä
+ n kautta. Nenäpäivän lahjoitusten avulla yhä useampi lapsi pääsee kouluun\
+ , saa riittävästi ravintoa\, rokotetaan tappavien tautien ehkäisemiseksi j
+ a kasvaa turvatummassa ympäristössä. Avun vie perille yhdeksän luotettavaa
+  järjestöä: Suomen Punainen Risti\, Unicef\, Plan\, Pelastakaa Lapset\, So
+ lidaarisuus\, Sask\, Fida\, Kirkon Ulkomaanapu ja Suomen Lähetysseura.\n\n
+ Päivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://www.n
+ enapaiva.fi/
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.nenapaiva.fi/
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:6C7877C6-D4D6-4917-A83C-DC6489C4177E@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211114
+DTEND;VALUE=DATE:20211115
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:👨 Isänpäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Isänpäivä on juhlapäivä\, jota viet
+ etään isien kunniaksi ja muistoksi. Suomessa\, muissa Pohjoismaissa Tanska
+ a lukuun ottamatta sekä Virossa päivää vietetään marraskuun toisena sunnun
+ taina\, puoli vuotta äitienpäivän jälkeen. Muualla maailmassa ajankohta va
+ ihtelee. Isänpäivä on ollut Suomessa virallinen liputuspäivä vuodesta 2019
+ \, sitä aiemmin se oli vakiintunut liputuspäivä vuosina 1987–2018. Myös is
+ oisiä usein juhlistetaan isänpäivänä.\n\nPäivitetty: Sun\, 31 Oct 2021 19:
+ 17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Is%C3%A4np%C3%A4
+ iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Is%C3%A4np%C3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:170FF420-FCC9-446E-AE2B-3A1A230A3B5E@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211119
+DTEND;VALUE=DATE:20211120
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Kansainvälinen miestenpäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Kansainvälinen miestenpäivä on kans
+ ainvälinen vuosipäivä\, jota vietetään 19. marraskuuta. Vuonna 1999 alkanu
+ tta tapahtumaa juhlitaan nykyään monissa järjestöissä kaikissa maanosissa\
+ , ja sillä on myös Unescon tuki. Miestenpäivä huomioidaan ainakin jollain 
+ tasolla yli 80 valtiossa.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\
+ n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Kansainv%C3%A4linen_miestenp
+ %C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Kansainv%C3%A4linen_miestenp%C
+ 3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:661CDD52-CE92-4441-A4DA-5215BC97BA2A@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211120
+DTEND;VALUE=DATE:20211121
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🧸 Lapsen oikeuksien päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Kansainvälinen lasten päivä on YK:n
+  yleiskokouksen aloitteesta vuodesta 1954 vietetty kansainvälinen vuosipäi
+ vä. Päivän ajankohta vaihtelee maittain. Useissa maissa\, myös Suomessa si
+ tä vietetään 20. marraskuuta\, sillä tuona päivänä vuonna 1959 hyväksyttii
+ n Lasten oikeuksien julistus ja 20. marraskuuta 1989 Lapsen oikeuksien sop
+ imus.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttp
+ s://fi.wikipedia.org/wiki/Kansainv%C3%A4linen_lasten_p%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Kansainv%C3%A4linen_lasten_p%C
+ 3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:20F94AEB-B25D-4F43-AFE7-F6135F691FDF@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211121
+DTEND;VALUE=DATE:20211122
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Itsemurhan uhrien muistopäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Päivitetty: Sun\, 31 Oct 2021 19:17
+ :14 +0000\n\nLisätietoja\nhttps://mtkl.fi/palvelut/tapahtumat-ja-kurssit/k
+ ynttilatapahtuma/
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://mtkl.fi/palvelut/tapahtumat-ja-kurssit/kynttilatapah
+ tuma/
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:FD5F3E44-E6AF-4F62-AC3E-E5BAC3FC8395@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211125
+DTEND;VALUE=DATE:20211126
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🦃 Kiitospäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Kiitospäivä on Yhdysvalloissa ja Ka
+ nadassa vuosittain vietettävä kansallinen juhlapäivä. Sitä vietetään Yhdys
+ valloissa marraskuun neljäntenä torstaina ja Kanadassa lokakuun toisena ma
+ anantaina. Näistä täysin erillisiä kiitospäiviä vietetään ainakin Grenadas
+ sa 25. lokakuuta ja Japanissa loppuvuodesta.\n\nPäivitetty: Sun\, 31 Oct 2
+ 021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Kiitosp%C
+ 3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Kiitosp%C3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:4BC82928-92D5-4A45-AA1D-1E3AB4C25911@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211126
+DTEND;VALUE=DATE:20211127
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Black Friday
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Black Friday on kiitospäivän jälkei
+ nen päivä eli marraskuun neljännen torstain jälkeinen perjantai\, ja sitä 
+ pidetään Yhdysvalloissa kauppojen joulusesongin avauspäivänä. Black Friday
+  on siellä kaupoille vuoden suurin yksittäinen ostospäivä\, ja ne myyvät e
+ rilaisia tuotteita alennettuun hintaan. Kaupat avaavat ovensa normaalia ai
+ kaisemmin\, yleensä viideltä tai kuudelta\, ja ne pysyvät avoinna jopa ilt
+ ayhteentoista asti. Vuosittain amerikkalaiset kuluttavat päivän aikana kym
+ meniä miljardeja dollareita.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +00
+ 00\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Black_Friday
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Black_Friday
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:FF8EA12E-7828-45A7-AACD-D19EBFF20C8F@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211128
+DTEND;VALUE=DATE:20211129
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Ensimmäinen adventti
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- Adventus humiliationis\n- nöyrtym
+ isen adventti\n\nAdvent Sunday\, also called the First Sunday of Advent or
+  First Advent Sunday\, among the Western Christian Churches\, is the first
+  day of the liturgical year and the start of the season of Advent.\n\nPäiv
+ itetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://en.wikipe
+ dia.org/wiki/Advent_Sunday
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://en.wikipedia.org/wiki/Advent_Sunday
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:89FF69D5-CB62-4C20-AC6F-182BC1E6256E@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211129
+DTEND;VALUE=DATE:20211130
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Cyber Monday
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Cyber Monday on ostospäivä\, jota v
+ ietetään Black Friday -viikonlopun jälkeisenä maanantaina. Silloin varsink
+ in verkkokaupoissa on tarjouksia tuotteista. Ilmiö on lähtöisin Yhdysvallo
+ ista\, mistä se on viime vuosina levinnyt ympäri maailmaa.\n\nPäivitetty: 
+ Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/
+ wiki/Cyber_Monday
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Cyber_Monday
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:ECFCA9A4-A68D-4195-A019-81271AB5D1B9@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211203
+DTEND;VALUE=DATE:20211204
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Osta työtä Suomeen -päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Päivitetty: Sun\, 31 Oct 2021 19:17
+ :14 +0000\n\nLisätietoja\nhttps://suomalainentyo.fi/asiasana/osta-tyota-su
+ omeen-paiva/
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://suomalainentyo.fi/asiasana/osta-tyota-suomeen-paiva/
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:EA937B42-77B6-4400-A766-346406C933CC@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211205
+DTEND;VALUE=DATE:20211206
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Toinen adventtti
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- Adventus glorificationis\n- kunni
+ an adventti\n\nAdventti tarkoittaa joulua edeltävää vajaan neljän viikon j
+ aksoa kristillisessä kirkollisessa kalenterissa. Läntisten Kirkkojen kirkk
+ ovuosi on keskiajan lopulta lähtien alkanut ensimmäisestä\nadventtisunnunt
+ aista\, joka on aikaisintaan 27. marraskuuta ja viimeistään 3. joulukuuta.
+  Adventtisunnuntait ovat neljä joulua edeltävää sunnuntaita. Jokaisena adv
+ enttisunnuntaina sytytetään adventtikynttilä.\n\nPäivitetty: Sun\, 31 Oct 
+ 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Adventti
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Adventti
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:0FC1935D-E114-4A2B-AEC8-C04F736F2CE9@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211208
+DTEND;VALUE=DATE:20211209
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Jean Sibeliuksen päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- suomalaisen musiikin päivä\n\nJoh
+ an Christian Julius ”Jean” Sibelius oli suomalainen myöhäisromantiikan tai
+ demusiikin säveltäjä. Hänen kansallisromanttinen musiikkinsa oli tärkeässä
+  osassa Suomen kansallisen identiteetin muodostumisessa. Sibelius on kansa
+ invälisesti tunnetuin ja esitetyin suomalainen säveltäjä. Sinfonioiden ja 
+ sinfonisten runojen luojana Sibelius oli 1900-luvun merkittävimpiä.\n\nPäi
+ vitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikip
+ edia.org/wiki/Jean_Sibelius
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Jean_Sibelius
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:3E75FFB0-69F8-4E08-ACA1-18D74352FE15@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211212
+DTEND;VALUE=DATE:20211213
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Kolmas adventti
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- Adventus spiritualis\n- pyhän hen
+ gen adventti\n\nAdventti tarkoittaa joulua edeltävää vajaan neljän viikon 
+ jaksoa kristillisessä kirkollisessa kalenterissa. Läntisten Kirkkojen kirk
+ kovuosi on keskiajan lopulta lähtien alkanut ensimmäisestä\nadventtisunnun
+ taista\, joka on aikaisintaan 27. marraskuuta ja viimeistään 3. joulukuuta
+ . Adventtisunnuntait ovat neljä joulua edeltävää sunnuntaita. Jokaisena ad
+ venttisunnuntaina sytytetään adventtikynttilä.\n\nPäivitetty: Sun\, 31 Oct
+  2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Adventt
+ i
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Adventti
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:602FE9F5-C8E5-48F4-AA44-B36D0F83497B@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211213
+DTEND;VALUE=DATE:20211214
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Lucianpäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Lucian päivää vietetään Pyhän Lucia
+ n muistoksi vuosittain hänen kuolinpäivänään 13. joulukuuta. Muistopäivä k
+ uuluu alun perin katoliseen pyhimyskalenteriin\, mutta nykyisin sitä viete
+ tään ennen kaikkea ruotsinkielisessä kulttuurissa. Perinteeseen kuuluu Luc
+ ia-neito\, joka on pukeutunut valkoisiin vaatteisiin\, punaiseen vyöhön ja
+  kynttiläkruunuun ja pitää kädessään kynttilää.\n\nPäivitetty: Sun\, 31 Oc
+ t 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Lucian
+ _p%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Lucian_p%C3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:B9CD2AA3-3673-49AB-A412-E222640EFF24@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211215
+DTEND;VALUE=DATE:20211216
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🎵 Joululaulupäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Päivitetty: Sun\, 31 Oct 2021 19:17
+ :14 +0000\n\nLisätietoja\nhttps://www.jouluradio.fi/artikkelit/sunnuntaina
+ -15-12-joululaulupaivana-on-taas-lupa-laulaa
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.jouluradio.fi/artikkelit/sunnuntaina-15-12-joulu
+ laulupaivana-on-taas-lupa-laulaa
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:7122F100-90FA-49E7-A6AD-14C1209BF7A9@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211219
+DTEND;VALUE=DATE:20211220
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Neljäs adventti
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- Adventus sanctificationis\n- pyhä
+  adventti\n\nAdventti tarkoittaa joulua edeltävää vajaan neljän viikon jak
+ soa kristillisessä kirkollisessa kalenterissa. Läntisten Kirkkojen kirkkov
+ uosi on keskiajan lopulta lähtien alkanut ensimmäisestä\nadventtisunnuntai
+ sta\, joka on aikaisintaan 27. marraskuuta ja viimeistään 3. joulukuuta. A
+ dventtisunnuntait ovat neljä joulua edeltävää sunnuntaita. Jokaisena adven
+ ttisunnuntaina sytytetään adventtikynttilä.\n\nPäivitetty: Sun\, 31 Oct 20
+ 21 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Adventti
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Adventti
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:F321D212-D02A-42E8-A0C9-2609D931E511@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211221
+DTEND;VALUE=DATE:20211222
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:☀️ Talvipäivänseisaus
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Talvipäivänseisaus on vuoden lyhin 
+ päivä. Pohjoisella pallonpuoliskolla se on ajankohta\, jolloin Aurinko on 
+ suoraan Kauriin kääntöpiirin yläpuolella. Silloin Auringon deklinaatio on 
+ minimissään ja aurinko on alimmillaan taivaalla etelässä ollessaan. Pohjoi
+ sen napapiirin pohjoispuolella aurinko ei silloin nouse lainkaan. Talvipäi
+ vänseisaus ajoittuu aikavälille 21.–22. joulukuuta.\n\nPäivitetty: Sun\, 3
+ 1 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Ta
+ lvip%C3%A4iv%C3%A4nseisaus
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Talvip%C3%A4iv%C3%A4nseisaus
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:59757E91-4E5F-477C-AF5E-30365817B32A@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211224
+DTEND;VALUE=DATE:20211225
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🎄 Jouluaatto
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Jouluaatto on joulupäivää edeltävä 
+ päivä\, jota vietetään 24. joulukuuta. Jouluaatto ei ole virallinen almana
+ kkaan merkitty pyhäpäivä\, jos päivä ei osu sunnuntaille.\n\nPäivitetty: S
+ un\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/w
+ iki/Jouluaatto_Suomessa
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Jouluaatto_Suomessa
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:23B12D9D-0237-4640-A2D7-A059784FECEF@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211228
+DTEND;VALUE=DATE:20211229
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Viattomien lasten päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Viattomien lasten päivä on kristinu
+ skossa juhlapäivä\, jota vietetään niiden betlehemiläisten lasten muistoks
+ i\, jotka kuningas Herodes Matteuksen evankeliumin 2. luvun mukaan surmaut
+ ti.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps:
+ //fi.wikipedia.org/wiki/Viattomien_lasten_p%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Viattomien_lasten_p%C3%A4iv%C3
+ %A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:746ABCBB-1466-4C2C-A58B-E22E41E3006B@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20211231
+DTEND;VALUE=DATE:20220101
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🎆 Uudenvuodenaatto
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Uusivuosi on juhla\, jolla juhliste
+ taan vuoden vaihtumista\, kun vanhan vuoden viimeinen päivä (uudenvuodenaa
+ tto) vaihtuu uuden vuoden ensimmäiseksi päiväksi (uudenvuodenpäivä). Uutta
+ vuotta juhlitaan ympäri maailmaa eri tavoin. Uuden vuoden alkaessa on tapa
+ na muistella menneen vuoden tapahtumia sekä tehdä suunnitelmia alkavan vuo
+ den varalle. Uusivuosi yhteen kirjoitettuna tarkoittaa tapahtumaa\, jota v
+ ietetään viimeisenä päivänä. Erikseen kirjoitettuna uusi vuosi viittaa kok
+ o seuraavaan vuoteen.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nL
+ isätietoja\nhttps://fi.wikipedia.org/wiki/Uusivuosi
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Uusivuosi
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:ED1FF61B-52CD-448D-A112-7E9959972341@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220113
+DTEND;VALUE=DATE:20220114
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Joulurauhan loppumisen päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- nuutinpäinä\n\nJoulurauha on vanh
+ aan pohjoismaiseen lainsäädäntöön kuulunut määräys 20 päivää kestäneestä a
+ janjaksosta joulun aikana. Keskiajalla Ruotsissa joulurauha oli kuninkaanr
+ auha\, jonka kautta hallitsija käytti tuomiovaltaansa sukuyhteisöjen yli. 
+ Muita vastaavia lakeja olivat esimerkiksi käräjärauha ja naisrauha. Joulur
+ auhan aikana tehdyistä rikkomuksista annetut rangaistukset olivat ankaramp
+ ia kuin muulloin.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisät
+ ietoja\nhttps://fi.wikipedia.org/wiki/Joulurauha
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Joulurauha
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:4BC8E35F-D756-4AD7-A26D-BC2814B20E56@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220123
+DTEND;VALUE=DATE:20220124
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Aluevaalit
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Päivitetty: Sun\, 31 Oct 2021 19:17
+ :14 +0000\n\nLisätietoja\nhttps://vaalit.fi/aluevaalit
+CLASS;VALUE=TEXT:PUBLIC
+LOCATION;VALUE=TEXT:Muualla paitsi Helsingissä
+URL;VALUE=URI:https://vaalit.fi/aluevaalit
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:D0EC8B49-A883-4298-ABB9-0C46E80C1361@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220201
+DTEND;VALUE=DATE:20220202
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🐉 Kiinalainen uusivuosi
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Kiinalainen uusivuosi on kiinalaist
+ en vuoden tärkein juhla\, jota vietetään perheen ja sukulaisten kanssa. Ny
+ kyisin pääjuhla kestää neljä päivää\, jotka ovat tyypillisesti vapaapäiviä
+  maissa\, joissa asuu runsaasti kiinalaisia. Kiinan lisäksi tällaisia mait
+ a ovat muun muassa Malesia ja Singapore. Uudenvuoden vietto päättyy lyhtyj
+ uhlaan.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nht
+ tps://fi.wikipedia.org/wiki/Kiinalainen_uusivuosi
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Kiinalainen_uusivuosi
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:B111693E-E5C5-44A9-A678-9B19DE331F4F@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220202
+DTEND;VALUE=DATE:20220203
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🕯️ Kynttilänpäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Kynttilänpäivä on kristillinen juhl
+ apäivä\, jota vietetään alkujaan 40 päivää joulusta\, siis 2. helmikuuta\,
+  sen muistoksi\, että Jeesus vietiin 40 päivän ikäisenä temppeliin ja Sime
+ on siunasi hänet.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisät
+ ietoja\nhttps://fi.wikipedia.org/wiki/Kynttil%C3%A4np%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Kynttil%C3%A4np%C3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:B5197C3B-E4C3-4982-A24C-D13177738F49@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220205
+DTEND;VALUE=DATE:20220206
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:J. L. Runebergin päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Johan Ludvig Runeberg oli suomalain
+ en runoilija\, opettaja\, toimittaja\, pappi ja professori. Runebergiä pid
+ etään Suomen kansallisrunoilijana. Hänen ruotsiksi kirjoittamansa työt vai
+ kuttivat merkittävästi myös Ruotsin kirjallisuuteen. J. L. Runebergin puol
+ iso oli kirjailija Fredrika Runeberg.\n\nPäivitetty: Sun\, 31 Oct 2021 19:
+ 17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Johan_Ludvig_Run
+ eberg
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Johan_Ludvig_Runeberg
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:52E996CF-DDDA-4A73-A771-9A655BD22E2B@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220206
+DTEND;VALUE=DATE:20220207
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Saamelaisten kansallispäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Saamelaisten kansallispäiväksi on v
+ alittu 6. helmikuuta\, sillä tuona päivänä vuonna 1917 Pohjoismaiden saame
+ laiset aloittivat valtionrajat ylittävän keskinäisen yhteistyön. Yhteistyö
+ stä päätettiin Norjan Trondheimin saamelaiskokouksessa\, joka oli ensimmäi
+ nen laatuaan. Saamelaisten poliittisen tietoisuuden katsotaan syntyneen tu
+ ohon aikaan. Virikkeenä oli maailmalla leviävä kansallisuusaate. Saamelais
+ ten pyrkimyksenä oli ensisijaisesti säilyttää mahdollisuus perinteisiin el
+ inkeinoihinsa.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätiet
+ oja\nhttps://fi.wikipedia.org/wiki/Saamelaisten_kansallisp%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Saamelaisten_kansallisp%C3%A4i
+ v%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:CAAEC0BC-2AA3-4156-AE3B-E33768FE49F2@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220211
+DTEND;VALUE=DATE:20220212
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:112-päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Hätäkeskuslaitos on sisäministeriön
+  alainen valtakunnallinen\, verkottuneen toimintamallin mukainen virasto. 
+ Hätäkeskuslaitoksen lakisääteisenä tehtävänä on hätätilanteita koskevien h
+ ätäpuheluiden vastaanottaminen ja arviointi sekä tehtävän välittäminen pel
+ astus-\, poliisi- tai sosiaali- ja terveystoimen viranomaiselle välittömiä
+  toimenpiteitä varten.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\n
+ Lisätietoja\nhttps://112.fi/
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://112.fi/
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:661BFE40-7F84-4A3F-AE7D-69DF30E4B2A7@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220214
+DTEND;VALUE=DATE:20220215
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:💝 Ystävänpäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Ystävänpäivä on useissa maissa 14. 
+ helmikuuta vietettävä juhla. Kansainvälisestä tavasta poiketen suomalainen
+  ystävänpäivä on yleisemmin ystävien muistamisen\, ei vain rakastavaisten\
+ , juhlapäivä. Ystävänpäivänä ystäviä muistetaan ystävänpäiväkorteilla tai 
+ muilla tervehdyksillä.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\n
+ Lisätietoja\nhttps://fi.wikipedia.org/wiki/Yst%C3%A4v%C3%A4np%C3%A4iv%C3%A
+ 4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Yst%C3%A4v%C3%A4np%C3%A4iv%C3%
+ A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:24844372-45A6-4020-AF35-90DF48AAEA8E@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220227
+DTEND;VALUE=DATE:20220228
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Laskiaissunnuntai
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Laskiainen on pääsiäistä edeltävä j
+ uhla\, johon kuuluu sekä pakanallisia että kirkollisia perinteitä.\n\nPäiv
+ itetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipe
+ dia.org/wiki/Laskiainen
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Laskiainen
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:1CFB6325-F847-456F-A4A9-2C2095D122C0@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220228
+DTEND;VALUE=DATE:20220301
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Kalevalan päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- suomalaisen kulttuurin päivä\n\nK
+ alevalan päivä on suomalaisen kulttuurin päivä\, jota vietetään Suomen kan
+ salliseepoksen\, Kalevalan kunniaksi 28. helmikuuta. Päivä on virallinen l
+ iputuspäivä.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoj
+ a\nhttps://fi.wikipedia.org/wiki/Kalevalan_p%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Kalevalan_p%C3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:59F953E3-5128-4F08-A136-F0BE09A261DE@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220301
+DTEND;VALUE=DATE:20220302
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Laskiaistiistai
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Laskiainen on pääsiäistä edeltävä j
+ uhla\, johon kuuluu sekä pakanallisia että kirkollisia perinteitä.\n\nPäiv
+ itetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipe
+ dia.org/wiki/Laskiainen
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Laskiainen
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:9394D681-A5AA-4B36-A97D-B375B7713561@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220302
+DTEND;VALUE=DATE:20220303
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Tuhkakeskiviikko
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Tuhkakeskiviikko on läntisen kristi
+ kunnan kirkkovuodessa juhla\, joka aloittaa pääsiäistä edeltävän 40 päivän
+  paastonajan. Tuhkakeskiviikko on kirkkovuodessa laskiaissunnuntaita seura
+ ava keskiviikko\, joka samalla lopettaa paastoa edeltävän karnevaali- tai 
+ laskiaisajan. Paastonaika jatkuu tuhkakeskiviikosta lankalauantaihin. Tuhk
+ akeskiviikon ja pääsiäislauantain väliin jää\, nämä päivät mukaan luettuin
+ a\, 46 päivää\, mutta paastopäivien lukumääräksi tulee 40\, koska paastona
+ jan sunnuntait ja palmusunnuntai eivät ole paastopäiviä. 40 päivän paaston
+ aika muistuttaa Jeesuksen paastosta autiomaassa ennen hänen julkisen toimi
+ ntansa alkua. Sen tarkoituksena on valmistaa kristittyjä pääsiäisen vietto
+ on\, auttaa heitä miettimään syntejään ja puutteitaan sekä tekemään niistä
+  parannusta kehottaen heitä samalla lähimmäisenrakkauden tekoihin.\n\nPäiv
+ itetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipe
+ dia.org/wiki/Tuhkakeskiviikko
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Tuhkakeskiviikko
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:6ABCD581-435E-4B36-A8E5-7DF50F5C90BC@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220308
+DTEND;VALUE=DATE:20220309
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:👭 Kansainvälinen naistenpäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Kansainvälinen naistenpäivä on kans
+ ainvälinen vuosipäivä\, jota on vietetty 8. maaliskuuta 1900-luvun alkupuo
+ lelta lähtien. Vuonna 1975\, jota vietettiin kansainvälisenä naisten vuote
+ na\, Yhdistyneet kansakunnat vahvisti päivän vieton\, ja se sai samalla ni
+ men ”Yhdistyneiden kansakuntien naisten oikeuksien ja kansainvälisen rauha
+ n päivä”.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\n
+ https://fi.wikipedia.org/wiki/Kansainv%C3%A4linen_naistenp%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Kansainv%C3%A4linen_naistenp%C
+ 3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:D8B84E78-B796-448A-A508-D9543364B958@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220316
+DTEND;VALUE=DATE:20220317
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Keltaisen nauhan päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Reumaliiton iloisen liikunnallinen 
+ Keltaisen nauhan päivä muistuttaa vuosittain arkiliikunnan merkityksestä. 
+ Päivää vietetään maaliskuun puolivälissä\, mutta arkiliikuntaa kannattaa h
+ arrastaa vuoden ympäri joka päivä.  Seuraava Keltaisen nauhan päivä on kes
+ kiviikko 17.3.2021! Keltaisen nauhan päivä Facebookissa\n\nPäivitetty: Sun
+ \, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://www.reumaliitto.fi/f
+ i/keltaisen-nauhan-paiva
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.reumaliitto.fi/fi/keltaisen-nauhan-paiva
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:8088B43C-556B-4369-AEC3-9F2E36A4D475@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220317
+DTEND;VALUE=DATE:20220318
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:☘ Pyhän Patrickin päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Pyhän Patrickin päivä on Irlannin k
+ ansallispäivä\, jota vietetään vuosittain 17. maaliskuuta maan suojeluspyh
+ imyksen Pyhän Patrickin muistoksi. Irlannin lisäksi päivää juhlitaan laaja
+ lti ympäri maailman esimerkiksi Yhdysvalloissa\, Kanadassa ja Britanniassa
+ .\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://
+ fi.wikipedia.org/wiki/Pyh%C3%A4n_Patrickin_p%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Pyh%C3%A4n_Patrickin_p%C3%A4iv
+ %C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:5FC131A6-7D22-4907-A110-928A02FE0981@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220319
+DTEND;VALUE=DATE:20220320
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Minna Canthin päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- tasa-arvon päivä\n\nMinna Canthin
+  päivä\, tasa-arvon päivä on vakiintunut liputuspäivä Suomessa joka vuosi 
+ 19. maaliskuuta. Tasa-arvon päivä on kirjailija Minna Canthin (1844–1897) 
+ syntymäpäivä.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätieto
+ ja\nhttps://fi.wikipedia.org/wiki/Minna_Canthin_p%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Minna_Canthin_p%C3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:B0B98762-EF50-4795-A0A8-12BE857FEFA5@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220320
+DTEND;VALUE=DATE:20220321
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:☀️ Kevätpäiväntasaus
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Kevätpäiväntasaus eli kevättasaus o
+ n se hetki\, jolloin Auringon keskipiste siirtyy eteläiseltä tähtitaivaalt
+ a pohjoiselle tähtitaivaalle\, eli ylittää taivaanekvaattorin etelästä poh
+ joiseen. Syynä on Maan kiertoliike Auringon ympäri ja maan kalteva pyörimi
+ sakseli Aurinkoon nähden: ennen kevätpäiväntasausta pohjoinen pallonpuolis
+ ko on kääntyneenä poispäin Auringosta\, kevättasauksen jälkeen taas kohti 
+ aurinkoa. Kevätpäiväntasaus sijoittuu 19. ja 21. maaliskuuta välille.\n\nP
+ äivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wik
+ ipedia.org/wiki/Kev%C3%A4tp%C3%A4iv%C3%A4ntasaus
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Kev%C3%A4tp%C3%A4iv%C3%A4ntasa
+ us
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:4E54FB23-9F49-4D33-A2B5-198F8D7D8932@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220320
+DTEND;VALUE=DATE:20220321
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:World Cleanup Day
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:World Cleanup Day eli Maailman siiv
+ ouspäivä on maailmanlaajuinen yhden päivän kestävä ympäristön siivoustempa
+ us - siis siivoustalkoopäivä. Tapahtuman pääorganisaattori on Let’s do it!
+ \, joka on Virossa vuonna 2008 perustettu ja rekisteröity yleishyödyllinen
+ \, voittoatavoittelematon säätiö. Sittemmin siivoustalkoopäivä on levinnyt
+  ympäri maailmaa ja mukana on yli 150 valtiota.\n\nPäivitetty: Sun\, 31 Oc
+ t 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/World_
+ Cleanup_Day
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/World_Cleanup_Day
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:973C4118-2C0F-4B4D-AD11-B1E98053ADB1@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220327
+DTEND;VALUE=DATE:20220328
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🕒 Kesäaika alkaa
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Kesäaika on laajalti käytetty järje
+ stelmä virallisen paikallisen ajan siirtämiseksi eteenpäin\, yleensä yhden
+  tunnin verran\, kevät- ja kesäkuukausiksi.\n\nPäivitetty: Sun\, 31 Oct 20
+ 21 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Kes%C3%A4a
+ ika
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Kes%C3%A4aika
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:1C7B3929-AF79-4621-A912-ECD61BD03741@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220331
+DTEND;VALUE=DATE:20220401
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🚗 Talvirenkaiden käyttöpakko loppuu
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- Nastarenkaiden käyttö kielletty\n
+ \nRenkaiden pitävyydestä riippuu koko ajoneuvon hallinta. Ratsaa renkaasi 
+ ja vaihda huonokuntoiset uusiin. Tarkista myös ilmanpaineet. Lue lisää.\n\
+ nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://www.
+ liikenneturva.fi/fi/liikenteessa/auton-renkaat#420c947a
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.liikenneturva.fi/fi/liikenteessa/auton-renkaat#4
+ 20c947a
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:33FFB4C2-3C2E-4C44-AAC1-EAC3D65A666E@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220401
+DTEND;VALUE=DATE:20220402
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:😉 Aprillipäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Aprillipäivä on joka vuosi 1. huhti
+ kuuta. Latinan aprilis ja useiden nykykielten april tarkoittavat huhtikuut
+ a. Aprillipäivänä on tapana puijata leikkimielisesti ihmisiä. Useissa lehd
+ issä julkaistaan jokin pilailumielessä kirjoitettu artikkeli. Suomessa apr
+ illipäivää ei ole otettu kalenteriin\, vaikka sitä on joskus ehdotettu\, k
+ oska sen teho perustuu yllätyksellisyyteen. Aprillipäivä voi osua joka vuo
+ si eri viikonpäivälle. Vuoden 2019 aprillipäivä on maanantaina ja vuoden 2
+ 020 aprillipäivä keskiviikkona.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 
+ +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Aprillip%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Aprillip%C3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:4F5C4B15-1269-4571-A023-B40D6A6D2C68@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220407
+DTEND;VALUE=DATE:20220408
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🍎 Maailman terveyspäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Maailman terveyspäivää vietetään ma
+ ailmanlaajuisesti 7. huhtikuuta\, jotta terveysongelmien tietoisuus lisään
+ tyisi. Kyseisenä päivänä Maailman terveysjärjestö (WHO) organisoi maailman
+ laajuisia ja paikallisia tapahtumia\, jotka liittyvät kulloiseenkin aihees
+ een. Maailman terveyspäivä on yksi kahdeksasta WHO:n virallisesta maailman
+ laajuisesta terveyskampanjasta. Muut seitsemän ovat kansainvälinen tuberku
+ loosipäivä\, kansainvälinen rokoteviikko\, kansainvälinen malariapäivä\, k
+ ansainvälinen tupakaton päivä\, kansainvälinen AIDS-päivä\, kansainvälinen
+  verenluovutuspäivä sekä kansainvälinen hepatiittipäivä.\n\nPäivitetty: Su
+ n\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wi
+ ki/Maailman_terveysp%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Maailman_terveysp%C3%A4iv%C3%A
+ 4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:572DDA59-1300-4220-A5D8-4DE212B042EF@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220409
+DTEND;VALUE=DATE:20220410
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Mikael Agricolan päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- suomen kielen päivä\n\nMikael Agr
+ icolan päivää eli suomen kielen päivää vietetään Suomessa 9. huhtikuuta. K
+ yseessä on vakiintunut liputuspäivä. Päivää vietetään Mikael Agricolan kuo
+ linpäivänä\, vaikka yleensä henkilön kunniaksi liputetaan tämän syntymäpäi
+ vänä. Syynä tähän on se\, että Agricolan tarkka syntymäaika ei ole tiedoss
+ a. Mikael Agricolan päivä tuli kalenteriin vuonna 1960\, ja vuodesta 1980 
+ lähtien se on merkitty myös liputuspäiväksi\, jollaiseksi se olikin jo vak
+ iintunut. Vuonna 1978 Agricolan päivä sai lisämääreen suomen kielen päivä.
+ \n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://f
+ i.wikipedia.org/wiki/Mikael_Agricolan_p%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Mikael_Agricolan_p%C3%A4iv%C3%
+ A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:2C61869A-747A-429B-A179-9168EF97B4B3@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220410
+DTEND;VALUE=DATE:20220411
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Palmusunnuntai
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- Virposunnuntai\n\nPalmusunnuntai 
+ on kristillisen kirkkovuoden juhla\, joka on viikkoa ennen pääsiäissunnunt
+ aita. Palmusunnuntain ajankohta vaihtelee vuosittain\, sillä pääsiäinen on
+  kevätpäiväntasausta seuraavan täydenkuun jälkeinen sunnuntai ja palmusunn
+ untai viikkoa ennen sitä. Aikaisintaan palmusunnuntai voi olla 15. maalisk
+ uuta ja myöhäisimmillään 18. huhtikuuta. Palmusunnuntai aloittaa niin sano
+ tun hiljaisen viikon\, jolloin muistellaan Jeesuksen kärsimyksiä.\n\nPäivi
+ tetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikiped
+ ia.org/wiki/Palmusunnuntai
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Palmusunnuntai
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:FD6FD619-980E-43F4-AEBF-40E8B6B28BB2@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220411
+DTEND;VALUE=DATE:20220412
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Malkamaanantai
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Hiljainen viikko tai suuri viikko t
+ ai pyhä viikko on pääsiäistä edeltävä viikko\, joka alkaa palmusunnuntaist
+ a ja päättyy pääsiäiseen eli Kristuksen ylösnousemusjuhlaan. Hiljaisella v
+ iikolla muistellaan Kristuksen kärsimyskertomusta.\n\nPäivitetty: Sun\, 31
+  Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Hil
+ jainen_viikko
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Hiljainen_viikko
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:91DD958D-2660-42DD-A275-DDE2C5224C4C@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220412
+DTEND;VALUE=DATE:20220413
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Tikkutiistai
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Hiljainen viikko tai suuri viikko t
+ ai pyhä viikko on pääsiäistä edeltävä viikko\, joka alkaa palmusunnuntaist
+ a ja päättyy pääsiäiseen eli Kristuksen ylösnousemusjuhlaan. Hiljaisella v
+ iikolla muistellaan Kristuksen kärsimyskertomusta.\n\nPäivitetty: Sun\, 31
+  Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Hil
+ jainen_viikko
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Hiljainen_viikko
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:89C3DCC4-EC40-4144-AF8E-4CB1620F62A8@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220413
+DTEND;VALUE=DATE:20220414
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Kellokeskiviikko
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Hiljainen viikko tai suuri viikko t
+ ai pyhä viikko on pääsiäistä edeltävä viikko\, joka alkaa palmusunnuntaist
+ a ja päättyy pääsiäiseen eli Kristuksen ylösnousemusjuhlaan. Hiljaisella v
+ iikolla muistellaan Kristuksen kärsimyskertomusta.\n\nPäivitetty: Sun\, 31
+  Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Hil
+ jainen_viikko
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Hiljainen_viikko
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:6AACA4F8-01F8-45FF-AB09-BB34EE2E5A6C@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220413
+DTEND;VALUE=DATE:20220414
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:📚 Kirjastoautopäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:National Bookmobile Day is being ob
+ served today! It has always been observed Wednesday of the second full wee
+ k in April.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja
+ \nhttps://www.checkiday.com/b33498f9df4c0ff0d073530b795526ca/national-book
+ mobile-day
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.checkiday.com/b33498f9df4c0ff0d073530b795526ca/n
+ ational-bookmobile-day
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:5CACB992-CDD7-4786-A492-8E47CBAB67E7@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220414
+DTEND;VALUE=DATE:20220415
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Kiirastorstai
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Kiirastorstai on pääsiäistä edeltäv
+ ä torstai. Sitä vietetään kristillisissä kirkoissa Jeesuksen viimeisen ate
+ rian muistopäivänä ja ehtoollisen asettamisen päivänä. Se ei ole viralline
+ n pyhäpäivä toisin kuin sitä seuraava pitkäperjantai.\n\nPäivitetty: Sun\,
+  31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/
+ Kiirastorstai
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Kiirastorstai
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:AC787406-884A-4878-A999-1C0EA7F608E2@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220416
+DTEND;VALUE=DATE:20220417
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Lankalauantai
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Lankalauantai tai hiljainen lauanta
+ i on päivä pitkänperjantain ja pääsiäispäivän välissä. Se on hiljaisen vii
+ kon eli suuren viikon viimeinen päivä.\n\nPäivitetty: Sun\, 31 Oct 2021 19
+ :17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Lankalauantai
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Lankalauantai
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:CF6277EC-A50B-4600-AD2D-686461CD6002@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220423
+DTEND;VALUE=DATE:20220424
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Kirjan ja ruusun päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Kirjan ja ruusun päivä on kirjaa ju
+ hlistava vuosipäivä\, jota on useimmiten vietetty 23. huhtikuuta. Ajankoht
+ a valittiin kirjallisen historiansa ansiosta: 23. huhtikuuta 1616 kaksi ma
+ ailmankirjallisuuden klassikkokirjailijaa\, Miguel de Cervantes sekä Willi
+ am Shakespeare kuolivat.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n
+ \nLisätietoja\nhttps://fi.wikipedia.org/wiki/Kirjan_ja_ruusun_p%C3%A4iv%C3
+ %A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Kirjan_ja_ruusun_p%C3%A4iv%C3%
+ A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:2EB15087-AFF7-4043-A29A-87F325688B0F@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220424
+DTEND;VALUE=DATE:20220425
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Ahvenanmaan lipun päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Ahvenanmaan lippu on Suomen itsehal
+ linnollisen maakunnan Ahvenanmaan virallinen lippu. Sitä käytettiin ensimm
+ äistä kertaa Maarianhaminassa 3. huhtikuuta 1954. Se on ainoa virallinen S
+ uomen maakunnan lippu vastaavasti kuin Ahvenanmaa on Suomen ainoa itsehall
+ innollinen maakunta. Ahvenanmaan lippu on mittasuhteita lukuun ottamatta R
+ uotsin lipun kaltainen paitsi että siihen on lisätty punainen risti symbol
+ oimaan Suomea. Lipussa yhdistyvät Ruotsin lipun sinikeltaiset värit ja Suo
+ men vaakunan keltapunaiset värit.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:1
+ 4 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Ahvenanmaan_lippu
+CLASS;VALUE=TEXT:PUBLIC
+LOCATION;VALUE=TEXT:Ahvenanmaa
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Ahvenanmaan_lippu
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:801E1A62-C8C3-437F-A8E0-FC02C52C99E3@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220427
+DTEND;VALUE=DATE:20220428
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Kansallinen veteraanipäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Veteraanipäivä on sotaveteraanien m
+ uistamiseksi useissa maissa vietettävä juhlapäivä.Suomen kansallinen veter
+ aanipäivä 27. huhtikuuta\nYhdysvaltain veteraanipäivä 11. marraskuuta\nRuo
+ tsin veteraanipäivä (Veterandagen) 29. toukokuuta\nNorjan veteraanipäivä (
+ Veterandagen) 8. toukokuuta\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +000
+ 0\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Veteraanip%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Veteraanip%C3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:CE116855-801A-489E-AE02-A9ED6B5B6952@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220430
+DTEND;VALUE=DATE:20220501
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Vappuaatto
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Vappu on vuosittain 1. toukokuuta v
+ ietettävä enimmäkseen länsimaalainen kansainvälinen juhlapäivä ja monissa 
+ maissa yleinen vapaapäivä. Se on kevään loppupuolen juhlapäivä sekä kansai
+ nvälinen työväen juhlapäivä. Suomessa vapunpäivää aattopäivineen vietetään
+  työväen\, ylioppilaiden ja kevään karnevaalijuhlana. Vuodesta 1979 lähtie
+ n vappu on ollut Suomessa virallinen liputuspäivä\, suomalaisen työn päivä
+ . Juhlapäivä on saanut nimensä pyhästä Valburgista\, jonka muistopäivä on 
+ 1.5.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps
+ ://fi.wikipedia.org/wiki/Vappu
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Vappu
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:16291971-2E56-470D-A647-F58EF5B67806@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220508
+DTEND;VALUE=DATE:20220509
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:👩 Äitienpäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Äitienpäivä on äitien kunniaksi vuo
+ sittain vietettävä juhlapäivä. Sen ajankohta vaihtelee maittain. Suomessa 
+ äitienpäivä on toukokuun toisena sunnuntaina\, ja se on yksi virallisista 
+ liputuspäivistä.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisäti
+ etoja\nhttps://fi.wikipedia.org/wiki/%C3%84itienp%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/%C3%84itienp%C3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:79A64E90-9676-460E-A16E-1FE8407A09FE@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220509
+DTEND;VALUE=DATE:20220510
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:✌️ Voitonpäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Voitonpäivä on useissa toisessa maa
+ ilmansodassa liittoutuneiden puolella taistelleissa maissa juhlapäivä\, jo
+ ta vietetään natsi-Saksasta 8. toukokuuta 1945 saadun voiton kunniaksi. Ju
+ hlapäivää vietetään useissa Länsi-Euroopan maissa\, muun muassa Norjassa j
+ a Ranskassa\, 8. toukokuuta.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +00
+ 00\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Voitonp%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Voitonp%C3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:CC0738E5-34AA-45ED-A047-4A5BEF468262@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220509
+DTEND;VALUE=DATE:20220510
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🇪🇺 Eurooppa-päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Eurooppa-päivää vietetään Euroopass
+ a 9. toukokuuta.\n9. toukokuuta 1950 Robert Schuman esitti ehdotuksensa yh
+ tenäisen Euroopan luomisesta välttämättömänä rauhanomaisten suhteiden yllä
+ pitämiseksi.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoj
+ a\nhttps://fi.wikipedia.org/wiki/Eurooppa-p%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Eurooppa-p%C3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:ED92F681-8ADC-48A7-AD29-681ECED313C7@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220512
+DTEND;VALUE=DATE:20220513
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:J. V. Snellmannin päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- suomalaisuuden päivä\n\nJohan (Ju
+ hana) Vilhelm Snellman oli suomalainen filosofi\, kirjailija\, sanomalehti
+ mies ja valtiomies\, yksi vaikutusvaltaisimmista fennomaaneista 1800-luvun
+  Suomessa. Hän vaikutti merkittävästi suomen kielen asemaan ja Suomen mark
+ an käyttöönottoon. Häntä pidetään Suomen kansallisfilosofina ja yhtenä tär
+ keimmistä kansallisista herättäjistä.\n\nPäivitetty: Sun\, 31 Oct 2021 19:
+ 17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/J._V._Snellman
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/J._V._Snellman
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:92B3755D-01F5-4A1F-A83E-752C163B984E@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220513
+DTEND;VALUE=DATE:20220514
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Kukanpäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Kukanpäivä eli Flooran päivä 13. to
+ ukokuuta on ollut Suomessa perinteinen ylioppilaiden juhlapäivä. Helsingis
+ sä ylioppilaat kokoontuivat 1800-luvulla kukanpäivänä Kumtähden kentälle n
+ ykyiseen Kumpulaan. Erityisen merkityksen kokoontuminen sai vuonna 1848\, 
+ jolloin tapahtumassa esitettiin J. L. Runebergin ja Fredrik Paciuksen Maam
+ me-laulu ensimmäisen kerran. Sillä oli suuri merkitys kansallisen heräämis
+ en kannalta\, joka johti lopulta Suomen itsenäistymiseen vuonna 1917.\n\nP
+ äivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wik
+ ipedia.org/wiki/Kukanp%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Kukanp%C3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:ECB006F0-75C0-40D3-ADA5-C8EB182E3DD5@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220513
+DTEND;VALUE=DATE:20220514
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🤞 Perjantai\, 13. päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Perjantai 13. päivä on yleisen taik
+ auskoisen käsityksen mukaan epäonnen päivä. Se on ilmeisesti lähtöisin kah
+ desta erillisestä taikauskoisesta käsityksestä: perjantai on huonon onnen 
+ päivä ja 13 huonon onnen luku. Jossain vaiheessa nämä kaksi näkemystä ovat
+  sulautuneet yhteen. Sanonnan käyttö tunnetaan 1800-luvun lopulta alkaen. 
+ Yleiseksi uskomus on tullut vasta 1900-luvulla\, minkä on väitetty johtune
+ en Thomas Lawsonin vuonna 1907 julkaisemasta romaanista Friday the Thirtee
+ nth. Perjantai 13. päivän pelkoa kutsutaan paraskevidekatriafobiaksi.\n\nP
+ äivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wik
+ ipedia.org/wiki/Perjantai_13.
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Perjantai_13.
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:BE2E38A3-7004-45F3-A13D-2461E1F75BAC@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220528
+DTEND;VALUE=DATE:20220529
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Amnesty Internationalin vuosipäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Amnesty tutkii\, paljastaa ja pysäy
+ ttää ihmisoikeusloukkauksia ympäri maailmaa. Tavoitteenamme on\, että ihmi
+ soikeudet toteutuvat kaikille.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +
+ 0000\n\nLisätietoja\nhttps://www.amnesty.fi/
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.amnesty.fi/
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:92C0EDA2-FFD3-4B3E-A72A-95529254C04C@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220531
+DTEND;VALUE=DATE:20220601
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🚬 Kansainvälinen tupakaton päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Kansainvälinen tupakaton päivä on 3
+ 1. toukokuuta vietettävä kansainvälinen vuosipäivä. Päivää on vietetty vuo
+ desta 1988 alkaen Maailman terveysjärjestön (WHO) aloitteesta. Tarkoitukse
+ na on kiinnittää maailman huomio tupakan laajaan käyttöön\, tupakoinnista 
+ aiheutuviin sairauksiin ja kuolemiin. Vuonna 2020 tupakasta johtuvia kuole
+ mia aiheutui vuodessa 8 miljoonaa.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:
+ 14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Kansainv%C3%A4linen
+ _tupakaton_p%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Kansainv%C3%A4linen_tupakaton_
+ p%C3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:058FFCA0-E5B7-4F4A-A677-BAF6F9D186C9@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220604
+DTEND;VALUE=DATE:20220605
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Puolustusvoimain lippujuhlan päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- Carl Gustaf Emil Mannerheimin syn
+ tymäpäivä\n\nPuolustusvoimain lippujuhlan päivä on Suomessa vuosittain 4. 
+ kesäkuuta vietettävä puolustusvoimien juhlapäivä ja virallinen liputuspäiv
+ ä. Lippujuhlapäivänä jaetaan myönnetyt kunniamerkit ja ylennetään ansioitu
+ neita sotilaita ja reserviläisiä.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:1
+ 4 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Puolustusvoimain_lip
+ pujuhlan_p%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Puolustusvoimain_lippujuhlan_p
+ %C3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:D27590DC-34D7-48C1-AFCC-3348265035A7@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220609
+DTEND;VALUE=DATE:20220610
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Ahvenanmaan itsehallintopäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Ahvenanmaan maakuntapäivät on Ahven
+ anmaan lakiasäätävä elin eli "eduskunta". Maakuntapäivät nimittää Ahvenanm
+ aan maakuntahallituksen. Maakuntapäivät kokoontuivat ensimmäiseen täysistu
+ ntoonsa 9. kesäkuuta 1922. Sitä juhlitaan nykyään Ahvenanmaan itsehallinto
+ päivänä.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nh
+ ttps://fi.wikipedia.org/wiki/Ahvenanmaan_maakuntap%C3%A4iv%C3%A4t
+CLASS;VALUE=TEXT:PUBLIC
+LOCATION;VALUE=TEXT:Ahvenanmaa
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Ahvenanmaan_maakuntap%C3%A4iv%
+ C3%A4t
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:1119CDB7-5E97-4080-A4EA-8C82F2022BAB@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220612
+DTEND;VALUE=DATE:20220613
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Pyhän Kolminaisuuden päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Pyhän Kolminaisuuden päivä on krist
+ illinen juhlapäivä\, jota vietetään ensimmäisenä sunnuntaina helluntain jä
+ lkeen. Sen vietto sai alkunsa Englannissa 1000-luvulla. Päivä on omistettu
+  Pyhälle Kolminaisuudelle.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000
+ \n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Pyh%C3%A4n_Kolminaisuuden_p
+ %C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Pyh%C3%A4n_Kolminaisuuden_p%C3
+ %A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:F1864039-F427-45EA-AAD5-571333E29E4F@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220621
+DTEND;VALUE=DATE:20220622
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:☀️ Kesäpäivänseisaus
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Kesäpäivänseisaus on vuoden pisin p
+ äivä. Pohjoisella pallonpuoliskolla se sijoittuu joka vuosi välille 20.–22
+ . kesäkuuta. Silloin Aurinko paistaa keskipäivällä kohtisuoraan taivaalta 
+ Kravun kääntöpiirillä. Aurinko on pohjoisimmillaan vuotuisessa liikkeessää
+ n eli Auringon deklinaatio on suurimmillaan.\n\nPäivitetty: Sun\, 31 Oct 2
+ 021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Kes%C3%A4
+ p%C3%A4iv%C3%A4nseisaus
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Kes%C3%A4p%C3%A4iv%C3%A4nseisa
+ us
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:467B0C79-DEA9-4AC0-A37B-C50A802EF13B@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220624
+DTEND;VALUE=DATE:20220625
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Juhannusaatto
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Juhannus on valon ja keskikesän juh
+ la\, jota vietetään kesäkuussa kesäpäivänseisauksen tienoilla. Suomessa ju
+ hannus on yöttömän yön juhla\, kun pohjoisen napapiirin pohjoispuolella au
+ rinko ei laske lainkaan kesäpäivänseisauksena. Suomessa juhannus on myös v
+ irallinen liputuspäivä\, jolloin liputetaan koko juhannusyön ajan.\n\nPäiv
+ itetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipe
+ dia.org/wiki/Juhannus
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Juhannus
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:1AACCEBB-302E-4480-A97D-DCFD5F4779F4@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220706
+DTEND;VALUE=DATE:20220707
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Eino Leinon päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- runon ja suven päivä\n\nEino Lein
+ o oli suomalainen kirjailija\, lehtimies ja kriitikko. Leinon laaja ja mon
+ ipuolinen kirjallinen tuotanto sisälsi runoutta\, romaaneja\, näytelmiä\, 
+ esseitä ja lehtipakinoita sekä suomennoksia ulkomaisesta kirjallisuudesta.
+  Leino luetaan Suomen merkittävimpiin kirjailijoihin. Sekä hänen lyriikkan
+ sa että aaterunonsa ovat vuosikymmenestä toiseen pysyneet laajojen lukijap
+ iirien suosiossa.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisät
+ ietoja\nhttps://fi.wikipedia.org/wiki/Eino_Leino
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Eino_Leino
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:40B76C1D-FD8C-4940-A576-57DCC01A5721@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220709
+DTEND;VALUE=DATE:20220710
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Merivoimien vuosipäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Ruotsinsalmen toinen meritaistelu o
+ n Kustaa III:n sotaan kuulunut meritaistelu Ruotsin ja Venäjän laivastojen
+  välillä 9.–10. heinäkuuta 1790. Se käytiin Kotkansaaren\, Mussalon ja Kuu
+ tsalon saarten välisellä alueella nykyisen Kotkan edustalla. Taistelu on s
+ uurin Itämerellä koskaan käyty meritaistelu\, ja sen voidaan laskea myös k
+ uuluvan suurimpien meritaisteluitten joukkoon alusmäärän ja joukkojen koon
+  vuoksi. \nVain vuotta aiemmin käytiin samalla paikalla Ruotsinsalmen ensi
+ mmäinen meritaistelu\, jonka Ruotsi hävisi.\n\nPäivitetty: Sun\, 31 Oct 20
+ 21 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Ruotsinsal
+ men_toinen_meritaistelu
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Ruotsinsalmen_toinen_meritaist
+ elu
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:8AAEC877-8478-475B-A8C9-38E2770C3395@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220718
+DTEND;VALUE=DATE:20220725
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Naistenviikko
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Naistenviikko on seitsemän päivän a
+ janjakso 18.–24. heinäkuuta\, jolloin suomalaisessa almanakassa on vain na
+ isten nimiä. Silloin juhlitaan Riikkaa\, Saaraa\, Markettaa\, Johannaa\, L
+ eenaa\, Oilia\, Kristiinaa ja Tiinaa monine nimimuunnoksineen. Kaikkiaan n
+ aistenviikolla on almanakassa 34 nimeä\, ja silloin viettää nimipäiväänsä 
+ noin 627 000 naista\, joista 280 000:lla on silloin ensimmäisen etunimensä
+  mukainen nimipäivä.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLi
+ sätietoja\nhttps://fi.wikipedia.org/wiki/Naistenviikko
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Naistenviikko
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:F676590F-B180-47D7-A59F-406A72F2F24F@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220723
+DTEND;VALUE=DATE:20220724
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Mätäkuu alkaa
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Mätäkuu on kansanperinteessä loppuk
+ esästä oleva kuukauden pituinen ajanjakso\, jolloin Aurinko on Leijonan me
+ rkissä\, noin 23. heinäkuuta - 23. elokuuta. Se on peräisin muinaisesta Eg
+ yptistä mutta vastaa roomalaisten koiranpäiviä. Egyptissä se liittyi Niili
+ n tulvimiseen.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätiet
+ oja\nhttps://fi.wikipedia.org/wiki/M%C3%A4t%C3%A4kuu
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/M%C3%A4t%C3%A4kuu
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:70897A1B-6DB7-456D-AD1F-95F0EC4A0926@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220727
+DTEND;VALUE=DATE:20220728
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:😴 Unikeonpäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Unikeonpäivä\, monissa maissa nimel
+ tään seitsemän nukkujan päivä\, on vanha kristillinen merkkipäivä\, jolla 
+ muistettiin Efesoksen seitsemää unikekoa. Legendan mukaan nuorukaiset pake
+ nivat 200-luvulla kristittyjä vainonnutta keisari Deciusta luolaan ja herä
+ sivät vasta 200 vuotta myöhemmin.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:1
+ 4 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Unikeonp%C3%A4iv%C3%
+ A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Unikeonp%C3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:F25FFD0A-99F7-46B4-A17E-57F5F77874A9@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220809
+DTEND;VALUE=DATE:20220810
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Tove Janssonin päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- suomalaisen taiteen päivä\n\nKans
+ alaiset voivat aktiivisuudellaan vaikuttaa siihen\, vakiintuuko 9. elokuut
+ a pysyväksi liputuspäiväksi.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +00
+ 00\n\nLisätietoja\nhttps://yle.fi/uutiset/3-11244844
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://yle.fi/uutiset/3-11244844
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:B3B0B34E-6948-4867-A094-F650B3012B09@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220823
+DTEND;VALUE=DATE:20220824
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Mätäkuu loppuu
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Mätäkuu on kansanperinteessä loppuk
+ esästä oleva kuukauden pituinen ajanjakso\, jolloin Aurinko on Leijonan me
+ rkissä\, noin 23. heinäkuuta - 23. elokuuta. Se on peräisin muinaisesta Eg
+ yptistä mutta vastaa roomalaisten koiranpäiviä. Egyptissä se liittyi Niili
+ n tulvimiseen.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätiet
+ oja\nhttps://fi.wikipedia.org/wiki/M%C3%A4t%C3%A4kuu
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/M%C3%A4t%C3%A4kuu
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:38C75BCB-5AA4-4149-AED2-D6E9AF329D3C@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220916
+DTEND;VALUE=DATE:20220923
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Liikkujan viikko
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Liikkujan viikkoa vietetään vuositt
+ ain syyskuussa\, 16.–22.9. Viikolla kannustetaan ihmisiä pohtimaan omia\, 
+ arkisia liikkumisvalintoja ja niiden vaikutuksia ympäristöön ja yhteiskunt
+ aan.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps
+ ://www.motiva.fi/ratkaisut/kestava_liikenne_ja_liikkuminen/nain_mahdollist
+ at_viisaan_liikkumisen/kunnat_ja_kaupungit/euroopan_liikkujan_viikko
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.motiva.fi/ratkaisut/kestava_liikenne_ja_liikkumi
+ nen/nain_mahdollistat_viisaan_liikkumisen/kunnat_ja_kaupungit/euroopan_lii
+ kkujan_viikko
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:A8E49A4B-D7CC-4BFF-A51C-8B8590C5C9BF@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220923
+DTEND;VALUE=DATE:20220924
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:☀️ Syyspäiväntasaus
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Syyspäiväntasaus on hetki\, jolloin
+  Aurinko siirtyy taivaanpallon pohjoiselta puoliskolta eteläiselle. Se on 
+ joko 22. syyskuuta tai 23. syyskuuta. Aurinko on silloin zeniitissä päivän
+ tasaajalla. Käyttöyhteydestä riippuen syyspäiväntasauksella voidaan tarkoi
+ ttaa joko kellonlyömää\, jona Aurinko siirtyy pois kyseiseltä pallonpuolis
+ kolta tai koko vuorokautta\, jonka aikana siirtyminen tapahtuu.\n\nPäivite
+ tty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia
+ .org/wiki/Syysp%C3%A4iv%C3%A4ntasaus
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Syysp%C3%A4iv%C3%A4ntasaus
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:CCD59E7F-7AC2-497F-A637-236EF8ED603E@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220927
+DTEND;VALUE=DATE:20220928
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🌲 Puun päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Puun päivä on vuosipäivä\, jolloin 
+ yksilöitä ja yhteisöjä kehotetaan istuttamaan puita. Suomessa puun päivä o
+ n 27. syyskuuta Vesan päivänä. Päivän tarkoitus on kiinnittää huomiota pui
+ den ja metsien merkitykseen ja suojeluun. Useissa muissa maissa puunistutu
+ späivää vietetään maaliskuun puolivälissä.\n\nPäivitetty: Sun\, 31 Oct 202
+ 1 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Puun_p%C3%A
+ 4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Puun_p%C3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:14262707-D508-4F03-A49C-B9456F73E9DF@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20220929
+DTEND;VALUE=DATE:20220930
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Mikkelinpäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Mikkelinpäivä on alun perin arkkien
+ keli Mikaelille\, mutta nykyisin kaikille enkeleille omistettu kristilline
+ n juhlapäivä. Sitä on vietetty varhaiskeskiajalta saakka laajalti kristiku
+ nnassa 29. syyskuuta. Varhaisimmat tiedot sen vietosta ovat 400-luvulta Fr
+ yygiasta.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\n
+ https://fi.wikipedia.org/wiki/Mikkelinp%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Mikkelinp%C3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:DEE488B9-C529-4608-A200-7F6F29B11F73@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20221001
+DTEND;VALUE=DATE:20221002
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Heijastinpäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Joka toinen suomalainen käyttää hei
+ jastinta (51 %). Heijastin lisää jalankulkijan näkyvyyttä ja turvallisuutt
+ a pimeällä liikuttaessa. Siksi Liikenneturva kehottaa kaikkia kiinnittämää
+ n heijastimen –viimeistään nyt.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 
+ +0000\n\nLisätietoja\nhttps://www.liikenneturva.fi/fi/ajankohtaista/tiedot
+ e/110-nyt-heijastinpaiva
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.liikenneturva.fi/fi/ajankohtaista/tiedote/110-ny
+ t-heijastinpaiva
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:CD77F143-4947-48F3-A11F-A74C35C3C6FF@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20221002
+DTEND;VALUE=DATE:20221003
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Vanhustenpäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Päivitetty: Sun\, 31 Oct 2021 19:17
+ :14 +0000\n\nLisätietoja\nhttps://www.vtkl.fi/fin/kampanjat/vanhustenpaiva
+ _ja_viikko/
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.vtkl.fi/fin/kampanjat/vanhustenpaiva_ja_viikko/
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:BBE2679E-7182-4267-A3B5-7A939F2B26E1@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20221004
+DTEND;VALUE=DATE:20221005
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Korvapuustipäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Korvapuusti on kanelilla\, sokerill
+ a ja voilla täytetty pulla. Ylimääräinen rasva täytteessä lisää sen säilyv
+ yyttä tavalliseen vehnäpullaan verrattuna.\n\nPäivitetty: Sun\, 31 Oct 202
+ 1 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Korvapuusti
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Korvapuusti
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:937A3F07-F7AE-4AE6-A2BE-C94364A516AD@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20221008
+DTEND;VALUE=DATE:20221009
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Hiljaisuuden päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Päivitetty: Sun\, 31 Oct 2021 19:17
+ :14 +0000\n\nLisätietoja\nhttps://www.kuuloliitto.fi/fin/kuuloliitto/ajank
+ ohtaista/?nid=453
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.kuuloliitto.fi/fin/kuuloliitto/ajankohtaista/?ni
+ d=453
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:B304BFB0-54C4-412C-ACD6-4DA9DDD87E8C@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20221010
+DTEND;VALUE=DATE:20221011
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Aleksis Kiven päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- suomalaisen kirjallisuuden päivä\
+ n\nAleksis Kivi oli suomalainen kirjailija. Kivi kirjoitti kansallisromaan
+ in aseman saavuttaneen romaanin Seitsemän veljestä (1870)\, näytelmiä kute
+ n Nummisuutarit (1864) ja runoja.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:1
+ 4 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Aleksis_Kivi
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Aleksis_Kivi
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:7A9FBB6F-0701-45E9-A05A-C4D5F46542B2@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20221017
+DTEND;VALUE=DATE:20221018
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Asunnottomien yö
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Päivitetty: Sun\, 31 Oct 2021 19:17
+ :14 +0000\n\nLisätietoja\nhttps://www.asunnottomienyo.fi/
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.asunnottomienyo.fi/
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:B3100A78-ED5D-4C18-A6D8-75FF7625BDC2@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20221018
+DTEND;VALUE=DATE:20221019
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🧚 Satupäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Päivitetty: Sun\, 31 Oct 2021 19:17
+ :14 +0000\n\nLisätietoja\nhttps://www.satupaiva.fi/
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.satupaiva.fi/
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:2082936E-DE81-427E-A5AE-ADAE55A6B122@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20221024
+DTEND;VALUE=DATE:20221029
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Digiturvaviikko
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Digi- ja väestötietoviraston Digitu
+ rvapalvelut tukevat koko julkista hallintoa turvallisten palvelujen ja toi
+ mintaympäristön kehittämisessä.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 
+ +0000\n\nLisätietoja\nhttps://dvv.fi/digiturva
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://dvv.fi/digiturva
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:3CF8078B-DD33-4542-A4FC-F47A8542B062@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20221024
+DTEND;VALUE=DATE:20221025
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🇺🇳 Yhdistyneiden kansakuntien päivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Yhdistyneiden kansakuntien päivä on
+  24. lokakuuta vietettävä vuosipäivä\, jota vietetään Yhdistyneiden kansak
+ untien (YK) perustamisen kunniaksi. Sanottuun päivään mennessä vuonna 1945
+  oli riittävän suuri määrä jäsenvaltioita vahvistanut YK:n perustamissopim
+ uksen niin\, että se tuli voimaan. Useissa maissa se on nykyisin myös lipu
+ tuspäivä ja osa kansainvälistä YK-viikkoa\, jota vietetään aina 20.–26. lo
+ kakuuta\, alkoi viikko 20. lokakuuta tai ei.\n\nPäivitetty: Sun\, 31 Oct 2
+ 021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Yhdistyne
+ iden_kansakuntien_p%C3%A4iv%C3%A4
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Yhdistyneiden_kansakuntien_p%C
+ 3%A4iv%C3%A4
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:518C3C0F-48E4-49B7-AD52-464B6096CB72@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20221025
+DTEND;VALUE=DATE:20221026
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Salasanapäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Digi- ja väestötietoviraston Digitu
+ rvapalvelut tukevat koko julkista hallintoa turvallisten palvelujen ja toi
+ mintaympäristön kehittämisessä.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 
+ +0000\n\nLisätietoja\nhttps://dvv.fi/digiturva
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://dvv.fi/digiturva
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:BBC7E90E-A03E-476A-A241-EF47AE8EFD45@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20221026
+DTEND;VALUE=DATE:20221027
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:Tietoturvapäivä
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Digi- ja väestötietoviraston Digitu
+ rvapalvelut tukevat koko julkista hallintoa turvallisten palvelujen ja toi
+ mintaympäristön kehittämisessä.\n\nPäivitetty: Sun\, 31 Oct 2021 19:17:14 
+ +0000\n\nLisätietoja\nhttps://dvv.fi/digiturva
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://dvv.fi/digiturva
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:2F960DB6-CBB3-457F-AB1B-90657D4D7440@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20221030
+DTEND;VALUE=DATE:20221031
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🕒 Kesäaika loppuu
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Kesäaika on laajalti käytetty järje
+ stelmä virallisen paikallisen ajan siirtämiseksi eteenpäin\, yleensä yhden
+  tunnin verran\, kevät- ja kesäkuukausiksi.\n\nPäivitetty: Sun\, 31 Oct 20
+ 21 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Kes%C3%A4a
+ ika
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Kes%C3%A4aika
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:69B05F34-277C-4691-A95E-2E81D323F7E1@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20221031
+DTEND;VALUE=DATE:20221101
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🎃 Halloween
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:Halloween on anglosaksisissa maissa
+  pyhäinpäivän aattona lokakuun viimeisenä päivänä 31.10. vietettävä juhlap
+ äivä\, alkuaan muinaisten kelttien talven alkamisen päivä samhain\, jolloi
+ n vainajahenkien uskottiin liikkuvan. Nimi on lyhenne englannin sanoista ”
+ All Hallows' Eve” eli kaikkien pyhien aatto.\n\nPäivitetty: Sun\, 31 Oct 2
+ 021 19:17:14 +0000\n\nLisätietoja\nhttps://fi.wikipedia.org/wiki/Halloween
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://fi.wikipedia.org/wiki/Halloween
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+BEGIN:VEVENT
+UID;VALUE=TEXT:F618202F-1567-428E-A6F8-9A82EE32E074@webcal.guru
+X-FUNAMBOL-ALLDAY:1
+X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
+DTSTART;VALUE=DATE:20221101
+DTEND;VALUE=DATE:20221102
+SUMMARY;VALUE=TEXT\;LANGUAGE=fi-FI:🚗 Talvirenkaiden käyttöpakko alkaa
+DESCRIPTION;VALUE=TEXT\;LANGUAGE=fi-FI:- Nastarenkaiden käyttö sallittu\n\
+ nRenkaiden pitävyydestä riippuu koko ajoneuvon hallinta. Ratsaa renkaasi j
+ a vaihda huonokuntoiset uusiin. Tarkista myös ilmanpaineet. Lue lisää.\n\n
+ Päivitetty: Sun\, 31 Oct 2021 19:17:14 +0000\n\nLisätietoja\nhttps://www.l
+ iikenneturva.fi/fi/liikenteessa/auton-renkaat#420c947a
+CLASS;VALUE=TEXT:PUBLIC
+URL;VALUE=URI:https://www.liikenneturva.fi/fi/liikenteessa/auton-renkaat#4
+ 20c947a
+CONTACT;VALUE=TEXT:guru@webcal.guru
+TRANSP;VALUE=TEXT:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:DISABLED
+STATUS;VALUE=TEXT:CONFIRMED
+PRIORITY;VALUE=INTEGER:5
+SEQUENCE;VALUE=INTEGER:669
+CREATED;VALUE=DATE-TIME:20211031T191714Z
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+DTSTAMP;VALUE=DATE-TIME:20211031T191714Z
+END:VEVENT
+LAST-MODIFIED;VALUE=DATE-TIME:20211031T191714Z
+END:VCALENDAR

@@ -1,17 +1,19 @@
 import { Humidity } from 'types'
+import { HeaderCell } from './HeaderCell'
 
 interface Props {
   humidity: Humidity
+  useLabel?: boolean
 }
 
-export const HumidityDetails: React.FC<Props> = ({ humidity }) => {
+export const HumidityDetails: React.FC<Props> = ({ humidity, useLabel }) => {
   return (
-    <div className="dashboard-row">
-      <p className="dashboard-text dashboard-humidity-text">
+    <>
+      <p className="dashboard-text dashboard-header-side-text">
         {formatHumidity(humidity)}
       </p>
-      <p className="dashboard-text dashboard-label">humidity</p>
-    </div>
+      {useLabel && <p className="dashboard-text dashboard-label">humidity</p>}
+    </>
   )
 }
 

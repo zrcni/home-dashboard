@@ -7,25 +7,19 @@ export interface ConditionData {
   lastUpdated: Date
 }
 
-export interface NameDaysData {
-  official: string[]
-  swedish: string[]
-  sami: string[]
-  orthodox: string[]
-  unofficial: string[]
-}
-
 export interface CalendarDateEventRequestPayload {
   id: string
   date: Date
 }
 
-export interface CalendarEventData {
-  holiday: string[]
-  holy: string[]
-}
+export type CalendarEvent = string
 
-export type CalendarEvents = CalendarEventData & { nameDays: NameDaysData }
+export type CalendarEvents = {
+  holiday: CalendarEvent[]
+  goodToKnow: CalendarEvent[]
+  nameday: CalendarEvent[]
+  theme: CalendarEvent[]
+}
 
 export interface CalendarDateEventUpdateReceivedPayload {
   events: CalendarEvents
