@@ -4,7 +4,7 @@ import { PubSub } from '../pub-sub/types'
 import { IPC_CHANNELS } from '../../ipc-channels'
 import { ConditionData } from '../../types'
 
-export class ConditionsUpdatedSubscription {
+export class InsideConditionsUpdatedSubscription {
   private pubSub: PubSub
 
   private webContents: WebContents

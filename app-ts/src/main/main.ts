@@ -18,7 +18,8 @@ import { resolveHtmlPath } from './util'
 import AppUpdater from './AppUpdater'
 import { PubSubMQTT } from './pub-sub'
 import { createMQTTClient } from './mqtt'
-import { ConditionsUpdatedSubscription } from './conditions/ConditionsUpdatedSubscription'
+import { InsideConditionsUpdatedSubscription } from './conditions/InsideConditionsUpdatedSubscription'
+import { OutsideConditionsUpdatedSubscription } from './conditions/OutsideConditionsUpdatedSubscription'
 import { CalendarDateEventRequestSubscrpition } from './calendar/CalendarDateEventRequestSubscrpition'
 
 process.on('unhandledRejection', (err) => {
@@ -77,7 +78,16 @@ const createWindow = async () => {
     },
   })
 
-  new ConditionsUpdatedSubscription(pubSub, mainWindow.webContents).create()
+  new InsideConditionsUpdatedSubscription(
+    pubSub,
+    mainWindow.webContents
+  ).create()
+
+  new OutsideConditionsUpdatedSubscription(
+    ipcMain,
+    mainWindow.webContents
+  ).create()
+
   new CalendarDateEventRequestSubscrpition(
     ipcMain,
     mainWindow.webContents

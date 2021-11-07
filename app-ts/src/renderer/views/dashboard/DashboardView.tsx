@@ -8,14 +8,20 @@ import './DashboardView.global.css'
 
 interface Props {
   date: Date
-  conditions: ConditionData | null
+  insideConditions: ConditionData | null
+  outsideConditions: ConditionData | null
   eventsToday: CalendarEvents | null
   eventsTomorrow: CalendarEvents | null
 }
 
+/**
+ * TODO: move inside and outside condition views' code into a shared view
+ *       and show last updated timestamp
+ */
 export const DashboardView: React.FC<Props> = ({
   date,
-  conditions,
+  insideConditions,
+  outsideConditions,
   eventsToday,
   eventsTomorrow,
 }) => {
@@ -23,8 +29,18 @@ export const DashboardView: React.FC<Props> = ({
     <div id="dashboard-view">
       <div className="dashboard-row dashboard-view-header">
         <HeaderCell>
-          {conditions && (
-            <TemperatureDetails temperature={conditions.temperature} />
+          {outsideConditions && (
+            <>
+              <div>
+                <h4>🏞️ Outside</h4>
+              </div>
+              <div>
+                <TemperatureDetails
+                  temperature={outsideConditions.temperature}
+                />
+                <HumidityDetails humidity={outsideConditions.humidity} />
+              </div>
+            </>
           )}
         </HeaderCell>
 
@@ -33,7 +49,19 @@ export const DashboardView: React.FC<Props> = ({
         </HeaderCell>
 
         <HeaderCell>
-          {conditions && <HumidityDetails humidity={conditions.humidity} />}
+          {insideConditions && (
+            <>
+              <div>
+                <h4>🏠 Inside</h4>
+              </div>
+              <div>
+                <TemperatureDetails
+                  temperature={insideConditions.temperature}
+                />
+                <HumidityDetails humidity={insideConditions.humidity} />
+              </div>
+            </>
+          )}
         </HeaderCell>
       </div>
 

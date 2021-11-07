@@ -37,7 +37,7 @@ export function useCalendarEvents(date: Date) {
 
     return () => {
       window.electronAPI.ipcRenderer.off(
-        `${IPC_CHANNELS.CALENDAR_EVENTS_REQUEST_UPDATE}:${idRef.current}`,
+        `${IPC_CHANNELS.CALENDAR_EVENTS_UPDATE_RECEIVED}:${idRef.current}`,
         onMessage
       )
     }

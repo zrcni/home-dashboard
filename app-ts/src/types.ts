@@ -7,8 +7,11 @@ export interface ConditionData {
   lastUpdated: Date
 }
 
-export interface CalendarDateEventRequestPayload {
+interface RequestUpdatePayload {
   id: string
+}
+
+export interface CalendarDateEventRequestPayload extends RequestUpdatePayload {
   date: Date
 }
 
@@ -23,4 +26,10 @@ export type CalendarEvents = {
 
 export interface CalendarDateEventUpdateReceivedPayload {
   events: CalendarEvents
+}
+
+export type OutsideConditionsRequestPayload = RequestUpdatePayload
+
+export interface OutsideConditionsUpdateReceivedPayload {
+  conditions: ConditionData
 }

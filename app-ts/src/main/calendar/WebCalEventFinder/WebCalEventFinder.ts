@@ -1,5 +1,4 @@
 import got from 'got'
-import { startOfMonth } from 'date-fns'
 import { WebCalEventParser } from './WebCalEventParser'
 
 export class WebCalEventFinder {

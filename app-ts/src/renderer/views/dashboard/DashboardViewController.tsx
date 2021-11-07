@@ -5,10 +5,12 @@ import { DashboardView } from './DashboardView'
 import { useLivingRoomConditions } from '../../conditions/useLivingRoomConditions'
 import { addDays } from 'date-fns'
 import { useCalendarEvents } from '../../calendar/useCalendarEvents'
+import { useOutsideConditions } from 'renderer/conditions/useOutsideConditions'
 
 export const DashboardViewController: React.FC = () => {
   const [dateNow, setDateNow] = useState(new Date())
-  const conditions = useLivingRoomConditions()
+  const insideConditions = useLivingRoomConditions()
+  const outsideConditions = useOutsideConditions()
   const eventsToday = useCalendarEvents(dateNow)
   const eventsTomorrow = useCalendarEvents(addDays(dateNow, 1))
 
@@ -19,7 +21,8 @@ export const DashboardViewController: React.FC = () => {
       date={dateNow}
       eventsToday={eventsToday}
       eventsTomorrow={eventsTomorrow}
-      conditions={conditions}
+      insideConditions={insideConditions}
+      outsideConditions={outsideConditions}
     />
   )
 }

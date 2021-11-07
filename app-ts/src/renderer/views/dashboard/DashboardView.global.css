@@ -47,14 +47,17 @@
   font-size: 1.4em;
 }
 
+.calendar-date-text-small {
+  font-size: 1.1em;
+}
+
 .dashboard-view-header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  align-content: center;
 }
 
-.dashboard-header-cell {
-  align-self: center;
-}
+.dashboard-header-cell {}
 
 .dashboard-header-side-text {
   font-size: 2em;
