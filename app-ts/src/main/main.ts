@@ -18,16 +18,15 @@ import { resolveHtmlPath } from './util'
 import AppUpdater from './AppUpdater'
 import { PubSubMQTT } from './pub-sub'
 import { createMQTTClient } from './mqtt'
+import { SaveLivingRoomConditionsSubscription } from './conditions/SaveLivingRoomConditionsSubscription'
 import { InsideConditionsUpdatedSubscription } from './conditions/InsideConditionsUpdatedSubscription'
 import { OutsideConditionsUpdatedSubscription } from './conditions/OutsideConditionsUpdatedSubscription'
 import { CalendarDateEventRequestSubscrpition } from './calendar/CalendarDateEventRequestSubscrpition'
+import { SQLite } from './sqlite'
+import { migrateUp } from './migrations'
 
 process.on('unhandledRejection', (err) => {
   console.error('unhandledRejection: ', err)
-})
-
-const pubSub = new PubSubMQTT(createMQTTClient(cfg.mqttBrokerUrl), {
-  onError: console.error,
 })
 
 let mainWindow: BrowserWindow | null = null
@@ -54,7 +53,7 @@ const installExtensions = async () => {
     .catch(console.log)
 }
 
-const createWindow = async () => {
+const createMainWindow = async () => {
   if (cfg.dev) {
     await installExtensions()
   }
@@ -77,21 +76,6 @@ const createWindow = async () => {
       preload: path.join(__dirname, 'preload.js'),
     },
   })
-
-  new InsideConditionsUpdatedSubscription(
-    pubSub,
-    mainWindow.webContents
-  ).create()
-
-  new OutsideConditionsUpdatedSubscription(
-    ipcMain,
-    mainWindow.webContents
-  ).create()
-
-  new CalendarDateEventRequestSubscrpition(
-    ipcMain,
-    mainWindow.webContents
-  ).create()
 
   mainWindow.loadURL(resolveHtmlPath('index.html'))
 
@@ -123,6 +107,8 @@ const createWindow = async () => {
   // Remove this if your app does not use auto updates
   // eslint-disable-next-line
   new AppUpdater()
+
+  return mainWindow
 }
 
 /**
@@ -137,14 +123,37 @@ app.on('window-all-closed', () => {
   }
 })
 
-app
-  .whenReady()
-  .then(() => {
-    createWindow()
-    app.on('activate', () => {
-      // On macOS it's common to re-create a window in the app when the
-      // dock icon is clicked and there are no other windows open.
-      if (mainWindow === null) createWindow()
-    })
+async function main() {
+  await app.whenReady()
+
+  const mainWindow = await createMainWindow()
+  console.info('main window created')
+
+  const sqlite = new SQLite(cfg.sqliteDb)
+
+  await migrateUp(sqlite)
+  console.log('migrate up finished successfully')
+
+  const pubSub = new PubSubMQTT(createMQTTClient(cfg.mqttBrokerUrl), {
+    onError: console.error,
   })
-  .catch(console.log)
+
+  new SaveLivingRoomConditionsSubscription(pubSub, sqlite).create()
+
+  new InsideConditionsUpdatedSubscription(
+    pubSub,
+    mainWindow.webContents
+  ).create()
+
+  new OutsideConditionsUpdatedSubscription(
+    ipcMain,
+    mainWindow.webContents
+  ).create()
+
+  new CalendarDateEventRequestSubscrpition(
+    ipcMain,
+    mainWindow.webContents
+  ).create()
+}
+
+main().catch(console.error)

@@ -4,11 +4,11 @@
 ### mqtt
 
 ```
-mosquitto -h localhost -p 1884
+mosquitto -p 1884
 ```
 
 ```
-mosquitto_pub -h localhost -p 1884 -t "home/livingroom/temperature" -m "{\"temperature\":24.1,\"humidity\":38.1,\"timestamp\":$(date +%s)}"
+mosquitto_pub -h localhost -p 1884 -t "home/livingroom/temperature" -m "{\"temperature\":24.1,\"humidity\":38.1,\"timestamp\":$(date +%s),\"device_id\":\"rpi\",\"client_id\":\"rpi\"}"
 ```
 
 ### Boilerplate

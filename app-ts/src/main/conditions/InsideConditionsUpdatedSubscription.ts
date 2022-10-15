@@ -3,6 +3,7 @@ import { MQTT_TOPICS } from '../mqtt'
 import { PubSub } from '../pub-sub/types'
 import { IPC_CHANNELS } from '../../ipc-channels'
 import { ConditionData } from '../../types'
+import { ConditionsUpdatedPayload } from './types'
 
 export class InsideConditionsUpdatedSubscription {
   private pubSub: PubSub
@@ -34,11 +35,4 @@ export class InsideConditionsUpdatedSubscription {
       event
     )
   }
-}
-
-interface ConditionsUpdatedPayload {
-  temperature: number
-  humidity: number
-  // seconds
-  timestamp: number
 }
