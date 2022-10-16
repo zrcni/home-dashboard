@@ -19,6 +19,7 @@ export class SaveLivingRoomConditionsSubscription {
     )
   }
 
+  // TODO validate message payload
   // eslint-disable-next-line class-methods-use-this
   private async onMessage(payload: ConditionsUpdatedPayload) {
     await this.sqlite.run(
@@ -28,7 +29,9 @@ export class SaveLivingRoomConditionsSubscription {
       payload.timestamp,
       payload.device_id,
       payload.client_id || null,
-      'living_room'
+      'livingroom'
     )
   }
+
 }
+

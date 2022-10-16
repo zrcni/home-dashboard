@@ -15,15 +15,8 @@ import deleteSourceMaps from '../scripts/delete-source-maps'
 checkNodeEnv('production')
 deleteSourceMaps()
 
-const devtoolsConfig =
-  process.env.DEBUG_PROD === 'true'
-    ? {
-        devtool: 'source-map',
-      }
-    : {}
-
 export default merge(baseConfig, {
-  ...devtoolsConfig,
+  devtool: 'source-map',
 
   mode: 'production',
 
@@ -65,8 +58,6 @@ export default merge(baseConfig, {
      */
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'production',
-      DEBUG_PROD: false,
-      MQTT_BROKER_URL: process.env.MQTT_BROKER_URL,
     }),
   ],
 

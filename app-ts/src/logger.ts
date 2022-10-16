@@ -1,15 +1,19 @@
 import winston from 'winston'
-import { cfg } from './config'
 
-const format = cfg.dev
-  ? winston.format.combine(
-      winston.format.timestamp(),
-      winston.format.prettyPrint()
-    )
-  : winston.format.combine(winston.format.timestamp(), winston.format.json())
+export function createLogger(
+  logLevel: winston.LoggerOptions['level'],
+  dev?: boolean
+) {
+  const format = dev
+    ? winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.prettyPrint()
+      )
+    : winston.format.combine(winston.format.timestamp(), winston.format.json())
 
-export const logger = winston.createLogger({
-  level: cfg.logLevel,
-  format,
-  transports: [new winston.transports.Console()],
-})
+  return winston.createLogger({
+    level: logLevel,
+    format,
+    transports: [new winston.transports.Console()],
+  })
+}

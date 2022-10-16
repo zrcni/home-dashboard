@@ -12,7 +12,7 @@ import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 import path from 'path'
 import { app, BrowserWindow, ipcMain, shell } from 'electron'
-import { cfg } from './config'
+import { cfg, verifyMainConfig } from './config'
 import MenuBuilder from './menu'
 import { resolveHtmlPath } from './util'
 import AppUpdater from './AppUpdater'
@@ -24,7 +24,7 @@ import { OutsideConditionsUpdatedSubscription } from './conditions/OutsideCondit
 import { CalendarDateEventRequestSubscrpition } from './calendar/CalendarDateEventRequestSubscrpition'
 import { SQLite } from './sqlite'
 import { migrateUp } from './migrations'
-import { logger } from '../logger'
+import { logger } from './logger'
 
 process.on('unhandledRejection', (err) => {
   logger.error('unhandledRejection: ', err)
@@ -37,13 +37,13 @@ if (cfg.prod) {
   sourceMapSupport.install()
 }
 
-if (cfg.debug) {
+if (cfg.dev) {
   require('electron-debug')()
 }
 
 const installExtensions = async () => {
   const installer = require('electron-devtools-installer')
-  const forceDownload = !!process.env.UPGRADE_EXTENSIONS
+  const forceDownload = Boolean(process.env.UPGRADE_EXTENSIONS)
   const extensions = ['REACT_DEVELOPER_TOOLS']
 
   return installer
@@ -84,19 +84,15 @@ const createMainWindow = async () => {
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined')
     }
-    if (cfg.startMinimized) {
-      mainWindow.minimize()
-    } else {
-      mainWindow.show()
-      mainWindow.focus()
-    }
+    mainWindow.show()
+    mainWindow.focus()
   })
 
   mainWindow.on('closed', () => {
     mainWindow = null
   })
 
-  const menuBuilder = new MenuBuilder(mainWindow, cfg.debug)
+  const menuBuilder = new MenuBuilder(mainWindow, cfg.dev)
   menuBuilder.buildMenu()
 
   // Open urls in the user's browser
@@ -112,20 +108,18 @@ const createMainWindow = async () => {
   return mainWindow
 }
 
-/**
- * Add event listeners...
- */
-
-app.on('window-all-closed', () => {
-  // Respect the OSX convention of having the application in memory even
-  // after all windows have been closed
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
-})
-
 async function main() {
+  verifyMainConfig()
+
   await app.whenReady()
+
+  app.on('window-all-closed', () => {
+    // Respect the OSX convention of having the application in memory even
+    // after all windows have been closed
+    if (process.platform !== 'darwin') {
+      app.quit()
+    }
+  })
 
   const mainWindow = await createMainWindow()
   logger.info('main window created')

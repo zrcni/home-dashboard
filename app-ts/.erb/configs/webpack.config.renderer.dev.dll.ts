@@ -60,6 +60,7 @@ export default merge(baseConfig, {
      */
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
+      HIDE_CURSOR: 'false'
     }),
 
     new webpack.LoaderOptionsPlugin({

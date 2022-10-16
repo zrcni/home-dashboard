@@ -1,5 +1,5 @@
 import { IpcMain, WebContents } from 'electron'
-import { logger } from '../../logger'
+import { logger } from '../logger'
 import { IPC_CHANNELS } from '../../ipc-channels'
 import {
   OutsideConditionsUpdateReceivedPayload,

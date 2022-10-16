@@ -47,7 +47,7 @@ describe('SaveLivingRoomConditionsSubscription', () => {
       client_id: 'mock_client',
       device_id: 'mock_device',
       humidity: 20.1,
-      location: 'living_room',
+      location: 'livingroom',
       temperature: 23.2,
       timestamp: 1665779082868,
     })

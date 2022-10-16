@@ -1,5 +1,5 @@
 import mqtt from 'mqtt'
-import { logger } from '../../logger'
+import { logger } from '../logger'
 
 export function createMQTTClient(url: string) {
   const mqttClient = mqtt.connect(url)

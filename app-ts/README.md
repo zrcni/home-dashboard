@@ -1,5 +1,20 @@
 # Home Dashboard
 
+### TODO
+
+- setup HomeDashboard.json config file to make it easier to configure prod
+
+- get renderer config from main proces (so it can be dynamic!)
+
+### ENV
+
+- DEBUG
+- MQTT_BROKER_URL
+- START_FULLSCREEN
+- HIDE_CURSOR
+- DB_PATH
+
+
 
 ### mqtt
 

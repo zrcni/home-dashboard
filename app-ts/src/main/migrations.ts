@@ -28,13 +28,15 @@ COMMIT;
   await sqlite.exec(sql)
 }
 
+const MIGRATIONS_PATH = path.join(__dirname, 'migrations')
+
 async function getMigrations(type: 'up' | 'down') {
-  const filePaths = await fs.readdir(cfg.migrationsPath)
+  const filePaths = await fs.readdir(MIGRATIONS_PATH)
   const promises = filePaths
     .filter((filename) => filename.endsWith(`.${type}.sql`))
     .map((filename) =>
       fs
-        .readFile(path.join(cfg.migrationsPath, filename))
+        .readFile(path.join(MIGRATIONS_PATH, filename))
         .then((buffer) => buffer.toString())
     )
   return Promise.all(promises)

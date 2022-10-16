@@ -2,31 +2,24 @@
  * Build config for electron renderer process
  */
 
-import path from 'path';
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
-import { merge } from 'webpack-merge';
-import TerserPlugin from 'terser-webpack-plugin';
-import baseConfig from './webpack.config.base';
-import webpackPaths from './webpack.paths';
-import checkNodeEnv from '../scripts/check-node-env';
-import deleteSourceMaps from '../scripts/delete-source-maps';
+import path from 'path'
+import webpack from 'webpack'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
+import { merge } from 'webpack-merge'
+import TerserPlugin from 'terser-webpack-plugin'
+import baseConfig from './webpack.config.base'
+import webpackPaths from './webpack.paths'
+import checkNodeEnv from '../scripts/check-node-env'
+import deleteSourceMaps from '../scripts/delete-source-maps'
 
-checkNodeEnv('production');
-deleteSourceMaps();
-
-const devtoolsConfig =
-  process.env.DEBUG_PROD === 'true'
-    ? {
-        devtool: 'source-map',
-      }
-    : {};
+checkNodeEnv('production')
+deleteSourceMaps()
 
 export default merge(baseConfig, {
-  ...devtoolsConfig,
+  devtool: 'source-map',
 
   mode: 'production',
 
@@ -154,7 +147,7 @@ export default merge(baseConfig, {
      */
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'production',
-      DEBUG_PROD: false,
+      HIDE_CURSOR: 'true'
     }),
 
     new MiniCssExtractPlugin({
@@ -179,4 +172,4 @@ export default merge(baseConfig, {
       isDevelopment: process.env.NODE_ENV !== 'production',
     }),
   ],
-});
+})

@@ -1,14 +1,17 @@
-import path from 'path'
+import invariant from 'tiny-invariant'
 import { cfg } from '../config'
 
 const mainConfig = {
   ...cfg,
-  debug: cfg.dev || process.env.DEBUG_PROD === 'true',
-  mqttBrokerUrl: process.env.MQTT_BROKER_URL || 'tcp://localhost:1884',
-  startMinimized: false,
-  startFullscreen: cfg.prod,
-  sqliteDb: path.join(process.cwd(), 'db/conditions.db'),
-  migrationsPath: path.join(process.cwd(), 'migrations'),
+  logLevel: process.env.DEBUG === 'true' ? 'debug' : 'info',
+  mqttBrokerUrl: process.env.MQTT_BROKER_URL as string,
+  startFullscreen: process.env.START_FULLSCREEN === 'true',
+  sqliteDb: process.env.DB_PATH as string,
 }
 
 export { mainConfig as cfg }
+
+export function verifyMainConfig() {
+  invariant(mainConfig.mqttBrokerUrl, 'MQTT_BROKER_URL must be configured!')
+  invariant(mainConfig.sqliteDb, 'DB_PATH must be configured!')
+}

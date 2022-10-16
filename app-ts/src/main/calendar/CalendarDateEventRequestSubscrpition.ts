@@ -5,7 +5,7 @@ import {
   CalendarDateEventUpdateReceivedPayload,
   CalendarDateEventRequestPayload,
 } from '../../types'
-import { logger } from '../../logger'
+import { logger } from '../logger'
 
 export class CalendarDateEventRequestSubscrpition {
   private ipcMain: IpcMain
