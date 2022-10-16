@@ -59,8 +59,6 @@ const createMainWindow = async () => {
     await installExtensions()
   }
 
-  logger.error('this is an error: ', new Error('hah!'))
-
   const RESOURCES_PATH = app.isPackaged
     ? path.join(process.resourcesPath, 'assets')
     : path.join(__dirname, '../../assets')

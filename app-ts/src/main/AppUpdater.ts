@@ -1,10 +1,9 @@
 import { autoUpdater } from 'electron-updater'
-import log from 'electron-log'
+import { logger } from '../logger'
 
 export default class AppUpdater {
   constructor() {
-    log.transports.file.level = 'info'
-    autoUpdater.logger = log
+    autoUpdater.logger = logger
     autoUpdater.checkForUpdatesAndNotify()
   }
 }
