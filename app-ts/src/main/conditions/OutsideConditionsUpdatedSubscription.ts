@@ -1,4 +1,5 @@
 import { IpcMain, WebContents } from 'electron'
+import { logger } from '../../logger'
 import { IPC_CHANNELS } from '../../ipc-channels'
 import {
   OutsideConditionsUpdateReceivedPayload,
@@ -40,7 +41,7 @@ export class OutsideConditionsUpdatedSubscription {
         outPayload
       )
     } catch (err) {
-      console.error('OutsideConditionsUpdatedSubscription error: ', err)
+      logger.error('OutsideConditionsUpdatedSubscription error: ', err)
     }
   }
 }

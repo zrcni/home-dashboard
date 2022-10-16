@@ -5,6 +5,7 @@ import {
   CalendarDateEventUpdateReceivedPayload,
   CalendarDateEventRequestPayload,
 } from '../../types'
+import { logger } from '../../logger'
 
 export class CalendarDateEventRequestSubscrpition {
   private ipcMain: IpcMain
@@ -50,7 +51,7 @@ export class CalendarDateEventRequestSubscrpition {
         outPayload
       )
     } catch (err) {
-      console.error('NameDayRequestSubscription error: ', err)
+      logger.error('NameDayRequestSubscription error: ', err)
     }
   }
 }

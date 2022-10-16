@@ -24,9 +24,10 @@ import { OutsideConditionsUpdatedSubscription } from './conditions/OutsideCondit
 import { CalendarDateEventRequestSubscrpition } from './calendar/CalendarDateEventRequestSubscrpition'
 import { SQLite } from './sqlite'
 import { migrateUp } from './migrations'
+import { logger } from '../logger'
 
 process.on('unhandledRejection', (err) => {
-  console.error('unhandledRejection: ', err)
+  logger.error('unhandledRejection: ', err)
 })
 
 let mainWindow: BrowserWindow | null = null
@@ -50,13 +51,15 @@ const installExtensions = async () => {
       extensions.map((name) => installer[name]),
       forceDownload
     )
-    .catch(console.log)
+    .catch(logger.error)
 }
 
 const createMainWindow = async () => {
   if (cfg.dev) {
     await installExtensions()
   }
+
+  logger.error('this is an error: ', new Error('hah!'))
 
   const RESOURCES_PATH = app.isPackaged
     ? path.join(process.resourcesPath, 'assets')
@@ -127,15 +130,15 @@ async function main() {
   await app.whenReady()
 
   const mainWindow = await createMainWindow()
-  console.info('main window created')
+  logger.info('main window created')
 
   const sqlite = new SQLite(cfg.sqliteDb)
 
   await migrateUp(sqlite)
-  console.log('migrate up finished successfully')
+  logger.info('migrate up finished successfully')
 
   const pubSub = new PubSubMQTT(createMQTTClient(cfg.mqttBrokerUrl), {
-    onError: console.error,
+    onError: logger.error,
   })
 
   new SaveLivingRoomConditionsSubscription(pubSub, sqlite).create()
@@ -156,4 +159,4 @@ async function main() {
   ).create()
 }
 
-main().catch(console.error)
+main().catch(logger.error)
