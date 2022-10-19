@@ -6,8 +6,10 @@ export function createMQTTClient(url: string) {
 
   mqttClient.on('connect', () => logger.info('mqtt client connected'))
   mqttClient.on('disconnect', () => logger.info('mqtt client disconnected'))
-  mqttClient.on('error', (err: any) =>
-    logger.error('mqtt client error (code %s):', err.errno, err.message)
+  mqttClient.on('error', (error: any) =>
+    logger.error(`mqtt client error: ${error.message}`, {
+      error: error,
+    })
   )
 
   return mqttClient

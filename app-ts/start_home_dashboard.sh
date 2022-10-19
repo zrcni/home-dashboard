@@ -8,7 +8,7 @@ app_name="HomeDashboard"
 ext="AppImage"
 filename="$app_name.$ext"
 
-if [[ ! -f "./$filename" ]];then
+if [ ! -f "./$filename" ];then
   echo "File $filename does not exist!"
 fi
 

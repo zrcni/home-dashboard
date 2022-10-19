@@ -1,7 +1,5 @@
-import path from 'path'
-import fs from 'fs/promises'
-import { cfg } from './config'
 import { SQLite } from './sqlite'
+import * as migrations from './migration-defs'
 
 export function migrateUp(sqlite: SQLite) {
   return runMigrations(sqlite, 'up')
@@ -28,16 +26,6 @@ COMMIT;
   await sqlite.exec(sql)
 }
 
-const MIGRATIONS_PATH = path.join(__dirname, 'migrations')
-
 async function getMigrations(type: 'up' | 'down') {
-  const filePaths = await fs.readdir(MIGRATIONS_PATH)
-  const promises = filePaths
-    .filter((filename) => filename.endsWith(`.${type}.sql`))
-    .map((filename) =>
-      fs
-        .readFile(path.join(MIGRATIONS_PATH, filename))
-        .then((buffer) => buffer.toString())
-    )
-  return Promise.all(promises)
+  return migrations[type]
 }

@@ -15,7 +15,6 @@ import { app, BrowserWindow, ipcMain, shell } from 'electron'
 import { cfg, verifyMainConfig } from './config'
 import MenuBuilder from './menu'
 import { resolveHtmlPath } from './util'
-import AppUpdater from './AppUpdater'
 import { PubSubMQTT } from './pub-sub'
 import { createMQTTClient } from './mqtt'
 import { SaveLivingRoomConditionsSubscription } from './conditions/SaveLivingRoomConditionsSubscription'
@@ -100,10 +99,6 @@ const createMainWindow = async () => {
     event.preventDefault()
     shell.openExternal(url)
   })
-
-  // Remove this if your app does not use auto updates
-  // eslint-disable-next-line
-  new AppUpdater()
 
   return mainWindow
 }

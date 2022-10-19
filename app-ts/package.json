@@ -34,47 +34,29 @@
   "build": {
     "productName": "HomeDashboard",
     "appId": "org.zrcni.HomeDashboard",
-    "asar": true,
+    "asar": false,
     "asarUnpack": "**\\*.{node,dll}",
+    "npmRebuild": false,
     "files": [
       "dist",
       "node_modules",
       "package.json"
     ],
     "afterSign": ".erb/scripts/notarize.js",
-    "mac": {
-      "type": "distribution",
-      "hardenedRuntime": true,
-      "entitlements": "assets/entitlements.mac.plist",
-      "entitlementsInherit": "assets/entitlements.mac.plist",
-      "gatekeeperAssess": false
-    },
-    "dmg": {
-      "contents": [
-        {
-          "x": 130,
-          "y": 220
-        },
-        {
-          "x": 410,
-          "y": 220,
-          "type": "link",
-          "path": "/Applications"
-        }
-      ]
-    },
     "win": {
       "target": [
         "nsis"
       ]
     },
     "linux": {
-      "target": {
-        "target": "AppImage",
-        "arch": [
-          "armv7l"
-        ]
-      },
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "armv7l"
+          ]
+        }
+      ],
       "category": "Development"
     },
     "directories": {
@@ -84,12 +66,7 @@
     },
     "extraResources": [
       "./assets/**"
-    ],
-    "publish": {
-      "provider": "github",
-      "owner": "zrcni",
-      "repo": "home-dashboard-ts"
-    }
+    ]
   },
   "repository": {
     "type": "git",
@@ -201,7 +178,6 @@
     "classnames": "^2.3.1",
     "date-fns": "^2.25.0",
     "electron-debug": "^3.2.0",
-    "electron-updater": "^4.3.9",
     "got": "^11.8.2",
     "history": "4.x.x",
     "mqtt": "^4.2.8",
