@@ -146,4 +146,7 @@ async function main() {
   ).create()
 }
 
-main().catch(logger.error)
+main().catch((err) => {
+  logger.error(err)
+  process.exit(1)
+})

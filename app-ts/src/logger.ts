@@ -7,9 +7,14 @@ export function createLogger(
   const format = dev
     ? winston.format.combine(
         winston.format.timestamp(),
+        winston.format.errors({ stack: true }),
         winston.format.prettyPrint()
       )
-    : winston.format.combine(winston.format.timestamp(), winston.format.json())
+    : winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.errors({ stack: false }),
+        winston.format.json()
+      )
 
   return winston.createLogger({
     level: logLevel,
