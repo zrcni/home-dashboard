@@ -7,9 +7,10 @@ import { CalendarEventsColumn } from './CalendarEventsColumn'
 import { HeaderCell } from './HeaderCell'
 import { formatDate } from '../../utils'
 import './DashboardView.global.css'
+import { LastUpdatedDetails } from './LastUpdatedDetails'
 
 interface Props {
-  date: Date
+  dateNow: Date
   insideConditions: ConditionData | null
   outsideConditions: ConditionData | null
   eventsToday: CalendarEvents | null
@@ -21,14 +22,14 @@ interface Props {
  *       and show last updated timestamp
  */
 export const DashboardView: React.FC<Props> = ({
-  date,
+  dateNow,
   insideConditions,
   outsideConditions,
   eventsToday,
   eventsTomorrow,
 }) => {
-  const todayDayOfWeek = formatDate(date, 'EEEE')
-  const tomorrowDayOfWeek = formatDate(addDays(date, 1), 'EEEE')
+  const todayDayOfWeek = formatDate(dateNow, 'EEEE')
+  const tomorrowDayOfWeek = formatDate(addDays(dateNow, 1), 'EEEE')
 
   return (
     <div id="dashboard-view">
@@ -44,13 +45,17 @@ export const DashboardView: React.FC<Props> = ({
                   temperature={outsideConditions.temperature}
                 />
                 <HumidityDetails humidity={outsideConditions.humidity} />
+                <LastUpdatedDetails
+                  dateNow={dateNow}
+                  lastUpdated={outsideConditions.lastUpdated}
+                />
               </div>
             </>
           )}
         </HeaderCell>
 
         <HeaderCell>
-          <DashboardClock date={date} />
+          <DashboardClock date={dateNow} />
         </HeaderCell>
 
         <HeaderCell>
@@ -64,6 +69,10 @@ export const DashboardView: React.FC<Props> = ({
                   temperature={insideConditions.temperature}
                 />
                 <HumidityDetails humidity={insideConditions.humidity} />
+                <LastUpdatedDetails
+                  dateNow={dateNow}
+                  lastUpdated={insideConditions.lastUpdated}
+                />
               </div>
             </>
           )}

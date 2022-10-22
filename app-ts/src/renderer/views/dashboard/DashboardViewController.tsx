@@ -18,7 +18,7 @@ export const DashboardViewController: React.FC = () => {
 
   return (
     <DashboardView
-      date={dateNow}
+      dateNow={dateNow}
       eventsToday={eventsToday}
       eventsTomorrow={eventsTomorrow}
       insideConditions={insideConditions}
