@@ -6,7 +6,7 @@
 :root {
   --text-color: white;
   --text-color-secondary: #A239B2;
-  --bg-color: black;
+  --bg-color: rgb(20, 8, 19);
   --cursor: initial;
 }
 
