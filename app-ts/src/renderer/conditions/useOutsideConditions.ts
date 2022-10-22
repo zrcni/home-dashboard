@@ -1,17 +1,18 @@
 import { nanoid } from 'nanoid'
 import ms from 'ms'
-import { useState, useRef, useCallback } from 'react'
+import { useRef, useCallback } from 'react'
 import { useMount } from 'renderer/hooks/useMount'
 import { useInterval } from 'renderer/hooks'
 import { IPC_CHANNELS } from '../../ipc-channels'
-import {
-  OutsideConditionsUpdateReceivedPayload,
-  ConditionData,
-} from '../../types'
+import { OutsideConditionsUpdateReceivedPayload } from '../../types'
+import { useStore } from '../store'
 
 export function useOutsideConditions() {
   const idRef = useRef(nanoid())
-  const [data, setData] = useState<ConditionData | null>(null)
+  const [conditions, setConditions] = useStore((state) => [
+    state.outsideConditions,
+    state.setOutsideConditions,
+  ])
 
   const handleRequestUpdate = useCallback(() => {
     window.electronAPI.ipcRenderer.send(
@@ -28,7 +29,7 @@ export function useOutsideConditions() {
     const onMessage = (
       _: unknown,
       payload: OutsideConditionsUpdateReceivedPayload
-    ) => setData(payload.conditions)
+    ) => setConditions(payload.conditions)
 
     window.electronAPI.ipcRenderer.on(
       `${IPC_CHANNELS.OUTSIDE_CONDITIONS_UPDATE_RECEIVED}:${idRef.current}`,
@@ -45,7 +46,7 @@ export function useOutsideConditions() {
     }
   })
 
-  return data
+  return conditions
 }
 
 const REFRESH_FREQ_MS = ms('5min')

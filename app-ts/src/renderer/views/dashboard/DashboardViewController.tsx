@@ -1,24 +1,21 @@
-import { useState } from 'react'
 import ms from 'ms'
-import { useInterval } from 'renderer/hooks/useInterval'
-import { DashboardView } from './DashboardView'
-import { useLivingRoomConditions } from '../../conditions/useLivingRoomConditions'
 import { addDays } from 'date-fns'
-import { useCalendarEvents } from '../../calendar/useCalendarEvents'
+import { useLivingRoomConditions } from 'renderer/conditions/useLivingRoomConditions'
 import { useOutsideConditions } from 'renderer/conditions/useOutsideConditions'
+import { useCalendarEvents } from 'renderer/calendar/useCalendarEvents'
+import { DashboardView } from './DashboardView'
+import { useStore } from 'renderer/store'
 
 export const DashboardViewController: React.FC = () => {
-  const [dateNow, setDateNow] = useState(new Date())
+  const date = useStore((state) => state.date)
   const insideConditions = useLivingRoomConditions()
   const outsideConditions = useOutsideConditions()
-  const eventsToday = useCalendarEvents(dateNow)
-  const eventsTomorrow = useCalendarEvents(addDays(dateNow, 1))
-
-  useInterval(() => setDateNow(new Date()), ms('1s'))
+  const eventsToday = useCalendarEvents(date)
+  const eventsTomorrow = useCalendarEvents(addDays(date, 1))
 
   return (
     <DashboardView
-      dateNow={dateNow}
+      dateNow={date}
       eventsToday={eventsToday}
       eventsTomorrow={eventsTomorrow}
       insideConditions={insideConditions}

@@ -1,10 +1,13 @@
-import { useState } from 'react'
 import { useMount } from 'renderer/hooks/useMount'
+import { useStore } from '../store'
 import { IPC_CHANNELS } from '../../ipc-channels'
 import { ConditionData } from '../../types'
 
 export function useLivingRoomConditions() {
-  const [conditions, setConditions] = useState<ConditionData | null>(null)
+  const [conditions, setConditions] = useStore((state) => [
+    state.insideConditions,
+    state.setInsideConditions,
+  ])
 
   useMount(() => {
     const onMessage = (_: unknown, payload: ConditionData) =>

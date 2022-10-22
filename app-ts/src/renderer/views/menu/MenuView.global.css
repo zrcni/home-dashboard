@@ -1,0 +1,8 @@
+#menu {
+  padding: 6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-button {
+}
