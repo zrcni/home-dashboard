@@ -22,5 +22,5 @@ export const LastUpdatedDetails: React.FC<Props> = ({
 }
 
 function formatLastUpdated(lastUpdated: Date, date: Date) {
-  return `${formatDistance(lastUpdated, date, { includeSeconds: true })} ago`
+  return `${formatDistance(lastUpdated, date)} ago`
 }
