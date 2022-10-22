@@ -1,5 +1,5 @@
 ### app-ts
-the _home dashboard_ app, running on a Raspberry Pi, 7" screen
+the _home dashboard_ app, running on a Raspberry Pi, 11" screen
 
 ![ui](./home-dashboard-ui.png)
 
