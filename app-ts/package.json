@@ -14,7 +14,8 @@
     "start:renderer": "export $(cat .env.dev | xargs); cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack serve --config ./.erb/configs/webpack.config.renderer.dev.ts",
     "test": "jest",
     "test:precommit": "jest --bail --findRelatedTests",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "mock-inside-conditions": "export $(cat .env.dev | xargs); ts-node ./scripts/mock-inside-conditions.ts"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -183,6 +184,7 @@
     "mqtt": "^4.2.8",
     "ms": "^2.1.3",
     "nanoid": "^3.1.29",
+    "random": "^3.0.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.3.0",
