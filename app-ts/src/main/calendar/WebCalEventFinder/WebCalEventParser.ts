@@ -1,5 +1,12 @@
 import ical, { ParamList, CalendarComponent } from '../../../lib/ical'
-import { isBefore, isAfter, startOfDay, endOfDay, subDays } from 'date-fns'
+import {
+  isBefore,
+  isEqual,
+  isAfter,
+  startOfDay,
+  endOfDay,
+  subDays,
+} from 'date-fns'
 
 export class WebCalEventParser {
   private data: string
@@ -31,7 +38,9 @@ function isEventDuring(event: CalendarComponent, date: Date) {
   const start = startOfDay(new Date(event.start!))
   // end date seems to be the next day after the event, so one day needs to be subtracted.
   const end = endOfDay(subDays(new Date(event.end!), 1))
-  return isBetween(start, end, date)
+  return (
+    isEqual(date, start) || isEqual(date, end) || isBetween(start, end, date)
+  )
 }
 
 function isBetween(start: Date, end: Date, date: Date) {

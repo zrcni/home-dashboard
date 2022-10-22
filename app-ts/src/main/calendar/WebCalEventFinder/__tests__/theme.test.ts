@@ -8,6 +8,9 @@ describe('WebCal events – theme', () => {
 
   it('16.11.2021', () => {
     const events = readEventsByDate(new Date(2021, 10, 16), 'theme.ics')
-    expect(events).toEqual(['International Day for Tolerance'])
+    expect(events).toEqual([
+      'World Antibiotic Awareness Week',
+      'International Day for Tolerance',
+    ])
   })
 })
