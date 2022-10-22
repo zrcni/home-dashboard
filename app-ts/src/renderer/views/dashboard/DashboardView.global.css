@@ -44,11 +44,17 @@
 }
 
 .calendar-date-text {
-  font-size: 1.4em;
+  font-size: 1.3em;
+  font-weight: bold;
+  top: 8px;
+  position: relative;
 }
 
 .calendar-date-text-small {
   font-size: 1.1em;
+  font-weight: bold;
+  top: -2px;
+  position: relative;
 }
 
 .dashboard-view-header {
@@ -57,10 +63,16 @@
   align-content: center;
 }
 
-.dashboard-header-cell {}
+.dashboard-header-cell {
+}
 
-.dashboard-header-side-text {
+.temperature-side-text {
   font-size: 2em;
+  font-weight: bold;
+}
+
+.humidity-side-text {
+  font-size: 1.2em;
   font-weight: bold;
 }
 
@@ -80,4 +92,39 @@
 
 .event-details-container:last-child {
   margin-bottom: 0;
+}
+
+.conditions-title {
+  margin: 0;
+}
+
+.txt-color-2 {
+  color: var(--text-color-secondary);
+}
+
+.dashboard-side-container {
+  padding-top: 2em;
+}
+
+.date-events-title-primary {
+  margin: 0;
+  font-weight: bold;
+}
+
+.date-events-title-secondary {
+  margin: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.calender-events-divider {
+  border-color: var(--text-color-secondary);
+  border-width: 1px;
+  border-style: solid;
+  width: 160px;
+  margin: 0 auto;
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+  padding: 0;
 }

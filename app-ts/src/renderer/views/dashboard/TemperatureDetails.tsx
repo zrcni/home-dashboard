@@ -2,26 +2,19 @@ import { Temperature } from 'types'
 
 interface Props {
   temperature: Temperature
-  useLabel?: boolean
 }
 
-export const TemperatureDetails: React.FC<Props> = ({
-  temperature,
-  useLabel,
-}) => {
+export const TemperatureDetails: React.FC<Props> = ({ temperature }) => {
   return (
     <>
-      <p className="dashboard-text dashboard-header-side-text">
-        {formatTemperature(temperature)}
+      <p className="dashboard-text temperature-side-text">
+        <span>{formatTemperature(temperature)}</span>
+        <span className="txt-color-2">°C</span>
       </p>
-      {useLabel && (
-        <p className="dashboard-text dashboard-label">temperature</p>
-      )}
     </>
   )
 }
 
-function formatTemperature(temperature: Temperature) {
-  const v = temperature.toFixed(1)
-  return `${v}°C`
+function formatTemperature(temperature: Temperature): string {
+  return temperature.toFixed(1)
 }

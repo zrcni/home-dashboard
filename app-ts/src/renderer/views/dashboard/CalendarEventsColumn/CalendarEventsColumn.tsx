@@ -2,13 +2,21 @@ import { CalendarEvents } from 'types'
 import { EventDetails } from './EventDetails'
 
 interface Props {
-  label: string
+  labelPrimary: string
+  labelSecondary: string
   events: CalendarEvents
 }
 
-export const CalendarEventsColumn: React.FC<Props> = ({ label, events }) => (
+export const CalendarEventsColumn: React.FC<Props> = ({
+  labelPrimary,
+  labelSecondary,
+  events,
+}) => (
   <div>
-    <h1 style={{ textDecoration: 'underline' }}>{label}</h1>
+    <h4 className="date-events-title-secondary">{labelSecondary}</h4>
+    <h2 className="date-events-title-primary">{labelPrimary}</h2>
+
+    <div className="calender-events-divider" />
 
     {events && (
       <div className="event-details-container">

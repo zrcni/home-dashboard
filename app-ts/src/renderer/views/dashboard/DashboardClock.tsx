@@ -9,14 +9,24 @@ export const DashboardClock: React.FC<Props> = ({ date }) => {
   return (
     <HeaderCell>
       <p className="dashboard-text calendar-date-text">
-        {formatDate(date, 'EEEE, d.MM.yyyy')}
+        <span>{formatDate(date, 'd')}</span>
+        <span className="txt-color-2">.</span>
+        <span>{formatDate(date, 'MM')}</span>
+        <span className="txt-color-2">.</span>
+        <span>{formatDate(date, 'yyyy')}</span>
       </p>
+
       <p className="dashboard-text clock-text">
-        {formatDate(date, 'HH:mm:ss')}
+        <span>{formatDate(date, 'HH')}</span>
+        <span className="txt-color-2">:</span>
+        <span>{formatDate(date, 'mm')}</span>
+        <span className="txt-color-2">:</span>
+        <span>{formatDate(date, 'ss')}</span>
       </p>
 
       <p className="dashboard-text calendar-date-text-small">
-        {formatDate(date, "'WEEK' I")}
+        <span className="txt-color-2">{'W '}</span>
+        <span>{formatDate(date, 'I')}</span>
       </p>
     </HeaderCell>
   )

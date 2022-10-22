@@ -69,8 +69,8 @@ const createMainWindow = async () => {
   mainWindow = new BrowserWindow({
     show: false,
     fullscreen: cfg.startFullscreen,
-    width: 800,
-    height: 600,
+    width: cfg.viewWidth,
+    height: cfg.viewHeight,
     icon: getAssetPath('icon.png'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
