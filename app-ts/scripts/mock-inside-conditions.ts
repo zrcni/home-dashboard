@@ -45,7 +45,7 @@ function publish(client: MqttClient, topic: string, payload: object) {
 
 function generatePayload(): ConditionsUpdatedPayload {
   return {
-    timestamp: Date.now(),
+    timestamp: Math.floor(Date.now() / 1000),
     client_id: 'mock_client_id',
     device_id: 'mock_device_id',
     location: 'mock_location',
