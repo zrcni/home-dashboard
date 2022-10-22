@@ -9,4 +9,8 @@ export const IPC_CHANNELS = {
 
   CALENDAR_EVENTS_REQUEST_UPDATE: 'calendar-events/request-update' as const,
   CALENDAR_EVENTS_UPDATE_RECEIVED: 'calendar-events/update-received' as const,
+
+  METRICS_GET_CONDITIONS: 'metrics/get-conditions' as const,
+  METRICS_GET_CONDITIONS_FAILED: 'metrics/get-conditions-failed' as const,
+  METRICS_GET_CONDITIONS_SUCCEEDED: 'metrics/get-conditions-succeeded' as const,
 }

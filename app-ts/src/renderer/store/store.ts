@@ -1,5 +1,5 @@
 import create, { StateCreator } from 'zustand'
-import { ConditionData } from '../../types'
+import { ConditionData, ConditionMetricRow } from '../../types'
 
 export enum AppView {
   Dashboard = 'dashboard',
@@ -11,7 +11,6 @@ type AppStateSlice = {
   setDate(date: Date): void
   isMenuOpen: boolean
   toggleMenuOpen(): void
-  openMenu(): void
   closeMenu(): void
   currentView: AppView
   openView(view: AppView): void
@@ -23,7 +22,6 @@ const createAppStateSlice: StateCreator<AppStateSlice, [], [], AppStateSlice> =
     setDate: (date: Date) => set({ date }),
     isMenuOpen: false,
     toggleMenuOpen: () => set((state) => ({ isMenuOpen: !state.isMenuOpen })),
-    openMenu: () => set({ isMenuOpen: true }),
     closeMenu: () => set({ isMenuOpen: false }),
     currentView: null as any,
     openView: (view: AppView) => set({ currentView: view }),
@@ -52,11 +50,26 @@ const createConditionsSlice: StateCreator<
   },
 })
 
-export type Store = AppStateSlice & ConditionsSlice
+type MetricsSlice = {
+  insideConditionsMetrics: ConditionMetricRow[]
+  setInsideConditionsMetrics(rows: ConditionMetricRow[]): void
+}
+
+const createMetricsSlice: StateCreator<MetricsSlice, [], [], MetricsSlice> = (
+  set
+) => ({
+  insideConditionsMetrics: [],
+  setInsideConditionsMetrics(rows: ConditionMetricRow[]) {
+    set({ insideConditionsMetrics: rows })
+  },
+})
+
+export type Store = AppStateSlice & ConditionsSlice & MetricsSlice
 
 export const useStore = create<Store>()((...args) => ({
   ...createAppStateSlice(...args),
   ...createConditionsSlice(...args),
+  ...createMetricsSlice(...args),
 }))
 
 export function initializeStore(date: Date, initialView: AppView) {

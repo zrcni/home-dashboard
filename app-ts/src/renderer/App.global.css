@@ -5,8 +5,9 @@
 
 :root {
   --text-color: white;
-  --text-color-secondary: #A239B2;
+  --text-color-secondary: #a239b2;
   --bg-color: rgb(20, 8, 19);
+  --bg-color-hover: rgb(27, 11, 26);
   --cursor: initial;
   --text-animation-speed: 0.2s;
 }

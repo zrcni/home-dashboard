@@ -2,4 +2,9 @@
   position: absolute;
   right: 0px;
   top: 0px;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  text-transform: none;
+  border: none;
 }

@@ -7,6 +7,20 @@ export interface ConditionData {
   lastUpdated: Date
 }
 
+export interface ConditionMetricRow {
+  temperature: number
+  humidity: number
+  timestamp: number
+}
+
+export interface GetConditionsSucceeded {
+  rows: ConditionMetricRow[]
+}
+
+export interface GetConditionsFailed {
+  error: Error
+}
+
 interface RequestUpdatePayload {
   id: string
 }
