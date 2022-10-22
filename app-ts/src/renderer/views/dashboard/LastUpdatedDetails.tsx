@@ -9,10 +9,13 @@ export const LastUpdatedDetails: React.FC<Props> = ({
   lastUpdated,
   dateNow,
 }) => {
+  const dateString = formatLastUpdated(lastUpdated, dateNow)
+
   return (
     <div className="dashboard-row">
-      <p className="dashboard-text last-updated-text">
-        {formatLastUpdated(lastUpdated, dateNow)}
+      {/* By using key prop the animation plays every time the value changes */}
+      <p className="dashboard-text last-updated-text" key={dateString}>
+        {dateString}
       </p>
     </div>
   )

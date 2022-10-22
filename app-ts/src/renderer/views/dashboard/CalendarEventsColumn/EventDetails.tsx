@@ -6,12 +6,12 @@ interface Props {
 export const EventDetails: React.FC<Props> = ({ label, events }) => {
   return (
     <div className="event-details-container">
-      <div>
-        <b>{label}</b>
-      </div>
+      <div className="event-details-label">{label}</div>
       <div>
         {events.map((event) => (
-          <div key={event}>{event}</div>
+          <div key={event} className="event-details-text">
+            {event}
+          </div>
         ))}
       </div>
     </div>

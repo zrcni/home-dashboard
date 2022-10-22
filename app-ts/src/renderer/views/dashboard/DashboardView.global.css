@@ -29,6 +29,7 @@
   margin-top: 0.2rem;
   font-size: 0.8rem;
   font-weight: bold;
+  animation: grow var(--text-animation-speed);
 }
 
 .dashboard-label {
@@ -42,6 +43,7 @@
 .clock-text {
   font-size: 4em;
   font-weight: bold;
+  animation: grow var(--text-animation-speed);
 }
 
 .calendar-date-text {
@@ -49,6 +51,7 @@
   font-weight: bold;
   top: 6px;
   position: relative;
+  animation: grow var(--text-animation-speed);
 }
 
 .calendar-date-text-small {
@@ -56,6 +59,7 @@
   font-weight: bold;
   top: -2px;
   position: relative;
+  animation: grow var(--text-animation-speed);
 }
 
 .dashboard-view-header {
@@ -70,11 +74,13 @@
 .temperature-side-text {
   font-size: 2em;
   font-weight: bold;
+  animation: grow var(--text-animation-speed);
 }
 
 .humidity-side-text {
   font-size: 1.2em;
   font-weight: bold;
+  animation: grow var(--text-animation-speed);
 }
 
 .dashboard-content {
@@ -95,8 +101,18 @@
   margin-bottom: 0;
 }
 
+.event-details-label {
+  font-weight: bold;
+  animation: grow var(--text-animation-speed);
+}
+
+.event-details-text {
+  animation: grow var(--text-animation-speed);
+}
+
 .conditions-title {
   margin: 0;
+  animation: grow var(--text-animation-speed);
 }
 
 .txt-color-2 {
@@ -110,6 +126,7 @@
 .date-events-title-primary {
   margin: 0;
   font-weight: bold;
+  animation: grow var(--text-animation-speed);
 }
 
 .date-events-title-secondary {
@@ -117,6 +134,7 @@
   font-weight: bold;
   text-transform: uppercase;
   font-size: 0.8rem;
+  animation: grow var(--text-animation-speed);
 }
 
 .calender-events-divider {
