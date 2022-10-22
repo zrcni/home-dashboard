@@ -1,7 +1,7 @@
-### app
-the _home dashboard_ app, running on a Raspberry Pi
+### app-ts
+the _home dashboard_ app, running on a Raspberry Pi, 7" screen
 
-Shows indoor weather conditions and time among other things like a picture frame.
+![ui](./home-dashboard-ui.png)
 
 ### mobile
 Controls the app
