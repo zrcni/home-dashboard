@@ -16,9 +16,8 @@ import { cfg, verifyMainConfig } from './config'
 import MenuBuilder from './menu'
 import { resolveHtmlPath } from './util'
 import { PubSubMQTT } from './pub-sub'
-import { createMQTTClient } from './mqtt'
+import { createMQTTClient, MQTT_TOPICS } from './mqtt'
 import { SaveLivingRoomConditionsSubscription } from './conditions/SaveLivingRoomConditionsSubscription'
-import { InsideConditionsUpdatedSubscription } from './conditions/InsideConditionsUpdatedSubscription'
 import { SQLite } from './sqlite'
 import { migrateUp } from './migrations'
 import { logger } from './logger'
@@ -28,12 +27,16 @@ import { COMMANDS } from '../commands'
 import { OutsideConditionsFinder } from './conditions/OutsideConditionsFinder'
 import * as webCalEventFinders from './calendar/WebCalEventFinder'
 import {
+  ConditionData,
   GetCalendarEventsParams,
   GetCalendarEventsResult,
   GetConditionsMetricsParams,
   GetConditionsMetricsResult,
   GetOutsideConditionsResult,
 } from 'types'
+import { MainSubscriptionHandler } from './MainSubscriptionHandler'
+import { SUBSCRIPTIONS } from '../subscriptions'
+import { ConditionsUpdatedPayload } from './conditions/types'
 
 process.on('unhandledRejection', (err) => {
   logger.error('unhandledRejection: ', err)
@@ -135,19 +138,18 @@ async function main() {
   logger.info('migrate up finished successfully')
 
   const pubSub = new PubSubMQTT(createMQTTClient(cfg.mqttBrokerUrl), {
-    onError: logger.error,
+    onError: (err) => logger.error(err),
   })
 
   new SaveLivingRoomConditionsSubscription(pubSub, sqlite).create()
 
-  new InsideConditionsUpdatedSubscription(
-    pubSub,
-    mainWindow.webContents
-  ).create()
-
   const metrics = new Metrics(sqlite)
 
-  const commandHandler = new MainCommandHandler(ipcMain, mainWindow.webContents)
+  const commandHandler = new MainCommandHandler(
+    ipcMain,
+    mainWindow.webContents,
+    true
+  )
 
   commandHandler.addHandler<
     GetConditionsMetricsParams,
@@ -178,6 +180,25 @@ async function main() {
         theme,
       }
     }
+  )
+
+  const subscriptionHandler = new MainSubscriptionHandler(
+    ipcMain,
+    mainWindow.webContents
+  )
+
+  subscriptionHandler.add<undefined, ConditionData>(
+    SUBSCRIPTIONS.LIVING_ROOM_CONDITIONS,
+    (_params, handler) =>
+      pubSub.subscribe<ConditionsUpdatedPayload>(
+        MQTT_TOPICS.LIVING_ROOM_CONDITIONS_UPDATED,
+        (payload) =>
+          handler({
+            temperature: payload.temperature,
+            humidity: payload.humidity,
+            lastUpdated: new Date(payload.timestamp * 1000),
+          })
+      )
   )
 }
 

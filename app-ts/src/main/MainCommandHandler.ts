@@ -13,9 +13,16 @@ export class MainCommandHandler {
 
   private unsubs: (() => void)[]
 
-  constructor(ipcMain: IpcMain, webContents: WebContents) {
+  private debug: boolean
+
+  constructor(
+    ipcMain: IpcMain,
+    webContents: WebContents,
+    debug: boolean = false
+  ) {
     this.ipcMain = ipcMain
     this.webContents = webContents
+    this.debug = debug
 
     this.unsubs = []
   }
@@ -28,27 +35,32 @@ export class MainCommandHandler {
     const self = this
 
     async function _handler(_: IpcMainEvent, payload: any) {
-      logger.info(`command received`, {
-        requestId: payload.requestId,
-        commandName,
-      })
+      if (self.debug) {
+        logger.info(`command received`, {
+          requestId: payload.requestId,
+          commandName,
+        })
+      }
 
       try {
         const result = await handler(payload.payload)
 
-        logger.info(`command succeeded`, {
-          requestId: payload.requestId,
-          commandName,
-        })
+        if (self.debug) {
+          logger.info(`command succeeded`, {
+            requestId: payload.requestId,
+            commandName,
+          })
+        }
 
         self.webContents.send(
           self.succeededEventName(commandName, payload.requestId),
           { payload: result }
         )
       } catch (err) {
-        logger.info(`command failed`, {
+        logger.error(`command failed`, {
           requestId: payload.requestId,
           commandName,
+          error: err,
         })
 
         self.webContents.send(
