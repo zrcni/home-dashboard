@@ -42,6 +42,7 @@ export const MetricsView: React.FC<Props> = ({
           legendPosition: 'middle',
         }}
         colors={['#f47560', '#e8c1a0']}
+        lineWidth={3}
         legends={[
           {
             anchor: 'bottom-right',
