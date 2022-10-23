@@ -1,3 +1,4 @@
+import { ConditionMetricRow } from 'types'
 import { SQLite } from '../sqlite'
 
 export class ConditionsMetrics {
@@ -8,7 +9,7 @@ export class ConditionsMetrics {
   }
 
   async getByLocation(location: string, dateRange: [Date, Date]) {
-    return this.sqlite.all(
+    const rows = await this.sqlite.all(
       `SELECT strftime('%Y-%m-%dT%H:%M:00Z', timestamp, 'unixepoch') AS timestamp, avg(temperature) AS temperature, avg(humidity) as humidity
       FROM conditions WHERE location = ? AND timestamp BETWEEN ? AND ?
       GROUP BY timestamp
@@ -17,5 +18,6 @@ export class ConditionsMetrics {
       Math.floor(dateRange[0].valueOf() / 1000),
       Math.ceil(dateRange[1].valueOf() / 1000)
     )
+    return rows as ConditionMetricRow[]
   }
 }

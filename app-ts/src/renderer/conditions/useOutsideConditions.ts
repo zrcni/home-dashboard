@@ -4,7 +4,7 @@ import { useInterval } from 'renderer/hooks'
 import { useStore } from '../store'
 import { RendererCommand } from 'renderer/RendererCommand'
 import { COMMANDS } from '../../commands'
-import { GetOutsideConditionsError, GetOutsideConditionsResult } from 'types'
+import { GetOutsideConditionsResult } from 'types'
 import { useMount } from 'renderer/hooks/useMount'
 import { logger } from 'renderer/logger'
 
@@ -15,11 +15,9 @@ export function useOutsideConditions() {
   ])
 
   const handler = useCallback(() => {
-    RendererCommand.run<
-      undefined,
-      GetOutsideConditionsResult,
-      GetOutsideConditionsError
-    >(COMMANDS.GET_OUTSIDE_CONDITIONS)
+    RendererCommand.run<undefined, GetOutsideConditionsResult>(
+      COMMANDS.GET_OUTSIDE_CONDITIONS
+    )
       .then((result) => setConditions(result))
       .catch((err) =>
         logger.error(`${COMMANDS.GET_OUTSIDE_CONDITIONS} query failed: `, err)

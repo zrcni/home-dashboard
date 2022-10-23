@@ -1,3 +1,5 @@
+import { TimeoutError } from 'errors'
+
 export type Temperature = number
 export type Humidity = number
 
@@ -20,11 +22,9 @@ export interface GetConditionsMetricsParams {
 
 export type GetConditionsMetricsResult = ConditionMetricRow[]
 
-export type GetConditionsMetricsError = Error
-
 export type GetOutsideConditionsResult = ConditionData
 
-export type GetOutsideConditionsError = Error
+export type CommandError = Error | TimeoutError
 
 interface RequestUpdatePayload {
   id: string

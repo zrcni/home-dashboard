@@ -27,6 +27,11 @@ import { Metrics } from './metrics'
 import { MainCommandHandler } from './MainCommandHandler'
 import { COMMANDS } from '../commands'
 import { OutsideConditionsFinder } from './conditions/OutsideConditionsFinder'
+import {
+  GetConditionsMetricsParams,
+  GetConditionsMetricsResult,
+  GetOutsideConditionsResult,
+} from 'types'
 
 process.on('unhandledRejection', (err) => {
   logger.error('unhandledRejection: ', err)
@@ -147,12 +152,16 @@ async function main() {
 
   const commandHandler = new MainCommandHandler(ipcMain, mainWindow.webContents)
 
-  commandHandler.addHandler(COMMANDS.GET_CONDITIONS_METRICS, (params) =>
+  commandHandler.addHandler<
+    GetConditionsMetricsParams,
+    GetConditionsMetricsResult
+  >(COMMANDS.GET_CONDITIONS_METRICS, (params) =>
     metrics.conditions.getByLocation(params.location, params.dateRange)
   )
 
-  commandHandler.addHandler(COMMANDS.GET_OUTSIDE_CONDITIONS, () =>
-    OutsideConditionsFinder.getLatest()
+  commandHandler.addHandler<undefined, GetOutsideConditionsResult>(
+    COMMANDS.GET_OUTSIDE_CONDITIONS,
+    () => OutsideConditionsFinder.getLatest()
   )
 }
 

@@ -1,21 +1,14 @@
+import { TimeoutError } from 'errors'
 import { nanoid } from 'nanoid'
-
-interface ErrorPayload<Err extends Error = Error> {
-  error: Err
-}
-
-interface QueryResultPayload<T = any> {
-  payload: T
-}
-
-interface QueryOptions {
-  timeout?: number
-}
+import { CommandError } from 'types'
 
 const TIMEOUT_DURATION_MS_DEFAULT = 5000
 
+/**
+ * TODO: update error handling to be {ok,error} instead of promise .then/.catch
+ */
 export class RendererCommand {
-  static run<Params = any, Result = any, Err extends Error = Error>(
+  static run<Params = any, Result = any, Err extends Error = CommandError>(
     commandName: string,
     params?: Params,
     opts?: QueryOptions
@@ -26,9 +19,13 @@ export class RendererCommand {
 
     return new Promise((_resolve, _reject) => {
       let timedOut = false
+      const startTimestamp = Date.now()
+
       let timeout = setTimeout(() => {
         timedOut = true
-        _reject(new Error('query timed out'))
+        _reject(
+          new TimeoutError('query timed out', Date.now() - startTimestamp)
+        )
       }, opts?.timeout ?? TIMEOUT_DURATION_MS_DEFAULT)
 
       function resolve(a: any) {
@@ -71,4 +68,16 @@ export class RendererCommand {
       failed: `${commandName}_cmd_failed:${requestId}`,
     }
   }
+}
+
+interface ErrorPayload<Err extends Error = CommandError> {
+  error: Err
+}
+
+interface QueryResultPayload<Result = any> {
+  payload: Result
+}
+
+interface QueryOptions {
+  timeout?: number
 }
