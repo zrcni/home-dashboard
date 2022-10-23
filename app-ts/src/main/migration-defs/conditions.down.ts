@@ -1,1 +1,1 @@
-export default 'DROP TABLE IF EXISTS conditions;'
+export default ['DROP TABLE IF EXISTS conditions;']

@@ -1,15 +1,18 @@
 import { ResponsiveLine } from '@nivo/line'
-import { endOfDay, startOfDay, subDays } from 'date-fns'
+import { subDays } from 'date-fns'
 import { useStore } from 'renderer/store'
 import { ConditionMetricRow } from 'types'
 import './MetricsView.global.css'
 
 type Props = {
   insideConditionsMetrics: ConditionMetricRow[]
+  dateRange: [Date, Date]
 }
 
-export const MetricsView: React.FC<Props> = ({ insideConditionsMetrics }) => {
-  const date = useStore((state) => state.date)
+export const MetricsView: React.FC<Props> = ({
+  insideConditionsMetrics,
+  dateRange,
+}) => {
   const data = formatData(insideConditionsMetrics)
 
   return (
@@ -20,8 +23,8 @@ export const MetricsView: React.FC<Props> = ({ insideConditionsMetrics }) => {
         xScale={{
           type: 'time',
           // format: '%Y-%m-%dT%H:%M:%S.%L%Z',
-          min: startOfDay(subDays(date, 1)),
-          max: endOfDay(date),
+          min: dateRange[0],
+          max: dateRange[1],
           precision: 'hour',
         }}
         yScale={{
@@ -91,16 +94,16 @@ function formatData(rows: ConditionMetricRow[]) {
     data: [] as { x: any; y: any }[],
   }
   for (const row of rows) {
+    const date = new Date(row.timestamp)
+
     temperature.data.push({
       y: row.temperature,
-      // x: row.timestamp,
-      x: new Date(row.timestamp),
+      x: date,
     })
 
     humidity.data.push({
       y: row.humidity,
-      // x: row.timestamp,
-      x: new Date(row.timestamp),
+      x: date,
     })
   }
 

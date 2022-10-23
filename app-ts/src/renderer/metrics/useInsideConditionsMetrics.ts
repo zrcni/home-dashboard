@@ -1,12 +1,12 @@
 import { IPC_CHANNELS } from 'ipc-channels'
-import { useMount } from 'renderer/hooks/useMount'
+import { useEffect } from 'react'
 import { useStore } from 'renderer/store'
 import { GetConditionsFailed, GetConditionsSucceeded } from 'types'
 
-export function useInsideConditionsMetrics() {
+export function useInsideConditionsMetrics(dateRange: [Date, Date]) {
   const setMetrics = useStore((state) => state.setInsideConditionsMetrics)
 
-  useMount(() => {
+  useEffect(() => {
     window.electronAPI.ipcRenderer.on(
       IPC_CHANNELS.METRICS_GET_CONDITIONS_SUCCEEDED,
       (_, payload: GetConditionsSucceeded) => {
@@ -23,6 +23,7 @@ export function useInsideConditionsMetrics() {
 
     window.electronAPI.ipcRenderer.send(IPC_CHANNELS.METRICS_GET_CONDITIONS, {
       location: 'livingroom',
+      dateRange,
     })
-  })
+  }, [dateRange[0], dateRange[1]])
 }

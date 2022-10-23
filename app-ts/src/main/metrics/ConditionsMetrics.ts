@@ -7,13 +7,15 @@ export class ConditionsMetrics {
     this.sqlite = sqlite
   }
 
-  /**
-   * TODO date range
-   */
-  async getByLocation(location: string) {
+  async getByLocation(location: string, dateRange: [Date, Date]) {
     return this.sqlite.all(
-      `SELECT temperature, humidity, timestamp * 1000 as timestamp FROM conditions WHERE location = ?`,
-      location
+      `SELECT strftime('%Y-%m-%dT%H:%M:00Z', timestamp, 'unixepoch') AS timestamp, avg(temperature) AS temperature, avg(humidity) as humidity
+      FROM conditions WHERE location = ? AND timestamp BETWEEN ? AND ?
+      GROUP BY timestamp
+      ORDER BY timestamp ASC`,
+      location,
+      Math.floor(dateRange[0].valueOf() / 1000),
+      Math.ceil(dateRange[1].valueOf() / 1000)
     )
   }
 }

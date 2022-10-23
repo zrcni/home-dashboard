@@ -151,21 +151,17 @@ async function main() {
 
   ipcMain.on(IPC_CHANNELS.METRICS_GET_CONDITIONS, (_, payload) => {
     metrics.conditions
-      .getByLocation(payload.location)
-      .then((rows) => {
+      .getByLocation(payload.location, payload.dateRange)
+      .then((rows: any) => {
         mainWindow.webContents.send(
           IPC_CHANNELS.METRICS_GET_CONDITIONS_SUCCEEDED,
-          {
-            rows,
-          }
+          { rows }
         )
       })
       .catch((err) => {
         mainWindow.webContents.send(
           IPC_CHANNELS.METRICS_GET_CONDITIONS_FAILED,
-          {
-            error: err,
-          }
+          { error: err }
         )
       })
   })

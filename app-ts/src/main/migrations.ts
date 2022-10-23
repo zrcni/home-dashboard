@@ -14,6 +14,7 @@ export async function resetDb(sqlite: SQLite) {
   await migrateUp(sqlite)
 }
 
+// TODO: don't run migrations if they've already been run! (use a library or something)
 async function runMigrations(sqlite: SQLite, type: 'up' | 'down') {
   const migrations = await getMigrations(type)
 
