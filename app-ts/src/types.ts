@@ -26,23 +26,17 @@ export type GetOutsideConditionsResult = ConditionData
 
 export type CommandError = Error | TimeoutError
 
-interface RequestUpdatePayload {
-  id: string
-}
-
-export interface CalendarDateEventRequestPayload extends RequestUpdatePayload {
-  date: Date
-}
-
 export type CalendarEvent = string
 
-export type CalendarEvents = {
+export interface CalendarEvents {
   holiday: CalendarEvent[]
   goodToKnow: CalendarEvent[]
   nameday: CalendarEvent[]
   theme: CalendarEvent[]
 }
 
-export interface CalendarDateEventUpdateReceivedPayload {
-  events: CalendarEvents
+export interface GetCalendarEventsParams {
+  date: Date
 }
+
+export type GetCalendarEventsResult = CalendarEvents

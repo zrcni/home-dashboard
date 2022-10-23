@@ -19,7 +19,6 @@ import { PubSubMQTT } from './pub-sub'
 import { createMQTTClient } from './mqtt'
 import { SaveLivingRoomConditionsSubscription } from './conditions/SaveLivingRoomConditionsSubscription'
 import { InsideConditionsUpdatedSubscription } from './conditions/InsideConditionsUpdatedSubscription'
-import { CalendarDateEventRequestSubscrpition } from './calendar/CalendarDateEventRequestSubscrpition'
 import { SQLite } from './sqlite'
 import { migrateUp } from './migrations'
 import { logger } from './logger'
@@ -27,7 +26,10 @@ import { Metrics } from './metrics'
 import { MainCommandHandler } from './MainCommandHandler'
 import { COMMANDS } from '../commands'
 import { OutsideConditionsFinder } from './conditions/OutsideConditionsFinder'
+import * as webCalEventFinders from './calendar/WebCalEventFinder'
 import {
+  GetCalendarEventsParams,
+  GetCalendarEventsResult,
   GetConditionsMetricsParams,
   GetConditionsMetricsResult,
   GetOutsideConditionsResult,
@@ -143,11 +145,6 @@ async function main() {
     mainWindow.webContents
   ).create()
 
-  new CalendarDateEventRequestSubscrpition(
-    ipcMain,
-    mainWindow.webContents
-  ).create()
-
   const metrics = new Metrics(sqlite)
 
   const commandHandler = new MainCommandHandler(ipcMain, mainWindow.webContents)
@@ -162,6 +159,25 @@ async function main() {
   commandHandler.addHandler<undefined, GetOutsideConditionsResult>(
     COMMANDS.GET_OUTSIDE_CONDITIONS,
     () => OutsideConditionsFinder.getLatest()
+  )
+
+  commandHandler.addHandler<GetCalendarEventsParams, GetCalendarEventsResult>(
+    COMMANDS.GET_CALENDAR_EVENTS,
+    async (params) => {
+      const [holiday, goodToKnow, nameday, theme] = await Promise.all([
+        webCalEventFinders.holiday.findByDate(params.date),
+        webCalEventFinders.goodToKnow.findByDate(params.date),
+        webCalEventFinders.nameday.findByDate(params.date),
+        webCalEventFinders.theme.findByDate(params.date),
+      ])
+
+      return {
+        holiday,
+        goodToKnow,
+        nameday,
+        theme,
+      }
+    }
   )
 }
 
