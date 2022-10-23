@@ -23,6 +23,11 @@ export class MainCommandHandler {
     const self = this
 
     function _handler(_: IpcMainEvent, payload: any) {
+      logger.info(`command received`, {
+        requestId: payload.requestId,
+        commandName,
+      })
+
       handler(payload.payload)
         .then((result: Result) => {
           logger.info(`command succeeded`, {

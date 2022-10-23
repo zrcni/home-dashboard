@@ -1,49 +1,35 @@
-import { nanoid } from 'nanoid'
 import ms from 'ms'
-import { useRef, useCallback } from 'react'
-import { useMount } from 'renderer/hooks/useMount'
+import { useCallback } from 'react'
 import { useInterval } from 'renderer/hooks'
-import { IPC_CHANNELS } from '../../ipc-channels'
-import { OutsideConditionsUpdateReceivedPayload } from '../../types'
 import { useStore } from '../store'
+import { RendererCommand } from 'renderer/RendererCommand'
+import { COMMANDS } from '../../commands'
+import { GetOutsideConditionsError, GetOutsideConditionsResult } from 'types'
+import { useMount } from 'renderer/hooks/useMount'
+import { logger } from 'renderer/logger'
 
 export function useOutsideConditions() {
-  const idRef = useRef(nanoid())
   const [conditions, setConditions] = useStore((state) => [
     state.outsideConditions,
     state.setOutsideConditions,
   ])
 
-  const handleRequestUpdate = useCallback(() => {
-    window.electronAPI.ipcRenderer.send(
-      IPC_CHANNELS.OUTSIDE_CONDITIONS_REQUEST_UPDATE,
-      {
-        id: idRef.current,
-      }
-    )
+  const handler = useCallback(() => {
+    RendererCommand.run<
+      undefined,
+      GetOutsideConditionsResult,
+      GetOutsideConditionsError
+    >(COMMANDS.GET_OUTSIDE_CONDITIONS)
+      .then((result) => setConditions(result))
+      .catch((err) =>
+        logger.error(`${COMMANDS.GET_OUTSIDE_CONDITIONS} query failed: `, err)
+      )
   }, [])
 
-  useInterval(handleRequestUpdate, REFRESH_FREQ_MS)
+  useInterval(handler, REFRESH_FREQ_MS)
 
   useMount(() => {
-    const onMessage = (
-      _: unknown,
-      payload: OutsideConditionsUpdateReceivedPayload
-    ) => setConditions(payload.conditions)
-
-    window.electronAPI.ipcRenderer.on(
-      `${IPC_CHANNELS.OUTSIDE_CONDITIONS_UPDATE_RECEIVED}:${idRef.current}`,
-      onMessage
-    )
-
-    handleRequestUpdate()
-
-    return () => {
-      window.electronAPI.ipcRenderer.off(
-        `${IPC_CHANNELS.OUTSIDE_CONDITIONS_UPDATE_RECEIVED}:${idRef.current}`,
-        onMessage
-      )
-    }
+    handler()
   })
 
   return conditions

@@ -14,9 +14,6 @@ interface QueryOptions {
 
 const TIMEOUT_DURATION_MS_DEFAULT = 5000
 
-/**
- *
- */
 export class RendererCommand {
   static run<Params = any, Result = any, Err extends Error = Error>(
     commandName: string,

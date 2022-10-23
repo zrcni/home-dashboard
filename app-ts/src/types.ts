@@ -13,14 +13,18 @@ export interface ConditionMetricRow {
   timestamp: number
 }
 
-export interface GetConditionsParams {
+export interface GetConditionsMetricsParams {
   location: string
   dateRange: [Date, Date]
 }
 
-export type GetConditionsSucceededPayload = ConditionMetricRow[]
+export type GetConditionsMetricsResult = ConditionMetricRow[]
 
-export type GetConditionsError = Error
+export type GetConditionsMetricsError = Error
+
+export type GetOutsideConditionsResult = ConditionData
+
+export type GetOutsideConditionsError = Error
 
 interface RequestUpdatePayload {
   id: string
@@ -41,10 +45,4 @@ export type CalendarEvents = {
 
 export interface CalendarDateEventUpdateReceivedPayload {
   events: CalendarEvents
-}
-
-export type OutsideConditionsRequestPayload = RequestUpdatePayload
-
-export interface OutsideConditionsUpdateReceivedPayload {
-  conditions: ConditionData
 }

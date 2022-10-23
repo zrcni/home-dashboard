@@ -19,7 +19,6 @@ import { PubSubMQTT } from './pub-sub'
 import { createMQTTClient } from './mqtt'
 import { SaveLivingRoomConditionsSubscription } from './conditions/SaveLivingRoomConditionsSubscription'
 import { InsideConditionsUpdatedSubscription } from './conditions/InsideConditionsUpdatedSubscription'
-import { OutsideConditionsUpdatedSubscription } from './conditions/OutsideConditionsUpdatedSubscription'
 import { CalendarDateEventRequestSubscrpition } from './calendar/CalendarDateEventRequestSubscrpition'
 import { SQLite } from './sqlite'
 import { migrateUp } from './migrations'
@@ -27,6 +26,7 @@ import { logger } from './logger'
 import { Metrics } from './metrics'
 import { MainCommandHandler } from './MainCommandHandler'
 import { COMMANDS } from '../commands'
+import { OutsideConditionsFinder } from './conditions/OutsideConditionsFinder'
 
 process.on('unhandledRejection', (err) => {
   logger.error('unhandledRejection: ', err)
@@ -138,11 +138,6 @@ async function main() {
     mainWindow.webContents
   ).create()
 
-  new OutsideConditionsUpdatedSubscription(
-    ipcMain,
-    mainWindow.webContents
-  ).create()
-
   new CalendarDateEventRequestSubscrpition(
     ipcMain,
     mainWindow.webContents
@@ -154,6 +149,10 @@ async function main() {
 
   commandHandler.addHandler(COMMANDS.GET_CONDITIONS_METRICS, (params) =>
     metrics.conditions.getByLocation(params.location, params.dateRange)
+  )
+
+  commandHandler.addHandler(COMMANDS.GET_OUTSIDE_CONDITIONS, () =>
+    OutsideConditionsFinder.getLatest()
   )
 }
 
