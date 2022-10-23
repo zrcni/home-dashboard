@@ -13,13 +13,14 @@ export interface ConditionMetricRow {
   timestamp: number
 }
 
-export interface GetConditionsSucceeded {
-  rows: ConditionMetricRow[]
+export interface GetConditionsParams {
+  location: string
+  dateRange: [Date, Date]
 }
 
-export interface GetConditionsFailed {
-  error: Error
-}
+export type GetConditionsSucceededPayload = ConditionMetricRow[]
+
+export type GetConditionsError = Error
 
 interface RequestUpdatePayload {
   id: string

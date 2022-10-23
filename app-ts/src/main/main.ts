@@ -24,8 +24,9 @@ import { CalendarDateEventRequestSubscrpition } from './calendar/CalendarDateEve
 import { SQLite } from './sqlite'
 import { migrateUp } from './migrations'
 import { logger } from './logger'
-import { IPC_CHANNELS } from '../ipc-channels'
 import { Metrics } from './metrics'
+import { MainCommandHandler } from './MainCommandHandler'
+import { COMMANDS } from '../commands'
 
 process.on('unhandledRejection', (err) => {
   logger.error('unhandledRejection: ', err)
@@ -149,22 +150,11 @@ async function main() {
 
   const metrics = new Metrics(sqlite)
 
-  ipcMain.on(IPC_CHANNELS.METRICS_GET_CONDITIONS, (_, payload) => {
-    metrics.conditions
-      .getByLocation(payload.location, payload.dateRange)
-      .then((rows: any) => {
-        mainWindow.webContents.send(
-          IPC_CHANNELS.METRICS_GET_CONDITIONS_SUCCEEDED,
-          { rows }
-        )
-      })
-      .catch((err) => {
-        mainWindow.webContents.send(
-          IPC_CHANNELS.METRICS_GET_CONDITIONS_FAILED,
-          { error: err }
-        )
-      })
-  })
+  const commandHandler = new MainCommandHandler(ipcMain, mainWindow.webContents)
+
+  commandHandler.addHandler(COMMANDS.GET_CONDITIONS_METRICS, (params) =>
+    metrics.conditions.getByLocation(params.location, params.dateRange)
+  )
 }
 
 main().catch((err) => {
