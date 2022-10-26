@@ -1,13 +1,13 @@
 import { EventEmitter } from 'events'
 import { PubSubInMemory } from '../../../pub-sub/PubSubInMemory'
-import { SaveLivingRoomConditionsSubscription } from '../SaveLivingRoomConditionsSubscription'
+import { saveLivingRoomConditionsSubscription } from '../saveLivingRoomConditionsSubscription'
 import { migrateUp, resetDb } from '../../../migrations'
 import { SQLite } from '../../../sqlite'
 import { MQTT_TOPICS } from '../../../mqtt'
 import { ConditionsRecord, ConditionsUpdatedPayload } from '../../types'
 import { flushPromises } from '../../../../test-utils'
 
-describe('SaveLivingRoomConditionsSubscription', () => {
+describe('saveLivingRoomConditionsSubscription', () => {
   let sqlite: SQLite
 
   beforeAll(async () => {
@@ -20,7 +20,8 @@ describe('SaveLivingRoomConditionsSubscription', () => {
   it('add record to _conditions_ table', async () => {
     const emitter = new EventEmitter()
     const pubsub = new PubSubInMemory(emitter)
-    new SaveLivingRoomConditionsSubscription(pubsub, sqlite).create()
+
+    saveLivingRoomConditionsSubscription(pubsub, sqlite)
 
     jest.spyOn(Date, 'now').mockReturnValue(1665779082868)
 

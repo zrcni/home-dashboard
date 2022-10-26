@@ -16,18 +16,15 @@ import { cfg, verifyMainConfig } from './config'
 import MenuBuilder from './menu'
 import { resolveHtmlPath } from './util'
 import { PubSubMQTT } from './pub-sub'
-import { createMQTTClient, MQTT_TOPICS } from './mqtt'
-import { SaveLivingRoomConditionsSubscription } from './conditions/SaveLivingRoomConditionsSubscription'
+import { createMQTTClient } from './mqtt'
+import { saveLivingRoomConditionsSubscription } from './conditions/saveLivingRoomConditionsSubscription'
 import { SQLite } from './sqlite'
 import { migrateUp } from './migrations'
 import { logger } from './logger'
 import { Metrics } from './metrics'
 import { IPCCommandHandler } from './IPCCommandHandler'
 import * as webCalEventFinders from './calendar/WebCalEventFinder'
-import { ConditionData } from 'types'
 import { IPCSubscriptionHandler } from './IPCSubscriptionHandler'
-import { SUBSCRIPTIONS } from '../subscriptions'
-import { ConditionsUpdatedPayload } from './conditions/types'
 import * as ipcCommands from './ipc-commands'
 import * as ipcSubscriptions from './ipc-subscriptions'
 
@@ -134,7 +131,7 @@ async function main() {
     onError: (err) => logger.error(err),
   })
 
-  new SaveLivingRoomConditionsSubscription(pubSub, sqlite).create()
+  saveLivingRoomConditionsSubscription(pubSub, sqlite)
 
   const metrics = new Metrics(sqlite)
 
