@@ -23,20 +23,13 @@ import { migrateUp } from './migrations'
 import { logger } from './logger'
 import { Metrics } from './metrics'
 import { IPCCommandHandler } from './IPCCommandHandler'
-import { COMMANDS } from '../commands'
-import { OutsideConditionsFinder } from './conditions/OutsideConditionsFinder'
 import * as webCalEventFinders from './calendar/WebCalEventFinder'
-import {
-  ConditionData,
-  GetCalendarEventsParams,
-  GetCalendarEventsResult,
-  GetConditionsMetricsParams,
-  GetConditionsMetricsResult,
-  GetOutsideConditionsResult,
-} from 'types'
+import { ConditionData } from 'types'
 import { IPCSubscriptionHandler } from './IPCSubscriptionHandler'
 import { SUBSCRIPTIONS } from '../subscriptions'
 import { ConditionsUpdatedPayload } from './conditions/types'
+import * as ipcCommands from './ipc-commands'
+import * as ipcSubscriptions from './ipc-subscriptions'
 
 process.on('unhandledRejection', (err) => {
   logger.error('unhandledRejection: ', err)
@@ -148,62 +141,19 @@ async function main() {
   const commandHandler = new IPCCommandHandler(
     ipcMain,
     mainWindow.webContents,
-    true
+    cfg.dev
   )
 
-  /**
-   * TODO move these handlers away to make them testable
-   */
-
-  commandHandler.addHandler<
-    GetConditionsMetricsParams,
-    GetConditionsMetricsResult
-  >(COMMANDS.GET_CONDITIONS_METRICS, (params) =>
-    metrics.conditions.getByLocation(params.location, params.dateRange)
-  )
-
-  commandHandler.addHandler<undefined, GetOutsideConditionsResult>(
-    COMMANDS.GET_OUTSIDE_CONDITIONS,
-    () => OutsideConditionsFinder.getLatest()
-  )
-
-  commandHandler.addHandler<GetCalendarEventsParams, GetCalendarEventsResult>(
-    COMMANDS.GET_CALENDAR_EVENTS,
-    async (params) => {
-      const [holiday, goodToKnow, nameday, theme] = await Promise.all([
-        webCalEventFinders.holiday.findByDate(params.date),
-        webCalEventFinders.goodToKnow.findByDate(params.date),
-        webCalEventFinders.nameday.findByDate(params.date),
-        webCalEventFinders.theme.findByDate(params.date),
-      ])
-
-      return {
-        holiday,
-        goodToKnow,
-        nameday,
-        theme,
-      }
-    }
-  )
+  ipcCommands.getConditionsMetrics(commandHandler, metrics)
+  ipcCommands.getOutsideConditions(commandHandler)
+  ipcCommands.getCalendarEvents(commandHandler, webCalEventFinders)
 
   const subscriptionHandler = new IPCSubscriptionHandler(
     ipcMain,
     mainWindow.webContents
   )
 
-  subscriptionHandler.addHandler<undefined, ConditionData>(
-    SUBSCRIPTIONS.LIVING_ROOM_CONDITIONS,
-    (_params, handler) =>
-      pubSub.subscribe<ConditionsUpdatedPayload>(
-        MQTT_TOPICS.LIVING_ROOM_CONDITIONS_UPDATED,
-        (payload) =>
-          handler({
-            temperature: payload.temperature,
-            humidity: payload.humidity,
-            lastUpdated: new Date(payload.timestamp * 1000),
-          })
-      )
-  )
+  ipcSubscriptions.livingRoomConditionsUpdated(subscriptionHandler, pubSub)
 }
 
 main().catch((err) => {
