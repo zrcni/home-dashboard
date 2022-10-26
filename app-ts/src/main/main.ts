@@ -22,7 +22,7 @@ import { SQLite } from './sqlite'
 import { migrateUp } from './migrations'
 import { logger } from './logger'
 import { Metrics } from './metrics'
-import { MainCommandHandler } from './MainCommandHandler'
+import { IPCCommandHandler } from './IPCCommandHandler'
 import { COMMANDS } from '../commands'
 import { OutsideConditionsFinder } from './conditions/OutsideConditionsFinder'
 import * as webCalEventFinders from './calendar/WebCalEventFinder'
@@ -34,7 +34,7 @@ import {
   GetConditionsMetricsResult,
   GetOutsideConditionsResult,
 } from 'types'
-import { MainSubscriptionHandler } from './MainSubscriptionHandler'
+import { IPCSubscriptionHandler } from './IPCSubscriptionHandler'
 import { SUBSCRIPTIONS } from '../subscriptions'
 import { ConditionsUpdatedPayload } from './conditions/types'
 
@@ -145,11 +145,15 @@ async function main() {
 
   const metrics = new Metrics(sqlite)
 
-  const commandHandler = new MainCommandHandler(
+  const commandHandler = new IPCCommandHandler(
     ipcMain,
     mainWindow.webContents,
     true
   )
+
+  /**
+   * TODO move these handlers away to make them testable
+   */
 
   commandHandler.addHandler<
     GetConditionsMetricsParams,
@@ -182,12 +186,12 @@ async function main() {
     }
   )
 
-  const subscriptionHandler = new MainSubscriptionHandler(
+  const subscriptionHandler = new IPCSubscriptionHandler(
     ipcMain,
     mainWindow.webContents
   )
 
-  subscriptionHandler.add<undefined, ConditionData>(
+  subscriptionHandler.addHandler<undefined, ConditionData>(
     SUBSCRIPTIONS.LIVING_ROOM_CONDITIONS,
     (_params, handler) =>
       pubSub.subscribe<ConditionsUpdatedPayload>(

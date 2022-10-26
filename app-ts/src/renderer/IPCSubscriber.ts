@@ -1,7 +1,7 @@
 import { IpcRendererEvent } from 'electron'
 import { nanoid } from 'nanoid'
 
-export class RendererSubscriber {
+export class IPCSubscriber {
   static subscribe<Params = any, Payload = any>(
     subscriptionName: string,
     params: Params,

@@ -7,7 +7,7 @@ const TIMEOUT_DURATION_MS_DEFAULT = 5000
 /**
  * TODO: update error handling to be {ok,error} instead of promise .then/.catch
  */
-export class RendererCommand {
+export class IPCCommand {
   static run<Params = any, Result = any, Err extends Error = CommandError>(
     commandName: string,
     params?: Params,

@@ -1,6 +1,6 @@
 import { useStore } from '../store'
 import { ConditionData } from '../../types'
-import { useSubscription } from 'renderer/hooks/useSubscription'
+import { useIPCSubscription } from 'renderer/hooks/useIPCSubscription'
 import { SUBSCRIPTIONS } from '../../subscriptions'
 
 export function useLivingRoomConditions() {
@@ -9,7 +9,7 @@ export function useLivingRoomConditions() {
     state.setInsideConditions,
   ])
 
-  useSubscription<ConditionData>(
+  useIPCSubscription<ConditionData>(
     SUBSCRIPTIONS.LIVING_ROOM_CONDITIONS,
     undefined,
     (payload) => setConditions(payload)

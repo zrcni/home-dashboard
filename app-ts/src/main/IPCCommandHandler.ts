@@ -6,7 +6,7 @@ import { logger } from './logger'
  * TODO: update error handling to be {ok,error} instead of promise .then/.catch
  * (send one event with either {ok} or {error} payload)
  */
-export class MainCommandHandler {
+export class IPCCommandHandler {
   private ipcMain: IpcMain
 
   private webContents: WebContents

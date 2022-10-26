@@ -2,7 +2,7 @@ import ms from 'ms'
 import { useCallback } from 'react'
 import { useInterval } from 'renderer/hooks'
 import { useStore } from '../store'
-import { RendererCommand } from 'renderer/RendererCommand'
+import { IPCCommand } from 'renderer/IPCCommand'
 import { COMMANDS } from '../../commands'
 import { GetOutsideConditionsResult } from 'types'
 import { useMount } from 'renderer/hooks/useMount'
@@ -15,7 +15,7 @@ export function useOutsideConditions() {
   ])
 
   const handler = useCallback(() => {
-    RendererCommand.run<undefined, GetOutsideConditionsResult>(
+    IPCCommand.run<undefined, GetOutsideConditionsResult>(
       COMMANDS.GET_OUTSIDE_CONDITIONS
     )
       .then((result) => setConditions(result))

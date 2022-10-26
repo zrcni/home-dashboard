@@ -2,7 +2,7 @@ import invariant from 'tiny-invariant'
 import { IpcMain, WebContents } from 'electron'
 import { logger } from './logger'
 
-export class MainSubscriptionHandler {
+export class IPCSubscriptionHandler {
   private ipcMain: IpcMain
 
   private webContents: WebContents
@@ -101,7 +101,7 @@ export class MainSubscriptionHandler {
     }
   }
 
-  add<Params = any, Payload = any>(
+  addHandler<Params = any, Payload = any>(
     subscriptionName: string,
     subscribe: Subscribe<Params, Payload>
   ) {

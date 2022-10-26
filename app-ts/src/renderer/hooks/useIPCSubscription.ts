@@ -1,8 +1,8 @@
 import { useMount } from 'renderer/hooks/useMount'
 import { useEffect, useRef } from 'react'
-import { RendererSubscriber } from 'renderer/RendererSubscriber'
+import { IPCSubscriber } from 'renderer/IPCSubscriber'
 
-export function useSubscription<Payload = any, Params = any>(
+export function useIPCSubscription<Payload = any, Params = any>(
   subscriptionName: string,
   params: Params,
   onEvent: (payload: Payload) => void
@@ -17,7 +17,7 @@ export function useSubscription<Payload = any, Params = any>(
     const handleEvent: typeof onEvent = (payload) => {
       onEventRef.current(payload)
     }
-    const unsubscribe = RendererSubscriber.subscribe(
+    const unsubscribe = IPCSubscriber.subscribe(
       subscriptionName,
       params,
       handleEvent

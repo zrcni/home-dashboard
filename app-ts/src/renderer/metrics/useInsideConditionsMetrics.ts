@@ -1,6 +1,6 @@
 import { COMMANDS } from '../../commands'
 import { useEffect } from 'react'
-import { RendererCommand } from 'renderer/RendererCommand'
+import { IPCCommand } from 'renderer/IPCCommand'
 import { useStore } from 'renderer/store'
 import { GetConditionsMetricsParams, GetConditionsMetricsResult } from 'types'
 import { logger } from 'renderer/logger'
@@ -9,7 +9,7 @@ export function useInsideConditionsMetrics(dateRange: [Date, Date]) {
   const setMetrics = useStore((state) => state.setInsideConditionsMetrics)
 
   useEffect(() => {
-    RendererCommand.run<GetConditionsMetricsParams, GetConditionsMetricsResult>(
+    IPCCommand.run<GetConditionsMetricsParams, GetConditionsMetricsResult>(
       COMMANDS.GET_CONDITIONS_METRICS,
       {
         location: 'livingroom',

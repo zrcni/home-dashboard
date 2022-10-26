@@ -1,6 +1,6 @@
 import { COMMANDS } from '../../commands'
 import { useState, useEffect } from 'react'
-import { RendererCommand } from 'renderer/RendererCommand'
+import { IPCCommand } from 'renderer/IPCCommand'
 import {
   GetCalendarEventsParams,
   GetCalendarEventsResult,
@@ -14,7 +14,7 @@ export function useCalendarEvents(date: Date) {
   const ddmm = dayMonth(date)
 
   useEffect(() => {
-    RendererCommand.run<GetCalendarEventsParams, GetCalendarEventsResult>(
+    IPCCommand.run<GetCalendarEventsParams, GetCalendarEventsResult>(
       COMMANDS.GET_CALENDAR_EVENTS,
       { date }
     )
