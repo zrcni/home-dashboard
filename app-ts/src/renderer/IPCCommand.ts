@@ -26,12 +26,14 @@ export class IPCCommand {
         _reject(
           new TimeoutError('query timed out', Date.now() - startTimestamp)
         )
+        cleanup()
       }, opts?.timeout ?? TIMEOUT_DURATION_MS_DEFAULT)
 
       function resolve(a: any) {
         if (!timedOut) {
           clearTimeout(timeout)
           _resolve(a)
+          cleanup()
         }
       }
 
@@ -39,20 +41,31 @@ export class IPCCommand {
         if (!timedOut) {
           clearTimeout(timeout)
           _reject(a)
+          cleanup()
         }
       }
 
-      window.electronAPI.ipcRenderer.on(
-        eventNames.succeeded,
-        (_, payload: QueryResultPayload<Result>) => {
-          resolve(payload.payload)
-        }
-      )
+      function handleSucceeded(
+        _: unknown,
+        payload: QueryResultPayload<Result>
+      ) {
+        resolve(payload.payload)
+      }
 
-      window.electronAPI.ipcRenderer.on(
-        eventNames.failed,
-        (_, payload: ErrorPayload<Err>) => reject(payload.error)
-      )
+      function handleFailed(_: unknown, payload: ErrorPayload<Err>) {
+        reject(payload.error)
+      }
+
+      function cleanup() {
+        window.electronAPI.ipcRenderer.off(
+          eventNames.succeeded,
+          handleSucceeded
+        )
+        window.electronAPI.ipcRenderer.off(eventNames.failed, handleFailed)
+      }
+
+      window.electronAPI.ipcRenderer.once(eventNames.succeeded, handleSucceeded)
+      window.electronAPI.ipcRenderer.once(eventNames.failed, handleFailed)
 
       window.electronAPI.ipcRenderer.send(eventNames.request, {
         payload: params,
