@@ -5,6 +5,7 @@ const rootPath = path.join(__dirname, '../..');
 const dllPath = path.join(__dirname, '../dll');
 
 const srcPath = path.join(rootPath, 'src');
+const sharedPath = path.resolve(rootPath, '../shared')
 const srcMainPath = path.join(srcPath, 'main');
 const srcRendererPath = path.join(srcPath, 'renderer');
 
@@ -24,6 +25,7 @@ module.exports = {
   rootPath,
   dllPath,
   srcPath,
+  sharedPath,
   srcMainPath,
   srcRendererPath,
   releasePath,

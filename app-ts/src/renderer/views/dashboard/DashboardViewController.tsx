@@ -1,10 +1,9 @@
-import ms from 'ms'
 import { addDays } from 'date-fns'
 import { useLivingRoomConditions } from 'renderer/conditions/useLivingRoomConditions'
 import { useOutsideConditions } from 'renderer/conditions/useOutsideConditions'
 import { useCalendarEvents } from 'renderer/calendar/useCalendarEvents'
-import { DashboardView } from './DashboardView'
 import { useStore } from 'renderer/store'
+import { DashboardView } from '@shared/views'
 
 export const DashboardViewController: React.FC = () => {
   const date = useStore((state) => state.date)

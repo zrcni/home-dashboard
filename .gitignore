@@ -13,3 +13,4 @@ mobile/android/.gradle
 .clj-kondo
 /app-ts/db/*
 !/**/.gitkeep
+node_modules

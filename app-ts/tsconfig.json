@@ -21,7 +21,15 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "allowJs": true,
-    "outDir": "release/app/dist"
+    "outDir": "release/app/dist",
+    "paths": {
+      "@shared/errors": ["../../shared/errors"],
+      "@shared/store": ["../../shared/store"],
+      "@shared/types": ["../../shared/types"],
+      "@shared/utils": ["../../shared/utils"],
+      "@shared/views": ["../../shared/views"]
+    }
   },
+  "include": ["src", "../shared"],
   "exclude": ["__test__", "release/build", "release/app/dist", ".erb/dll"]
 }
