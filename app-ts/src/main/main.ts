@@ -138,7 +138,7 @@ async function main() {
   const commandHandler = new IPCCommandHandler(
     ipcMain,
     mainWindow.webContents,
-    cfg.dev
+    true
   )
 
   ipcCommands.getConditionsMetrics(commandHandler, metrics)
@@ -147,7 +147,8 @@ async function main() {
 
   const subscriptionHandler = new IPCSubscriptionHandler(
     ipcMain,
-    mainWindow.webContents
+    mainWindow.webContents,
+    true
   )
 
   ipcSubscriptions.livingRoomConditionsUpdated(subscriptionHandler, pubSub)
