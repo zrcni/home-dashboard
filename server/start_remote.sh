@@ -6,7 +6,8 @@ set -e
 # get Raspberry Pi's information from config file
 device_ip=$(grep -oP '(?<=\brpi_ip=)[^\n]+' ~/.smappa)
 device_user=$(grep -oP '(?<=\brpi_user=)[^\n]+' ~/.smappa)
-ssh_opts="-i $HOME/.ssh/id_rsa.pub"
+ssh_file=$(grep -oP '(?<=\bssh_file=)[^\n]+' ~/.smappa)
+ssh_opts="-i $ssh_file"
 
 if [ -z "$device_ip" ]; then
   echo "Device's IP address couldn't be found in ~/.smappa"

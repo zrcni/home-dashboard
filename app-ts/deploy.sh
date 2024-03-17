@@ -7,7 +7,8 @@ set -e
 # get Raspberry Pi's information from config file
 device_ip=$(grep -oP '(?<=\brpi_ip=)[^\n]+' ~/.smappa)
 device_user=$(grep -oP '(?<=\brpi_user=)[^\n]+' ~/.smappa)
-ssh_opts="-i $HOME/.ssh/id_rsa.pub"
+ssh_file=$(grep -oP '(?<=\bssh_file=)[^\n]+' ~/.smappa)
+ssh_opts="-i $ssh_file"
 
 version=$(cat ./package.json | jq .version | sed 's/"//g')
 app_name=$(cat ./package.json | jq .build.productName | sed 's/"//g')
