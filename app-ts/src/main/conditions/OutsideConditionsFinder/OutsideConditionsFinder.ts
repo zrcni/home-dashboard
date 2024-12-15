@@ -6,7 +6,7 @@ export class OutsideConditionsFinder {
   // fmisid 101794 = Oulu, Vihreäsaari satama
   // fmisid 101799 = Oulu, Oulunsalo Pellonpää
   private static baseUrl =
-    'https://www.ilmatieteenlaitos.fi/api/weather/observations?fmisid=101799&observations=true'
+    'https://www.ilmatieteenlaitos.fi/api/weather/observations?fmisid=101794&observations=true'
 
   public static async getLatest() {
     const data = await this.getJSON(this.baseUrl)
