@@ -7,7 +7,7 @@ import type { ConditionData } from '../../types'
 
 export function livingRoomConditionsUpdated(
   subscriptionHandler: IPCSubscriptionHandler,
-  pubSub: PubSub
+  pubSub: PubSub,
 ) {
   subscriptionHandler.addHandler<undefined, ConditionData>(
     SUBSCRIPTIONS.LIVING_ROOM_CONDITIONS,
@@ -19,7 +19,7 @@ export function livingRoomConditionsUpdated(
             temperature: payload.temperature,
             humidity: payload.humidity,
             lastUpdated: new Date(payload.timestamp * 1000),
-          })
-      )
+          }),
+      ),
   )
 }

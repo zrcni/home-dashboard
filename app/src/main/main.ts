@@ -6,36 +6,36 @@
  * When running `npm run build` or `npm run build:main`, this file is compiled to
  * `./src/main.js` using webpack. This gives us some performance wins.
  */
-import "dotenv/config"
-import "core-js/stable"
-import "regenerator-runtime/runtime"
-import path from "path"
-import { app, BrowserWindow, ipcMain, shell } from "electron"
-import { cfg, verifyMainConfig } from "./config"
-import MenuBuilder from "./menu"
-import { PubSubMQTT } from "./pub-sub"
-import { createMQTTClient } from "./mqtt"
-import { saveLivingRoomConditionsSubscription } from "./conditions/saveLivingRoomConditionsSubscription"
-import { SQLite } from "./sqlite"
-import { migrateUp } from "./migrations"
-import { logger } from "./logger"
-import { Metrics } from "./metrics"
-import { IPCCommandHandler } from "./IPCCommandHandler"
-import * as webCalEventFinders from "./calendar/WebCalEventFinder"
-import { IPCSubscriptionHandler } from "./IPCSubscriptionHandler"
-import * as ipcCommands from "./ipc-commands"
-import * as ipcSubscriptions from "./ipc-subscriptions"
-import electronDebug from "electron-debug"
+import 'dotenv/config'
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+import path from 'path'
+import { app, BrowserWindow, ipcMain, shell } from 'electron'
+import { cfg, verifyMainConfig } from './config'
+import MenuBuilder from './menu'
+import { PubSubMQTT } from './pub-sub'
+import { createMQTTClient } from './mqtt'
+import { saveLivingRoomConditionsSubscription } from './conditions/saveLivingRoomConditionsSubscription'
+import { SQLite } from './sqlite'
+import { migrateUp } from './migrations'
+import { logger } from './logger'
+import { Metrics } from './metrics'
+import { IPCCommandHandler } from './IPCCommandHandler'
+import * as webCalEventFinders from './calendar/WebCalEventFinder'
+import { IPCSubscriptionHandler } from './IPCSubscriptionHandler'
+import * as ipcCommands from './ipc-commands'
+import * as ipcSubscriptions from './ipc-subscriptions'
+import electronDebug from 'electron-debug'
 import installExtension, {
   REACT_DEVELOPER_TOOLS,
-} from "electron-devtools-installer"
-import sourceMapSupport from "source-map-support"
+} from 'electron-devtools-installer'
+import sourceMapSupport from 'source-map-support'
 
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string
 
-process.on("unhandledRejection", (err) => {
-  logger.error("unhandledRejection: ", err)
+process.on('unhandledRejection', (err) => {
+  logger.error('unhandledRejection: ', err)
 })
 
 let mainWindow: BrowserWindow | null = null
@@ -53,7 +53,7 @@ const installExtensions = async () => {
   const extensions = [REACT_DEVELOPER_TOOLS]
 
   return installExtension(extensions, { forceDownload: forceDownload }).catch(
-    logger.error
+    logger.error,
   )
 }
 
@@ -63,8 +63,8 @@ const createMainWindow = async () => {
   }
 
   const RESOURCES_PATH = app.isPackaged
-    ? path.join(process.resourcesPath, "assets")
-    : path.join(__dirname, "../../assets")
+    ? path.join(process.resourcesPath, 'assets')
+    : path.join(__dirname, '../../assets')
 
   const getAssetPath = (...paths: string[]): string => {
     return path.join(RESOURCES_PATH, ...paths)
@@ -75,7 +75,7 @@ const createMainWindow = async () => {
     fullscreen: cfg.startFullscreen,
     width: cfg.viewWidth,
     height: cfg.viewHeight,
-    icon: getAssetPath("icon.png"),
+    icon: getAssetPath('icon.png'),
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     },
@@ -83,7 +83,7 @@ const createMainWindow = async () => {
 
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY)
 
-  mainWindow.on("ready-to-show", () => {
+  mainWindow.on('ready-to-show', () => {
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined')
     }
@@ -91,7 +91,7 @@ const createMainWindow = async () => {
     mainWindow.focus()
   })
 
-  mainWindow.on("closed", () => {
+  mainWindow.on('closed', () => {
     mainWindow = null
   })
 
@@ -101,7 +101,7 @@ const createMainWindow = async () => {
   // Open urls in the user's browser
   mainWindow.webContents.setWindowOpenHandler(({ url }) => {
     shell.openExternal(url)
-    return { action: "deny" }
+    return { action: 'deny' }
   })
 
   return mainWindow
@@ -112,21 +112,21 @@ async function main() {
 
   await app.whenReady()
 
-  app.on("window-all-closed", () => {
+  app.on('window-all-closed', () => {
     // Respect the OSX convention of having the application in memory even
     // after all windows have been closed
-    if (process.platform !== "darwin") {
+    if (process.platform !== 'darwin') {
       app.quit()
     }
   })
 
   const mainWindow = await createMainWindow()
-  logger.info("main window created")
+  logger.info('main window created')
 
   const sqlite = new SQLite(cfg.sqliteDb)
 
   await migrateUp(sqlite)
-  logger.info("migrate up finished successfully")
+  logger.info('migrate up finished successfully')
 
   const pubSub = new PubSubMQTT(createMQTTClient(cfg.mqttBrokerUrl), {
     onError: (err) => logger.error(err),
@@ -139,7 +139,7 @@ async function main() {
   const commandHandler = new IPCCommandHandler(
     ipcMain,
     mainWindow.webContents,
-    true
+    true,
   )
 
   ipcCommands.getConditionsMetrics(commandHandler, metrics)
@@ -149,7 +149,7 @@ async function main() {
   const subscriptionHandler = new IPCSubscriptionHandler(
     ipcMain,
     mainWindow.webContents,
-    true
+    true,
   )
 
   ipcSubscriptions.livingRoomConditionsUpdated(subscriptionHandler, pubSub)

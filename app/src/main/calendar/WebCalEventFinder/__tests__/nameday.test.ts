@@ -1,4 +1,4 @@
-import { readEventsByDate } from './utils'
+import { readEventsByDate } from '../test-utils'
 
 describe('WebCal events – nameday', () => {
   it('7.11.2021', () => {

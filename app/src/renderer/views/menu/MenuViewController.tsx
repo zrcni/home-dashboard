@@ -11,7 +11,7 @@ export const MenuViewController: React.FC = () => {
       openView(view)
       closeMenu()
     },
-    [openView]
+    [openView, closeMenu],
   )
 
   return <MenuView onOpenView={onOpenView} />

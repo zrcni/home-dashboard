@@ -3,13 +3,13 @@ module.exports = {
   rules: {
     // A temporary hack related to IDE not resolving correct package.json
     'import/no-extraneous-dependencies': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+    'no-restricted-syntax': 'off',
     semi: ['error', 'never'],
     'prettier/prettier': ['error', { singleQuote: true, semi: false }],
     'import/prefer-default-export': 'off',
-    'react/react-in-jsx-scope': 'off',
-    'react/prop-types': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
-    'no-restricted-syntax': 'off',
     'guard-for-in': 'off',
     'no-console': 'off',
     'max-classes-per-file': 'off',

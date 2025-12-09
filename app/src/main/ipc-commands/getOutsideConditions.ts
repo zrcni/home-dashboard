@@ -6,6 +6,6 @@ import { COMMANDS } from '../../commands'
 export function getOutsideConditions(commandHandler: IPCCommandHandler) {
   commandHandler.addHandler<undefined, GetOutsideConditionsResult>(
     COMMANDS.GET_OUTSIDE_CONDITIONS,
-    () => OutsideConditionsFinder.getLatest()
+    () => OutsideConditionsFinder.getLatest(),
   )
 }

@@ -10,7 +10,29 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:import/electron",
-    "plugin:import/typescript"
+    "plugin:import/typescript",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended"
   ],
-  "parser": "@typescript-eslint/parser"
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "no-constant-condition": "off",
+    "semi": ["error", "never"],
+    "prettier/prettier": ["error", { "singleQuote": true, "semi": false }],
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "guard-for-in": "off",
+    "no-console": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-non-null-assertion": "off"
+  }
 }

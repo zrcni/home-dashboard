@@ -14,11 +14,11 @@ export function useInsideConditionsMetrics(dateRange: [Date, Date]) {
       {
         location: 'livingroom',
         dateRange,
-      }
+      },
     )
       .then((result) => setMetrics(result))
       .catch((err) =>
-        logger.error(`${COMMANDS.GET_CONDITIONS_METRICS} query failed: `, err)
+        logger.error(`${COMMANDS.GET_CONDITIONS_METRICS} query failed: `, err),
       )
   }, [dateRange[0], dateRange[1]])
 }

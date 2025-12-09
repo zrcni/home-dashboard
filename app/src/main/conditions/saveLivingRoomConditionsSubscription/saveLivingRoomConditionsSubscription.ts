@@ -5,7 +5,7 @@ import { ConditionsUpdatedPayload } from '../types'
 
 export function saveLivingRoomConditionsSubscription(
   pubSub: PubSub,
-  sqlite: SQLite
+  sqlite: SQLite,
 ) {
   async function handleMessage(payload: ConditionsUpdatedPayload) {
     await sqlite.run(
@@ -15,12 +15,12 @@ export function saveLivingRoomConditionsSubscription(
       payload.timestamp,
       payload.device_id,
       payload.client_id || null,
-      'livingroom'
+      'livingroom',
     )
   }
 
   return pubSub.subscribe<ConditionsUpdatedPayload>(
     MQTT_TOPICS.LIVING_ROOM_CONDITIONS_UPDATED,
-    handleMessage
+    handleMessage,
   )
 }

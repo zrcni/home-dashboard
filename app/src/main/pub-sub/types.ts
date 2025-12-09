@@ -7,6 +7,6 @@ type Unsubscribe = () => void
 export interface PubSub {
   subscribe<P = never>(
     topic: string,
-    callback: PubSubMessageHandler<P>
+    callback: PubSubMessageHandler<P>,
   ): Unsubscribe
 }

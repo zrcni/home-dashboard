@@ -29,7 +29,7 @@ export class OutsideConditionsFinder {
       lastUpdated: parseDate(
         observation.localtime,
         "yyyyMMdd'T'HHmmss",
-        new Date()
+        new Date(),
       ),
     }
   }

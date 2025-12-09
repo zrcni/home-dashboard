@@ -8,12 +8,12 @@ import type {
 
 export function getConditionsMetrics(
   commandHandler: IPCCommandHandler,
-  metrics: Metrics
+  metrics: Metrics,
 ) {
   commandHandler.addHandler<
     GetConditionsMetricsParams,
     GetConditionsMetricsResult
   >(COMMANDS.GET_CONDITIONS_METRICS, (params) =>
-    metrics.conditions.getByLocation(params.location, params.dateRange)
+    metrics.conditions.getByLocation(params.location, params.dateRange),
   )
 }

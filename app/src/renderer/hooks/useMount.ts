@@ -1,4 +1,4 @@
-import { EffectCallback, useEffect, useReducer, useRef } from "react"
+import { EffectCallback, useEffect, useReducer, useRef } from 'react'
 
 /**
  * Mount & unmount
@@ -12,7 +12,9 @@ export const useMount = (effect: EffectCallback) => {
   const renderedRef = useRef(false)
   const [, forceUpdate] = useReducer((n) => n + 1, 0)
 
+  // eslint-disable-next-line react-hooks/refs
   if (effectCalled.current) {
+    // eslint-disable-next-line react-hooks/refs
     renderedRef.current = true
   }
 

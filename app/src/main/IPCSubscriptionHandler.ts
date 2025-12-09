@@ -21,11 +21,7 @@ export class IPCSubscriptionHandler {
 
   private debug: boolean
 
-  constructor(
-    ipcMain: IpcMain,
-    webContents: WebContents,
-    debug: boolean = false
-  ) {
+  constructor(ipcMain: IpcMain, webContents: WebContents, debug = false) {
     this.ipcMain = ipcMain
     this.webContents = webContents
     this.subscriptions = {}
@@ -44,7 +40,7 @@ export class IPCSubscriptionHandler {
 
           invariant(
             subscribe,
-            `Subscription "${payload.subscriptionName}" does not exist!`
+            `Subscription "${payload.subscriptionName}" does not exist!`,
           )
 
           const unsubscribe = subscribe(payload.params, (result) => {
@@ -66,7 +62,7 @@ export class IPCSubscriptionHandler {
             })
           }
         }
-      }
+      },
     )
 
     this.ipcMain.on(
@@ -89,7 +85,7 @@ export class IPCSubscriptionHandler {
             params,
           })
         }
-      }
+      },
     )
   }
 
@@ -103,11 +99,11 @@ export class IPCSubscriptionHandler {
 
   addHandler<Params = any, Payload = any>(
     subscriptionName: string,
-    subscribe: Subscribe<Params, Payload>
+    subscribe: Subscribe<Params, Payload>,
   ) {
     invariant(
       !this.handlers[subscriptionName],
-      'Handler already has a subscription!'
+      'Handler already has a subscription!',
     )
     this.handlers[subscriptionName] = subscribe
   }
@@ -129,5 +125,5 @@ type Handler<Payload> = (payload: Payload) => void | Promise<void>
 
 type Subscribe<Params = any, Payload = any> = (
   params: Params,
-  handler: Handler<Payload>
+  handler: Handler<Payload>,
 ) => Unsubscribe

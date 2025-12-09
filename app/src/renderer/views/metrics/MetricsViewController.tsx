@@ -7,12 +7,15 @@ import { MetricsView } from './MetricsView'
 export const MetricsViewController: React.FC = () => {
   const date = useStore((state) => state.date)
   const insideConditionsMetrics = useStore(
-    (state) => state.insideConditionsMetrics
+    (state) => state.insideConditionsMetrics,
   )
   const endDate = endOfMinute(date)
+  const endDateNum = endDate.valueOf()
+
   const dateRange = useMemo(
     () => [subDays(endDate, 1), endDate] as [Date, Date],
-    [endDate.valueOf()]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [endDateNum],
   )
 
   useInsideConditionsMetrics(dateRange)

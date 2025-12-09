@@ -9,7 +9,46 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "eslint --ext .ts,.tsx ."
+    "lint": "eslint --ext .ts,.tsx .",
+    "lint:fix": "eslint --ext .ts,.tsx . --fix",
+    "test": "jest",
+    "test:precommit": "jest --bail --findRelatedTests",
+    "test:watch": "jest --watch",
+    "script:mock-inside-conditions": "cross-env TS_NODE_PROJECT=tsconfig.json ts-node -r dotenv/config ./scripts/mock-inside-conditions.ts"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.(ts|tsx|js|jsx)$": "ts-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(css|less|sass|scss)$": "identity-obj-proxy",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.js"
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "setupFiles": [
+      "<rootDir>/setup-tests.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "src/lib"
+    ]
+  },
+  "prettier": {
+    "overrides": [
+      {
+        "files": [
+          ".eslintrc.json"
+        ],
+        "options": {
+          "parser": "json"
+        }
+      }
+    ],
+    "singleQuote": true,
+    "semi": false
   },
   "keywords": [],
   "author": {
@@ -35,15 +74,27 @@
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "@vercel/webpack-asset-relocator-loader": "^1.7.3",
+    "cross-env": "^10.1.0",
     "css-loader": "^6.11.0",
     "electron": "39.2.6",
     "electron-devtools-installer": "^4.0.0",
     "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
     "fork-ts-checker-webpack-plugin": "^7.3.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "jest-extended": "^1.1.0",
     "node-loader": "^2.1.0",
+    "prettier": "^3.7.4",
     "style-loader": "^3.3.4",
+    "ts-jest": "^29.4.6",
     "ts-loader": "^9.5.4",
+    "ts-node": "^10.9.2",
     "typescript": "~4.5.4"
   },
   "dependencies": {

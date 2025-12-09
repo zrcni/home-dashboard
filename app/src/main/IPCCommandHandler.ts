@@ -15,11 +15,7 @@ export class IPCCommandHandler {
 
   private debug: boolean
 
-  constructor(
-    ipcMain: IpcMain,
-    webContents: WebContents,
-    debug: boolean = false
-  ) {
+  constructor(ipcMain: IpcMain, webContents: WebContents, debug = false) {
     this.ipcMain = ipcMain
     this.webContents = webContents
     this.debug = debug
@@ -29,7 +25,7 @@ export class IPCCommandHandler {
 
   addHandler<Params = any, Result = any, Err extends Error = CommandError>(
     commandName: string,
-    handler: (params: Params) => Result | Promise<Result>
+    handler: (params: Params) => Result | Promise<Result>,
   ) {
     const eventName = this.requestEventName(commandName)
     const self = this
@@ -54,7 +50,7 @@ export class IPCCommandHandler {
 
         self.webContents.send(
           self.succeededEventName(commandName, payload.requestId),
-          { payload: result }
+          { payload: result },
         )
       } catch (err) {
         logger.error(`command failed`, {
@@ -65,7 +61,7 @@ export class IPCCommandHandler {
 
         self.webContents.send(
           self.failedEventName(commandName, payload.requestId),
-          { error: err as Err }
+          { error: err as Err },
         )
       }
     }

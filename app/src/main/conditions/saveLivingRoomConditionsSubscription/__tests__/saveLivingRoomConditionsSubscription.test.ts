@@ -38,7 +38,7 @@ describe('saveLivingRoomConditionsSubscription', () => {
     await flushPromises()
 
     const records = (await sqlite.all(
-      `SELECT * FROM conditions;`
+      `SELECT * FROM conditions;`,
     )) as ConditionsRecord[]
 
     expect(records).toHaveLength(1)

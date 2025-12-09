@@ -4,17 +4,17 @@ export interface ElectronAPI {
 
     on<P = unknown>(
       channel: string,
-      func: (e: Electron.IpcRendererEvent, payload: P) => void
+      func: (e: Electron.IpcRendererEvent, payload: P) => void,
     ): void
 
     once<P = unknown>(
       channel: string,
-      func: (e: Electron.IpcRendererEvent, payload: P) => void
+      func: (e: Electron.IpcRendererEvent, payload: P) => void,
     ): void
 
     off<P = unknown>(
       channel: string,
-      func: (e: Electron.IpcRendererEvent, payload: P) => void
+      func: (e: Electron.IpcRendererEvent, payload: P) => void,
     ): void
   }
 }

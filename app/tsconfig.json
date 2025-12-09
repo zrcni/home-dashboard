@@ -13,6 +13,5 @@
     "moduleResolution": "node",
     "resolveJsonModule": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["**/__tests__/**", "**/*.test.ts", "**/*.spec.ts"]
+  "include": ["src/**/*", "scripts/**/*", "setup-tests.ts"]
 }

@@ -1,4 +1,4 @@
-import { readEventsByDate } from './utils'
+import { readEventsByDate } from '../test-utils'
 
 describe('WebCal events – theme', () => {
   it('8.11.2021', () => {

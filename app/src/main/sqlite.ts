@@ -18,8 +18,8 @@ export class SQLite {
       this.db.run(
         sql,
         ...params.concat((err: Error | null) =>
-          err ? reject(err) : resolve(undefined)
-        )
+          err ? reject(err) : resolve(undefined),
+        ),
       )
     })
   }
@@ -29,8 +29,8 @@ export class SQLite {
       this.db.get(
         sql,
         ...params.concat((err: Error | null, row: T) =>
-          err ? reject(err) : resolve(row)
-        )
+          err ? reject(err) : resolve(row),
+        ),
       )
     })
   }
@@ -40,8 +40,8 @@ export class SQLite {
       this.db.all(
         sql,
         ...params.concat((err: Error | null, rows: T[]) =>
-          err ? reject(err) : resolve(rows)
-        )
+          err ? reject(err) : resolve(rows),
+        ),
       )
     })
   }

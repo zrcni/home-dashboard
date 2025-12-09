@@ -5,4 +5,4 @@ import conditionsFixDataTypesDown from './conditions-fix-data-types.down'
 
 export const up = [...conditionsUp, ...conditionsFixDataTypesUp]
 
-export const down = [...conditionsDown, ...conditionsFixDataTypesDown]
+export const down = [...conditionsFixDataTypesDown, ...conditionsDown]

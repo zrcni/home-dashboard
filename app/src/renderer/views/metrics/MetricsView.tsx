@@ -1,6 +1,4 @@
 import { ResponsiveLine } from '@nivo/line'
-import { subDays } from 'date-fns'
-import { useStore } from 'renderer/store'
 import { ConditionMetricRow } from 'types'
 import './MetricsView.global.css'
 

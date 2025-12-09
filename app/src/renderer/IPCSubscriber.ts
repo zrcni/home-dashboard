@@ -5,7 +5,7 @@ export class IPCSubscriber {
   static subscribe<Params = any, Payload = any>(
     subscriptionName: string,
     params: Params,
-    handler: (payload: Payload) => void
+    handler: (payload: Payload) => void,
   ) {
     function _handler(_: IpcRendererEvent, payload: Payload) {
       handler(payload)

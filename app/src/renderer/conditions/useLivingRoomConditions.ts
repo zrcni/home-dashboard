@@ -12,7 +12,7 @@ export function useLivingRoomConditions() {
   useIPCSubscription<ConditionData>(
     SUBSCRIPTIONS.LIVING_ROOM_CONDITIONS,
     undefined,
-    (payload) => setConditions(payload)
+    (payload) => setConditions(payload),
   )
 
   return conditions

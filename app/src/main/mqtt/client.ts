@@ -9,7 +9,7 @@ export function createMQTTClient(url: string) {
   mqttClient.on('error', (error: any) =>
     logger.error(`mqtt client error: ${error.message}`, {
       error: error,
-    })
+    }),
   )
 
   return mqttClient

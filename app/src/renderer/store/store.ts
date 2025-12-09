@@ -16,16 +16,20 @@ type AppStateSlice = {
   openView(view: AppView): void
 }
 
-const createAppStateSlice: StateCreator<AppStateSlice, [], [], AppStateSlice> =
-  (set) => ({
-    date: null as any,
-    setDate: (date: Date) => set({ date }),
-    isMenuOpen: false,
-    toggleMenuOpen: () => set((state) => ({ isMenuOpen: !state.isMenuOpen })),
-    closeMenu: () => set({ isMenuOpen: false }),
-    currentView: null as any,
-    openView: (view: AppView) => set({ currentView: view }),
-  })
+const createAppStateSlice: StateCreator<
+  AppStateSlice,
+  [],
+  [],
+  AppStateSlice
+> = (set) => ({
+  date: null as any,
+  setDate: (date: Date) => set({ date }),
+  isMenuOpen: false,
+  toggleMenuOpen: () => set((state) => ({ isMenuOpen: !state.isMenuOpen })),
+  closeMenu: () => set({ isMenuOpen: false }),
+  currentView: null as any,
+  openView: (view: AppView) => set({ currentView: view }),
+})
 
 type ConditionsSlice = {
   outsideConditions: ConditionData | null
@@ -56,7 +60,7 @@ type MetricsSlice = {
 }
 
 const createMetricsSlice: StateCreator<MetricsSlice, [], [], MetricsSlice> = (
-  set
+  set,
 ) => ({
   insideConditionsMetrics: [],
   setInsideConditionsMetrics(rows: ConditionMetricRow[]) {

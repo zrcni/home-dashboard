@@ -16,13 +16,13 @@ export function useOutsideConditions() {
 
   const handler = useCallback(() => {
     IPCCommand.run<undefined, GetOutsideConditionsResult>(
-      COMMANDS.GET_OUTSIDE_CONDITIONS
+      COMMANDS.GET_OUTSIDE_CONDITIONS,
     )
       .then((result) => setConditions(result))
       .catch((err) =>
-        logger.error(`${COMMANDS.GET_OUTSIDE_CONDITIONS} query failed: `, err)
+        logger.error(`${COMMANDS.GET_OUTSIDE_CONDITIONS} query failed: `, err),
       )
-  }, [])
+  }, [setConditions])
 
   useInterval(handler, REFRESH_FREQ_MS)
 

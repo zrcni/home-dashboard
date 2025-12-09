@@ -8,7 +8,7 @@ import type { WebCalEventFinders } from '../calendar/WebCalEventFinder'
 
 export function getCalendarEvents(
   commandHandler: IPCCommandHandler,
-  webCalEventFinders: WebCalEventFinders
+  webCalEventFinders: WebCalEventFinders,
 ) {
   commandHandler.addHandler<GetCalendarEventsParams, GetCalendarEventsResult>(
     COMMANDS.GET_CALENDAR_EVENTS,
@@ -26,6 +26,6 @@ export function getCalendarEvents(
         nameday,
         theme,
       }
-    }
+    },
   )
 }

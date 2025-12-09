@@ -1,4 +1,4 @@
-import mqtt, { MqttClient } from 'mqtt'
+import { MqttClient } from 'mqtt'
 import { nanoid } from 'nanoid'
 import { PubSub, PubSubMessageHandler } from './types'
 

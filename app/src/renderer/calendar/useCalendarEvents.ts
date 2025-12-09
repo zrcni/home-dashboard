@@ -16,11 +16,11 @@ export function useCalendarEvents(date: Date) {
   useEffect(() => {
     IPCCommand.run<GetCalendarEventsParams, GetCalendarEventsResult>(
       COMMANDS.GET_CALENDAR_EVENTS,
-      { date }
+      { date },
     )
       .then((result) => setData(result))
       .catch((err) =>
-        logger.error(`${COMMANDS.GET_OUTSIDE_CONDITIONS} query failed: `, err)
+        logger.error(`${COMMANDS.GET_OUTSIDE_CONDITIONS} query failed: `, err),
       )
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ddmm])

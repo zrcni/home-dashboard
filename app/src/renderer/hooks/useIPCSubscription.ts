@@ -5,7 +5,7 @@ import { IPCSubscriber } from 'renderer/IPCSubscriber'
 export function useIPCSubscription<Payload = any, Params = any>(
   subscriptionName: string,
   params: Params,
-  onEvent: (payload: Payload) => void
+  onEvent: (payload: Payload) => void,
 ) {
   const onEventRef = useRef(onEvent)
 
@@ -20,7 +20,7 @@ export function useIPCSubscription<Payload = any, Params = any>(
     const unsubscribe = IPCSubscriber.subscribe(
       subscriptionName,
       params,
-      handleEvent
+      handleEvent,
     )
     return unsubscribe
   })

@@ -16,7 +16,7 @@ export class ConditionsMetrics {
       ORDER BY timestamp ASC`,
       location,
       Math.floor(dateRange[0].valueOf() / 1000),
-      Math.ceil(dateRange[1].valueOf() / 1000)
+      Math.ceil(dateRange[1].valueOf() / 1000),
     )
     return rows as ConditionMetricRow[]
   }

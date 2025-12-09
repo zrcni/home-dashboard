@@ -10,8 +10,8 @@ describe('OutsideConditionsFinder', () => {
         JSON.parse(
           fs
             .readFileSync(path.resolve(__dirname, 'api-response.json'))
-            .toString()
-        )
+            .toString(),
+        ),
       )
 
     const conditions = await OutsideConditionsFinder.getLatest()

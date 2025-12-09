@@ -11,7 +11,7 @@ export class IPCCommand {
   static run<Params = any, Result = any, Err extends Error = CommandError>(
     commandName: string,
     params?: Params,
-    opts?: QueryOptions
+    opts?: QueryOptions,
   ): Promise<Result> {
     const requestId = nanoid(12)
 
@@ -21,10 +21,10 @@ export class IPCCommand {
       let timedOut = false
       const startTimestamp = Date.now()
 
-      let timeout = setTimeout(() => {
+      const timeout = setTimeout(() => {
         timedOut = true
         _reject(
-          new TimeoutError('query timed out', Date.now() - startTimestamp)
+          new TimeoutError('query timed out', Date.now() - startTimestamp),
         )
         cleanup()
       }, opts?.timeout ?? TIMEOUT_DURATION_MS_DEFAULT)
@@ -47,7 +47,7 @@ export class IPCCommand {
 
       function handleSucceeded(
         _: unknown,
-        payload: QueryResultPayload<Result>
+        payload: QueryResultPayload<Result>,
       ) {
         resolve(payload.payload)
       }
@@ -59,7 +59,7 @@ export class IPCCommand {
       function cleanup() {
         window.electronAPI.ipcRenderer.off(
           eventNames.succeeded,
-          handleSucceeded
+          handleSucceeded,
         )
         window.electronAPI.ipcRenderer.off(eventNames.failed, handleFailed)
       }

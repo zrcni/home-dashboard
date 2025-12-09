@@ -164,7 +164,7 @@ export default class MenuBuilder {
           label: 'Documentation',
           click() {
             shell.openExternal(
-              'https://github.com/electron/electron/tree/main/docs#readme'
+              'https://github.com/electron/electron/tree/main/docs#readme',
             )
           },
         },
@@ -255,7 +255,7 @@ export default class MenuBuilder {
             label: 'Documentation',
             click() {
               shell.openExternal(
-                'https://github.com/electron/electron/tree/main/docs#readme'
+                'https://github.com/electron/electron/tree/main/docs#readme',
               )
             },
           },
