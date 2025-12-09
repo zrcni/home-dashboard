@@ -20,5 +20,6 @@ export function useInsideConditionsMetrics(dateRange: [Date, Date]) {
       .catch((err) =>
         logger.error(`${COMMANDS.GET_CONDITIONS_METRICS} query failed: `, err),
       )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dateRange[0], dateRange[1]])
 }

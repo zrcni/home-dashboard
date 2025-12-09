@@ -1,4 +1,4 @@
-import ical, { ParamList, CalendarComponent } from '../../../lib/ical'
+import { parseICS, ParamList, CalendarComponent } from '../../../lib/ical'
 import {
   isBefore,
   isEqual,
@@ -16,7 +16,7 @@ export class WebCalEventParser {
   }
 
   getEventsByDayOfMonth(date: Date) {
-    const calendar = ical.parseICS(this.data)
+    const calendar = parseICS(this.data)
 
     return Object.values(calendar)
       .filter((obj) => obj.type === CALENDAR_COMPONENT_TYPE_VEVENT)

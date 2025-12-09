@@ -1,7 +1,6 @@
 import type { Configuration } from 'webpack'
 import webpack from 'webpack'
-
-require('dotenv').config()
+import 'dotenv/config'
 
 import { rules } from './webpack.rules'
 import { plugins } from './webpack.plugins'

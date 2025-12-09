@@ -1,5 +1,5 @@
 import { SQLite } from './sqlite'
-import * as migrations from './migration-defs'
+import { up, down } from './migration-defs'
 
 export function migrateUp(sqlite: SQLite) {
   return runMigrations(sqlite, 'up')
@@ -28,5 +28,5 @@ COMMIT;
 }
 
 async function getMigrations(type: 'up' | 'down') {
-  return migrations[type]
+  return type === 'up' ? up : down
 }

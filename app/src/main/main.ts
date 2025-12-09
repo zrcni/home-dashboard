@@ -29,7 +29,7 @@ import electronDebug from 'electron-debug'
 import installExtension, {
   REACT_DEVELOPER_TOOLS,
 } from 'electron-devtools-installer'
-import sourceMapSupport from 'source-map-support'
+import { install as installSourceMapSupport } from 'source-map-support'
 
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string
@@ -41,7 +41,7 @@ process.on('unhandledRejection', (err) => {
 let mainWindow: BrowserWindow | null = null
 
 if (cfg.prod) {
-  sourceMapSupport.install()
+  installSourceMapSupport()
 }
 
 if (cfg.dev) {

@@ -28,10 +28,9 @@ export class IPCCommandHandler {
     handler: (params: Params) => Result | Promise<Result>,
   ) {
     const eventName = this.requestEventName(commandName)
-    const self = this
 
     async function _handler(_: IpcMainEvent, payload: any) {
-      if (self.debug) {
+      if (this.debug) {
         logger.info(`command received`, {
           requestId: payload.requestId,
           commandName,
@@ -41,15 +40,15 @@ export class IPCCommandHandler {
       try {
         const result = await handler(payload.payload)
 
-        if (self.debug) {
+        if (this.debug) {
           logger.info(`command succeeded`, {
             requestId: payload.requestId,
             commandName,
           })
         }
 
-        self.webContents.send(
-          self.succeededEventName(commandName, payload.requestId),
+        this.webContents.send(
+          this.succeededEventName(commandName, payload.requestId),
           { payload: result },
         )
       } catch (err) {
@@ -59,16 +58,18 @@ export class IPCCommandHandler {
           error: err,
         })
 
-        self.webContents.send(
-          self.failedEventName(commandName, payload.requestId),
+        this.webContents.send(
+          this.failedEventName(commandName, payload.requestId),
           { error: err as Err },
         )
       }
     }
 
-    this.ipcMain.on(eventName, _handler)
+    const _handlerBound = _handler.bind(this)
 
-    this.unsubs.push(() => this.ipcMain.off(eventName, _handler))
+    this.ipcMain.on(eventName, _handlerBound)
+
+    this.unsubs.push(() => this.ipcMain.off(eventName, _handlerBound))
   }
 
   quit() {

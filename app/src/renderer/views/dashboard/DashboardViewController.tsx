@@ -1,4 +1,3 @@
-import ms from 'ms'
 import { addDays } from 'date-fns'
 import { useLivingRoomConditions } from 'renderer/conditions/useLivingRoomConditions'
 import { useOutsideConditions } from 'renderer/conditions/useOutsideConditions'

@@ -1,24 +1,26 @@
-import winston from 'winston'
+import {
+  format,
+  transports,
+  LoggerOptions,
+  createLogger as createWinstonLogger,
+} from 'winston'
 
-export function createLogger(
-  logLevel: winston.LoggerOptions['level'],
-  dev?: boolean,
-) {
-  const format = dev
-    ? winston.format.combine(
-        winston.format.timestamp(),
-        winston.format.errors({ stack: true }),
-        winston.format.prettyPrint(),
+export function createLogger(logLevel: LoggerOptions['level'], dev?: boolean) {
+  const selectedFormat = dev
+    ? format.combine(
+        format.timestamp(),
+        format.errors({ stack: true }),
+        format.prettyPrint(),
       )
-    : winston.format.combine(
-        winston.format.timestamp(),
-        winston.format.errors({ stack: false }),
-        winston.format.json(),
+    : format.combine(
+        format.timestamp(),
+        format.errors({ stack: false }),
+        format.json(),
       )
 
-  return winston.createLogger({
+  return createWinstonLogger({
     level: logLevel,
-    format,
-    transports: [new winston.transports.Console()],
+    format: selectedFormat,
+    transports: [new transports.Console()],
   })
 }
