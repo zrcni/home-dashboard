@@ -1,0 +1,17 @@
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mosquitto
+    restart: always
+    ports:
+      - "1884:1884"
+      - "9001:9001" #default mqtt port for websockets
+    healthcheck:
+      test: ["CMD-SHELL", "timeout -t 5 mosquitto_sub -t '$$SYS/#' -C 1 | grep -v Error || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
