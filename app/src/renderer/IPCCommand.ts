@@ -2,7 +2,8 @@ import { TimeoutError } from 'errors'
 import { nanoid } from 'nanoid'
 import { CommandError } from 'types'
 
-const TIMEOUT_DURATION_MS_DEFAULT = 5000
+// Running on Raspberry Pi it can sometimes take quite a long time to respond
+const TIMEOUT_DURATION_MS_DEFAULT = 20000
 
 /**
  * TODO: update error handling to be {ok,error} instead of promise .then/.catch

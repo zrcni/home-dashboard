@@ -20,7 +20,7 @@ export function useCalendarEvents(date: Date) {
     )
       .then((result) => setData(result))
       .catch((err) =>
-        logger.error(`${COMMANDS.GET_OUTSIDE_CONDITIONS} query failed: `, err),
+        logger.error(`${COMMANDS.GET_CALENDAR_EVENTS} query failed: `, err),
       )
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ddmm])
