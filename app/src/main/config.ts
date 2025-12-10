@@ -8,7 +8,7 @@ let googleCredentials = { client_email: '', private_key: '' }
 try {
   const credentialsPath = cfg.prod
     ? path.join(
-        process.resourcesPath,
+        (process as any).resourcesPath,
         'credentials',
         'home-dashboard-rpi-service-account.json',
       )

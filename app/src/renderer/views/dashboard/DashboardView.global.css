@@ -32,6 +32,12 @@
   animation: grow var(--text-animation-speed);
 }
 
+.location-text {
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  animation: grow var(--text-animation-speed);
+}
+
 .dashboard-label {
   font-size: 1.2em;
 }

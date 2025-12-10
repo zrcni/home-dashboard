@@ -44,13 +44,18 @@ export const DashboardView: React.FC<Props> = ({
               <div>
                 <TemperatureDetails
                   temperature={outsideConditions.temperature}
-                  icon={<FaTree />}
+                  icon={<FaTree size="0.7em" />}
                 />
                 <HumidityDetails humidity={outsideConditions.humidity} />
                 <LastUpdatedDetails
                   dateNow={dateNow}
                   lastUpdated={outsideConditions.lastUpdated}
                 />
+                {outsideConditions.location && (
+                  <p className="dashboard-text location-text">
+                    {outsideConditions.location}
+                  </p>
+                )}
               </div>
             </>
           )}
@@ -69,13 +74,19 @@ export const DashboardView: React.FC<Props> = ({
               <div>
                 <TemperatureDetails
                   temperature={insideConditions.temperature}
-                  icon={<FaHome />}
+                  icon={<FaHome size="0.7em" />}
+                  iconPosition="right"
                 />
                 <HumidityDetails humidity={insideConditions.humidity} />
                 <LastUpdatedDetails
                   dateNow={dateNow}
                   lastUpdated={insideConditions.lastUpdated}
                 />
+                {insideConditions.location && (
+                  <p className="dashboard-text location-text">
+                    {insideConditions.location}
+                  </p>
+                )}
               </div>
             </>
           )}

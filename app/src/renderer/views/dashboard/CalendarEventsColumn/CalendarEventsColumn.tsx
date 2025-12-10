@@ -1,13 +1,13 @@
 import { GetCalendarEventsResult } from 'types'
 import { EventDetails } from './EventDetails'
 import {
-  FaBirthdayCake,
   FaCalendarCheck,
   FaInfoCircle,
-  FaPalette,
   FaUser,
   FaMoon,
   FaCalendarAlt,
+  FaGlobe,
+  FaTag,
 } from 'react-icons/fa'
 
 interface Props {
@@ -20,8 +20,8 @@ const iconMapping: Record<string, React.ReactNode> = {
   personal: <FaUser />,
   finnishHolidays: <FaCalendarCheck />,
   goodToKnow: <FaInfoCircle />,
-  theme: <FaPalette />,
-  nameDays: <FaBirthdayCake />,
+  theme: <FaGlobe />,
+  nameDays: <FaTag />,
   moonCycle: <FaMoon />,
 }
 

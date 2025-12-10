@@ -7,6 +7,7 @@ export interface ConditionData {
   temperature: Temperature
   humidity: Humidity
   lastUpdated: Date
+  location?: string
 }
 
 export interface ConditionMetricRow {
