@@ -1,13 +1,13 @@
 {
   "name": "app",
-  "productName": "app",
+  "productName": "HomeDashboard",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
+    "package": "electron-forge package --arch=armv7l --platform=linux",
+    "make": "electron-forge make --arch=armv7l --platform=linux",
     "publish": "electron-forge publish",
     "lint": "eslint --ext .ts,.tsx .",
     "lint:fix": "eslint --ext .ts,.tsx . --fix",
