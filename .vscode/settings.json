@@ -1,6 +1,3 @@
 {
-  "eslint.workingDirectories": [
-    "./app",
-    "./app-ts"
-  ]
+  "eslint.workingDirectories": ["./app"]
 }
