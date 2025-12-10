@@ -84,8 +84,6 @@ const createMainWindow = async () => {
     },
   })
 
-  mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY)
-
   mainWindow.on('ready-to-show', () => {
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined')
@@ -156,6 +154,8 @@ async function main() {
   )
 
   ipcSubscriptions.livingRoomConditionsUpdated(subscriptionHandler, pubSub)
+
+  mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY)
 }
 
 main().catch((err) => {
