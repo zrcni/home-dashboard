@@ -17,20 +17,6 @@
     "test:watch": "jest --watch",
     "script:mock-inside-conditions": "cross-env TS_NODE_PROJECT=tsconfig.json ts-node -r dotenv/config ./scripts/mock-inside-conditions.ts"
   },
-  "prettier": {
-    "overrides": [
-      {
-        "files": [
-          ".eslintrc.json"
-        ],
-        "options": {
-          "parser": "json"
-        }
-      }
-    ],
-    "singleQuote": true,
-    "semi": false
-  },
   "keywords": [],
   "author": {
     "name": "zrcni",
