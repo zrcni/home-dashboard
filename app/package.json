@@ -13,8 +13,8 @@
     "lint:fix": "eslint --ext .ts,.tsx . --fix",
     "test:unit": "jest --config jest.config.unit.js",
     "test:integration": "jest --config jest.config.integration.js",
-    "test:precommit": "jest --bail --findRelatedTests",
-    "test:watch": "jest --watch",
+    "test:precommit": "jest --config jest.config.unit.js --bail --findRelatedTests",
+    "test:unit:watch": "jest --config jest.config.unit.js --watch",
     "script:mock-inside-conditions": "cross-env TS_NODE_PROJECT=tsconfig.json ts-node -r dotenv/config ./scripts/mock-inside-conditions.ts"
   },
   "keywords": [],
