@@ -11,7 +11,8 @@
     "publish": "electron-forge publish",
     "lint": "eslint --ext .ts,.tsx .",
     "lint:fix": "eslint --ext .ts,.tsx . --fix",
-    "test": "jest",
+    "test:unit": "jest --testPathIgnorePatterns src/__integration-tests__ src/lib",
+    "test:integration": "jest src/__integration-tests__",
     "test:precommit": "jest --bail --findRelatedTests",
     "test:watch": "jest --watch",
     "script:mock-inside-conditions": "cross-env TS_NODE_PROJECT=tsconfig.json ts-node -r dotenv/config ./scripts/mock-inside-conditions.ts"

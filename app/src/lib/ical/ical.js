@@ -274,10 +274,15 @@
         var par = stack.pop()
 
         if (curr.uid) {
+          var uid = curr.uid
+          if (uid.val) {
+            uid = uid.val
+          }
+
           // If this is the first time we run into this UID, just save it.
-          if (par[curr.uid] === undefined) {
+          if (par[uid] === undefined) {
             // @MODIFIED
-            par[curr.uid.val] = curr
+            par[uid] = curr
           } else {
             // If we have multiple ical entries with the same UID, it's either going to be a
             // modification to a recurrence (RECURRENCE-ID), and/or a significant modification
@@ -292,7 +297,7 @@
               var key
               for (key in curr) {
                 // @MODIFIED
-                par[curr.uid.val][key] = curr[key]
+                par[uid][key] = curr[key]
               }
             }
           }
@@ -326,9 +331,9 @@
 
             // If we don't have an array to store recurrences in yet, create it.
             // @MODIFIED
-            if (par[curr.uid.val].recurrences === undefined) {
+            if (par[uid].recurrences === undefined) {
               // @MODIFIED
-              par[curr.uid.val].recurrences = new Array()
+              par[uid].recurrences = new Array()
             }
 
             // Save off our cloned recurrence object into the array, keyed by date but not time.
@@ -336,7 +341,7 @@
             // TODO: See if this causes a problem with events that have multiple recurrences per day.
             if (typeof curr.recurrenceid.toISOString === 'function') {
               // @MODIFIED
-              par[curr.uid.val].recurrences[
+              par[uid].recurrences[
                 curr.recurrenceid.toISOString().substring(0, 10)
               ] = recurrenceObj
             } else {
@@ -351,12 +356,12 @@
           // let's make sure to clear the recurrenceid off the parent field.
           if (
             // @MODIFIED
-            par[curr.uid.val].rrule != undefined &&
+            par[uid].rrule != undefined &&
             // @MODIFIED
-            par[curr.uid.val].recurrenceid != undefined
+            par[uid].recurrenceid != undefined
           ) {
             // @MODIFIED
-            delete par[curr.uid.val].recurrenceid
+            delete par[uid].recurrenceid
           }
         } else par[Math.random() * 100000] = curr // Randomly assign ID : TODO - use true GUID
 
