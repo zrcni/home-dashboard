@@ -1,5 +1,11 @@
 import { CalendarEvents } from 'types'
 import { EventDetails } from './EventDetails'
+import {
+  FaBirthdayCake,
+  FaCalendarCheck,
+  FaInfoCircle,
+  FaPalette,
+} from 'react-icons/fa'
 
 interface Props {
   labelPrimary: string
@@ -21,19 +27,35 @@ export const CalendarEventsColumn: React.FC<Props> = ({
     {events && (
       <div className="event-details-container">
         {events.nameday.length > 0 && (
-          <EventDetails label="Name days" events={events.nameday} />
+          <EventDetails
+            label="Name days"
+            events={events.nameday}
+            icon={<FaBirthdayCake />}
+          />
         )}
 
         {events.holiday.length > 0 && (
-          <EventDetails label="Holidays" events={events.holiday} />
+          <EventDetails
+            label="Holidays"
+            events={events.holiday}
+            icon={<FaCalendarCheck />}
+          />
         )}
 
         {events.goodToKnow.length > 0 && (
-          <EventDetails label="Good to know" events={events.goodToKnow} />
+          <EventDetails
+            label="Good to know"
+            events={events.goodToKnow}
+            icon={<FaInfoCircle />}
+          />
         )}
 
         {events.theme.length > 0 && (
-          <EventDetails label="Theme" events={events.theme} />
+          <EventDetails
+            label="Theme"
+            events={events.theme}
+            icon={<FaPalette />}
+          />
         )}
       </div>
     )}

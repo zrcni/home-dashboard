@@ -8,6 +8,7 @@ import { HeaderCell } from './HeaderCell'
 import { formatDate } from '../../utils'
 import './DashboardView.global.css'
 import { LastUpdatedDetails } from './LastUpdatedDetails'
+import { FaHome, FaTree } from 'react-icons/fa'
 
 interface Props {
   dateNow: Date
@@ -43,6 +44,7 @@ export const DashboardView: React.FC<Props> = ({
               <div>
                 <TemperatureDetails
                   temperature={outsideConditions.temperature}
+                  icon={<FaTree />}
                 />
                 <HumidityDetails humidity={outsideConditions.humidity} />
                 <LastUpdatedDetails
@@ -67,6 +69,7 @@ export const DashboardView: React.FC<Props> = ({
               <div>
                 <TemperatureDetails
                   temperature={insideConditions.temperature}
+                  icon={<FaHome />}
                 />
                 <HumidityDetails humidity={insideConditions.humidity} />
                 <LastUpdatedDetails
