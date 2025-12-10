@@ -27,35 +27,19 @@ export const CalendarEventsColumn: React.FC<Props> = ({
     {events && (
       <div className="event-details-container">
         {events.nameday.length > 0 && (
-          <EventDetails
-            label="Name days"
-            events={events.nameday}
-            icon={<FaBirthdayCake />}
-          />
+          <EventDetails events={events.nameday} icon={<FaBirthdayCake />} />
         )}
 
         {events.holiday.length > 0 && (
-          <EventDetails
-            label="Holidays"
-            events={events.holiday}
-            icon={<FaCalendarCheck />}
-          />
+          <EventDetails events={events.holiday} icon={<FaCalendarCheck />} />
         )}
 
         {events.goodToKnow.length > 0 && (
-          <EventDetails
-            label="Good to know"
-            events={events.goodToKnow}
-            icon={<FaInfoCircle />}
-          />
+          <EventDetails events={events.goodToKnow} icon={<FaInfoCircle />} />
         )}
 
         {events.theme.length > 0 && (
-          <EventDetails
-            label="Theme"
-            events={events.theme}
-            icon={<FaPalette />}
-          />
+          <EventDetails events={events.theme} icon={<FaPalette />} />
         )}
       </div>
     )}
