@@ -37,6 +37,7 @@ export interface CalendarEvents {
   goodToKnow: CalendarEvent[]
   nameday: CalendarEvent[]
   theme: CalendarEvent[]
+  personal: CalendarEvent[]
 }
 
 export interface GetCalendarEventsParams {

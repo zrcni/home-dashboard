@@ -13,7 +13,7 @@ const config: ForgeConfig = {
     executableName: 'HomeDashboard',
     appBundleId: 'org.zrcni.HomeDashboard',
     asar: false,
-    extraResource: ['./assets'],
+    extraResource: ['./assets', './credentials'],
     prune: false,
     ignore: [
       /^\/src/,

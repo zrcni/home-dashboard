@@ -60,6 +60,7 @@ typings/
 # dotenv environment variables file
 .env
 .env.test
+.env.build
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -90,3 +91,7 @@ typings/
 
 # Electron-Forge
 out/
+
+credentials/*
+!credentials/.gitkeep
+!credentials/*.template

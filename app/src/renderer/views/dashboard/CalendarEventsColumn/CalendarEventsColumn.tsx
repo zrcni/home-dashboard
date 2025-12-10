@@ -5,6 +5,7 @@ import {
   FaCalendarCheck,
   FaInfoCircle,
   FaPalette,
+  FaUser,
 } from 'react-icons/fa'
 
 interface Props {
@@ -26,6 +27,10 @@ export const CalendarEventsColumn: React.FC<Props> = ({
 
     {events && (
       <div className="event-details-container">
+        {events.personal.length > 0 && (
+          <EventDetails events={events.personal} icon={<FaUser />} />
+        )}
+
         {events.nameday.length > 0 && (
           <EventDetails events={events.nameday} icon={<FaBirthdayCake />} />
         )}
