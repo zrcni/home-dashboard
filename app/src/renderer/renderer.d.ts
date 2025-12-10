@@ -1,4 +1,7 @@
 export interface ElectronAPI {
+  env: {
+    HIDE_CURSOR?: string
+  }
   ipcRenderer: {
     send<P = unknown>(channel: string, event?: P): void
 

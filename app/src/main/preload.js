@@ -1,6 +1,9 @@
 const { contextBridge, ipcRenderer } = require('electron')
 
 contextBridge.exposeInMainWorld('electronAPI', {
+  env: {
+    HIDE_CURSOR: process.env.HIDE_CURSOR,
+  },
   ipcRenderer: {
     send(channel, ...args) {
       ipcRenderer.send(channel, ...args)

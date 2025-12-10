@@ -20,9 +20,6 @@ export const rendererConfig: Configuration = {
       'process.env.NODE_ENV': JSON.stringify(
         process.env.NODE_ENV || 'development',
       ),
-      'process.env.HIDE_CURSOR': JSON.stringify(
-        process.env.HIDE_CURSOR || 'false',
-      ),
     }),
   ],
   resolve: {

@@ -2,7 +2,7 @@ import { cfg } from '../config'
 
 const rendererConfig = {
   ...cfg,
-  hideCursor: process.env.HIDE_CURSOR === 'true',
+  hideCursor: window.electronAPI.env.HIDE_CURSOR === 'true',
   logLevel: 'level',
 }
 
