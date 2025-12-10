@@ -1,7 +1,9 @@
 import got from 'got'
 import { WebCalEventParser } from './WebCalEventParser'
+import { IEventFinder } from '../types'
+import { CalendarEvent } from '../../../types'
 
-export class WebCalEventFinder {
+export class WebCalEventFinder implements IEventFinder {
   private url: string
 
   constructor(calendarId: string | number) {
@@ -10,7 +12,7 @@ export class WebCalEventFinder {
     this.url = url.toString()
   }
 
-  async findByDate(date: Date) {
+  async findByDate(date: Date): Promise<CalendarEvent[]> {
     const text = await this.getText(this.url)
     const parser = new WebCalEventParser(text)
     return parser.getEventsByDayOfMonth(date)

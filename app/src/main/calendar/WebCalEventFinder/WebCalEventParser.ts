@@ -1,4 +1,5 @@
 import ics, { ParamList, CalendarComponent } from '../../../lib/ical'
+import { CalendarEvent } from '../../../types'
 import {
   isBefore,
   isEqual,
@@ -15,14 +16,17 @@ export class WebCalEventParser {
     this.data = data
   }
 
-  getEventsByDayOfMonth(date: Date) {
+  getEventsByDayOfMonth(date: Date): CalendarEvent[] {
     const calendar = ics.parseICS(this.data)
 
     return Object.values(calendar)
       .filter((obj) => obj.type === CALENDAR_COMPONENT_TYPE_VEVENT)
       .filter((event) => isEventDuring(event, date))
-      .map((event) => (event.summary as ParamList).val)
-      .map(cleanSummary)
+      .map((event) => ({
+        text: cleanSummary((event.summary as ParamList).val),
+        startDate: new Date(event.start!),
+        endDate: subDays(new Date(event.end!), 1),
+      }))
   }
 }
 

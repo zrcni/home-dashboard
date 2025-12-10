@@ -11,6 +11,9 @@ describe('WebCalEventFinder Integration', () => {
     const events = await holiday.findByDate(date)
     expect(Array.isArray(events)).toBe(true)
     expect(events.length).toBeGreaterThan(0)
+    expect(events[0]).toHaveProperty('text')
+    expect(events[0]).toHaveProperty('startDate')
+    expect(events[0]).toHaveProperty('endDate')
   })
 
   it('should find goodToKnow events', async () => {

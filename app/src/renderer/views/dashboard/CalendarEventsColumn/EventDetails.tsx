@@ -1,5 +1,7 @@
+import { CalendarEvent } from 'types'
+
 interface Props {
-  events: string[]
+  events: CalendarEvent[]
   icon?: React.ReactNode
 }
 
@@ -7,9 +9,9 @@ export const EventDetails: React.FC<Props> = ({ events, icon }) => {
   return (
     <>
       {events.map((event, index) => (
-        <div key={`${event}-${index}`} className="event-details-item">
+        <div key={`${event.text}-${index}`} className="event-details-item">
           {icon && <span className="event-details-icon">{icon}</span>}
-          <span className="event-details-text">{event}</span>
+          <span className="event-details-text">{event.text}</span>
         </div>
       ))}
     </>

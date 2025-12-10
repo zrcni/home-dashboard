@@ -26,7 +26,11 @@ export type GetOutsideConditionsResult = ConditionData
 
 export type CommandError = Error | TimeoutError
 
-export type CalendarEvent = string
+export interface CalendarEvent {
+  text: string
+  startDate: Date
+  endDate: Date
+}
 
 export interface CalendarEvents {
   holiday: CalendarEvent[]
