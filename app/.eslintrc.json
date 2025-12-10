@@ -44,5 +44,13 @@
     "@typescript-eslint/no-non-null-assertion": "off",
     "import/no-named-as-default": "off",
     "import/no-named-as-default-member": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
 }

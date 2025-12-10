@@ -1,4 +1,9 @@
-import { holiday, goodToKnow, theme, nameday } from '../main/calendar/WebCalEventFinder/index'
+import {
+  holiday,
+  goodToKnow,
+  theme,
+  nameday,
+} from '../main/calendar/WebCalEventFinder/index'
 
 describe('WebCalEventFinder Integration', () => {
   it('should find holiday events', async () => {
