@@ -21,7 +21,6 @@ import { migrateUp } from './migrations'
 import { logger } from './logger'
 import { Metrics } from './metrics'
 import { IPCCommandHandler } from './IPCCommandHandler'
-import * as webCalEventFinders from './calendar/WebCalEventFinder'
 import { IPCSubscriptionHandler } from './IPCSubscriptionHandler'
 import * as ipcCommands from './ipc-commands'
 import * as ipcSubscriptions from './ipc-subscriptions'
@@ -145,7 +144,7 @@ async function main() {
 
   ipcCommands.getConditionsMetrics(commandHandler, metrics)
   ipcCommands.getOutsideConditions(commandHandler)
-  ipcCommands.getCalendarEvents(commandHandler, webCalEventFinders)
+  ipcCommands.getCalendarEvents(commandHandler)
 
   const subscriptionHandler = new IPCSubscriptionHandler(
     ipcMain,

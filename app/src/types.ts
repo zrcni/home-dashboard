@@ -30,18 +30,16 @@ export interface CalendarEvent {
   text: string
   startDate: Date
   endDate: Date
+  categoryId: string
 }
 
-export interface CalendarEvents {
-  holiday: CalendarEvent[]
-  goodToKnow: CalendarEvent[]
-  nameday: CalendarEvent[]
-  theme: CalendarEvent[]
-  personal: CalendarEvent[]
+export interface CalendarCategory {
+  categoryId: string
+  events: CalendarEvent[]
 }
 
 export interface GetCalendarEventsParams {
   date: Date
 }
 
-export type GetCalendarEventsResult = CalendarEvents
+export type GetCalendarEventsResult = CalendarCategory[]

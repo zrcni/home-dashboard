@@ -37,6 +37,28 @@ const mainConfig = {
       .split(',')
       .filter(Boolean),
   },
+  icals: [
+    {
+      categoryId: 'nameDays',
+      url: 'https://www.webcal.guru/fi-FI/lataa_kalenteri?calendar_instance_id=263',
+    },
+    {
+      categoryId: 'finnishHolidays',
+      url: 'https://calendar.google.com/calendar/ical/en.finnish%23holiday%40group.v.calendar.google.com/public/basic.ics',
+    },
+    {
+      categoryId: 'goodToKnow',
+      url: 'https://www.webcal.guru/fi-FI/lataa_kalenteri?calendar_instance_id=180',
+    },
+    {
+      categoryId: 'theme',
+      url: 'https://www.webcal.guru/fi-FI/lataa_kalenteri?calendar_instance_id=899',
+    },
+    {
+      categoryId: 'moonCycle',
+      url: 'https://calendar.google.com/calendar/ical/ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com/public/basic.ics',
+    },
+  ],
   // take devtools etc. into account
   viewWidth: cfg.dev ? 1170 : 800,
   viewHeight: cfg.dev ? 625 : 600,

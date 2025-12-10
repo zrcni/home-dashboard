@@ -9,11 +9,13 @@ import {
   subDays,
 } from 'date-fns'
 
-export class WebCalEventParser {
+export class ICalEventParser {
   private data: string
+  private categoryId: string
 
-  constructor(data: string) {
+  constructor(data: string, categoryId: string) {
     this.data = data
+    this.categoryId = categoryId
   }
 
   getEventsByDayOfMonth(date: Date): CalendarEvent[] {
@@ -23,11 +25,22 @@ export class WebCalEventParser {
       .filter((obj) => obj.type === CALENDAR_COMPONENT_TYPE_VEVENT)
       .filter((event) => isEventDuring(event, date))
       .map((event) => ({
-        text: cleanSummary((event.summary as ParamList).val),
+        text: cleanSummary(getSummary(event.summary)),
         startDate: new Date(event.start!),
         endDate: subDays(new Date(event.end!), 1),
+        categoryId: this.categoryId,
       }))
   }
+}
+
+function getSummary(summary: string | ParamList | undefined): string {
+  if (!summary) {
+    return ''
+  }
+  if (typeof summary === 'string') {
+    return summary
+  }
+  return summary.val || ''
 }
 
 function cleanSummary(summary: string) {
@@ -49,6 +62,13 @@ const CALENDAR_COMPONENT_TYPE_VEVENT = 'VEVENT' as const
  * not be necessary, but lets be sure.
  */
 function isEventDuring(event: CalendarComponent, date: Date) {
+  if (event.rrule) {
+    const start = startOfDay(date)
+    const end = endOfDay(date)
+    const occurrences = event.rrule.between(start, end, true)
+    return occurrences.length > 0
+  }
+
   const start = startOfDay(new Date(event.start!))
   // end date seems to be the next day after the event, so one day needs to be subtracted.
   const end = endOfDay(subDays(new Date(event.end!), 1))

@@ -1,5 +1,5 @@
 import addDays from 'date-fns/addDays'
-import { CalendarEvents, ConditionData } from 'types'
+import { GetCalendarEventsResult, ConditionData } from 'types'
 import { DashboardClock } from './DashboardClock'
 import { TemperatureDetails } from './TemperatureDetails'
 import { HumidityDetails } from './HumidityDetails'
@@ -14,8 +14,8 @@ interface Props {
   dateNow: Date
   insideConditions: ConditionData | null
   outsideConditions: ConditionData | null
-  eventsToday: CalendarEvents | null
-  eventsTomorrow: CalendarEvents | null
+  eventsToday: GetCalendarEventsResult | null
+  eventsTomorrow: GetCalendarEventsResult | null
 }
 
 /**

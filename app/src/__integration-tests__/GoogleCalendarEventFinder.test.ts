@@ -10,7 +10,7 @@ describe('GoogleCalendarEventFinder Integration', () => {
   })
 
   it('should find events', async () => {
-    const date = new Date('2025-12-24T12:00:00')
+    const date = new Date('2025-12-10T12:00:00')
     console.log('Using Calendar IDs:', process.env.GOOGLE_CALENDAR_IDS)
     const events = await googleCalendarEventFinder.findByDate(date)
 

@@ -1,4 +1,4 @@
-import { CalendarEvents } from 'types'
+import { GetCalendarEventsResult } from 'types'
 import { EventDetails } from './EventDetails'
 import {
   FaBirthdayCake,
@@ -6,12 +6,23 @@ import {
   FaInfoCircle,
   FaPalette,
   FaUser,
+  FaMoon,
+  FaCalendarAlt,
 } from 'react-icons/fa'
 
 interface Props {
   labelPrimary: string
   labelSecondary: string
-  events: CalendarEvents
+  events: GetCalendarEventsResult
+}
+
+const iconMapping: Record<string, React.ReactNode> = {
+  personal: <FaUser />,
+  finnishHolidays: <FaCalendarCheck />,
+  goodToKnow: <FaInfoCircle />,
+  theme: <FaPalette />,
+  nameDays: <FaBirthdayCake />,
+  moonCycle: <FaMoon />,
 }
 
 export const CalendarEventsColumn: React.FC<Props> = ({
@@ -27,25 +38,13 @@ export const CalendarEventsColumn: React.FC<Props> = ({
 
     {events && (
       <div className="event-details-container">
-        {events.personal.length > 0 && (
-          <EventDetails events={events.personal} icon={<FaUser />} />
-        )}
-
-        {events.nameday.length > 0 && (
-          <EventDetails events={events.nameday} icon={<FaBirthdayCake />} />
-        )}
-
-        {events.holiday.length > 0 && (
-          <EventDetails events={events.holiday} icon={<FaCalendarCheck />} />
-        )}
-
-        {events.goodToKnow.length > 0 && (
-          <EventDetails events={events.goodToKnow} icon={<FaInfoCircle />} />
-        )}
-
-        {events.theme.length > 0 && (
-          <EventDetails events={events.theme} icon={<FaPalette />} />
-        )}
+        {events.map((category) => (
+          <EventDetails
+            key={category.categoryId}
+            events={category.events}
+            icon={iconMapping[category.categoryId] || <FaCalendarAlt />}
+          />
+        ))}
       </div>
     )}
   </div>
