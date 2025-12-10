@@ -1,13 +1,7 @@
-### app-ts
+### app
 the _home dashboard_ app, running on a Raspberry Pi, 11" screen
 
 ![ui](./home-dashboard-ui.png)
-
-### mobile
-Controls the app
-
-### server
-Provides an API for the app
 
 ### more
 MQTT broker runs on the Raspberry Pi.
@@ -26,4 +20,4 @@ Also run this on raspberry pi (zrcni/temperature-reader repo)
 $ job.sh
 ```
 
-and finally start home dashboard with app-ts folder's start_remote.sh
+and finally start home dashboard with app folder's start_remote.sh
