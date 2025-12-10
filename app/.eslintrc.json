@@ -43,7 +43,8 @@
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "import/no-named-as-default": "off",
-    "import/no-named-as-default-member": "off"
+    "import/no-named-as-default-member": "off",
+    "@typescript-eslint/ban-ts-comment": "off"
   },
   "overrides": [
     {

@@ -41,10 +41,12 @@ process.on('unhandledRejection', (err) => {
 let mainWindow: BrowserWindow | null = null
 
 if (cfg.prod) {
+  logger.info('Installing source map support')
   installSourceMapSupport()
 }
 
 if (cfg.dev) {
+  logger.info('Enabling electron debug')
   electronDebug()
 }
 
@@ -59,6 +61,7 @@ const installExtensions = async () => {
 
 const createMainWindow = async () => {
   if (cfg.dev) {
+    logger.info('Installing extensions')
     await installExtensions()
   }
 

@@ -18,4 +18,7 @@ export const mainConfig: Configuration = {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json'],
     modules: ['node_modules', 'src'],
   },
+  externals: {
+    sqlite3: 'commonjs sqlite3',
+  },
 }

@@ -5,6 +5,7 @@
 set -e
 
 app_name="HomeDashboard"
+arch="armv7l"
 ext="AppImage"
 filename="$app_name.$ext"
 

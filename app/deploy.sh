@@ -11,10 +11,10 @@ ssh_file=$(grep -oP '(?<=\bssh_file=)[^\n]+' ~/.smappa)
 ssh_opts="-i $ssh_file"
 
 version=$(cat ./package.json | jq .version | sed 's/"//g')
-app_name=$(cat ./package.json | jq .build.productName | sed 's/"//g')
+app_name=$(cat ./package.json | jq .productName | sed 's/"//g')
 arch="armv7l"
 ext="AppImage"
-build_path="./release/build"
+build_path="./release/build/make/$ext/$arch"
 filename="$app_name-$version-$arch.$ext"
 file_path="$build_path/$filename"
 out_filename="$app_name.$ext"
