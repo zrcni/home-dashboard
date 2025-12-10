@@ -31,6 +31,8 @@ export interface CalendarEvent {
   startDate: Date
   endDate: Date
   categoryId: string
+  isAllDay?: boolean
+  personal?: boolean
 }
 
 export interface CalendarCategory {

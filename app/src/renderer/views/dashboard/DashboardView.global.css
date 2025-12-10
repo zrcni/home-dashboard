@@ -160,3 +160,7 @@
   display: flex;
   align-items: center;
 }
+
+.event-time {
+  font-size: 0.85em;
+}

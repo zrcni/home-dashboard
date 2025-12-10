@@ -29,8 +29,14 @@ export class ICalEventParser {
         startDate: new Date(event.start!),
         endDate: subDays(new Date(event.end!), 1),
         categoryId: this.categoryId,
+        isAllDay: isAllDay(event),
       }))
   }
+}
+
+function isAllDay(event: CalendarComponent) {
+  const start = event.start as any
+  return start && start.dateOnly
 }
 
 function getSummary(summary: string | ParamList | undefined): string {

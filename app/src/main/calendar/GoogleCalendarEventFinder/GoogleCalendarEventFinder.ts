@@ -49,12 +49,14 @@ export class GoogleCalendarEventFinder implements IEventFinder {
       )
 
       const flattenedEvents = allEvents.flat()
-console.log(flattenedEvents)
+
       return flattenedEvents.map((event) => ({
         text: event.summary || '',
         startDate: new Date(event.start?.dateTime || event.start?.date || ''),
         endDate: new Date(event.end?.dateTime || event.end?.date || ''),
         categoryId: 'personal',
+        personal: true,
+        isAllDay: !event.start?.dateTime,
       }))
     } catch (error) {
       console.error('Error fetching Google Calendar events:', error)
